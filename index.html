@@ -8616,10 +8616,36 @@ root.SudokuBank.push(
   function rng(seed){var x=seed>>>0;return function(){x=(x+0x6D2B79F5)>>>0;var t=x;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296;};}
   function shuffle(a,random){for(var i=a.length-1;i>0;i--){var j=Math.floor(random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
 
-  function digitPermutedSolution(base,seed){
-    var digits=[1,2,3,4,5,6,7,8,9],random=rng((seed^0x4C4B5355)>>>0);
-    shuffle(digits,random);
-    return base.map(function(row){return row.map(function(v){return digits[v-1];});});
+  function sudokuAutomorphism(base,seed){
+    var n=base.length,random=rng(seed>>>0),digits=Array.from({length:n},function(_,i){return i+1;}),bands=[0,1,2],stacks=[0,1,2],rows=[],cols=[];
+    shuffle(digits,random);shuffle(bands,random);shuffle(stacks,random);
+    bands.forEach(function(b){var within=[0,1,2];shuffle(within,random);within.forEach(function(x){rows.push(b*3+x);});});
+    stacks.forEach(function(s){var within=[0,1,2];shuffle(within,random);within.forEach(function(x){cols.push(s*3+x);});});
+    var rowInverse=Array(n),colInverse=Array(n);
+    rows.forEach(function(oldRow,newRow){rowInverse[oldRow]=newRow;});
+    cols.forEach(function(oldCol,newCol){colInverse[oldCol]=newCol;});
+    return{
+      solution:rows.map(function(r){return cols.map(function(c){return digits[base[r][c]-1];});}),
+      rowInverse:rowInverse,
+      colInverse:colInverse
+    };
+  }
+
+  function transformedCloneVariant(variant,seed){
+    var transformed=sudokuAutomorphism(variant.solution,(seed^0x434C4F4E)>>>0),out=clone(variant);
+    out.solution=transformed.solution;
+    if(out.data&&Array.isArray(out.data.clones)){
+      out.data.clones=out.data.clones.map(function(region){
+        return region.map(function(p){return[transformed.rowInverse[p[0]],transformed.colInverse[p[1]]];});
+      });
+    }
+    return out;
+  }
+
+  function makeClone(variant,seed,difficulty){
+    var working=transformedCloneVariant(variant,seed>>>0),out=baseMake.call(generator,working,seed>>>0,difficulty||'focused');
+    out.generation=Object.assign({},out.generation||{},{generatorFamily:'clone-seeded-sudoku-automorphism',structuralDiversity:'row-column-band-stack-permutation',topologyTransformed:true});
+    return out;
   }
 
   function diagonalCells(r,c,dr,dc,n){var cells=[];while(r>=0&&r<n&&c>=0&&c<n){cells.push([r,c]);r+=dr;c+=dc;}return cells;}
@@ -8678,7 +8704,7 @@ root.SudokuBank.push(
   function makeLittleKiller(variant,seed,difficulty){
     difficulty=difficulty||'focused';var extraWanted=extraRemovalsFor(difficulty);
     for(var attempt=0;attempt<5;attempt++){
-      var actual=((seed>>>0)^0x4C4B4745^Math.imul(attempt+1,0x9E3779B1))>>>0,solution=digitPermutedSolution(variant.solution,actual),topology=freshTopology(solution,actual,12),clues=topology.clues;
+      var actual=((seed>>>0)^0x4C4B4745^Math.imul(attempt+1,0x9E3779B1))>>>0,solution=sudokuAutomorphism(variant.solution,(actual^0x4C4B5355)>>>0).solution,topology=freshTopology(solution,actual,12),clues=topology.clues;
       var grid=gridClone(solution),order=shuffle(Array.from({length:81},function(_,i){return i;}),rng(actual^0x524D564C)),clueCount=81,totalNodes=0,budgetHit=false,essentialReached=false,extraDone=0;
       for(var oi=0;oi<order.length&&clueCount>22;oi++){
         var idx=order[oi],r=Math.floor(idx/9),c=idx%9,old=grid[r][c];grid[r][c]=0;var check=solveCount(grid,clues,2,9000);totalNodes+=check.nodes;if(check.exhausted){grid[r][c]=old;budgetHit=true;continue;}if(check.count!==1){grid[r][c]=old;continue;}clueCount--;
@@ -8687,7 +8713,7 @@ root.SudokuBank.push(
       var exact=solveCount(grid,clues,2,30000);totalNodes+=exact.nodes;var classic=generator.countSolutions(grid,2);
       if(essentialReached&&!exact.exhausted&&exact.count===1&&classic>1&&extraDone>=extraWanted){
         var out=clone(variant);out.solution=solution;out.puzzle=grid;out.data=Object.assign({},out.data||{},{clues:clues});
-        out.generation={seed:seed>>>0,clues:clueCount,unique:true,variantEssential:true,verification:'little-killer-exact-sum-solver',generatorFamily:'little-killer-bounded-sum-aware',mode:'seeded-variant-essential',topology:{clueCount:clues.length,sideCounts:topology.sideCounts,usedSides:topology.sideOrder,activeSideCount:topology.activeSideCount},search:{nodes:totalNodes,budgetHit:budgetHit,attempt:attempt,extraRemovals:extraDone}};
+        out.generation={seed:seed>>>0,clues:clueCount,unique:true,variantEssential:true,verification:'little-killer-exact-sum-solver',generatorFamily:'little-killer-bounded-structural-sum-aware',mode:'seeded-variant-essential',topology:{clueCount:clues.length,sideCounts:topology.sideCounts,usedSides:topology.sideOrder,activeSideCount:topology.activeSideCount},search:{nodes:totalNodes,budgetHit:budgetHit,attempt:attempt,extraRemovals:extraDone}};
         return out;
       }
     }
@@ -8696,9 +8722,8 @@ root.SudokuBank.push(
 
   generator.countLittleKillerSolutions=countLittleKillerSolutions;generator._littleKillerSolveCount=solveCount;
   generator.countVariantSolutions=function(grid,variant,limit){if(variant&&variant.kind==='littlekiller')return countLittleKillerSolutions(grid,variant,limit);return baseCountVariantSolutions.call(this,grid,variant,limit);};
-  generator.make=function(variant,seed,difficulty){if(variant&&variant.kind==='littlekiller')return makeLittleKiller(variant,seed,difficulty);return baseMake.call(this,variant,seed,difficulty);};
+  generator.make=function(variant,seed,difficulty){if(variant&&variant.kind==='littlekiller')return makeLittleKiller(variant,seed,difficulty);if(variant&&variant.kind==='clone')return makeClone(variant,seed,difficulty);return baseMake.call(this,variant,seed,difficulty);};
 })(typeof window!=='undefined'?window:globalThis);
-
   </script>
   <script data-source="games/x-sums-runtime-hardening.js">
 (function(root){
@@ -8709,6 +8734,10 @@ root.SudokuBank.push(
   var baseMake=generator.make;
   var EXPERT_MIN_SCORE=80;
   var MAX_CANDIDATES=12;
+
+  function clone(x){return JSON.parse(JSON.stringify(x));}
+  function rng(seed){var x=seed>>>0;return function(){x=(x+0x6D2B79F5)>>>0;var t=x;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296;};}
+  function shuffle(a,random){for(var i=a.length-1;i>0;i--){var j=Math.floor(random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
 
   function candidateSeed(seed,index){
     if(index===0)return seed>>>0;
@@ -8743,15 +8772,62 @@ root.SudokuBank.push(
     return best;
   }
 
+  function sudokuAutomorphism(source,seed){
+    var random=rng((seed^0x524F5353)>>>0),digits=shuffle([1,2,3,4,5,6,7,8,9],random),digitMap={};
+    for(var d=1;d<=9;d++)digitMap[d]=digits[d-1];
+    var bands=shuffle([0,1,2],random),rows=[];
+    bands.forEach(function(b){shuffle([0,1,2],random).forEach(function(x){rows.push(b*3+x);});});
+    var stacks=shuffle([0,1,2],random),cols=[];
+    stacks.forEach(function(s){shuffle([0,1,2],random).forEach(function(x){cols.push(s*3+x);});});
+    return rows.map(function(r){return cols.map(function(c){return digitMap[source[r][c]];});});
+  }
+
+  function mono(a,b,c){return a<b&&b<c?'inc':a>b&&b>c?'dec':null;}
+  function rossiniClues(solution){
+    var clues=[];
+    for(var r=0;r<9;r++){
+      var left=mono(solution[r][0],solution[r][1],solution[r][2]);
+      if(left)clues.push({axis:'row',index:r,side:'left',dir:left});
+      var right=mono(solution[r][8],solution[r][7],solution[r][6]);
+      if(right)clues.push({axis:'row',index:r,side:'right',dir:right});
+    }
+    for(var c=0;c<9;c++){
+      var top=mono(solution[0][c],solution[1][c],solution[2][c]);
+      if(top)clues.push({axis:'col',index:c,side:'top',dir:top});
+      var bottom=mono(solution[8][c],solution[7][c],solution[6][c]);
+      if(bottom)clues.push({axis:'col',index:c,side:'bottom',dir:bottom});
+    }
+    return clues;
+  }
+
+  function freshRossini(variant,seed,difficulty){
+    difficulty=difficulty||'focused';
+    for(var attempt=0;attempt<16;attempt++){
+      var actual=((seed>>>0)^0x524F5353^Math.imul(attempt+1,0x9E3779B1))>>>0;
+      var solution=sudokuAutomorphism(variant.solution,actual),working=clone(variant);
+      working.solution=solution;
+      working.data=Object.assign({},working.data||{},{clues:rossiniClues(solution)});
+      var out=baseMake.call(generator,working,actual,difficulty),g=out&&out.generation;
+      if(!g||g.unique!==true||g.variantEssential!==true)continue;
+      out.solution=solution;
+      out.data=working.data;
+      out.generation=Object.assign({},g,{seed:seed>>>0,actualSeed:actual,attempt:attempt,generatorFamily:'rossini-fresh-solution-derived-arrows'});
+      return out;
+    }
+    throw new Error('Rossini generation failed for seed '+seed+' / '+difficulty);
+  }
+
   generator.make=function(variant,seed,difficulty){
     if(variant&&variant.kind==='xsums'&&difficulty==='expert')return calibratedExpert(variant,seed>>>0);
+    if(variant&&variant.kind==='rossini')return freshRossini(variant,seed>>>0,difficulty);
     return baseMake.call(generator,variant,seed,difficulty);
   };
 
   root.XSumsRuntimeHardening={
     expertMinimumScore:EXPERT_MIN_SCORE,
     maxCandidates:MAX_CANDIDATES,
-    candidateSeed:candidateSeed
+    candidateSeed:candidateSeed,
+    rossiniClues:rossiniClues
   };
 })(typeof window!=='undefined'?window:globalThis);
 
