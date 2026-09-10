@@ -831,7 +831,7 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
       <section class="welcome-card" aria-label="Üdvözlés"><div class="welcome-flower" aria-hidden="true">❀</div><div><p class="welcome-kicker">ILDI SUDOKU KERTJE</p><h1 id="welcome-title">Üdv Ildi Sudoku Kertjében!</h1><p id="welcome-copy">Válassz kategóriát, találd meg a kedvenc Sudoku-változatodat, és élvezd a logikai kihívásokat.</p></div><div class="welcome-cat" aria-hidden="true"><svg viewBox="0 0 190 92" focusable="false"><path class="cat-cushion" d="M33 72c20-20 102-24 132 0-21 12-109 16-132 0z"/><path class="sleep-cat-body" d="M63 62c10-29 47-35 72-14 7 6 11 14 11 22-17 6-68 7-92 1 1-3 4-6 9-9z"/><path class="sleep-cat-head" d="M52 50l3-23 13 11c7-3 15-3 22 0l14-12 2 24c-2 18-13 27-28 27-16 0-27-10-26-27z"/><path class="sleep-cat-tail" d="M136 62c25-2 31-14 23-22-5-5-13-5-18 1 8-2 12 2 11 7-1 8-9 10-19 9"/><path class="sleep-cat-face" d="M64 53c4 3 7 3 11 0M86 53c4 3 7 3 11 0M77 58l3 2 3-2M80 60c0 4-4 6-8 4M80 60c0 4 4 6 8 4"/></svg><span class="floating-heart">♡</span></div></section>
       <section class="control-deck" aria-label="Feladvány beállításai"><label class="deck-field"><span id="category-label">Kategória</span><select id="category-select"></select></label><label class="deck-field variant-field"><span id="variant-label">Sudoku-változat</span><select id="variant-select"></select></label><span id="variant-count" class="variant-count">82 változat</span><div class="deck-actions"><label class="deck-field difficulty-field"><span id="difficulty-label">Nehézség</span><select id="difficulty-select"></select></label><button id="restart-button" class="button secondary" type="button">↻ <span>Újrakezdés</span></button><button id="new-button" class="button primary" type="button">❀ <span>Új feladvány</span></button></div></section>
       <section id="workspace" class="workspace sudoku-only-workspace" aria-labelledby="game-title"><div class="garden-layout"><aside class="garden-sidebar" aria-label="Sudoku kategóriák"><section class="garden-card categories-card"><div class="card-title-row"><h2 id="categories-heading">Kategóriák</h2><span aria-hidden="true">✿</span></div><div id="category-list" class="category-list"></div></section><section class="garden-card favorites-card"><div class="card-title-row"><h2 id="favorites-heading">Kedvenceim</h2><span aria-hidden="true">♡</span></div><div id="favorites-list" class="favorites-list"><p id="favorites-empty">Itt jelennek meg a kedvenc változataid.</p></div></section><section class="garden-card stats-card"><div class="card-title-row"><h2 id="stats-heading">Statisztikám</h2><span aria-hidden="true">▥</span></div><dl class="stats-list"><div><dt id="solved-label">Megoldott</dt><dd id="stat-solved">0</dd></div><div><dt id="best-label">Legjobb idő</dt><dd id="stat-best">--:--</dd></div><div><dt id="streak-label">Jelenlegi sorozat</dt><dd id="stat-streak">0 nap</dd></div><div><dt id="total-time-label">Összes játékidő</dt><dd id="stat-total">0:00:00</dd></div></dl></section></aside><div class="play-column"><section class="garden-card puzzle-card"><div class="puzzle-card-head"><div><p id="game-family" class="eyebrow">Sudoku-gyűjtemény</p><h2 id="game-title">Sudoku-változatok</h2></div><button id="favorite-button" class="favorite-button" type="button" aria-label="Hozzáadás a kedvencekhez" title="Kedvenc">♡</button></div><div class="play-surface"><div id="game-stage" class="game-stage" tabindex="-1"></div><div id="game-tools" class="game-tools tool-rail"></div></div></section></div><aside class="garden-card inspector" aria-label="Feladvány információ"><section class="inspector-heading"><h2 id="about-heading">A változatról</h2><span aria-hidden="true">✿</span></section><section><h3 id="objective-heading">Cél</h3><p id="game-objective"></p></section><section><h3 id="rules-heading">Játékszabály</h3><div id="game-rules"></div></section><section class="tip-card"><h3 id="tip-heading">Tipp</h3><p id="game-tip">Haladj nyugodtan, és először azokat a cellákat keresd, ahol a szabályok a legtöbb lehetőséget kizárják.</p></section><section class="status-compact"><div class="status-row"><span id="status-label">Állapot</span><strong id="game-status" role="status" aria-live="polite">Készen áll</strong></div><div class="status-row"><span id="counter-label">Lépések</span><strong id="game-counter">0</strong></div></section><div class="garden-bench" aria-hidden="true"><span class="garden-sprig">❀ ✿ ❀</span><svg viewBox="0 0 210 105" focusable="false"><path class="mini-ground" d="M18 87c34-11 142-12 177 0"/><path class="mini-cat" d="M60 76c8-20 31-26 49-15 13 8 19 19 15 27H52c0-5 3-9 8-12zM54 61l3-17 11 9c5-2 11-2 16 0l11-9 2 18c-1 13-10 20-22 20-13 0-22-8-21-21z"/><path class="mini-tail" d="M118 77c26 1 36-9 31-18-3-6-10-7-16-3 8-1 11 3 9 8-3 6-11 7-22 5"/><path class="mini-bench" d="M128 76h59M134 64h47M140 64v23M176 64v23"/></svg></div></aside></div></section>
-      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=ba66043" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
+      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=000ff16" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
     </main>
   </div><div id="toast" class="toast" role="status" aria-live="polite"></div>
   <dialog id="help-dialog" class="dialog"><form method="dialog"><div class="dialog-head"><div><p id="guide-eyebrow" class="eyebrow"></p><h2 id="guide-title"></h2></div><button class="icon-button" value="close" aria-label="Bezárás">×</button></div><div class="dialog-body"><p id="guide-p1"></p><dl><div><dt id="guide-pointer"></dt><dd id="guide-pointer-d"></dd></div><div><dt id="guide-keyboard"></dt><dd id="guide-keyboard-d"></dd></div><div><dt id="guide-feedback"></dt><dd id="guide-feedback-d"></dd></div></dl><p id="guide-quiet" class="quiet"></p></div><button id="guide-close" class="button primary dialog-close" value="close"></button></form></dialog>
@@ -11959,6 +11959,205 @@ root.SudokuBank.push(
   }else{
     ensureControl();
   }
+})(typeof window!=='undefined'?window:globalThis);
+
+  </script>
+  <script data-source="games/p3-galaxies-complete.js">
+(function(root){
+  'use strict';
+
+  if(!root.SudokuGenerator||!root.SudokuBank)return;
+
+  var generator=root.SudokuGenerator;
+  var baseMake=generator.make;
+  var supported=[4,5,6,7,8];
+  var cache=new Map();
+
+  function clone(x){return JSON.parse(JSON.stringify(x));}
+  function rng(seed){var x=seed>>>0;return function(){x=(x+0x6D2B79F5)>>>0;var t=x;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296;};}
+
+  function makeRectTiling(n,random,profile){
+    var solution=Array.from({length:n},function(){return Array(n).fill(-1);});
+    var rects=[],nextId=0;
+
+    function split(r0,c0,h,w,depth){
+      var area=h*w;
+      var cap=2+Math.floor(profile*5);
+      var stop=area<=2||(area<=cap&&random()<(0.18+profile*0.42));
+
+      if(stop||(!((h>1)||(w>1)))){
+        var id=nextId++;
+        for(var r=r0;r<r0+h;r++)for(var c=c0;c<c0+w;c++)solution[r][c]=id;
+        rects.push({r:r0,c:c0,h:h,w:w,id:id});
+        return;
+      }
+
+      var canH=h>1,canV=w>1;
+      var horizontal=canH&&(!canV||random()<0.5);
+
+      if(horizontal){
+        var cutH=1+Math.floor(random()*(h-1));
+        split(r0,c0,cutH,w,depth+1);
+        split(r0+cutH,c0,h-cutH,w,depth+1);
+      }else{
+        var cutV=1+Math.floor(random()*(w-1));
+        split(r0,c0,h,cutV,depth+1);
+        split(r0,c0+cutV,h,w-cutV,depth+1);
+      }
+    }
+
+    split(0,0,n,n,0);
+
+    return {
+      solution:solution,
+      centers:rects.map(function(x){return {r:x.r+x.h/2,c:x.c+x.w/2,id:x.id};})
+    };
+  }
+
+  function score(stats){return Number(stats.nodes||0)+Number(stats.branches||0)*2+Number(stats.deadEnds||0)*2;}
+
+  function candidates(seed,n){
+    var out=[],seen={};
+
+    for(var attempt=0;attempt<320&&out.length<9;attempt++){
+      var random=rng(((seed>>>0)^0x47334C58^Math.imul(n,0x85EBCA6B)^Math.imul(attempt+1,0x9E3779B1))>>>0);
+      var profile=((attempt%7)+1)/8;
+      var made=makeRectTiling(n,random,profile);
+      var puzzle={size:n,centers:made.centers};
+      var topology=JSON.stringify(made.centers);
+      if(seen[topology])continue;
+      seen[topology]=1;
+
+      var stats={};
+      if(generator.countGalaxiesSolutions(puzzle,2,stats)!==1)continue;
+
+      out.push({
+        puzzle:puzzle,
+        solution:stats.firstSolution||made.solution,
+        stats:stats,
+        score:score(stats),
+        topology:topology
+      });
+    }
+
+    out.sort(function(a,b){if(a.score!==b.score)return a.score-b.score;return a.topology<b.topology?-1:(a.topology>b.topology?1:0);});
+    return out;
+  }
+
+  function choose(list,difficulty){
+    if(!list.length)return null;
+    if(difficulty==='gentle')return list[0];
+    if(difficulty==='expert')return list[list.length-1];
+    return list[Math.floor((list.length-1)/2)];
+  }
+
+  function makeGalaxies(variant,seed,difficulty,size){
+    var key=[variant.id,seed>>>0,difficulty,size].join(':');
+    if(cache.has(key))return clone(cache.get(key));
+
+    var list=candidates(seed>>>0,size);
+    var picked=choose(list,difficulty);
+    if(!picked)throw new Error('Galaxies multi-size generation failed for seed '+seed+' / '+difficulty+' / '+size+'x'+size);
+
+    var out=clone(variant);
+    out.data=Object.assign({},out.data||{}, {p3Size:size,p3SupportedSizes:supported.slice()});
+    out.puzzle=clone(picked.puzzle);
+    out.solution=clone(picked.solution);
+    out.generation={
+      seed:seed>>>0,
+      clues:picked.puzzle.centers.length,
+      unique:true,
+      verification:'solver-verified',
+      generatorFamily:'galaxies-multisize-rectangular-tiling',
+      difficultyScore:picked.score,
+      searchStats:clone(picked.stats),
+      mode:'seeded-variant-essential',
+      variantEssential:true,
+      boardSize:size
+    };
+
+    cache.set(key,clone(out));
+    return out;
+  }
+
+  var galaxyVariant=root.SudokuBank.find(function(v){return v.id==='tentai-show';});
+  if(galaxyVariant){
+    galaxyVariant.data=galaxyVariant.data||{};
+    var remembered=null;
+    try{remembered=Number(root.localStorage&&root.localStorage.getItem('ildi-size-tentai-show'));}catch(e){}
+    galaxyVariant.data.p3SupportedSizes=supported.slice();
+    galaxyVariant.data.p3Size=supported.indexOf(remembered)>=0?remembered:5;
+  }
+
+  generator.make=function(variant,seed,difficulty){
+    if(!variant||variant.id!=='tentai-show')return baseMake.call(this,variant,seed,difficulty);
+    var requested=Number(variant.data&&variant.data.p3Size);
+    if(supported.indexOf(requested)<0)requested=5;
+    return makeGalaxies(variant,seed>>>0,difficulty||'focused',requested);
+  };
+
+  root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};
+  root.IldiP3SizeSupport['tentai-show']=supported.slice();
+
+  if(typeof document==='undefined')return;
+
+  var field=null,select=null,currentId=null;
+
+  function language(){
+    var hu=!root.SudokuI18n||root.SudokuI18n.lang==='hu';
+    if(field){var label=field.querySelector('span');if(label)label.textContent=hu?'Méret':'Size';}
+    if(select)select.setAttribute('aria-label',hu?'Csillaggalaxisok táblaméret':'Galaxies board size');
+  }
+
+  function ensureControl(){
+    if(field)return field;
+    var difficultyField=document.querySelector('.difficulty-field');
+    if(!difficultyField||!difficultyField.parentNode)return null;
+
+    field=document.createElement('label');
+    field.className='deck-field size-field galaxies-size-field';
+    field.hidden=true;
+    var label=document.createElement('span');
+    select=document.createElement('select');
+    select.id='galaxies-size-select';
+
+    supported.forEach(function(n){var option=document.createElement('option');option.value=String(n);option.textContent=n+'×'+n;select.appendChild(option);});
+    field.append(label,select);
+    difficultyField.parentNode.insertBefore(field,difficultyField);
+
+    select.addEventListener('change',function(){
+      if(currentId!=='tentai-show')return;
+      var variant=root.SudokuBank.find(function(v){return v.id==='tentai-show';});
+      if(!variant)return;
+      var size=Number(select.value);
+      if(supported.indexOf(size)<0)return;
+      variant.data=variant.data||{};
+      variant.data.p3Size=size;
+      try{root.localStorage&&root.localStorage.setItem('ildi-size-tentai-show',String(size));}catch(e){}
+      var newButton=document.getElementById('new-button');
+      if(newButton&&typeof newButton.click==='function')newButton.click();
+    });
+
+    language();
+    return field;
+  }
+
+  function syncVariant(id){
+    currentId=id;
+    ensureControl();
+    if(!field||!select)return;
+    field.hidden=id!=='tentai-show';
+    if(id==='tentai-show'){
+      var variant=root.SudokuBank.find(function(v){return v.id==='tentai-show';});
+      var size=Number(variant&&variant.data&&variant.data.p3Size);
+      if(supported.indexOf(size)<0)size=5;
+      select.value=String(size);
+    }
+  }
+
+  document.addEventListener('sudoku:variantchange',function(event){syncVariant(event&&event.detail&&event.detail.id);});
+  document.addEventListener('sudoku:languagechange',language);
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ensureControl,{once:true});else ensureControl();
 })(typeof window!=='undefined'?window:globalThis);
 
   </script>
