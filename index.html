@@ -841,7 +841,7 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
       <section class="welcome-card" aria-label="Üdvözlés"><div class="welcome-flower" aria-hidden="true">❀</div><div><p class="welcome-kicker">ILDI SUDOKU KERTJE</p><h1 id="welcome-title">Üdv Ildi Sudoku Kertjében!</h1><p id="welcome-copy">Válassz kategóriát, találd meg a kedvenc Sudoku-változatodat, és élvezd a logikai kihívásokat.</p></div><div class="welcome-cat" aria-hidden="true"><svg viewBox="0 0 190 92" focusable="false"><path class="cat-cushion" d="M33 72c20-20 102-24 132 0-21 12-109 16-132 0z"/><path class="sleep-cat-body" d="M63 62c10-29 47-35 72-14 7 6 11 14 11 22-17 6-68 7-92 1 1-3 4-6 9-9z"/><path class="sleep-cat-head" d="M52 50l3-23 13 11c7-3 15-3 22 0l14-12 2 24c-2 18-13 27-28 27-16 0-27-10-26-27z"/><path class="sleep-cat-tail" d="M136 62c25-2 31-14 23-22-5-5-13-5-18 1 8-2 12 2 11 7-1 8-9 10-19 9"/><path class="sleep-cat-face" d="M64 53c4 3 7 3 11 0M86 53c4 3 7 3 11 0M77 58l3 2 3-2M80 60c0 4-4 6-8 4M80 60c0 4 4 6 8 4"/></svg><span class="floating-heart">♡</span></div></section>
       <section class="control-deck" aria-label="Feladvány beállításai"><label class="deck-field"><span id="category-label">Kategória</span><select id="category-select"></select></label><label class="deck-field variant-field"><span id="variant-label">Sudoku-változat</span><select id="variant-select"></select></label><span id="variant-count" class="variant-count">82 változat</span><div class="deck-actions"><label class="deck-field difficulty-field"><span id="difficulty-label">Nehézség</span><select id="difficulty-select"></select></label><button id="restart-button" class="button secondary" type="button">↻ <span>Újrakezdés</span></button><button id="new-button" class="button primary" type="button">❀ <span>Új feladvány</span></button></div></section>
       <section id="workspace" class="workspace sudoku-only-workspace" aria-labelledby="game-title"><div class="garden-layout"><aside class="garden-sidebar" aria-label="Sudoku kategóriák"><section class="garden-card categories-card"><div class="card-title-row"><h2 id="categories-heading">Kategóriák</h2><span aria-hidden="true">✿</span></div><div id="category-list" class="category-list"></div></section><section class="garden-card favorites-card"><div class="card-title-row"><h2 id="favorites-heading">Kedvenceim</h2><span aria-hidden="true">♡</span></div><div id="favorites-list" class="favorites-list"><p id="favorites-empty">Itt jelennek meg a kedvenc változataid.</p></div></section><section class="garden-card stats-card"><div class="card-title-row"><h2 id="stats-heading">Statisztikám</h2><span aria-hidden="true">▥</span></div><dl class="stats-list"><div><dt id="solved-label">Megoldott</dt><dd id="stat-solved">0</dd></div><div><dt id="best-label">Legjobb idő</dt><dd id="stat-best">--:--</dd></div><div><dt id="streak-label">Jelenlegi sorozat</dt><dd id="stat-streak">0 nap</dd></div><div><dt id="total-time-label">Összes játékidő</dt><dd id="stat-total">0:00:00</dd></div></dl></section></aside><div class="play-column"><section class="garden-card puzzle-card"><div class="puzzle-card-head"><div><p id="game-family" class="eyebrow">Sudoku-gyűjtemény</p><h2 id="game-title">Sudoku-változatok</h2></div><button id="favorite-button" class="favorite-button" type="button" aria-label="Hozzáadás a kedvencekhez" title="Kedvenc">♡</button></div><div class="play-surface"><div id="game-stage" class="game-stage" tabindex="-1"></div><div id="game-tools" class="game-tools tool-rail"></div></div></section></div><aside class="garden-card inspector" aria-label="Feladvány információ"><section class="inspector-heading"><h2 id="about-heading">A változatról</h2><span aria-hidden="true">✿</span></section><section><h3 id="objective-heading">Cél</h3><p id="game-objective"></p></section><section><h3 id="rules-heading">Játékszabály</h3><div id="game-rules"></div></section><section class="tip-card"><h3 id="tip-heading">Tipp</h3><p id="game-tip">Haladj nyugodtan, és először azokat a cellákat keresd, ahol a szabályok a legtöbb lehetőséget kizárják.</p></section><section class="status-compact"><div class="status-row"><span id="status-label">Állapot</span><strong id="game-status" role="status" aria-live="polite">Készen áll</strong></div><div class="status-row"><span id="counter-label">Lépések</span><strong id="game-counter">0</strong></div></section><div class="garden-bench" aria-hidden="true"><span class="garden-sprig">❀ ✿ ❀</span><svg viewBox="0 0 210 105" focusable="false"><path class="mini-ground" d="M18 87c34-11 142-12 177 0"/><path class="mini-cat" d="M60 76c8-20 31-26 49-15 13 8 19 19 15 27H52c0-5 3-9 8-12zM54 61l3-17 11 9c5-2 11-2 16 0l11-9 2 18c-1 13-10 20-22 20-13 0-22-8-21-21z"/><path class="mini-tail" d="M118 77c26 1 36-9 31-18-3-6-10-7-16-3 8-1 11 3 9 8-3 6-11 7-22 5"/><path class="mini-bench" d="M128 76h59M134 64h47M140 64v23M176 64v23"/></svg></div></aside></div></section>
-      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=2db12fc" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
+      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=f0c0ab2" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
     </main>
   </div><div id="toast" class="toast" role="status" aria-live="polite"></div>
   <dialog id="help-dialog" class="dialog"><form method="dialog"><div class="dialog-head"><div><p id="guide-eyebrow" class="eyebrow"></p><h2 id="guide-title"></h2></div><button class="icon-button" value="close" aria-label="Bezárás">×</button></div><div class="dialog-body"><p id="guide-p1"></p><dl><div><dt id="guide-pointer"></dt><dd id="guide-pointer-d"></dd></div><div><dt id="guide-keyboard"></dt><dd id="guide-keyboard-d"></dd></div><div><dt id="guide-feedback"></dt><dd id="guide-feedback-d"></dd></div></dl><p id="guide-quiet" class="quiet"></p></div><button id="guide-close" class="button primary dialog-close" value="close"></button></form></dialog>
@@ -12897,6 +12897,191 @@ root.SudokuBank.push(
 
   root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};
   root.IldiP3SizeSupport.fillomino=supported.slice();
+})(typeof window!=='undefined'?window:globalThis);
+
+  </script>
+  <script data-source="games/p3-nonogram-complete.js">
+(function(root){
+  'use strict';
+
+  if(!root.SudokuGenerator||!root.SudokuBank)return;
+
+  var generator=root.SudokuGenerator;
+  var baseMake=generator.make;
+  var supported=[5,6,8,10];
+  var cache=new Map();
+
+  function clone(x){return JSON.parse(JSON.stringify(x));}
+  function rng(seed){
+    var x=seed>>>0;
+    return function(){
+      x=(x+0x6D2B79F5)>>>0;
+      var t=x;
+      t=Math.imul(t^(t>>>15),t|1);
+      t^=t+Math.imul(t^(t>>>7),t|61);
+      return((t^(t>>>14))>>>0)/4294967296;
+    };
+  }
+
+  function clue(line){
+    var out=[],run=0;
+    for(var i=0;i<line.length;i++){
+      if(line[i])run++;
+      else if(run){out.push(run);run=0;}
+    }
+    if(run)out.push(run);
+    return out.length?out:[0];
+  }
+
+  function cluesFor(grid){
+    var n=grid.length;
+    var rows=grid.map(clue);
+    var cols=[];
+    for(var c=0;c<n;c++){
+      var line=[];
+      for(var r=0;r<n;r++)line.push(grid[r][c]);
+      cols.push(clue(line));
+    }
+    return {rows:rows,cols:cols};
+  }
+
+  function patternCount(n,cl){
+    if(cl.length===1&&cl[0]===0)return 1;
+    var blocks=cl.reduce(function(a,b){return a+b;},0);
+    var gaps=cl.length-1;
+    var free=n-blocks-gaps;
+    if(free<0)return 0;
+    var k=cl.length;
+    var top=free+k;
+    var choose=1;
+    for(var i=1;i<=k;i++)choose=choose*(top-k+i)/i;
+    return Math.max(1,Math.round(choose));
+  }
+
+  function ambiguity(puzzle){
+    var n=puzzle.rows.length;
+    var all=puzzle.rows.concat(puzzle.cols);
+    return all.reduce(function(sum,cl){
+      return sum+Math.log(1+patternCount(n,cl));
+    },0);
+  }
+
+  function seededGrid(seed,n,density){
+    var random=rng(seed>>>0);
+    var grid=Array.from({length:n},function(){return Array(n).fill(0);});
+
+    for(var r=0;r<n;r++)for(var c=0;c<n;c++){
+      var edge=Math.min(r,c,n-1-r,n-1-c);
+      var bias=edge===0?-0.05:0;
+      grid[r][c]=random()<Math.max(0.18,Math.min(0.82,density+bias))?1:0;
+    }
+
+    /* Avoid completely empty/full lines, which are visually weak and often trivial. */
+    for(r=0;r<n;r++){
+      var sum=grid[r].reduce(function(a,b){return a+b;},0);
+      if(sum===0)grid[r][Math.floor(random()*n)]=1;
+      else if(sum===n)grid[r][Math.floor(random()*n)]=0;
+    }
+    for(c=0;c<n;c++){
+      var col=0;
+      for(r=0;r<n;r++)col+=grid[r][c];
+      if(col===0)grid[Math.floor(random()*n)][c]=1;
+      else if(col===n)grid[Math.floor(random()*n)][c]=0;
+    }
+
+    return grid;
+  }
+
+  function candidateScore(puzzle){
+    return ambiguity(puzzle);
+  }
+
+  function build(seed,n,difficulty){
+    var targetCount=7;
+    var candidates=[];
+    var seen={};
+    var densities=difficulty==='gentle'?[0.60,0.64,0.56]:
+      (difficulty==='expert'?[0.43,0.47,0.39]:[0.50,0.54,0.46]);
+
+    for(var attempt=0;attempt<700&&candidates.length<targetCount;attempt++){
+      var density=densities[attempt%densities.length];
+      var salt=((seed>>>0)^Math.imul(attempt+1,0x9E3779B1)^Math.imul(n,0x85EBCA6B))>>>0;
+      var solution=seededGrid(salt,n,density);
+      var topology=JSON.stringify(solution);
+      if(seen[topology])continue;
+      seen[topology]=1;
+
+      var puzzle=cluesFor(solution);
+      if(generator.countNonogramSolutions(puzzle,2)!==1)continue;
+
+      candidates.push({
+        puzzle:puzzle,
+        solution:solution,
+        score:candidateScore(puzzle),
+        topology:topology
+      });
+    }
+
+    if(!candidates.length)return null;
+
+    candidates.sort(function(a,b){
+      if(a.score!==b.score)return a.score-b.score;
+      return a.topology<b.topology?-1:(a.topology>b.topology?1:0);
+    });
+
+    if(difficulty==='gentle')return candidates[0];
+    if(difficulty==='expert')return candidates[candidates.length-1];
+    return candidates[Math.floor((candidates.length-1)/2)];
+  }
+
+  function makeNonogram(variant,seed,difficulty,n){
+    var key=[seed>>>0,difficulty,n].join(':');
+    if(cache.has(key))return clone(cache.get(key));
+
+    var built=build(seed>>>0,n,difficulty);
+    if(!built)throw new Error('Nonogram multi-size generation failed for seed '+seed+' / '+difficulty+' / '+n+'x'+n);
+
+    var out=clone(variant);
+    out.data=Object.assign({},out.data||{}, {
+      p3Size:n,
+      p3SupportedSizes:supported.slice()
+    });
+    out.puzzle=built.puzzle;
+    out.solution=built.solution;
+    out.generation={
+      seed:seed>>>0,
+      clues:built.puzzle.rows.length+built.puzzle.cols.length,
+      unique:true,
+      verification:'solver-verified',
+      generatorFamily:'nonogram-multisize-seeded-bitmap',
+      difficultyScore:Number(built.score.toFixed(3)),
+      mode:'seeded-variant-essential',
+      variantEssential:true,
+      boardSize:n
+    };
+
+    cache.set(key,clone(out));
+    return out;
+  }
+
+  var variant=root.SudokuBank.find(function(v){return v.id==='nonogram';});
+  if(variant){
+    variant.data=variant.data||{};
+    var remembered=null;
+    try{remembered=Number(root.localStorage&&root.localStorage.getItem('ildi-size-nonogram'));}catch(e){}
+    variant.data.p3SupportedSizes=supported.slice();
+    variant.data.p3Size=supported.indexOf(remembered)>=0?remembered:8;
+  }
+
+  generator.make=function(variant,seed,difficulty){
+    if(!variant||variant.id!=='nonogram')return baseMake.call(this,variant,seed,difficulty);
+    var requested=Number(variant.data&&variant.data.p3Size);
+    if(supported.indexOf(requested)<0)requested=8;
+    return makeNonogram(variant,seed>>>0,difficulty||'focused',requested);
+  };
+
+  root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};
+  root.IldiP3SizeSupport.nonogram=supported.slice();
 })(typeof window!=='undefined'?window:globalThis);
 
   </script>
