@@ -841,7 +841,7 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
       <section class="welcome-card" aria-label="Üdvözlés"><div class="welcome-flower" aria-hidden="true">❀</div><div><p class="welcome-kicker">ILDI SUDOKU KERTJE</p><h1 id="welcome-title">Üdv Ildi Sudoku Kertjében!</h1><p id="welcome-copy">Válassz kategóriát, találd meg a kedvenc Sudoku-változatodat, és élvezd a logikai kihívásokat.</p></div><div class="welcome-cat" aria-hidden="true"><svg viewBox="0 0 190 92" focusable="false"><path class="cat-cushion" d="M33 72c20-20 102-24 132 0-21 12-109 16-132 0z"/><path class="sleep-cat-body" d="M63 62c10-29 47-35 72-14 7 6 11 14 11 22-17 6-68 7-92 1 1-3 4-6 9-9z"/><path class="sleep-cat-head" d="M52 50l3-23 13 11c7-3 15-3 22 0l14-12 2 24c-2 18-13 27-28 27-16 0-27-10-26-27z"/><path class="sleep-cat-tail" d="M136 62c25-2 31-14 23-22-5-5-13-5-18 1 8-2 12 2 11 7-1 8-9 10-19 9"/><path class="sleep-cat-face" d="M64 53c4 3 7 3 11 0M86 53c4 3 7 3 11 0M77 58l3 2 3-2M80 60c0 4-4 6-8 4M80 60c0 4 4 6 8 4"/></svg><span class="floating-heart">♡</span></div></section>
       <section class="control-deck" aria-label="Feladvány beállításai"><label class="deck-field"><span id="category-label">Kategória</span><select id="category-select"></select></label><label class="deck-field variant-field"><span id="variant-label">Sudoku-változat</span><select id="variant-select"></select></label><span id="variant-count" class="variant-count">82 változat</span><div class="deck-actions"><label class="deck-field difficulty-field"><span id="difficulty-label">Nehézség</span><select id="difficulty-select"></select></label><button id="restart-button" class="button secondary" type="button">↻ <span>Újrakezdés</span></button><button id="new-button" class="button primary" type="button">❀ <span>Új feladvány</span></button></div></section>
       <section id="workspace" class="workspace sudoku-only-workspace" aria-labelledby="game-title"><div class="garden-layout"><aside class="garden-sidebar" aria-label="Sudoku kategóriák"><section class="garden-card categories-card"><div class="card-title-row"><h2 id="categories-heading">Kategóriák</h2><span aria-hidden="true">✿</span></div><div id="category-list" class="category-list"></div></section><section class="garden-card favorites-card"><div class="card-title-row"><h2 id="favorites-heading">Kedvenceim</h2><span aria-hidden="true">♡</span></div><div id="favorites-list" class="favorites-list"><p id="favorites-empty">Itt jelennek meg a kedvenc változataid.</p></div></section><section class="garden-card stats-card"><div class="card-title-row"><h2 id="stats-heading">Statisztikám</h2><span aria-hidden="true">▥</span></div><dl class="stats-list"><div><dt id="solved-label">Megoldott</dt><dd id="stat-solved">0</dd></div><div><dt id="best-label">Legjobb idő</dt><dd id="stat-best">--:--</dd></div><div><dt id="streak-label">Jelenlegi sorozat</dt><dd id="stat-streak">0 nap</dd></div><div><dt id="total-time-label">Összes játékidő</dt><dd id="stat-total">0:00:00</dd></div></dl></section></aside><div class="play-column"><section class="garden-card puzzle-card"><div class="puzzle-card-head"><div><p id="game-family" class="eyebrow">Sudoku-gyűjtemény</p><h2 id="game-title">Sudoku-változatok</h2></div><button id="favorite-button" class="favorite-button" type="button" aria-label="Hozzáadás a kedvencekhez" title="Kedvenc">♡</button></div><div class="play-surface"><div id="game-stage" class="game-stage" tabindex="-1"></div><div id="game-tools" class="game-tools tool-rail"></div></div></section></div><aside class="garden-card inspector" aria-label="Feladvány információ"><section class="inspector-heading"><h2 id="about-heading">A változatról</h2><span aria-hidden="true">✿</span></section><section><h3 id="objective-heading">Cél</h3><p id="game-objective"></p></section><section><h3 id="rules-heading">Játékszabály</h3><div id="game-rules"></div></section><section class="tip-card"><h3 id="tip-heading">Tipp</h3><p id="game-tip">Haladj nyugodtan, és először azokat a cellákat keresd, ahol a szabályok a legtöbb lehetőséget kizárják.</p></section><section class="status-compact"><div class="status-row"><span id="status-label">Állapot</span><strong id="game-status" role="status" aria-live="polite">Készen áll</strong></div><div class="status-row"><span id="counter-label">Lépések</span><strong id="game-counter">0</strong></div></section><div class="garden-bench" aria-hidden="true"><span class="garden-sprig">❀ ✿ ❀</span><svg viewBox="0 0 210 105" focusable="false"><path class="mini-ground" d="M18 87c34-11 142-12 177 0"/><path class="mini-cat" d="M60 76c8-20 31-26 49-15 13 8 19 19 15 27H52c0-5 3-9 8-12zM54 61l3-17 11 9c5-2 11-2 16 0l11-9 2 18c-1 13-10 20-22 20-13 0-22-8-21-21z"/><path class="mini-tail" d="M118 77c26 1 36-9 31-18-3-6-10-7-16-3 8-1 11 3 9 8-3 6-11 7-22 5"/><path class="mini-bench" d="M128 76h59M134 64h47M140 64v23M176 64v23"/></svg></div></aside></div></section>
-      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=0b188ca" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
+      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=8d36a78" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
     </main>
   </div><div id="toast" class="toast" role="status" aria-live="polite"></div>
   <dialog id="help-dialog" class="dialog"><form method="dialog"><div class="dialog-head"><div><p id="guide-eyebrow" class="eyebrow"></p><h2 id="guide-title"></h2></div><button class="icon-button" value="close" aria-label="Bezárás">×</button></div><div class="dialog-body"><p id="guide-p1"></p><dl><div><dt id="guide-pointer"></dt><dd id="guide-pointer-d"></dd></div><div><dt id="guide-keyboard"></dt><dd id="guide-keyboard-d"></dd></div><div><dt id="guide-feedback"></dt><dd id="guide-feedback-d"></dd></div></dl><p id="guide-quiet" class="quiet"></p></div><button id="guide-close" class="button primary dialog-close" value="close"></button></form></dialog>
@@ -13565,6 +13565,244 @@ root.SudokuBank.push(
 
   root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};
   root.IldiP3SizeSupport.akari=supported.slice();
+})(typeof window!=='undefined'?window:globalThis);
+
+  </script>
+  <script data-source="games/p3-nurikabe-complete.js">
+(function(root){
+  'use strict';
+
+  if(!root.SudokuGenerator||!root.SudokuBank)return;
+
+  var generator=root.SudokuGenerator;
+  var baseMake=generator.make;
+  var supported=[5,6,7,8];
+  var cache=new Map();
+
+  function clone(x){return JSON.parse(JSON.stringify(x));}
+  function rng(seed){
+    var x=seed>>>0;
+    return function(){
+      x=(x+0x6D2B79F5)>>>0;
+      var t=x;
+      t=Math.imul(t^(t>>>15),t|1);
+      t^=t+Math.imul(t^(t>>>7),t|61);
+      return((t^(t>>>14))>>>0)/4294967296;
+    };
+  }
+  function shuffle(a,random){
+    for(var i=a.length-1;i>0;i--){
+      var j=Math.floor(random()*(i+1));
+      var t=a[i];a[i]=a[j];a[j]=t;
+    }
+    return a;
+  }
+
+  function components(grid,value){
+    var n=grid.length,seen={},out=[];
+    for(var r=0;r<n;r++)for(var c=0;c<n;c++){
+      if(grid[r][c]!==value||seen[r+','+c])continue;
+      var q=[[r,c]],comp=[];seen[r+','+c]=1;
+      while(q.length){
+        var p=q.pop();comp.push(p);
+        [[1,0],[-1,0],[0,1],[0,-1]].forEach(function(d){
+          var rr=p[0]+d[0],cc=p[1]+d[1],k=rr+','+cc;
+          if(rr>=0&&cc>=0&&rr<n&&cc<n&&grid[rr][cc]===value&&!seen[k]){
+            seen[k]=1;q.push([rr,cc]);
+          }
+        });
+      }
+      out.push(comp);
+    }
+    return out;
+  }
+
+  function noSea2x2(sea){
+    var n=sea.length;
+    for(var r=0;r<n-1;r++)for(var c=0;c<n-1;c++){
+      if(sea[r][c]&&sea[r+1][c]&&sea[r][c+1]&&sea[r+1][c+1])return false;
+    }
+    return true;
+  }
+
+  function seaConnected(sea){
+    var comps=components(sea,1);
+    if(!comps.length)return false;
+    var count=0;
+    for(var r=0;r<sea.length;r++)for(var c=0;c<sea.length;c++)if(sea[r][c])count++;
+    return comps.length===1&&comps[0].length===count;
+  }
+
+  function islandComponents(sea){
+    var land=sea.map(function(row){return row.map(function(x){return x?0:1;});});
+    return components(land,1);
+  }
+
+  function growSea(seed,n,attempt,difficulty){
+    var random=rng(((seed>>>0)^0x50334E55^Math.imul(n,0x85EBCA6B)^Math.imul(attempt+1,0x9E3779B1))>>>0);
+    var sea=Array.from({length:n},function(){return Array(n).fill(0);});
+    var start=[Math.floor(random()*n),Math.floor(random()*n)];
+    sea[start[0]][start[1]]=1;
+    var density=difficulty==='expert'?0.56:(difficulty==='gentle'?0.44:0.50);
+    var target=Math.max(n+2,Math.round(n*n*density));
+    var count=1;
+
+    function frontier(){
+      var out=[],seen={};
+      for(var r=0;r<n;r++)for(var c=0;c<n;c++)if(sea[r][c]){
+        [[1,0],[-1,0],[0,1],[0,-1]].forEach(function(d){
+          var rr=r+d[0],cc=c+d[1],k=rr+','+cc;
+          if(rr>=0&&cc>=0&&rr<n&&cc<n&&!sea[rr][cc]&&!seen[k]){
+            seen[k]=1;out.push([rr,cc]);
+          }
+        });
+      }
+      return shuffle(out,random);
+    }
+
+    while(count<target){
+      var options=frontier(),placed=false;
+      for(var i=0;i<options.length;i++){
+        var p=options[i];
+        sea[p[0]][p[1]]=1;
+        if(noSea2x2(sea)){
+          count++;placed=true;break;
+        }
+        sea[p[0]][p[1]]=0;
+      }
+      if(!placed)break;
+    }
+
+    if(count<Math.max(n+1,target-2)||!seaConnected(sea)||!noSea2x2(sea))return null;
+
+    var islands=islandComponents(sea);
+    if(islands.length<2)return null;
+    if(islands.some(function(comp){return comp.length>Math.max(8,Math.ceil(n*n*0.28));}))return null;
+
+    return {sea:sea,islands:islands,random:random};
+  }
+
+  function buildPuzzle(candidate){
+    var n=candidate.sea.length;
+    var puzzle=Array.from({length:n},function(){return Array(n).fill(null);});
+    candidate.islands.forEach(function(comp){
+      var q=comp[Math.floor(candidate.random()*comp.length)];
+      puzzle[q[0]][q[1]]=comp.length;
+    });
+    return puzzle;
+  }
+
+  function seaCells(sea,random){
+    var cells=[];
+    for(var r=0;r<sea.length;r++)for(var c=0;c<sea.length;c++)if(sea[r][c])cells.push([r,c]);
+    return shuffle(cells,random);
+  }
+
+  function starterFraction(difficulty,n){
+    /*
+     * Nurikabe's authoritative solver branches over every undecided cell.
+     * Large nearly-unseeded 7x7/8x8 puzzles therefore explode exponentially.
+     * Keep the exact certificate but begin from a bounded deterministic sea
+     * fraction. The fraction scales slightly with board size so generation
+     * remains interactive instead of turning the browser into a search worker.
+     */
+    var base=difficulty==='gentle'?0.88:(difficulty==='focused'?0.80:0.70);
+    if(n>=8)base+=0.05;
+    else if(n>=7)base+=0.03;
+    return Math.min(0.93,base);
+  }
+
+  function certifiedPreShade(puzzle,sea,random,difficulty){
+    var cells=seaCells(sea,random),n=sea.length;
+    var target=Math.min(cells.length,Math.max(1,Math.ceil(cells.length*starterFraction(difficulty,n))));
+    var shaded=cells.slice(0,target);
+    var stats={};
+    var count=generator.countNurikabeSolutions(puzzle,2,stats,shaded);
+
+    /* Add the remaining known sea in coarse batches only if still ambiguous. */
+    var pos=target,batch=Math.max(2,Math.ceil(n/2));
+    while(count!==1&&pos<cells.length){
+      var stop=Math.min(cells.length,pos+batch);
+      while(pos<stop)shaded.push(cells[pos++]);
+      stats={};
+      count=generator.countNurikabeSolutions(puzzle,2,stats,shaded);
+    }
+
+    return count===1?{preShaded:shaded,stats:stats}:null;
+  }
+
+  function build(seed,n,difficulty){
+    var seen={};
+    for(var attempt=0;attempt<20;attempt++){
+      var candidate=growSea(seed,n,attempt,difficulty);
+      if(!candidate)continue;
+      var topology=JSON.stringify(candidate.sea);
+      if(seen[topology])continue;
+      seen[topology]=1;
+
+      var puzzle=buildPuzzle(candidate);
+      var certified=certifiedPreShade(puzzle,candidate.sea,candidate.random,difficulty);
+      if(!certified)continue;
+
+      return {
+        puzzle:puzzle,
+        solution:candidate.sea,
+        preShaded:certified.preShaded,
+        clues:candidate.islands.length,
+        stats:certified.stats,
+        score:Number(certified.stats.nodes||0)+Number(certified.stats.branches||0)*2+Number(certified.stats.deadEnds||0),
+        topology:topology
+      };
+    }
+    return null;
+  }
+
+  function makeNurikabe(variant,seed,difficulty,n){
+    var key=[seed>>>0,difficulty,n].join(':');
+    if(cache.has(key))return clone(cache.get(key));
+    var built=build(seed>>>0,n,difficulty);
+    if(!built)throw new Error('Nurikabe multi-size generation failed for seed '+seed+' / '+difficulty+' / '+n+'x'+n);
+
+    var out=clone(variant);
+    out.data=Object.assign({},out.data||{}, {p3Size:n,p3SupportedSizes:supported.slice()});
+    out.puzzle=built.puzzle;
+    out.solution=built.solution;
+    out.preShaded=built.preShaded;
+    out.generation={
+      seed:seed>>>0,
+      clues:built.clues+built.preShaded.length,
+      unique:true,
+      verification:'solver-verified',
+      generatorFamily:'nurikabe-multisize-sea-growth-bounded',
+      difficultyScore:built.score,
+      searchStats:clone(built.stats),
+      mode:'seeded-variant-essential',
+      variantEssential:true,
+      boardSize:n
+    };
+
+    cache.set(key,clone(out));
+    return out;
+  }
+
+  var variant=root.SudokuBank.find(function(v){return v.id==='nurikabe';});
+  if(variant){
+    variant.data=variant.data||{};
+    var remembered=null;
+    try{remembered=Number(root.localStorage&&root.localStorage.getItem('ildi-size-nurikabe'));}catch(e){}
+    variant.data.p3SupportedSizes=supported.slice();
+    variant.data.p3Size=supported.indexOf(remembered)>=0?remembered:5;
+  }
+
+  generator.make=function(variant,seed,difficulty){
+    if(!variant||variant.id!=='nurikabe')return baseMake.call(this,variant,seed,difficulty);
+    var requested=Number(variant.data&&variant.data.p3Size);
+    if(supported.indexOf(requested)<0)requested=5;
+    return makeNurikabe(variant,seed>>>0,difficulty||'focused',requested);
+  };
+
+  root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};
+  root.IldiP3SizeSupport.nurikabe=supported.slice();
 })(typeof window!=='undefined'?window:globalThis);
 
   </script>
