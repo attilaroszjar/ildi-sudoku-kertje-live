@@ -761,6 +761,61 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
   box-shadow:inset 0 0 0 3px color-mix(in srgb,#9b6c14 58%,transparent);
 }
 
+/* Ildi feedback hardening — shared Sudoku rendering. */
+
+/*
+ * Cell gaps can disappear unevenly at fractional browser zoom.
+ * Draw the common grid from cell borders instead of 1px CSS grid gaps.
+ */
+.sudoku-board{
+  gap:0!important;
+  background:var(--surface)!important;
+}
+.sudoku-cell{
+  border-right:1px solid var(--line-strong)!important;
+  border-bottom:1px solid var(--line-strong)!important;
+}
+/* Preserve structural 3x3 dividers where that rule really exists. */
+.sudoku-cell.box-right{
+  border-right:3px solid var(--ink)!important;
+}
+.sudoku-cell.box-bottom{
+  border-bottom:3px solid var(--ink)!important;
+}
+
+/* Double Skyscrapers is a Latin-style rule: no decorative 2x3 boxes. */
+.sudoku-board.ildi-no-box-grid .sudoku-cell.box-right{
+  border-right:1px solid var(--line-strong)!important;
+}
+.sudoku-board.ildi-no-box-grid .sudoku-cell.box-bottom{
+  border-bottom:1px solid var(--line-strong)!important;
+}
+
+/* Inside Skyscrapers: make direction arrows easier to see. */
+.sudoku-inside-sky-marker{
+  font-size:clamp(15px,2vw,22px)!important;
+  line-height:1!important;
+  filter:drop-shadow(0 1px 0 var(--surface));
+}
+
+/* Diagonal Skyscrapers: give outside clues enough visual room. */
+.sudoku-diagonal-sky-marker{
+  min-width:32px!important;
+  min-height:24px;
+  padding:4px 6px!important;
+  font-size:clamp(11px,1.5vw,15px)!important;
+  z-index:12!important;
+}
+
+/* Even/Odd clues: larger ring/square while leaving the digit readable. */
+.sudoku-cell.parity-odd::after,
+.sudoku-cell.parity-even::after{
+  width:clamp(22px,3.7vw,30px)!important;
+  height:clamp(22px,3.7vw,30px)!important;
+  border-width:2px!important;
+  border-color:color-mix(in srgb,var(--muted) 72%,transparent)!important;
+}
+
   </style>
 </head>
 <body>
@@ -776,7 +831,7 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
       <section class="welcome-card" aria-label="Üdvözlés"><div class="welcome-flower" aria-hidden="true">❀</div><div><p class="welcome-kicker">ILDI SUDOKU KERTJE</p><h1 id="welcome-title">Üdv Ildi Sudoku Kertjében!</h1><p id="welcome-copy">Válassz kategóriát, találd meg a kedvenc Sudoku-változatodat, és élvezd a logikai kihívásokat.</p></div><div class="welcome-cat" aria-hidden="true"><svg viewBox="0 0 190 92" focusable="false"><path class="cat-cushion" d="M33 72c20-20 102-24 132 0-21 12-109 16-132 0z"/><path class="sleep-cat-body" d="M63 62c10-29 47-35 72-14 7 6 11 14 11 22-17 6-68 7-92 1 1-3 4-6 9-9z"/><path class="sleep-cat-head" d="M52 50l3-23 13 11c7-3 15-3 22 0l14-12 2 24c-2 18-13 27-28 27-16 0-27-10-26-27z"/><path class="sleep-cat-tail" d="M136 62c25-2 31-14 23-22-5-5-13-5-18 1 8-2 12 2 11 7-1 8-9 10-19 9"/><path class="sleep-cat-face" d="M64 53c4 3 7 3 11 0M86 53c4 3 7 3 11 0M77 58l3 2 3-2M80 60c0 4-4 6-8 4M80 60c0 4 4 6 8 4"/></svg><span class="floating-heart">♡</span></div></section>
       <section class="control-deck" aria-label="Feladvány beállításai"><label class="deck-field"><span id="category-label">Kategória</span><select id="category-select"></select></label><label class="deck-field variant-field"><span id="variant-label">Sudoku-változat</span><select id="variant-select"></select></label><span id="variant-count" class="variant-count">82 változat</span><div class="deck-actions"><label class="deck-field difficulty-field"><span id="difficulty-label">Nehézség</span><select id="difficulty-select"></select></label><button id="restart-button" class="button secondary" type="button">↻ <span>Újrakezdés</span></button><button id="new-button" class="button primary" type="button">❀ <span>Új feladvány</span></button></div></section>
       <section id="workspace" class="workspace sudoku-only-workspace" aria-labelledby="game-title"><div class="garden-layout"><aside class="garden-sidebar" aria-label="Sudoku kategóriák"><section class="garden-card categories-card"><div class="card-title-row"><h2 id="categories-heading">Kategóriák</h2><span aria-hidden="true">✿</span></div><div id="category-list" class="category-list"></div></section><section class="garden-card favorites-card"><div class="card-title-row"><h2 id="favorites-heading">Kedvenceim</h2><span aria-hidden="true">♡</span></div><div id="favorites-list" class="favorites-list"><p id="favorites-empty">Itt jelennek meg a kedvenc változataid.</p></div></section><section class="garden-card stats-card"><div class="card-title-row"><h2 id="stats-heading">Statisztikám</h2><span aria-hidden="true">▥</span></div><dl class="stats-list"><div><dt id="solved-label">Megoldott</dt><dd id="stat-solved">0</dd></div><div><dt id="best-label">Legjobb idő</dt><dd id="stat-best">--:--</dd></div><div><dt id="streak-label">Jelenlegi sorozat</dt><dd id="stat-streak">0 nap</dd></div><div><dt id="total-time-label">Összes játékidő</dt><dd id="stat-total">0:00:00</dd></div></dl></section></aside><div class="play-column"><section class="garden-card puzzle-card"><div class="puzzle-card-head"><div><p id="game-family" class="eyebrow">Sudoku-gyűjtemény</p><h2 id="game-title">Sudoku-változatok</h2></div><button id="favorite-button" class="favorite-button" type="button" aria-label="Hozzáadás a kedvencekhez" title="Kedvenc">♡</button></div><div class="play-surface"><div id="game-stage" class="game-stage" tabindex="-1"></div><div id="game-tools" class="game-tools tool-rail"></div></div></section></div><aside class="garden-card inspector" aria-label="Feladvány információ"><section class="inspector-heading"><h2 id="about-heading">A változatról</h2><span aria-hidden="true">✿</span></section><section><h3 id="objective-heading">Cél</h3><p id="game-objective"></p></section><section><h3 id="rules-heading">Játékszabály</h3><div id="game-rules"></div></section><section class="tip-card"><h3 id="tip-heading">Tipp</h3><p id="game-tip">Haladj nyugodtan, és először azokat a cellákat keresd, ahol a szabályok a legtöbb lehetőséget kizárják.</p></section><section class="status-compact"><div class="status-row"><span id="status-label">Állapot</span><strong id="game-status" role="status" aria-live="polite">Készen áll</strong></div><div class="status-row"><span id="counter-label">Lépések</span><strong id="game-counter">0</strong></div></section><div class="garden-bench" aria-hidden="true"><span class="garden-sprig">❀ ✿ ❀</span><svg viewBox="0 0 210 105" focusable="false"><path class="mini-ground" d="M18 87c34-11 142-12 177 0"/><path class="mini-cat" d="M60 76c8-20 31-26 49-15 13 8 19 19 15 27H52c0-5 3-9 8-12zM54 61l3-17 11 9c5-2 11-2 16 0l11-9 2 18c-1 13-10 20-22 20-13 0-22-8-21-21z"/><path class="mini-tail" d="M118 77c26 1 36-9 31-18-3-6-10-7-16-3 8-1 11 3 9 8-3 6-11 7-22 5"/><path class="mini-bench" d="M128 76h59M134 64h47M140 64v23M176 64v23"/></svg></div></aside></div></section>
-      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=9867778" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
+      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=5b58f12" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
     </main>
   </div><div id="toast" class="toast" role="status" aria-live="polite"></div>
   <dialog id="help-dialog" class="dialog"><form method="dialog"><div class="dialog-head"><div><p id="guide-eyebrow" class="eyebrow"></p><h2 id="guide-title"></h2></div><button class="icon-button" value="close" aria-label="Bezárás">×</button></div><div class="dialog-body"><p id="guide-p1"></p><dl><div><dt id="guide-pointer"></dt><dd id="guide-pointer-d"></dd></div><div><dt id="guide-keyboard"></dt><dd id="guide-keyboard-d"></dd></div><div><dt id="guide-feedback"></dt><dd id="guide-feedback-d"></dd></div></dl><p id="guide-quiet" class="quiet"></p></div><button id="guide-close" class="button primary dialog-close" value="close"></button></form></dialog>
@@ -857,7 +912,7 @@ var ui={
 };
 var families={'Japanese logic':'Japán logikai játékok',Core:'Alap',Grid:'Rács', 'Extra regions':'Extra régiók',Cages:'Ketrecek',Lines:'Vonalak','Cell relations':'Cellakapcsolatok','Cell marks':'Cellajelölések','Anti-constraints':'Tiltó szabályok','Outside clues':'Külső nyomok',Combinations:'Kombinációk'};
 var hu={'lits':['Tetrominókert','Minden körberajzolt régióban pontosan négy oldalirányban összefüggő mezőt feketíts be úgy, hogy L, I, T vagy S tetrominó alakuljon ki. Azonos alakú tetrominók külön régiókban nem érhetnek össze oldalról, minden fekete mező egyetlen hálózatot alkot, és 2×2-es blokk nem lehet teljesen fekete.'],'battleships':['Rejtett Flotta','Helyezd el a megadott flottát vízszintesen vagy függőlegesen. Külön hajók még átlósan sem érhetnek össze; a tábla szélén lévő számok megadják az adott sor vagy oszlop hajómezőinek számát.'],'heyawake':['Szobakert / Heyawake','Feketíts be mezőket úgy, hogy minden számozott szobában pontosan a jelzett számú fekete mező legyen. Két fekete mező nem érhet össze oldalról, a fehér mezők egyetlen összefüggő területet alkotnak, és egy egyenes fehér szakasz nem haladhat át három szobán.'],'shakashaka':['Háromszögkert','Helyezz fekete háromszögeket a fehér mezőkbe. A megmaradó fehér területek legyenek téglalapok; a számozott fekete mezők megadják a mellettük lévő háromszögek számát.'],'ripple-effect':['Hullámhatás','Minden N mezős szobába írd be az 1–N számokat egyszer-egyszer. Azonos számok egy sorban vagy oszlopban csak a számuknál nagyobb távolságra lehetnek egymástól.'],'yajilin':['Nyílösvény','Rajzolj egyetlen zárt hurkot a fehér mezőkön. A nyilak megadják, hány fekete mező van az irányukban; két fekete mező nem érhet össze oldalról.'],'star-battle':['Csillagkert','Helyezz pontosan egy csillagot minden sorba, oszlopba és körberajzolt régióba. Két csillag még átlósan sem érhet össze.'],'aquarium':['Akvárium','Töltsd meg vízzel az akváriumokat alulról felfelé. Egy akváriumon belül a vízszint vízszintes; a szélső számok az adott sor vagy oszlop vizes celláinak számát adják.'],'tentai-show':['Csillaggalaxisok','Oszd fel a táblát galaxisokra. Minden galaxis pontosan egy csillagközéppontot tartalmaz, összefüggő, és a középpontja körül 180 fokosan szimmetrikus.'],'masyu':['Masyu','Rajzolj egyetlen, önmagát nem metsző, oldalirányban haladó zárt hurkot, amely minden körön áthalad. Fehér körben a hurok egyenesen halad, és legalább az egyik közvetlenül szomszédos cellában fordul. Fekete körben a hurok fordul, és mindkét szomszédos cellában egyenesen folytatódik.'],'nonogram':['Nonogram / Picross','Töltsd ki a mezőket úgy, hogy minden sor és oszlop megfeleljen a szélén látható számsorozatnak. Minden szám egy összefüggő kitöltött blokk hosszát jelenti; az egymást követő blokkok között legalább egy üres mező van.'],'nurikabe':['Nurikabe','Feketíts be mezőket úgy, hogy egyetlen összefüggő fekete tenger jöjjön létre. Minden fehér sziget pontosan egy számot tartalmazzon, és a sziget mérete egyezzen ezzel a számmal. Külön szigetek oldalról nem érhetnek össze, és 2×2-es terület nem lehet teljesen fekete.'],'akari':['Akari / Fények','Helyezz lámpákat a fehér mezőkre úgy, hogy minden fehér mező vízszintesen vagy függőlegesen meg legyen világítva. Két lámpa nem világíthat egymásra. A fekete mező száma pontosan megadja a vele oldalról szomszédos lámpák számát; a szám nélküli fekete mező csak elzárja a fényt.'],'slitherlink':['Slitherlink','Rajzolj egyetlen, önmagát nem metsző zárt hurkot a rácsvonalakon. Egy cella száma pontosan megadja, hogy a négy oldala közül hány része a huroknak. A hurok nem ágazhat el, és minden berajzolt él ugyanahhoz az egyetlen hurokhoz tartozzon.'],'futoshiki':['Futoshiki','Töltsd ki a 6×6-os rácsot az 1–6 számokkal úgy, hogy minden sorban és oszlopban mindegyik szám pontosan egyszer szerepeljen. A szomszédos cellák közötti < és > jeleknek is igaznak kell lenniük; a jel keskeny oldala a kisebb szám felé mutat.'],'fillomino':['Fillomino','Oszd fel a rácsot oldalirányban összefüggő számtartományokra. Minden cella száma pontosan megadja a saját csoportjának méretét. Két azonos számú külön csoport nem érhet egymáshoz oldalról, mert akkor egyetlen nagyobb csoportot alkotnának.'],'hashiwokakero':['Hidak / Hashiwokakero','Kösd össze az összes számozott szigetet vízszintes vagy függőleges hidakkal. Minden szigetről pontosan annyi híd induljon, amennyit a száma mutat; két sziget között legfeljebb két híd lehet, a hidak nem keresztezhetik egymást, és minden szigetnek egyetlen összefüggő hálózatba kell tartoznia.'],hitori:['Hitori','Feketíts be cellákat úgy, hogy minden sorban és oszlopban minden megmaradó szám legfeljebb egyszer szerepeljen. Két fekete cella nem érhet egymáshoz oldalról, és minden fehér cellának egyetlen összefüggő területet kell alkotnia. Kattintás: jelöletlen → fekete → biztos fehér.'],
-classic:['Klasszikus Sudoku','Minden sorban, oszlopban és 3×3-as dobozban az 1–9 számok pontosan egyszer szerepelnek.'],mini:['Mini Sudoku 4×4','Az 1–4 számokat minden sorban, oszlopban és 2×2-es dobozban pontosan egyszer használd.'],diagonal:['Átlós / X Sudoku','A két hosszú átlóban is az 1–9 számok szerepelnek pontosan egyszer.'],hyper:['Hyper / Windoku','A négy árnyékolt 3×3-as ablakban is az 1–9 számok szerepelnek pontosan egyszer.'],killer:['Killer Sudoku','Egy ketrecben nem ismétlődhet szám, és a számok összege a ketrecben jelzett érték.'],thermo:['Thermo Sudoku','Minden hőmérőn a számok szigorúan növekednek a gömbtől a csúcs felé.'],arrow:['Nyíl Sudoku','Minden nyíl szárán lévő számok összege megegyezik a körben lévő számmal.'],kropki:['Kropki Sudoku','A fehér pont egymást követő számokat, a fekete pont 1:2 arányt jelent.'],xv:['XV Sudoku','Az X-szel elválasztott szomszédok összege 10, a V-vel elválasztottaké 5.'],consecutive:['Egymást követő Sudoku','A megjelölt szomszédos cellákban egymást követő számok állnak.'],greater:['Nagyobb–kisebb Sudoku','Az egyenlőtlenség jele megmutatja, melyik szomszédos cellában van a nagyobb szám.'],'odd-even':['Páros / páratlan Sudoku','A megjelölt cellákba csak a jelölésnek megfelelő páros vagy páratlan szám kerülhet.'],'anti-knight':['Anti-huszár Sudoku','Azonos számok nem lehetnek egymástól sakkbeli huszárlépés távolságra.'],'anti-king':['Anti-király Sudoku','Azonos számok átlósan sem érintkezhetnek úgy, ahogy a sakk-király lép.'],nonconsecutive:['Nem egymást követő Sudoku','Oldalszomszédos cellákban nem lehetnek egymást követő számok.'],sandwich:['Szendvics Sudoku','A külső szám az adott sorban vagy oszlopban az 1 és 9 közötti számok összegét adja.'],skyscraper:['Felhőkarcoló Sudoku','A külső nyom megadja, hány különböző magasságú épület látható az adott oldalról.'],'little-killer':['Little Killer Sudoku','A külső átlós nyom az adott átlón lévő számok összegét adja.'],renban:['Renban Sudoku','A lila vonalon ismétlés nélküli, egymást követő számok halmaza szerepelhet tetszőleges sorrendben.'],whispers:['German Whispers','A zöld vonalon minden szomszédos számpár különbsége legalább 5.'],between:['Between Lines Sudoku','A vonal belső számai szigorúan a két végponti kör értéke közé esnek.'],palindrome:['Palindrom Sudoku','A szürke vonalon a számsor mindkét irányból ugyanaz.'],'parity-line':['Paritásvonal','A piros vonalon a számok felváltva párosak és páratlanok.'],entropic:['Entrópikus vonal','Bármely három egymást követő cellában egy 1–3, egy 4–6 és egy 7–9 közötti szám van.'],modular:['Moduláris vonal','Bármely három egymást követő cellában egy-egy szám van a 147, 258 és 369 csoportból.'],'region-sum':['Régióösszeg-vonal','A dobozhatárok szakaszokra bontják a kék vonalat; ugyanazon vonal minden szakaszának azonos az összege.'],quadruple:['Négyes Sudoku','A metszéspontnál jelzett számoknak szerepelniük kell a körülötte lévő négy cellában.'],clone:['Klón Sudoku','A két árnyékolt klónalakzat azonos helyzetű celláiban azonos számok állnak.'],'x-sums':['X-összeg Sudoku','A külső nyom az első X szám összegét adja, ahol X az adott oldalról elsőként látott szám.'],rossini:['Rossini Sudoku','A külső nyilak jelzik, hogy a szélső három szám az adott oldalról növekvő vagy csökkenő.'],fortress:['Erőd Sudoku','Minden árnyékolt erődcella nagyobb minden oldalszomszédos, nem árnyékolt cellánál.'],'slow-thermo':['Lassú Thermo','A hőmérőn a számok nem csökkennek a gömbtől a csúcsig, és egy lépésben legfeljebb 1-gyel nőnek.'],zipper:['Cipzárvonal','A vonal közepétől azonos távolságra lévő számpárok összege a középső cella értéke.'],'center-dot':['Középpont Sudoku','A kilenc 3×3-as doboz középső celláiban az 1–9 számok pontosan egyszer szerepelnek.'],'disjoint-groups':['Szétválasztott csoportok','A kilenc 3×3-as doboz azonos relatív helyén álló cellákban az 1–9 számok pontosan egyszer szerepelnek.'],'mini-6':['Mini Sudoku 6×6','Az 1–6 számokat minden sorban, oszlopban és 2×3-as dobozban pontosan egyszer használd.'],'dutch-whispers':['Dutch Whispers','A narancssárga vonalon minden szomszédos számpár különbsége legalább 4.'],nabner:['Nabner-vonal','A Nabner-vonalon nincs ismétlődés, és a vonal bármely két száma nem lehet egymást követő.'],lockout:['Lockout-vonal','A két rombusz végpont különböző; a köztük lévő számok mind a végpontok által meghatározott számtartományon kívül esnek.'],frame:['Keret Sudoku','Minden külső nyom az adott sor vagy oszlop legközelebbi három számának összegét adja.'],'killer-thermo':['Killer Thermo','A Killer-ketrecek összegszabálya és a szigorúan növekvő hőmérővonalak egyszerre érvényesek.'],'killer-arrow':['Killer Nyíl','A Killer-ketrecek mellett a nyíl szárán lévő számok összege a kör értéke.'],'killer-palindrome':['Killer Palindrom','A Killer-ketrecek mellett a palindromvonalak mindkét irányból ugyanazt a számsort adják.'],'killer-zipper':['Killer Cipzár','A Killer-ketrecek mellett a cipzárvonal közepétől azonos távolságra lévő párok összege a középső szám.'],'killer-entropic':['Killer Entrópikus','A Killer-ketrecek mellett az entrópikus vonal minden három egymást követő cellája egy alacsony, közepes és magas számot tartalmaz.'],'killer-modular':['Killer Moduláris','A Killer-ketrecek mellett a moduláris vonal minden három cellája egy-egy számot tartalmaz mindhárom maradékosztályból.'],'killer-renban':['Killer Renban','A Killer-ketrecek mellett a Renban-vonalak számai ismétlés nélküli, egymást követő halmazt alkotnak.'],'killer-dutch-whispers':['Killer Dutch Whispers','A Killer-ketrecek mellett a Dutch Whispers-vonal szomszédos számai legalább 4-gyel térnek el.'],'killer-lockout':['Killer Lockout','A Killer-ketrecek mellett a Lockout-vonal belső számai a két végpont tartományán kívül esnek.'],miracle:['Miracle Sudoku','A normál Sudoku mellett anti-huszár, anti-király és nem-egymást-követő oldalszomszéd szabály is érvényes.'],'magic-square':['Bűvös négyzet Sudoku','A középső árnyékolt 3×3-as doboz Lo Shu bűvös négyzet: minden sora, oszlopa és átlója 15-öt ad.'],asterisk:['Csillag Sudoku','A kilenc megjelölt csillagcellában is az 1–9 számok szerepelnek pontosan egyszer.'],argyle:['Argyle Sudoku','A megjelölt átlós Argyle-vonalakon nem ismétlődhet szám.'],jigsaw:['Kirakós / szabálytalan Sudoku','A szokásos 3×3-as dobozokat kilenc szabálytalan, összefüggő régió váltja fel; minden régióban 1–9 szerepel pontosan egyszer.'],'sudoku-12x12':['12×12 Sudoku','Töltsd ki az 1–12 jelekkel úgy, hogy minden sorban, oszlopban és 3×4-es dobozban minden jel pontosan egyszer szerepeljen.'],'sudoku-16x16':['16×16 Sudoku','Töltsd ki az 1–16 jelekkel úgy, hogy minden sorban, oszlopban és 4×4-es dobozban minden jel pontosan egyszer szerepeljen.'],sukaku:['Sukaku','A cellák hagyományos kezdőszámok helyett engedélyezett jelölthalmazokkal indulnak. Válassz egy végső számot cellánként úgy, hogy a sorok, oszlopok és dobozok 1–9-et tartalmazzanak.'],samurai:['Samurai / Gattai-5','Öt egymást átfedő 9×9-es Sudoku alkot egy 21×21-es keresztet. Minden tábla normál Sudoku, a közös 3×3-as dobozok pedig mindkét táblához tartoznak.'],'anti-queen-9':['Anti-Queen (9) Sudoku','A normál Sudoku szabályai mellett két 9-es nem lehet ugyanazon átlóban, bármilyen távolságra egymástól, vagyis sakk-királynő lépésére.'],'quad-sums':['Quad Sums Sudoku','A normál Sudoku szabályai mellett minden fekete pont körüli négy szám közül az egyik a másik három összege.'],battenburg:['Battenburg Sudoku','Minden 2×2-es területet jelölünk, ahol a páros és páratlan számok sakktáblamintát alkotnak; jelöletlen 2×2-ben ilyen minta nem lehet.'],reflection:['Reflection Sudoku','Az azonos kezdőszimbólummal jelölt vonalak a szimbólumtól indulva ugyanazokat a számokat tartalmazzák ugyanabban a sorrendben, ameddig mindkét vonal tart.'],slingshot:['Slingshot Sudoku','Minden csúzli egy szomszédos forráscellát és egy irányt jelöl. Ha a csúzlicellában N áll, a forrás száma N cellával távolabb ugyanabban az irányban újra megjelenik.'],axia:['Axia Sudoku','A normál Sudoku mellett az Axia-jellel megjelölt cella száma nem ismétlődhet a cellából induló két átló egyikén sem. A jelöletlen cellák nem hoznak létre ilyen tiltást.'],couples:['Párok / Couples Sudoku','A ~ jellel elválasztott szomszédos cellák számai azonos párosságúak: mindkettő páros vagy mindkettő páratlan. Az áthúzott ~ jel eltérő párosságot jelent.'],'running-cells':['Futó cellák / Running Cells','A sor bal oldalán vagy az oszlop tetején lévő szám megadja, hány cella tartozik legalább egy oldalszomszédos, egymást követő értékű számpárhoz vagy hosszabb futamhoz.'],'ascending-sequences':['Növekvő sorozatok','A sor bal oldalán vagy az oszlop tetején lévő szám megadja a legalább két cellából álló, maximális szigorúan növekvő szakaszok számát. A számoknak nem kell egymást követniük.'],bishopsgate:['Bishopsgate Sudoku','A normál Sudoku mellett csak a kiemelt sakktáblaszín celláiban tilos azonos számnak ugyanazon átlóban állnia, bármilyen távolságra. A másik sakktáblaszínen nincs futótiltás.'],minmax:['Minimum / maximum Sudoku','A befelé mutató jel minimumot jelöl: a cella kisebb minden oldalszomszédjánál. A kifelé mutató jel maximumot jelöl: a cella nagyobb minden oldalszomszédjánál.'],'numbered-rooms':['Számozott szobák / Numbered Rooms','A külső nyom számának abban az N-edik cellában kell állnia az adott oldal felől, ahol N az első cella száma.'],'next-to-nine':['A kilences mellett / Next to Nine','A külső nyom felsorolja az adott sorban vagy oszlopban a 9 közvetlen szomszédait; a felsorolás sorrendje nem számít.'],'even-sandwich':['Páros szendvics / Even Sandwich','A bal oldali és felső nyomok pontosan azokat a számokat sorolják fel, amelyeknek az adott sorban vagy oszlopban mindkét közvetlen szomszédja páros. Az üres nyom azt jelenti, hogy nincs ilyen szám.'],'top-heavy-parity':['Felül nehéz paritás / Top-Heavy Parity','Ha két függőlegesen szomszédos szám azonos párosságú, a felső számnak nagyobbnak kell lennie az alsónál.'],'skyscraper-sums':['Lakótelep összegekkel / Skyscraper Sums','A külső nyom nem a látható házak darabszámát, hanem a látható épületek magasságainak összegét adja. A magasabb házak eltakarják a mögöttük álló alacsonyabbakat.'],'skyscraper-mixed':['Vegyes információs Lakótelep / Mixed Information','Minden külső nyom vagy a látható házak számát, vagy a legelső ház magasságát jelenti. A feladvány nem árulja el, melyik értelmezés érvényes az adott nyomnál.'],'skyscraper-nontouching':['Nem érintkező Lakótelep / Non-touching Skyscraper','A normál Sudoku és Lakótelep-láthatósági szabályok mellett két azonos magasságú épület átlósan sem érintkezhet.'],'skyscraper-parks':['Lakótelep – grundokkal / Skyscrapers Parks','Minden sorban és oszlopban az 1–8 házmagasság pontosan egyszer szerepel, plusz egy park (🌿). A park nem épület és nem takarja ki a mögötte álló házakat. A külső nyomok a látható házak számát adják.'],'sum-skyscraper-parks':['Összeges Lakótelep – grundokkal / Sum Skyscrapers Parks','Minden sorban és oszlopban az 1–8 házmagasság pontosan egyszer szerepel, plusz egy park (🌿). A park nem takar. A külső nyom a látható házak magasságainak összegét adja.'],'inside-skyscrapers':['Belső Lakótelep / Inside Skyscrapers','A normál Sudoku mellett a nyilat tartalmazó cella száma megadja, hány épület látható abból a cellából a nyíl irányába. A nyilas cella maga a nézőpont, ezért nem számít bele a látható házakba.'],'diagonal-skyscrapers':['Átlós Lakótelep / Diagonal Skyscraper','A normál Sudoku mellett a táblán kívüli nyomok a kijelölt átlós látóvonalon látható épületek számát adják. A magasabb ház eltakarja a mögötte álló alacsonyabbakat; az átlón ismétlődhet szám, ha a Sudoku megengedi.'],'product-skyscrapers':['Szorzatos Lakótelep / Product Skyscrapers','A normál Sudoku mellett minden külső nyom a megfelelő irányból látható házak magasságainak szorzatát adja. A magasabb házak eltakarják a mögöttük lévő alacsonyabbakat.'],'killer-skyscrapers':['Killer Lakótelep / Killer Skyscrapers','A normál Sudoku, a Killer-ketrecek és a Lakótelep szabályai egyszerre érvényesek. A ketrecek számai nem ismétlődnek és a jelzett összegre adódnak; a külső nyom a látható házak számát adja.'],'domino-skyscrapers':['Dominó Lakótelep / Domino Skyscrapers','Töltsd ki a 7×7-es Latin-rácsot az 1–7 számokkal úgy, hogy minden szám minden sorban és oszlopban pontosan egyszer szerepeljen. A külső nyomok a látható házak számát adják, és minden kijelölt dominó két számának összege azonos.'],'skyscraper-parks2':['Lakótelep – két grunddal / Skyscrapers Parks 2','Töltsd ki a 8×8-as rácsot úgy, hogy minden sorban és oszlopban az 1–6 házmagasság pontosan egyszer, valamint pontosan két park (🌿) szerepeljen. A parkok nem épületek és nem takarnak; a külső nyomok a látható házak számát adják.'],'classic-skyscrapers':['Klasszikus Lakótelep','Töltsd ki a 6×6-os Latin-rácsot az 1–6 számokkal úgy, hogy minden szám minden sorban és oszlopban pontosan egyszer szerepeljen. A külső nyomok megadják, hány ház látható az adott irányból; nincs Sudoku-doboz.'],'evenodd-skyscrapers':['Páros–páratlan Lakótelep / Skyscrapers (Even/Odd)','Töltsd ki a 6×6-os Latin-rácsot az 1–6 számokkal úgy, hogy minden szám minden sorban és oszlopban pontosan egyszer szerepeljen. A kör páratlan, a négyzet páros értéket jelöl; a táblán kívüli jelek a látható házak számának párosságát adják.'],'toroidal-skyscrapers':['Toroidális Lakótelep','Töltsd ki a 6×6-os tóruszrács nem nyomos celláit az 1–5 házmagasságokkal úgy, hogy minden sorban és oszlopban mindegyik pontosan egyszer szerepeljen. A szürke, nyilas nyomcella nézőpont, nem épület. A nyíl irányában a szemközti szélen folytatódik a látóvonal, amíg vissza nem ér a nyomhoz; a nyom száma a látható házak darabszáma.'],'double-skyscrapers':['Dupla Lakótelep / Double Skyscrapers','Töltsd ki a 6×6-os rácsot az 1–3 házmagasságokkal úgy, hogy minden magasság minden sorban és oszlopban pontosan kétszer szerepeljen. A külső nyom a látható házak számát adja. Egy házat az előtte álló azonos vagy magasabb ház is eltakar.']};
+classic:['Klasszikus Sudoku','Minden sorban, oszlopban és 3×3-as dobozban az 1–9 számok pontosan egyszer szerepelnek.'],mini:['Mini Sudoku 4×4','Az 1–4 számokat minden sorban, oszlopban és 2×2-es dobozban pontosan egyszer használd.'],diagonal:['Átlós / X Sudoku','A két hosszú átlóban is az 1–9 számok szerepelnek pontosan egyszer.'],hyper:['Hyper / Windoku','A négy árnyékolt 3×3-as ablakban is az 1–9 számok szerepelnek pontosan egyszer.'],killer:['Killer Sudoku','Egy ketrecben nem ismétlődhet szám, és a számok összege a ketrecben jelzett érték.'],thermo:['Thermo Sudoku','Minden hőmérőn a számok szigorúan növekednek a gömbtől a csúcs felé.'],arrow:['Nyíl Sudoku','Minden nyíl szárán lévő számok összege megegyezik a körben lévő számmal.'],kropki:['Kropki Sudoku','A fehér pont egymást követő számokat, a fekete pont 1:2 arányt jelent.'],xv:['XV Sudoku','Az X-szel elválasztott szomszédok összege 10, a V-vel elválasztottaké 5.'],consecutive:['Egymást követő Sudoku','A megjelölt szomszédos cellákban egymást követő számok állnak.'],greater:['Nagyobb–kisebb Sudoku','Az egyenlőtlenség jele megmutatja, melyik szomszédos cellában van a nagyobb szám.'],'odd-even':['Páros / páratlan Sudoku','A megjelölt cellákba csak a jelölésnek megfelelő páros vagy páratlan szám kerülhet.'],'anti-knight':['Anti-huszár Sudoku','Azonos számok nem lehetnek egymástól sakkbeli huszárlépés távolságra.'],'anti-king':['Anti-király Sudoku','Azonos számok átlósan sem érintkezhetnek úgy, ahogy a sakk-király lép.'],nonconsecutive:['Nem egymást követő Sudoku','Oldalszomszédos cellákban nem lehetnek egymást követő számok.'],sandwich:['Szendvics Sudoku','A külső szám az adott sorban vagy oszlopban az 1 és 9 közötti számok összegét adja.'],skyscraper:['Felhőkarcoló Sudoku','A külső nyom megadja, hány különböző magasságú épület látható az adott oldalról.'],'little-killer':['Little Killer Sudoku','A külső átlós nyom az adott átlón lévő számok összegét adja.'],renban:['Renban Sudoku','A lila vonalon ismétlés nélküli, egymást követő számok halmaza szerepelhet tetszőleges sorrendben.'],whispers:['German Whispers','A zöld vonalon minden szomszédos számpár különbsége legalább 5.'],between:['Between Lines Sudoku','A vonal belső számai szigorúan a két végponti kör értéke közé esnek.'],palindrome:['Palindrom Sudoku','A szürke vonalon a számsor mindkét irányból ugyanaz.'],'parity-line':['Paritásvonal','A piros vonalon a számok felváltva párosak és páratlanok.'],entropic:['Entrópikus vonal','Bármely három egymást követő cellában egy 1–3, egy 4–6 és egy 7–9 közötti szám van.'],modular:['Moduláris vonal','Bármely három egymást követő cellában egy-egy szám van a 147, 258 és 369 csoportból.'],'region-sum':['Régióösszeg-vonal','A dobozhatárok szakaszokra bontják a kék vonalat; ugyanazon vonal minden szakaszának azonos az összege.'],quadruple:['Négyes Sudoku','A metszéspontnál jelzett számoknak szerepelniük kell a körülötte lévő négy cellában.'],clone:['Klón Sudoku','A két árnyékolt klónalakzat azonos helyzetű celláiban azonos számok állnak.'],'x-sums':['X-összeg Sudoku','A külső nyom az első X szám összegét adja, ahol X az adott oldalról elsőként látott szám.'],rossini:['Rossini Sudoku','A külső nyilak jelzik, hogy a szélső három szám az adott oldalról növekvő vagy csökkenő.'],fortress:['Erőd Sudoku','Minden árnyékolt erődcella nagyobb minden oldalszomszédos, nem árnyékolt cellánál.'],'slow-thermo':['Lassú Thermo','A hőmérőn a számok nem csökkennek a gömbtől a csúcsig, és egy lépésben legfeljebb 1-gyel nőnek.'],zipper:['Cipzárvonal','A vonal közepétől azonos távolságra lévő számpárok összege a középső cella értéke.'],'center-dot':['Középpont Sudoku','A kilenc 3×3-as doboz középső celláiban az 1–9 számok pontosan egyszer szerepelnek.'],'disjoint-groups':['Szétválasztott csoportok','A kilenc 3×3-as doboz azonos relatív helyén álló cellákban az 1–9 számok pontosan egyszer szerepelnek.'],'mini-6':['Mini Sudoku 6×6','Az 1–6 számokat minden sorban, oszlopban és 2×3-as dobozban pontosan egyszer használd.'],'dutch-whispers':['Dutch Whispers','A narancssárga vonalon minden szomszédos számpár különbsége legalább 4.'],nabner:['Nabner-vonal','A Nabner-vonalon nincs ismétlődés, és a vonal bármely két száma nem lehet egymást követő.'],lockout:['Lockout-vonal','A két rombusz végpont különböző; a köztük lévő számok mind a végpontok által meghatározott számtartományon kívül esnek.'],frame:['Keret Sudoku','Minden külső nyom az adott sor vagy oszlop legközelebbi három számának összegét adja.'],'killer-thermo':['Killer Thermo','A Killer-ketrecek összegszabálya és a szigorúan növekvő hőmérővonalak egyszerre érvényesek.'],'killer-arrow':['Killer Nyíl','A Killer-ketrecek mellett a nyíl szárán lévő számok összege a kör értéke.'],'killer-palindrome':['Killer Palindrom','A Killer-ketrecek mellett a palindromvonalak mindkét irányból ugyanazt a számsort adják.'],'killer-zipper':['Killer Cipzár','A Killer-ketrecek mellett a cipzárvonal közepétől azonos távolságra lévő párok összege a középső szám.'],'killer-entropic':['Killer Entrópikus','A Killer-ketrecek mellett az entrópikus vonal minden három egymást követő cellája egy alacsony, közepes és magas számot tartalmaz.'],'killer-modular':['Killer Moduláris','A Killer-ketrecek mellett a moduláris vonal minden három cellája egy-egy számot tartalmaz mindhárom maradékosztályból.'],'killer-renban':['Killer Renban','A Killer-ketrecek mellett a Renban-vonalak számai ismétlés nélküli, egymást követő halmazt alkotnak.'],'killer-dutch-whispers':['Killer Dutch Whispers','A Killer-ketrecek mellett a Dutch Whispers-vonal szomszédos számai legalább 4-gyel térnek el.'],'killer-lockout':['Killer Lockout','A Killer-ketrecek mellett a Lockout-vonal belső számai a két végpont tartományán kívül esnek.'],miracle:['Miracle Sudoku','A normál Sudoku mellett anti-huszár, anti-király és nem-egymást-követő oldalszomszéd szabály is érvényes.'],'magic-square':['Bűvös négyzet Sudoku','A középső árnyékolt 3×3-as doboz Lo Shu bűvös négyzet: minden sora, oszlopa és átlója 15-öt ad.'],asterisk:['Csillag Sudoku','A kilenc megjelölt csillagcellában is az 1–9 számok szerepelnek pontosan egyszer.'],argyle:['Argyle Sudoku','A megjelölt átlós Argyle-vonalakon nem ismétlődhet szám.'],jigsaw:['Kirakós / szabálytalan Sudoku','A szokásos 3×3-as dobozokat kilenc szabálytalan, összefüggő régió váltja fel; minden régióban 1–9 szerepel pontosan egyszer.'],'sudoku-12x12':['12×12 Sudoku','Töltsd ki az 1–12 jelekkel úgy, hogy minden sorban, oszlopban és 3×4-es dobozban minden jel pontosan egyszer szerepeljen.'],'sudoku-16x16':['16×16 Sudoku','Töltsd ki az 1–16 jelekkel úgy, hogy minden sorban, oszlopban és 4×4-es dobozban minden jel pontosan egyszer szerepeljen.'],sukaku:['Sukaku','A cellák hagyományos kezdőszámok helyett engedélyezett jelölthalmazokkal indulnak. Válassz egy végső számot cellánként úgy, hogy a sorok, oszlopok és dobozok 1–9-et tartalmazzanak.'],samurai:['Samurai / Gattai-5','Öt egymást átfedő 9×9-es Sudoku alkot egy 21×21-es keresztet. Minden tábla normál Sudoku, a közös 3×3-as dobozok pedig mindkét táblához tartoznak.'],'anti-queen-9':['Anti-Queen (9) Sudoku','A normál Sudoku szabályai mellett két 9-es nem lehet ugyanazon átlóban, bármilyen távolságra egymástól, vagyis sakk-királynő lépésére.'],'quad-sums':['Quad Sums Sudoku','A normál Sudoku szabályai mellett minden fekete pont körüli négy szám közül az egyik a másik három összege.'],battenburg:['Battenburg Sudoku','Minden 2×2-es területet jelölünk, ahol a páros és páratlan számok sakktáblamintát alkotnak; jelöletlen 2×2-ben ilyen minta nem lehet.'],reflection:['Reflection Sudoku','Az azonos kezdőszimbólummal jelölt vonalak a szimbólumtól indulva ugyanazokat a számokat tartalmazzák ugyanabban a sorrendben, ameddig mindkét vonal tart.'],slingshot:['Slingshot Sudoku','Minden csúzli egy szomszédos forráscellát és egy irányt jelöl. Ha a csúzlicellában N áll, a forrás száma N cellával távolabb ugyanabban az irányban újra megjelenik.'],axia:['Axia Sudoku','A normál Sudoku mellett az Axia-jellel megjelölt cella száma nem ismétlődhet a cellából induló két átló egyikén sem. A jelöletlen cellák nem hoznak létre ilyen tiltást.'],couples:['Párok / Couples Sudoku','A ~ jellel elválasztott szomszédos cellák számai azonos párosságúak: mindkettő páros vagy mindkettő páratlan. Az áthúzott ~ jel eltérő párosságot jelent.'],'running-cells':['Futó cellák / Running Cells','A sor bal oldalán vagy az oszlop tetején lévő szám megadja, hány cella tartozik legalább egy oldalszomszédos, egymást követő értékű számpárhoz vagy hosszabb futamhoz.'],'ascending-sequences':['Növekvő sorozatok','A sor bal oldalán vagy az oszlop tetején lévő szám megadja a legalább két cellából álló, maximális szigorúan növekvő szakaszok számát. A számoknak nem kell egymást követniük.'],bishopsgate:['Bishopsgate Sudoku','A normál Sudoku mellett csak a kiemelt sakktáblaszín celláiban tilos azonos számnak ugyanazon átlóban állnia, bármilyen távolságra. A másik sakktáblaszínen nincs futótiltás.'],minmax:['Minimum / maximum Sudoku','A befelé mutató jel minimumot jelöl: a cella kisebb minden oldalszomszédjánál. A kifelé mutató jel maximumot jelöl: a cella nagyobb minden oldalszomszédjánál.'],'numbered-rooms':['Számozott szobák / Numbered Rooms','A külső nyom számának abban az N-edik cellában kell állnia az adott oldal felől, ahol N az első cella száma.'],'next-to-nine':['A kilences mellett / Next to Nine','A külső nyom felsorolja az adott sorban vagy oszlopban a 9 közvetlen szomszédait; a felsorolás sorrendje nem számít.'],'even-sandwich':['Páros szendvics / Even Sandwich','A bal oldali és felső nyomok pontosan azokat a számokat sorolják fel, amelyeknek az adott sorban vagy oszlopban mindkét közvetlen szomszédja páros. Az üres nyom azt jelenti, hogy nincs ilyen szám.'],'top-heavy-parity':['Felül nehéz paritás / Top-Heavy Parity','Ha két függőlegesen szomszédos szám azonos párosságú, a felső számnak nagyobbnak kell lennie az alsónál.'],'skyscraper-sums':['Lakótelep összegekkel / Skyscraper Sums','A külső nyom nem a látható házak darabszámát, hanem a látható épületek magasságainak összegét adja. A magasabb házak eltakarják a mögöttük álló alacsonyabbakat.'],'skyscraper-mixed':['Vegyes információs Lakótelep / Mixed Information','Minden külső jelölés vagy a látható házak számát, vagy a legelső ház magasságát jelenti. A feladvány nem árulja el, melyik értelmezés érvényes az adott jelölésnél.'],'skyscraper-nontouching':['Nem érintkező Lakótelep / Non-touching Skyscraper','A normál Sudoku és Lakótelep-láthatósági szabályok mellett két azonos magasságú épület átlósan sem érintkezhet.'],'skyscraper-parks':['Lakótelep – grundokkal / Skyscrapers Parks','Minden sorban és oszlopban az 1–8 házmagasság pontosan egyszer szerepel, plusz egy park (🌿). A park nem épület és nem takarja ki a mögötte álló házakat. A külső nyomok a látható házak számát adják.'],'sum-skyscraper-parks':['Összeges Lakótelep – grundokkal / Sum Skyscrapers Parks','Minden sorban és oszlopban az 1–8 házmagasság pontosan egyszer szerepel, plusz egy park (🌿). A park nem takar. A külső nyom a látható házak magasságainak összegét adja.'],'inside-skyscrapers':['Belső Lakótelep / Inside Skyscrapers','A normál Sudoku mellett a nyilat tartalmazó cella száma megadja, hány épület látható abból a cellából a nyíl irányába. A nyilas cella maga a nézőpont, ezért nem számít bele a látható házakba.'],'diagonal-skyscrapers':['Átlós Lakótelep / Diagonal Skyscraper','A normál Sudoku mellett a táblán kívüli nyomok a kijelölt átlós látóvonalon látható épületek számát adják. A magasabb ház eltakarja a mögötte álló alacsonyabbakat; az átlón ismétlődhet szám, ha a Sudoku megengedi.'],'product-skyscrapers':['Szorzatos Lakótelep / Product Skyscrapers','A normál Sudoku mellett minden külső nyom a megfelelő irányból látható házak magasságainak szorzatát adja. A magasabb házak eltakarják a mögöttük lévő alacsonyabbakat.'],'killer-skyscrapers':['Killer Lakótelep / Killer Skyscrapers','A normál Sudoku, a Killer-ketrecek és a Lakótelep szabályai egyszerre érvényesek. A ketrecek számai nem ismétlődnek és a jelzett összegre adódnak; a külső nyom a látható házak számát adja.'],'domino-skyscrapers':['Dominó Lakótelep / Domino Skyscrapers','Töltsd ki a 7×7-es Latin-rácsot az 1–7 számokkal úgy, hogy minden szám minden sorban és oszlopban pontosan egyszer szerepeljen. A külső nyomok a látható házak számát adják, és minden kijelölt dominó két számának összege azonos.'],'skyscraper-parks2':['Lakótelep – két grunddal / Skyscrapers Parks 2','Töltsd ki a 8×8-as rácsot úgy, hogy minden sorban és oszlopban az 1–6 házmagasság pontosan egyszer, valamint pontosan két park (🌿) szerepeljen. A parkok nem épületek és nem takarnak; a külső nyomok a látható házak számát adják.'],'classic-skyscrapers':['Klasszikus Lakótelep','Töltsd ki a 6×6-os Latin-rácsot az 1–6 számokkal úgy, hogy minden szám minden sorban és oszlopban pontosan egyszer szerepeljen. A külső nyomok megadják, hány ház látható az adott irányból; nincs Sudoku-doboz.'],'evenodd-skyscrapers':['Páros–páratlan Lakótelep / Skyscrapers (Even/Odd)','Töltsd ki a 6×6-os Latin-rácsot az 1–6 számokkal úgy, hogy minden szám minden sorban és oszlopban pontosan egyszer szerepeljen. A kör páratlan, a négyzet páros értéket jelöl; a táblán kívüli jelek a látható házak számának párosságát adják.'],'toroidal-skyscrapers':['Toroidális Lakótelep','Töltsd ki a 6×6-os tóruszrács nem nyomos celláit az 1–5 házmagasságokkal úgy, hogy minden sorban és oszlopban mindegyik pontosan egyszer szerepeljen. A szürke, nyilas nyomcella nézőpont, nem épület. A nyíl irányában a szemközti szélen folytatódik a látóvonal, amíg vissza nem ér a nyomhoz; a nyom száma a látható házak darabszáma.'],'double-skyscrapers':['Dupla Lakótelep / Double Skyscrapers','Töltsd ki a 6×6-os rácsot az 1–3 házmagasságokkal úgy, hogy minden magasság minden sorban és oszlopban pontosan kétszer szerepeljen. A külső nyom a látható házak számát adja. Egy házat az előtte álló azonos vagy magasabb ház is eltakar.']};
 function t(key){return (ui[lang]&&ui[lang][key])||ui.en[key]||key;}
 function variant(v){if(lang==='hu'&&hu[v.id])return {title:hu[v.id][0],rule:hu[v.id][1],family:families[v.family]||v.family};return {title:v.title,rule:v.rule,family:v.family};}
 root.SudokuI18n={get lang(){return lang;},t:t,variant:variant,set:function(next){lang=next==='en'?'en':'hu';try{localStorage.setItem('sudoku-room-language',lang);}catch(e){}},other:function(){return lang==='hu'?'en':'hu';}};
@@ -8950,6 +9005,68 @@ root.SudokuBank.push(
 })(typeof window!=='undefined'?window:globalThis);
 
   </script>
+  <script data-source="games/miracle-generator-hardening.js">
+(function(root){
+  'use strict';
+  if(!root.SudokuGenerator||root.MiracleGeneratorHardening)return;
+  var generator=root.SudokuGenerator,baseMake=generator.make;
+  var MAX_ATTEMPTS=12,NODE_LIMIT=200000;
+  function clone(x){return JSON.parse(JSON.stringify(x));}
+  function rng(seed){var x=seed>>>0;return function(){x=(x+0x6D2B79F5)>>>0;var t=x;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296;};}
+  function shuffle(a,random){for(var i=a.length-1;i>0;i--){var j=Math.floor(random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function valid(grid,r,c,value){
+    var dr,dc,rr,cc,other;
+    for(dr=-1;dr<=1;dr++)for(dc=-1;dc<=1;dc++){
+      if(!dr&&!dc)continue;rr=r+dr;cc=c+dc;
+      if(rr>=0&&rr<9&&cc>=0&&cc<9&&grid[rr][cc]===value)return false;
+    }
+    var km=[[1,2],[2,1],[-1,2],[-2,1],[1,-2],[2,-1],[-1,-2],[-2,-1]];
+    for(var i=0;i<km.length;i++){rr=r+km[i][0];cc=c+km[i][1];if(rr>=0&&rr<9&&cc>=0&&cc<9&&grid[rr][cc]===value)return false;}
+    var orth=[[1,0],[-1,0],[0,1],[0,-1]];
+    for(i=0;i<orth.length;i++){rr=r+orth[i][0];cc=c+orth[i][1];if(rr<0||rr>=9||cc<0||cc>=9)continue;other=grid[rr][cc];if(other&&Math.abs(other-value)===1)return false;}
+    return true;
+  }
+  function seededSolution(seed,nodeLimit){
+    var grid=Array.from({length:9},function(){return Array(9).fill(0);}),rows=Array(9).fill(0),cols=Array(9).fill(0),boxes=Array(9).fill(0),full=511,nodes=0,random=rng((seed^0x4D495241)>>>0),solved=false;
+    function candidates(r,c){var box=Math.floor(r/3)*3+Math.floor(c/3),mask=full&~(rows[r]|cols[c]|boxes[box]),out=[];for(var m=mask;m;m&=m-1){var one=m&-m,d=1+Math.round(Math.log(one)/Math.LN2);if(valid(grid,r,c,d))out.push(d);}return out;}
+    function visit(){
+      if(solved||nodes++>=nodeLimit)return;
+      var bestLength=10,ties=[];
+      for(var r=0;r<9;r++)for(var c=0;c<9;c++)if(!grid[r][c]){
+        var cand=candidates(r,c);
+        if(!cand.length)return;
+        if(cand.length<bestLength){bestLength=cand.length;ties=[{r:r,c:c,cand:cand}];}
+        else if(cand.length===bestLength)ties.push({r:r,c:c,cand:cand});
+      }
+      if(!ties.length){solved=true;return;}
+      var chosen=ties[Math.floor(random()*ties.length)],br=chosen.r,bc=chosen.c,best=chosen.cand;
+      shuffle(best,random);var box=Math.floor(br/3)*3+Math.floor(bc/3);
+      for(var i=0;i<best.length&&!solved;i++){
+        var d=best[i],one=1<<(d-1);grid[br][bc]=d;rows[br]|=one;cols[bc]|=one;boxes[box]|=one;
+        visit();
+        if(!solved){rows[br]^=one;cols[bc]^=one;boxes[box]^=one;grid[br][bc]=0;}
+      }
+    }
+    visit();return solved?{solution:grid,nodes:nodes,cellTieBreak:'seeded-mrv-ties'}:null;
+  }
+  function makeMiracle(variant,seed,difficulty){
+    var requested=seed>>>0;
+    for(var attempt=0;attempt<MAX_ATTEMPTS;attempt++){
+      var actual=(requested^0x4D495241^Math.imul(attempt+1,0x9E3779B1))>>>0,built=seededSolution(actual,NODE_LIMIT);if(!built)continue;
+      var working=clone(variant);working.solution=built.solution;
+      if(generator.countVariantSolutions(working.solution,working,2)!==1)continue;
+      var out=baseMake.call(generator,working,actual,difficulty),g=out&&out.generation;if(!g||g.unique!==true||g.variantEssential!==true)continue;
+      if(generator.countVariantSolutions(out.puzzle,out,2)!==1||generator.countSolutions(out.puzzle,2)<=1)continue;
+      out.solution=built.solution;out.generation=Object.assign({},g,{seed:requested,requestedSeed:requested,actualSeed:actual,solutionAttempt:attempt,solutionNodes:built.nodes,solutionNodeLimit:NODE_LIMIT,maxSolutionAttempts:MAX_ATTEMPTS,solutionCellTieBreak:built.cellTieBreak,generatorFamily:'miracle-seeded-full-solution-exact-verified'});return out;
+    }
+    throw new Error('Miracle generation exhausted after '+MAX_ATTEMPTS+' deterministic attempts');
+  }
+  generator.make=function(variant,seed,difficulty){if(variant&&variant.id==='miracle')return makeMiracle(variant,seed>>>0,difficulty||'focused');return baseMake.call(generator,variant,seed,difficulty);};
+  generator.makeSeededMiracleSolution=seededSolution;
+  root.MiracleGeneratorHardening={maxAttempts:MAX_ATTEMPTS,nodeLimit:NODE_LIMIT,cellTieBreak:'seeded-mrv-ties'};
+})(typeof window!=='undefined'?window:globalThis);
+
+  </script>
   <script data-source="games/sudoku-library.js">
 (function (root) {
   'use strict';
@@ -10020,7 +10137,7 @@ root.SudokuBank.push(
     function solved(){for(var r=0;r<n;r+=1)for(var c=0;c<n;c+=1)if(grid[r][c]!==v.solution[r][c])return false;return true;}
     function select(r,c){selected=[r,c];render();cells[r*n+c].focus();}
     function changed(){moves+=1;cells[selected[0]*n+selected[1]].classList.remove('checked-wrong');api.setCounter(moves,I?I.t('moves'):'Moves');api.setStatus(I?I.t('progress'):'In progress');render();}
-    function prunePeerNotes(r,c,val){var dims=n===6?[2,3]:(n===12?[3,4]:(n===16?[4,4]:[Math.sqrt(n)|0,Math.sqrt(n)|0])),br=Math.floor(r/dims[0])*dims[0],bc=Math.floor(c/dims[1])*dims[1],rr,cc;if(kindIs(v,'doubleskyscrapers')){var rowSeen=0,colSeen=0;for(var di=0;di<n;di+=1){if(grid[r][di]===val)rowSeen+=1;if(grid[di][c]===val)colSeen+=1;}if(rowSeen>=2)for(di=0;di<n;di+=1)if(di!==c)notes[r][di].delete(val);if(colSeen>=2)for(di=0;di<n;di+=1)if(di!==r)notes[di][c].delete(val);}else if(!(kindIs(v,'skyscraperparks2')&&v.data&&val===v.data.parkValue))for(var i=0;i<n;i+=1){if(i!==c)notes[r][i].delete(val);if(i!==r)notes[i][c].delete(val);}if(!kindIs(v,'jigsaw')&&!kindIs(v,'skyscraperparks')&&!kindIs(v,'sumskyscraperparks')&&!kindIs(v,'skyscraperparks2')&&!kindIs(v,'dominoskyscrapers')&&!kindIs(v,'evenoddskyscrapers')&&!kindIs(v,'toroidalskyscrapers')&&!kindIs(v,'doubleskyscrapers'))for(rr=br;rr<br+dims[0];rr+=1)for(cc=bc;cc<bc+dims[1];cc+=1)if(rr!==r||cc!==c)notes[rr][cc].delete(val);if(kindIs(v,'axia')&&v.data.axia){v.data.axia.forEach(function(a){if(a[0]===r&&a[1]===c){for(var dr=-1;dr<=1;dr+=2)for(var dc=-1;dc<=1;dc+=2)for(var k=1;;k+=1){var ar=r+dr*k,ac=c+dc*k;if(ar<0||ar>=n||ac<0||ac>=n)break;notes[ar][ac].delete(val);}}else if(Math.abs(r-a[0])===Math.abs(c-a[1]))notes[a[0]][a[1]].delete(val);});}if(kindIs(v,'couples')&&v.data.couples){v.data.couples.forEach(function(cp){var other=null;if(cp.a[0]===r&&cp.a[1]===c)other=cp.b;else if(cp.b[0]===r&&cp.b[1]===c)other=cp.a;if(!other)return;for(var dgt=1;dgt<=n;dgt+=1)if((((dgt%2)===(val%2))!==!!cp.same))notes[other[0]][other[1]].delete(dgt);});}if(kindIs(v,'bishopsgate')&&(((r+c)&1)===(v.data.parity==null?0:v.data.parity))){for(var bdr=-1;bdr<=1;bdr+=2)for(var bdc=-1;bdc<=1;bdc+=2)for(var bk=1;;bk+=1){var brr=r+bdr*bk,bcc=c+bdc*bk;if(brr<0||brr>=n||bcc<0||bcc>=n)break;notes[brr][bcc].delete(val);}}if(kindIs(v,'minmax')&&v.data.extrema){v.data.extrema.forEach(function(ex){var er=ex.cell[0],ec=ex.cell[1],dist=Math.abs(er-r)+Math.abs(ec-c);if(dist>1)return;if(er===r&&ec===c){[[1,0],[-1,0],[0,1],[0,-1]].forEach(function(o){var nr=r+o[0],nc=c+o[1];if(nr<0||nr>=n||nc<0||nc>=n)return;for(var dgt=1;dgt<=n;dgt+=1)if((ex.type==='min'&&dgt<=val)||(ex.type==='max'&&dgt>=val))notes[nr][nc].delete(dgt);});}else{for(var dgt=1;dgt<=n;dgt+=1)if((ex.type==='min'&&dgt>=val)||(ex.type==='max'&&dgt<=val))notes[er][ec].delete(dgt);}});}if(kindIs(v,'topheavyparity')){if(r>0)for(var td=1;td<=n;td+=1)if(td%2===val%2&&td<=val)notes[r-1][c].delete(td);if(r<n-1)for(var tu=1;tu<=n;tu+=1)if(tu%2===val%2&&tu>=val)notes[r+1][c].delete(tu);}if(kindIs(v,'skyscrapernontouching')){for(var ndr=-1;ndr<=1;ndr+=2)for(var ndc=-1;ndc<=1;ndc+=2){var nr=r+ndr,nc=c+ndc;if(nr>=0&&nr<n&&nc>=0&&nc<n)notes[nr][nc].delete(val);}}if(kindIs(v,'evenoddskyscrapers')&&v.data.parityCells){v.data.parityCells.forEach(function(pc){for(var pd=1;pd<=n;pd+=1)if((pd%2?'odd':'even')!==pc.parity)notes[pc.cell[0]][pc.cell[1]].delete(pd);});}}
+    function prunePeerNotes(r,c,val){var dims=n===6?[2,3]:(n===12?[3,4]:(n===16?[4,4]:[Math.sqrt(n)|0,Math.sqrt(n)|0])),br=Math.floor(r/dims[0])*dims[0],bc=Math.floor(c/dims[1])*dims[1],rr,cc;if(kindIs(v,'doubleskyscrapers')){var rowSeen=0,colSeen=0;for(var di=0;di<n;di+=1){if(grid[r][di]===val)rowSeen+=1;if(grid[di][c]===val)colSeen+=1;}if(rowSeen>=2)for(di=0;di<n;di+=1)if(di!==c)notes[r][di].delete(val);if(colSeen>=2)for(di=0;di<n;di+=1)if(di!==r)notes[di][c].delete(val);}else if(kindIs(v,'skyscraperparks2')&&v.data&&val===v.data.parkValue){var parkQuota=v.data.parksPerLine||2,rowParks=0,colParks=0;for(var pi=0;pi<n;pi+=1){if(grid[r][pi]===val)rowParks+=1;if(grid[pi][c]===val)colParks+=1;}if(rowParks>=parkQuota)for(pi=0;pi<n;pi+=1)if(pi!==c)notes[r][pi].delete(val);if(colParks>=parkQuota)for(pi=0;pi<n;pi+=1)if(pi!==r)notes[pi][c].delete(val);}else for(var i=0;i<n;i+=1){if(i!==c)notes[r][i].delete(val);if(i!==r)notes[i][c].delete(val);}if(!kindIs(v,'jigsaw')&&!kindIs(v,'skyscraperparks')&&!kindIs(v,'sumskyscraperparks')&&!kindIs(v,'skyscraperparks2')&&!kindIs(v,'dominoskyscrapers')&&!kindIs(v,'evenoddskyscrapers')&&!kindIs(v,'toroidalskyscrapers')&&!kindIs(v,'doubleskyscrapers'))for(rr=br;rr<br+dims[0];rr+=1)for(cc=bc;cc<bc+dims[1];cc+=1)if(rr!==r||cc!==c)notes[rr][cc].delete(val);if(kindIs(v,'axia')&&v.data.axia){v.data.axia.forEach(function(a){if(a[0]===r&&a[1]===c){for(var dr=-1;dr<=1;dr+=2)for(var dc=-1;dc<=1;dc+=2)for(var k=1;;k+=1){var ar=r+dr*k,ac=c+dc*k;if(ar<0||ar>=n||ac<0||ac>=n)break;notes[ar][ac].delete(val);}}else if(Math.abs(r-a[0])===Math.abs(c-a[1]))notes[a[0]][a[1]].delete(val);});}if(kindIs(v,'couples')&&v.data.couples){v.data.couples.forEach(function(cp){var other=null;if(cp.a[0]===r&&cp.a[1]===c)other=cp.b;else if(cp.b[0]===r&&cp.b[1]===c)other=cp.a;if(!other)return;for(var dgt=1;dgt<=n;dgt+=1)if((((dgt%2)===(val%2))!==!!cp.same))notes[other[0]][other[1]].delete(dgt);});}if(kindIs(v,'bishopsgate')&&(((r+c)&1)===(v.data.parity==null?0:v.data.parity))){for(var bdr=-1;bdr<=1;bdr+=2)for(var bdc=-1;bdc<=1;bdc+=2)for(var bk=1;;bk+=1){var brr=r+bdr*bk,bcc=c+bdc*bk;if(brr<0||brr>=n||bcc<0||bcc>=n)break;notes[brr][bcc].delete(val);}}if(kindIs(v,'minmax')&&v.data.extrema){v.data.extrema.forEach(function(ex){var er=ex.cell[0],ec=ex.cell[1],dist=Math.abs(er-r)+Math.abs(ec-c);if(dist>1)return;if(er===r&&ec===c){[[1,0],[-1,0],[0,1],[0,-1]].forEach(function(o){var nr=r+o[0],nc=c+o[1];if(nr<0||nr>=n||nc<0||nc>=n)return;for(var dgt=1;dgt<=n;dgt+=1)if((ex.type==='min'&&dgt<=val)||(ex.type==='max'&&dgt>=val))notes[nr][nc].delete(dgt);});}else{for(var dgt=1;dgt<=n;dgt+=1)if((ex.type==='min'&&dgt>=val)||(ex.type==='max'&&dgt<=val))notes[er][ec].delete(dgt);}});}if(kindIs(v,'topheavyparity')){if(r>0)for(var td=1;td<=n;td+=1)if(td%2===val%2&&td<=val)notes[r-1][c].delete(td);if(r<n-1)for(var tu=1;tu<=n;tu+=1)if(tu%2===val%2&&tu>=val)notes[r+1][c].delete(tu);}if(kindIs(v,'skyscrapernontouching')){for(var ndr=-1;ndr<=1;ndr+=2)for(var ndc=-1;ndc<=1;ndc+=2){var nr=r+ndr,nc=c+ndc;if(nr>=0&&nr<n&&nc>=0&&nc<n)notes[nr][nc].delete(val);}}if(kindIs(v,'evenoddskyscrapers')&&v.data.parityCells){v.data.parityCells.forEach(function(pc){for(var pd=1;pd<=n;pd+=1)if((pd%2?'odd':'even')!==pc.parity)notes[pc.cell[0]][pc.cell[1]].delete(pd);});}}
     function enter(val){var r=selected[0],c=selected[1];if(fixed[r][c]){api.toast(I?I.t('fixed'):'That clue is fixed');return;}if(val<0||val>inputMax)return;if(grid[r][c]!==val||notes[r][c].size){grid[r][c]=val;notes[r][c].clear();if(val)prunePeerNotes(r,c,val);changed();}if(solved()){cells.forEach(function(x){x.disabled=true;});api.solved();}}
     function toggleNote(val){var r=selected[0],c=selected[1];if(fixed[r][c]){api.toast(I?I.t('fixed'):'That clue is fixed');return;}if(val<1||val>inputMax||grid[r][c])return;if(notes[r][c].has(val))notes[r][c].delete(val);else notes[r][c].add(val);changed();}
     function clearCell(){var r=selected[0],c=selected[1];if(fixed[r][c]){api.toast(I?I.t('fixed'):'That clue is fixed');return;}if(grid[r][c]||notes[r][c].size){grid[r][c]=0;notes[r][c].clear();changed();}}
@@ -10526,6 +10643,171 @@ root.SudokuBank.push(
     document.addEventListener('sudoku:variantchange',schedule);
     if(root.addEventListener)root.addEventListener('resize',schedule,{passive:true});
     if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',schedule,{once:true});else schedule();
+  }
+})(typeof window!=='undefined'?window:globalThis);
+
+  </script>
+  <script data-source="games/ildi-feedback-runtime-hardening.js">
+(function(root){
+  'use strict';
+
+  function spreadPositions(values,minGap,min,max){
+    var indexed=values.map(function(value,index){
+      return {value:value,index:index};
+    }).sort(function(a,b){
+      return a.value-b.value;
+    });
+    var coords=indexed.map(function(x){return x.value;});
+    var result=Array(values.length);
+
+    if(coords.length<2)return values.slice();
+
+    for(var i=1;i<coords.length;i+=1){
+      if(coords[i]-coords[i-1]<minGap)coords[i]=coords[i-1]+minGap;
+    }
+
+    if(coords[coords.length-1]>max){
+      var shift=coords[coords.length-1]-max;
+      for(i=0;i<coords.length;i+=1)coords[i]-=shift;
+    }
+
+    if(coords[0]<min){
+      var shift2=min-coords[0];
+      for(i=0;i<coords.length;i+=1)coords[i]+=shift2;
+    }
+
+    for(i=coords.length-2;i>=0;i-=1){
+      if(coords[i+1]-coords[i]<minGap)coords[i]=coords[i+1]-minGap;
+    }
+
+    indexed.forEach(function(item,index){
+      result[item.index]=coords[index];
+    });
+    return result;
+  }
+
+  function currentVariant(){
+    var id=root.SudokuLibraryState&&root.SudokuLibraryState.currentId;
+    return root.SudokuBank&&root.SudokuBank.find(function(v){
+      return v.id===id;
+    });
+  }
+
+  function tagBoard(){
+    if(typeof document==='undefined')return null;
+    var board=document.querySelector('.sudoku-board');
+    var variant=currentVariant();
+    if(!board||!variant)return null;
+
+    board.dataset.ildiVariant=variant.id;
+    board.classList.toggle(
+      'ildi-no-box-grid',
+      variant.id==='double-skyscrapers'
+    );
+    return board;
+  }
+
+  function spreadDiagonalMarkers(){
+    if(typeof document==='undefined')return;
+
+    Array.prototype.forEach.call(
+      document.querySelectorAll('.sudoku-board-shell'),
+      function(shell){
+        var board=shell.querySelector('.sudoku-board');
+        var markers=Array.prototype.slice.call(
+          shell.querySelectorAll('.sudoku-diagonal-sky-marker')
+        );
+
+        if(!board||markers.length<2)return;
+
+        var rect=board.getBoundingClientRect();
+        var size=rect.width||board.clientWidth;
+        if(!size)return;
+
+        var groups={top:[],right:[],bottom:[],left:[]};
+
+        markers.forEach(function(marker){
+          if(!marker.dataset.ildiOriginalLeft){
+            marker.dataset.ildiOriginalLeft=marker.style.left;
+            marker.dataset.ildiOriginalTop=marker.style.top;
+          }
+
+          var x=parseFloat(marker.dataset.ildiOriginalLeft)*size/100;
+          var y=parseFloat(marker.dataset.ildiOriginalTop)*size/100;
+          if(!Number.isFinite(x)||!Number.isFinite(y))return;
+
+          var distances={
+            left:Math.abs(x),
+            right:Math.abs(size-x),
+            top:Math.abs(y),
+            bottom:Math.abs(size-y)
+          };
+          var side='left';
+
+          Object.keys(distances).forEach(function(key){
+            if(distances[key]<distances[side])side=key;
+          });
+
+          groups[side].push({marker:marker,x:x,y:y});
+        });
+
+        Object.keys(groups).forEach(function(side){
+          var list=groups[side];
+          if(list.length<2)return;
+
+          var horizontal=side==='top'||side==='bottom';
+          var values=list.map(function(p){
+            return horizontal?p.x:p.y;
+          });
+          var spread=spreadPositions(values,34,-26,size+26);
+
+          list.forEach(function(p,index){
+            if(horizontal)p.x=spread[index];
+            else p.y=spread[index];
+
+            p.marker.style.left=p.x+'px';
+            p.marker.style.top=p.y+'px';
+          });
+        });
+      }
+    );
+  }
+
+  function harden(){
+    tagBoard();
+    spreadDiagonalMarkers();
+  }
+
+  root.IldiFeedbackHardening={
+    spreadPositions:spreadPositions,
+    harden:harden
+  };
+
+  if(typeof document!=='undefined'){
+    var pending=false;
+
+    function schedule(){
+      if(pending)return;
+      pending=true;
+      (root.requestAnimationFrame||function(fn){
+        return setTimeout(fn,0);
+      })(function(){
+        pending=false;
+        harden();
+      });
+    }
+
+    document.addEventListener('sudoku:variantchange',schedule);
+
+    if(root.addEventListener){
+      root.addEventListener('resize',schedule,{passive:true});
+    }
+
+    if(document.readyState==='loading'){
+      document.addEventListener('DOMContentLoaded',schedule,{once:true});
+    }else{
+      schedule();
+    }
   }
 })(typeof window!=='undefined'?window:globalThis);
 
