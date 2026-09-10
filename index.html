@@ -831,7 +831,7 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
       <section class="welcome-card" aria-label="Üdvözlés"><div class="welcome-flower" aria-hidden="true">❀</div><div><p class="welcome-kicker">ILDI SUDOKU KERTJE</p><h1 id="welcome-title">Üdv Ildi Sudoku Kertjében!</h1><p id="welcome-copy">Válassz kategóriát, találd meg a kedvenc Sudoku-változatodat, és élvezd a logikai kihívásokat.</p></div><div class="welcome-cat" aria-hidden="true"><svg viewBox="0 0 190 92" focusable="false"><path class="cat-cushion" d="M33 72c20-20 102-24 132 0-21 12-109 16-132 0z"/><path class="sleep-cat-body" d="M63 62c10-29 47-35 72-14 7 6 11 14 11 22-17 6-68 7-92 1 1-3 4-6 9-9z"/><path class="sleep-cat-head" d="M52 50l3-23 13 11c7-3 15-3 22 0l14-12 2 24c-2 18-13 27-28 27-16 0-27-10-26-27z"/><path class="sleep-cat-tail" d="M136 62c25-2 31-14 23-22-5-5-13-5-18 1 8-2 12 2 11 7-1 8-9 10-19 9"/><path class="sleep-cat-face" d="M64 53c4 3 7 3 11 0M86 53c4 3 7 3 11 0M77 58l3 2 3-2M80 60c0 4-4 6-8 4M80 60c0 4 4 6 8 4"/></svg><span class="floating-heart">♡</span></div></section>
       <section class="control-deck" aria-label="Feladvány beállításai"><label class="deck-field"><span id="category-label">Kategória</span><select id="category-select"></select></label><label class="deck-field variant-field"><span id="variant-label">Sudoku-változat</span><select id="variant-select"></select></label><span id="variant-count" class="variant-count">82 változat</span><div class="deck-actions"><label class="deck-field difficulty-field"><span id="difficulty-label">Nehézség</span><select id="difficulty-select"></select></label><button id="restart-button" class="button secondary" type="button">↻ <span>Újrakezdés</span></button><button id="new-button" class="button primary" type="button">❀ <span>Új feladvány</span></button></div></section>
       <section id="workspace" class="workspace sudoku-only-workspace" aria-labelledby="game-title"><div class="garden-layout"><aside class="garden-sidebar" aria-label="Sudoku kategóriák"><section class="garden-card categories-card"><div class="card-title-row"><h2 id="categories-heading">Kategóriák</h2><span aria-hidden="true">✿</span></div><div id="category-list" class="category-list"></div></section><section class="garden-card favorites-card"><div class="card-title-row"><h2 id="favorites-heading">Kedvenceim</h2><span aria-hidden="true">♡</span></div><div id="favorites-list" class="favorites-list"><p id="favorites-empty">Itt jelennek meg a kedvenc változataid.</p></div></section><section class="garden-card stats-card"><div class="card-title-row"><h2 id="stats-heading">Statisztikám</h2><span aria-hidden="true">▥</span></div><dl class="stats-list"><div><dt id="solved-label">Megoldott</dt><dd id="stat-solved">0</dd></div><div><dt id="best-label">Legjobb idő</dt><dd id="stat-best">--:--</dd></div><div><dt id="streak-label">Jelenlegi sorozat</dt><dd id="stat-streak">0 nap</dd></div><div><dt id="total-time-label">Összes játékidő</dt><dd id="stat-total">0:00:00</dd></div></dl></section></aside><div class="play-column"><section class="garden-card puzzle-card"><div class="puzzle-card-head"><div><p id="game-family" class="eyebrow">Sudoku-gyűjtemény</p><h2 id="game-title">Sudoku-változatok</h2></div><button id="favorite-button" class="favorite-button" type="button" aria-label="Hozzáadás a kedvencekhez" title="Kedvenc">♡</button></div><div class="play-surface"><div id="game-stage" class="game-stage" tabindex="-1"></div><div id="game-tools" class="game-tools tool-rail"></div></div></section></div><aside class="garden-card inspector" aria-label="Feladvány információ"><section class="inspector-heading"><h2 id="about-heading">A változatról</h2><span aria-hidden="true">✿</span></section><section><h3 id="objective-heading">Cél</h3><p id="game-objective"></p></section><section><h3 id="rules-heading">Játékszabály</h3><div id="game-rules"></div></section><section class="tip-card"><h3 id="tip-heading">Tipp</h3><p id="game-tip">Haladj nyugodtan, és először azokat a cellákat keresd, ahol a szabályok a legtöbb lehetőséget kizárják.</p></section><section class="status-compact"><div class="status-row"><span id="status-label">Állapot</span><strong id="game-status" role="status" aria-live="polite">Készen áll</strong></div><div class="status-row"><span id="counter-label">Lépések</span><strong id="game-counter">0</strong></div></section><div class="garden-bench" aria-hidden="true"><span class="garden-sprig">❀ ✿ ❀</span><svg viewBox="0 0 210 105" focusable="false"><path class="mini-ground" d="M18 87c34-11 142-12 177 0"/><path class="mini-cat" d="M60 76c8-20 31-26 49-15 13 8 19 19 15 27H52c0-5 3-9 8-12zM54 61l3-17 11 9c5-2 11-2 16 0l11-9 2 18c-1 13-10 20-22 20-13 0-22-8-21-21z"/><path class="mini-tail" d="M118 77c26 1 36-9 31-18-3-6-10-7-16-3 8-1 11 3 9 8-3 6-11 7-22 5"/><path class="mini-bench" d="M128 76h59M134 64h47M140 64v23M176 64v23"/></svg></div></aside></div></section>
-      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=fb715d4" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
+      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=55cbcdd" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
     </main>
   </div><div id="toast" class="toast" role="status" aria-live="polite"></div>
   <dialog id="help-dialog" class="dialog"><form method="dialog"><div class="dialog-head"><div><p id="guide-eyebrow" class="eyebrow"></p><h2 id="guide-title"></h2></div><button class="icon-button" value="close" aria-label="Bezárás">×</button></div><div class="dialog-body"><p id="guide-p1"></p><dl><div><dt id="guide-pointer"></dt><dd id="guide-pointer-d"></dd></div><div><dt id="guide-keyboard"></dt><dd id="guide-keyboard-d"></dd></div><div><dt id="guide-feedback"></dt><dd id="guide-feedback-d"></dd></div></dl><p id="guide-quiet" class="quiet"></p></div><button id="guide-close" class="button primary dialog-close" value="close"></button></form></dialog>
@@ -10101,8 +10101,8 @@ root.SudokuBank.push(
     function refresh(){
       render();
       hint.textContent=I&&I.lang==='hu'
-        ?'Érintsd a fehér mezőt: üres → négy fekete háromszögirány → üres. A megmaradó fehér területeknek téglalapnak vagy négyzetnek kell lenniük.'
-        :'Tap a white cell: empty → four black triangle orientations → empty. Every remaining white area must form a rectangle or square.';
+        ?'Érintsd a fehér mezőt: üres → négy fekete háromszögirány → üres. A számozott fekete mező száma azt mutatja, hogy a négy oldal-szomszédos (nem átlós) fehér mező közül hányban van fekete háromszög; a háromszög iránya ennél a számolásnál nem számít. A megmaradó fehér területeknek téglalapnak vagy négyzetnek kell lenniük.'
+        :'Tap a white cell: empty → four black triangle orientations → empty. A numbered black cell tells how many of its four orthogonally adjacent (not diagonal) white cells contain a black triangle; triangle orientation does not affect this count. Every remaining white area must form a rectangle or square.';
       clear.textContent=I&&I.lang==='hu'?'Háromszögek törlése':'Clear triangles';
       check.textContent=I?I.t('check'):'Check';
     }
@@ -10151,11 +10151,11 @@ root.SudokuBank.push(
     if(v.kind==='battleships')(v.puzzle.givens||[]).forEach(function(p){grid[p.r][p.c]=p.state?1:2;fixed[p.r+','+p.c]=1;});
     function solved(){for(var r=0;r<n;r++)for(var c=0;c<n;c++){var shaded=grid[r][c]===1;if(shaded!==!!v.solution[r][c])return false;}return true;}
     function battleshipStateLabel(r,c,x){var hu=I&&I.lang==='hu',state=x===1?(hu?'hajó':'ship'):(x===2?(hu?'víz':'water'):(hu?'üres':'empty')),pos=hu?((r+1)+'. sor, '+(c+1)+'. oszlop'):('Row '+(r+1)+', column '+(c+1));return pos+': '+state+(fixed[r+','+c]?(hu?', adott':', given'):'');}
-    function shadeStateLabel(r,c,x){var hu=I&&I.lang==='hu',state=x===1?(hu?'fekete':'shaded'):(hu?'üres':'empty'),pos=hu?((r+1)+'. sor, '+(c+1)+'. oszlop'):('Row '+(r+1)+', column '+(c+1));return pos+': '+state+(fixed[r+','+c]?(hu?', adott':', given'):'');}
-    for(var r=0;r<n;r++)for(var c=0;c<n;c++)(function(rr,cc){var b=LR.el('button',{type:'button',className:'newlogic-cell iteration52-cell',role:'gridcell',onclick:function(){if(fixed[rr+','+cc])return;if(v.kind==='battleships')grid[rr][cc]=(grid[rr][cc]+1)%3;else grid[rr][cc]=grid[rr][cc]===1?0:1;moves++;render();api.setCounter(moves,I&&I.lang==='hu'?'Lépések':'Moves');if(solved())api.solved();}});regionBorder(b,rr,cc);if(fixed[rr+','+cc]){b.classList.add('given');b.setAttribute('aria-disabled','true');}cells.push(b);board.appendChild(b);}(r,c));
+    function shadeStateLabel(r,c,x){var hu=I&&I.lang==='hu',state=x===1?(hu?'fekete':'shaded'):(x===2?(hu?'X-szel jelölt fehér':'white marked X'):(hu?'üres':'empty')),pos=hu?((r+1)+'. sor, '+(c+1)+'. oszlop'):('Row '+(r+1)+', column '+(c+1));return pos+': '+state+(fixed[r+','+c]?(hu?', adott':', given'):'');}
+    for(var r=0;r<n;r++)for(var c=0;c<n;c++)(function(rr,cc){var b=LR.el('button',{type:'button',className:'newlogic-cell iteration52-cell',role:'gridcell',onclick:function(){if(fixed[rr+','+cc])return;if(v.kind==='battleships'||v.kind==='heyawake')grid[rr][cc]=(grid[rr][cc]+1)%3;else grid[rr][cc]=grid[rr][cc]===1?0:1;moves++;render();api.setCounter(moves,I&&I.lang==='hu'?'Lépések':'Moves');if(solved())api.solved();}});regionBorder(b,rr,cc);if(fixed[rr+','+cc]){b.classList.add('given');b.setAttribute('aria-disabled','true');}cells.push(b);board.appendChild(b);}(r,c));
     if(v.kind==='heyawake'){var labels={};for(r=0;r<n;r++)for(c=0;c<n;c++){var id=reg[r][c];if(labels[id])continue;labels[id]=1;var lab=LR.el('span',{className:'heyawake-room-clue',text:String(v.puzzle.roomClues[id])});lab.style.left=((c+.12)*100/n)+'%';lab.style.top=((r+.08)*100/n)+'%';board.appendChild(lab);}}
     if(v.kind==='battleships'){var top=LR.el('div',{className:'battleship-top'});v.puzzle.colClues.forEach(function(x){top.appendChild(LR.el('span',{text:String(x)}));});wrap.insertBefore(top,board);var side=LR.el('div',{className:'battleship-side'});v.puzzle.rowClues.forEach(function(x){side.appendChild(LR.el('span',{text:String(x)}));});wrap.appendChild(side);var fleet=LR.el('p',{className:'newlogic-fleet',text:(I&&I.lang==='hu'?'Flotta: ':'Fleet: ')+v.puzzle.fleet.map(function(x){return '▰'.repeat(x);}).join('  ')});host.appendChild(fleet);}
-    function render(){cells.forEach(function(b,i){var r=Math.floor(i/n),c=i%n,x=grid[r][c];b.classList.toggle('shade',x===1);b.classList.toggle('water-mark',x===2);b.textContent=x===1?(v.kind==='battleships'?'●':''):x===2?'×':'';b.setAttribute('aria-pressed',x===1?'true':(v.kind==='battleships'&&x===2?'mixed':'false'));if(v.kind==='battleships')b.setAttribute('aria-label',battleshipStateLabel(r,c,x));else b.setAttribute('aria-label',shadeStateLabel(r,c,x));});}
+    function render(){cells.forEach(function(b,i){var r=Math.floor(i/n),c=i%n,x=grid[r][c];b.classList.toggle('shade',x===1);b.classList.toggle('water-mark',x===2);b.textContent=x===1?(v.kind==='battleships'?'●':''):x===2?'×':'';b.setAttribute('aria-pressed',x===1?'true':((v.kind==='battleships'||v.kind==='heyawake')&&x===2?'mixed':'false'));if(v.kind==='battleships')b.setAttribute('aria-label',battleshipStateLabel(r,c,x));else b.setAttribute('aria-label',shadeStateLabel(r,c,x));});}
     var clearButton=null,checkButton=null;
     if(v.kind==='battleships'){
       var tools=LR.el('div',{className:'sudoku-tools iteration52-tools battleships-tools'});
@@ -10168,7 +10168,7 @@ root.SudokuBank.push(
       checkButton=LR.el('button',{type:'button',className:'tool-button check-button check-'+v.kind+'-button',onclick:function(){var wrong=0;for(var r=0;r<n;r++)for(var c=0;c<n;c++)if(grid[r][c]&&grid[r][c]!==v.solution[r][c])wrong++;api.toast(wrong?(I&&I.lang==='hu'?'Van még javítandó jelölés.':'Some markings still need attention.'):(I&&I.lang==='hu'?'Az eddigi jelölések rendben vannak.':'Current markings look good.'));}});
       shadeTools.append(clearButton,checkButton);api.tools.appendChild(shadeTools);
     }
-    var hints={lits:['Minden régióban pontosan négy mezőt feketíts be L, I, T vagy S tetrominóként.','Shade exactly four cells per region as an L, I, T or S tetromino.'],battleships:['Helyezd el a flottát a szélső számok szerint. Kattintás: üres → hajó → vízjel.','Place the fleet using the edge counts. Click: empty → ship → water mark.'],heyawake:['A szobaszám pontosan ennyi fekete mezőt kér; a fehér terület maradjon összefüggő.','Each room number gives its exact black-cell count; keep all white cells connected.']};
+    var hints={lits:['Minden régióban pontosan négy mezőt feketíts be úgy, hogy azok L, I, T vagy S tetrominót alkossanak. Az összes fekete mező oldal-szomszédosan összefüggő területet alkot; 2×2-es teljesen fekete blokk nem lehet; és két külön régió azonos alakú tetrominója nem érintkezhet egymással oldallal (az elforgatott vagy tükrözött alak is azonos típusnak számít).','Shade exactly four cells in every region so they form an L, I, T or S tetromino. All shaded cells must form one orthogonally connected area; no 2×2 block may be fully shaded; and equal tetromino shapes in different regions may not touch orthogonally (rotations and reflections count as the same type).'],battleships:['Helyezd el a flottát a szélső számok szerint. Kattintás: üres → hajó → vízjel.','Place the fleet using the edge counts. Click: empty → ship → water mark.'],heyawake:['Kattintás: üres → fekete → X (fehér) → üres. A szobaszám pontosan ennyi fekete mezőt kér; a fehér terület maradjon összefüggő.','Click: empty → black → X (white) → empty. Each room number gives its exact black-cell count; keep all white cells connected.']};
     var hint=LR.el('p',{className:'newlogic-hint'});host.appendChild(hint);
     function language(){
       hint.textContent=hints[v.kind][I&&I.lang==='hu'?0:1];
@@ -11151,6 +11151,26 @@ root.SudokuBank.push(
     );
   }
 
+  function ensureP1LayoutStyles(){
+    if(typeof document==='undefined'||typeof document.createElement!=='function')return null;
+    var id='ildi-p1-layout-hardening';
+    var existing=document.getElementById(id);
+    if(existing)return existing;
+
+    var style=document.createElement('style');
+    style.id=id;
+    style.textContent=[
+      '.nonogram-board{grid-template-rows:repeat(var(--nonogram-size),minmax(0,1fr));}',
+      '.nonogram-cell{min-height:0;overflow:hidden;line-height:1;}',
+      '.newlogic-board{grid-template-rows:repeat(var(--newlogic-size),minmax(0,1fr));}',
+      '.masyu-board{background-position:0 0;}'
+    ].join('');
+    var target=document.head||document.documentElement;
+    if(!target||typeof target.appendChild!=='function')return null;
+    target.appendChild(style);
+    return style;
+  }
+
   function solvedStage(){
     if(typeof document==='undefined')return null;
     var stage=document.getElementById('game-stage');
@@ -11175,18 +11195,136 @@ root.SudokuBank.push(
     return true;
   }
 
+  var p2Installed=false;
+  var p2Targets={
+    skyscraper:{type:'outside',value:20},
+    'double-skyscrapers':{type:'outside',value:12},
+    'toroidal-skyscrapers':{type:'givens',value:10},
+    'odd-even':{type:'givens',value:16}
+  };
+
+  function p2Clone(x){return JSON.parse(JSON.stringify(x));}
+  function p2Rng(seed){var x=seed>>>0;return function(){x=(x+0x6D2B79F5)>>>0;var t=x;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296;};}
+  function p2Shuffle(a,random){for(var i=a.length-1;i>0;i--){var j=Math.floor(random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function p2GivenCount(grid){var count=0;for(var r=0;r<grid.length;r++)for(var c=0;c<grid[r].length;c++)if(Number.isFinite(grid[r][c])&&grid[r][c]!==0)count++;return count;}
+  function p2SkyVisible(line){var max=0,count=0;for(var i=0;i<line.length;i++)if(line[i]>max){max=line[i];count++;}return count;}
+  function p2ToroidalValid(variant,grid,r,c,ignoreSpecial){
+    if(ignoreSpecial)return true;
+    var clues=variant.data&&variant.data.toroidalClues||[];
+    for(var i=0;i<clues.length;i++){
+      var cl=clues[i],touches=cl.cells.some(function(p){return p[0]===r&&p[1]===c;});
+      if(!touches)continue;
+      var line=cl.cells.map(function(p){return grid[p[0]][p[1]];});
+      if(line.every(Boolean)&&p2SkyVisible(line)!==cl.count)return false;
+    }
+    return true;
+  }
+  function p2CountToroidal(source,variant,limit,ignoreSpecial){
+    var grid=source.map(function(row){return row.slice();}),n=grid.length,d=variant.data||{},clueValue=d.clueValue||n,maxDigit=d.maxDigit||n-1,full=(1<<maxDigit)-1,rows=Array(n).fill(0),cols=Array(n).fill(0),clueMap={},r,c;
+    (d.toroidalClues||[]).forEach(function(cl){clueMap[cl.cell[0]+','+cl.cell[1]]=1;grid[cl.cell[0]][cl.cell[1]]=clueValue;});
+    for(r=0;r<n;r++)for(c=0;c<n;c++){
+      if(clueMap[r+','+c])continue;
+      var value=grid[r][c];if(!value)continue;if(value<1||value>maxDigit)return 0;
+      var bit=1<<(value-1);if((rows[r]|cols[c])&bit)return 0;rows[r]|=bit;cols[c]|=bit;
+      if(!p2ToroidalValid(variant,grid,r,c,ignoreSpecial))return 0;
+    }
+    var found=0;
+    function visit(){
+      if(found>=limit)return;
+      var br=-1,bc=-1,best=[],bestCount=maxDigit+1;
+      for(var rr=0;rr<n;rr++)for(var cc=0;cc<n;cc++)if(!clueMap[rr+','+cc]&&!grid[rr][cc]){
+        var mask=full&~(rows[rr]|cols[cc]),allowed=[];
+        for(var bits=mask;bits;bits&=bits-1){var one=bits&-bits,digit=1+Math.round(Math.log(one)/Math.LN2);grid[rr][cc]=digit;if(p2ToroidalValid(variant,grid,rr,cc,ignoreSpecial))allowed.push(digit);grid[rr][cc]=0;}
+        if(allowed.length<bestCount){br=rr;bc=cc;best=allowed;bestCount=allowed.length;if(bestCount<=1)break;}
+      }
+      if(br<0){for(var i=0;i<n;i++)if(rows[i]!==full||cols[i]!==full)return;found++;return;}
+      if(!best.length)return;
+      for(var ai=0;ai<best.length;ai++){
+        var digit=best[ai],one=1<<(digit-1);grid[br][bc]=digit;rows[br]|=one;cols[bc]|=one;visit();rows[br]^=one;cols[bc]^=one;grid[br][bc]=0;if(found>=limit)return;
+      }
+    }
+    visit();return found;
+  }
+
+  function p2ExactCount(generator,id,puzzle,candidate){
+    if(id==='double-skyscrapers')return generator.countDoubleSkyscraperSolutions(puzzle,candidate,2,false);
+    if(id==='toroidal-skyscrapers')return p2CountToroidal(puzzle,candidate,2,false);
+    return generator.countVariantSolutions(puzzle,candidate,2);
+  }
+  function p2BaselineCount(generator,id,puzzle,candidate){
+    if(id==='double-skyscrapers')return generator.countDoubleSkyscraperSolutions(puzzle,candidate,2,true);
+    if(id==='toroidal-skyscrapers')return p2CountToroidal(puzzle,candidate,2,true);
+    return generator.countSolutions(puzzle,2);
+  }
+  function p2CarveGivens(generator,id,generated,target,seed){
+    var out=p2Clone(generated),n=out.puzzle.length,order=[];
+    for(var i=0;i<n*n;i++)if(out.puzzle[Math.floor(i/n)][i%n])order.push(i);
+    p2Shuffle(order,p2Rng((seed^0xC411B4A7)>>>0));
+    for(var oi=0;oi<order.length;oi++){
+      if(p2GivenCount(out.puzzle)<=target)break;
+      var idx=order[oi],r=Math.floor(idx/n),c=idx%n,old=out.puzzle[r][c];
+      out.puzzle[r][c]=0;
+      if(p2ExactCount(generator,id,out.puzzle,out)!==1)out.puzzle[r][c]=old;
+    }
+    return out;
+  }
+  function p2CarveOutside(generator,id,generated,target,seed){
+    var out=p2Clone(generated),list=out.data&&out.data.clues;
+    if(!Array.isArray(list))return out;
+    var order=p2Shuffle(Array.from({length:list.length},function(_,i){return i;}),p2Rng((seed^0x0C1751DE)>>>0)),removed={};
+    for(var oi=0;oi<order.length;oi++){
+      if(list.length-Object.keys(removed).length<=target)break;
+      var idx=order[oi];removed[idx]=1;
+      out.data.clues=list.filter(function(_,i){return !removed[i];});
+      if(p2ExactCount(generator,id,out.puzzle,out)!==1){delete removed[idx];out.data.clues=list.filter(function(_,i){return !removed[i];});}
+    }
+    return out;
+  }
+  function p2Annotate(generator,id,out,target){
+    var exact=p2ExactCount(generator,id,out.puzzle,out),baseline=p2BaselineCount(generator,id,out.puzzle,out);
+    if(exact!==1||baseline<=1)throw new Error('P2 recalibration contract failed for '+id);
+    var actual=target.type==='givens'?p2GivenCount(out.puzzle):(out.data&&Array.isArray(out.data.clues)?out.data.clues.length:null);
+    out.generation=out.generation||{};
+    out.generation.p2Recalibrated=true;
+    out.generation.p2Calibration={strategy:target.type,target:target.value,actual:actual};
+    if(id==='double-skyscrapers')out.clues=p2GivenCount(out.puzzle)+(out.data&&Array.isArray(out.data.clues)?out.data.clues.length:0);
+    else out.clues=p2GivenCount(out.puzzle);
+    if(Number.isFinite(out.generation.clues))out.generation.clues=out.clues;
+    return out;
+  }
+  function installP2DifficultyHardening(){
+    if(p2Installed||!root.SudokuGenerator||typeof root.SudokuGenerator.make!=='function')return false;
+    var generator=root.SudokuGenerator,baseMake=generator.make;
+    generator.make=function(variant,seed,difficulty){
+      var out=baseMake.call(this,variant,seed,difficulty);
+      var id=variant&&variant.id,target=p2Targets[id];
+      if(!target||difficulty!=='expert')return out;
+      out=target.type==='outside'?p2CarveOutside(generator,id,out,target.value,seed):p2CarveGivens(generator,id,out,target.value,seed);
+      return p2Annotate(generator,id,out,target);
+    };
+    p2Installed=true;
+    return true;
+  }
+
   function harden(){
+    installP2DifficultyHardening();
+    ensureP1LayoutStyles();
     tagBoard();
     spreadDiagonalMarkers();
   }
 
   root.IldiFeedbackHardening={
     spreadPositions:spreadPositions,
+    ensureP1LayoutStyles:ensureP1LayoutStyles,
     solvedStage:solvedStage,
     targetInsideSolvedSurface:targetInsideSolvedSurface,
     blockSolvedInteraction:blockSolvedInteraction,
+    installP2DifficultyHardening:installP2DifficultyHardening,
+    p2Targets:p2Targets,
     harden:harden
   };
+
+  installP2DifficultyHardening();
 
   if(typeof document!=='undefined'){
     var pending=false;
