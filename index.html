@@ -841,7 +841,7 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
       <section class="welcome-card" aria-label="Üdvözlés"><div class="welcome-flower" aria-hidden="true">❀</div><div><p class="welcome-kicker">ILDI SUDOKU KERTJE</p><h1 id="welcome-title">Üdv Ildi Sudoku Kertjében!</h1><p id="welcome-copy">Válassz kategóriát, találd meg a kedvenc Sudoku-változatodat, és élvezd a logikai kihívásokat.</p></div><div class="welcome-cat" aria-hidden="true"><svg viewBox="0 0 190 92" focusable="false"><path class="cat-cushion" d="M33 72c20-20 102-24 132 0-21 12-109 16-132 0z"/><path class="sleep-cat-body" d="M63 62c10-29 47-35 72-14 7 6 11 14 11 22-17 6-68 7-92 1 1-3 4-6 9-9z"/><path class="sleep-cat-head" d="M52 50l3-23 13 11c7-3 15-3 22 0l14-12 2 24c-2 18-13 27-28 27-16 0-27-10-26-27z"/><path class="sleep-cat-tail" d="M136 62c25-2 31-14 23-22-5-5-13-5-18 1 8-2 12 2 11 7-1 8-9 10-19 9"/><path class="sleep-cat-face" d="M64 53c4 3 7 3 11 0M86 53c4 3 7 3 11 0M77 58l3 2 3-2M80 60c0 4-4 6-8 4M80 60c0 4 4 6 8 4"/></svg><span class="floating-heart">♡</span></div></section>
       <section class="control-deck" aria-label="Feladvány beállításai"><label class="deck-field"><span id="category-label">Kategória</span><select id="category-select"></select></label><label class="deck-field variant-field"><span id="variant-label">Sudoku-változat</span><select id="variant-select"></select></label><span id="variant-count" class="variant-count">82 változat</span><div class="deck-actions"><label class="deck-field difficulty-field"><span id="difficulty-label">Nehézség</span><select id="difficulty-select"></select></label><button id="restart-button" class="button secondary" type="button">↻ <span>Újrakezdés</span></button><button id="new-button" class="button primary" type="button">❀ <span>Új feladvány</span></button></div></section>
       <section id="workspace" class="workspace sudoku-only-workspace" aria-labelledby="game-title"><div class="garden-layout"><aside class="garden-sidebar" aria-label="Sudoku kategóriák"><section class="garden-card categories-card"><div class="card-title-row"><h2 id="categories-heading">Kategóriák</h2><span aria-hidden="true">✿</span></div><div id="category-list" class="category-list"></div></section><section class="garden-card favorites-card"><div class="card-title-row"><h2 id="favorites-heading">Kedvenceim</h2><span aria-hidden="true">♡</span></div><div id="favorites-list" class="favorites-list"><p id="favorites-empty">Itt jelennek meg a kedvenc változataid.</p></div></section><section class="garden-card stats-card"><div class="card-title-row"><h2 id="stats-heading">Statisztikám</h2><span aria-hidden="true">▥</span></div><dl class="stats-list"><div><dt id="solved-label">Megoldott</dt><dd id="stat-solved">0</dd></div><div><dt id="best-label">Legjobb idő</dt><dd id="stat-best">--:--</dd></div><div><dt id="streak-label">Jelenlegi sorozat</dt><dd id="stat-streak">0 nap</dd></div><div><dt id="total-time-label">Összes játékidő</dt><dd id="stat-total">0:00:00</dd></div></dl></section></aside><div class="play-column"><section class="garden-card puzzle-card"><div class="puzzle-card-head"><div><p id="game-family" class="eyebrow">Sudoku-gyűjtemény</p><h2 id="game-title">Sudoku-változatok</h2></div><button id="favorite-button" class="favorite-button" type="button" aria-label="Hozzáadás a kedvencekhez" title="Kedvenc">♡</button></div><div class="play-surface"><div id="game-stage" class="game-stage" tabindex="-1"></div><div id="game-tools" class="game-tools tool-rail"></div></div></section></div><aside class="garden-card inspector" aria-label="Feladvány információ"><section class="inspector-heading"><h2 id="about-heading">A változatról</h2><span aria-hidden="true">✿</span></section><section><h3 id="objective-heading">Cél</h3><p id="game-objective"></p></section><section><h3 id="rules-heading">Játékszabály</h3><div id="game-rules"></div></section><section class="tip-card"><h3 id="tip-heading">Tipp</h3><p id="game-tip">Haladj nyugodtan, és először azokat a cellákat keresd, ahol a szabályok a legtöbb lehetőséget kizárják.</p></section><section class="status-compact"><div class="status-row"><span id="status-label">Állapot</span><strong id="game-status" role="status" aria-live="polite">Készen áll</strong></div><div class="status-row"><span id="counter-label">Lépések</span><strong id="game-counter">0</strong></div></section><div class="garden-bench" aria-hidden="true"><span class="garden-sprig">❀ ✿ ❀</span><svg viewBox="0 0 210 105" focusable="false"><path class="mini-ground" d="M18 87c34-11 142-12 177 0"/><path class="mini-cat" d="M60 76c8-20 31-26 49-15 13 8 19 19 15 27H52c0-5 3-9 8-12zM54 61l3-17 11 9c5-2 11-2 16 0l11-9 2 18c-1 13-10 20-22 20-13 0-22-8-21-21z"/><path class="mini-tail" d="M118 77c26 1 36-9 31-18-3-6-10-7-16-3 8-1 11 3 9 8-3 6-11 7-22 5"/><path class="mini-bench" d="M128 76h59M134 64h47M140 64v23M176 64v23"/></svg></div></aside></div></section>
-      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=3b73326" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
+      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=5d292f0" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
     </main>
   </div><div id="toast" class="toast" role="status" aria-live="polite"></div>
   <dialog id="help-dialog" class="dialog"><form method="dialog"><div class="dialog-head"><div><p id="guide-eyebrow" class="eyebrow"></p><h2 id="guide-title"></h2></div><button class="icon-button" value="close" aria-label="Bezárás">×</button></div><div class="dialog-body"><p id="guide-p1"></p><dl><div><dt id="guide-pointer"></dt><dd id="guide-pointer-d"></dd></div><div><dt id="guide-keyboard"></dt><dd id="guide-keyboard-d"></dd></div><div><dt id="guide-feedback"></dt><dd id="guide-feedback-d"></dd></div></dl><p id="guide-quiet" class="quiet"></p></div><button id="guide-close" class="button primary dialog-close" value="close"></button></form></dialog>
@@ -15238,6 +15238,307 @@ root.SudokuBank.push(
 
   root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};
   root.IldiP3SizeSupport.skyscraper=supported.slice();
+})(typeof window!=='undefined'?window:globalThis);
+
+  </script>
+  <script data-source="games/p3-double-skyscraper-complete.js">
+(function(root){
+  'use strict';
+
+  if(!root.SudokuGenerator||!root.SudokuBank)return;
+
+  var generator=root.SudokuGenerator;
+  var baseMake=generator.make;
+  var baseCount=generator.countDoubleSkyscraperSolutions;
+  var supported=[6,8];
+  var cache=new Map();
+  var familyCache=new Map();
+  var countCache=new Map();
+  var permutationCache=null;
+  var clueBucketCache=null;
+
+  function clone(x){return JSON.parse(JSON.stringify(x));}
+  function rng(seed){
+    var x=seed>>>0;
+    return function(){
+      x=(x+0x6D2B79F5)>>>0;
+      var t=x;
+      t=Math.imul(t^(t>>>15),t|1);
+      t^=t+Math.imul(t^(t>>>7),t|61);
+      return((t^(t>>>14))>>>0)/4294967296;
+    };
+  }
+  function shuffle(a,random){
+    for(var i=a.length-1;i>0;i--){
+      var j=Math.floor(random()*(i+1));
+      var t=a[i];a[i]=a[j];a[j]=t;
+    }
+    return a;
+  }
+  function visible(line){
+    var max=0,count=0;
+    for(var i=0;i<line.length;i++)if(line[i]>max){max=line[i];count++;}
+    return count;
+  }
+  function outsideClues(solution){
+    var n=solution.length,out=[];
+    for(var i=0;i<n;i++){
+      var row=solution[i].slice(),col=solution.map(function(r){return r[i];});
+      out.push({axis:'row',index:i,side:'left',count:visible(row)});
+      out.push({axis:'row',index:i,side:'right',count:visible(row.slice().reverse())});
+      out.push({axis:'col',index:i,side:'top',count:visible(col)});
+      out.push({axis:'col',index:i,side:'bottom',count:visible(col.slice().reverse())});
+    }
+    return out;
+  }
+  function repeatedLatin8(random){
+    var rowShift=[0,0,1,1,2,2,3,3];
+    var colShift=[0,0,1,1,2,2,3,3];
+    var digits=shuffle([1,2,3,4],random);
+    shuffle(rowShift,random);shuffle(colShift,random);
+    var out=[];
+    for(var r=0;r<8;r++){
+      var row=[];
+      for(var c=0;c<8;c++)row.push(digits[(rowShift[r]+colShift[c])%4]);
+      out.push(row);
+    }
+    return out;
+  }
+  function extraGivens(difficulty){
+    return difficulty==='gentle'?8:(difficulty==='focused'?4:0);
+  }
+
+  function allDoubleRows(){
+    if(permutationCache)return permutationCache;
+    var out=[],row=Array(8).fill(0),left=[0,2,2,2,2];
+    function rec(pos){
+      if(pos===8){out.push(row.slice());return;}
+      for(var d=1;d<=4;d++)if(left[d]){
+        left[d]--;row[pos]=d;rec(pos+1);left[d]++;
+      }
+    }
+    rec(0);
+    permutationCache=out;
+    clueBucketCache={};
+    for(var i=0;i<out.length;i++){
+      var p=out[i],l=visible(p),r=visible(p.slice().reverse()),key=l+':'+r;
+      (clueBucketCache[key]||(clueBucketCache[key]=[])).push(p);
+    }
+    return out;
+  }
+
+  function clueMaps(variant){
+    var row=Array.from({length:8},function(){return {left:null,right:null};});
+    var col=Array.from({length:8},function(){return {top:null,bottom:null};});
+    var clues=(variant.data&&variant.data.clues)||[];
+    for(var i=0;i<clues.length;i++){
+      var cl=clues[i];
+      if(cl.axis==='row'&&row[cl.index])row[cl.index][cl.side]=cl.count;
+      else if(cl.axis==='col'&&col[cl.index])col[cl.index][cl.side]=cl.count;
+    }
+    return {row:row,col:col};
+  }
+
+  function filteredDomain(pool,givens){
+    var out=[];
+    outer: for(var i=0;i<pool.length;i++){
+      var p=pool[i];
+      for(var k=0;k<8;k++)if(givens[k]&&givens[k]!==p[k])continue outer;
+      out.push(p);
+    }
+    return out;
+  }
+
+  function fastCountEight(source,variant,limit,ignoreSpecial){
+    allDoubleRows();
+    var maps=clueMaps(variant),rowDomains=Array(8),colDomains=Array(8),r,c;
+
+    for(r=0;r<8;r++){
+      var rm=maps.row[r],rpool=!ignoreSpecial&&rm.left!=null&&rm.right!=null?(clueBucketCache[rm.left+':'+rm.right]||[]):permutationCache;
+      rowDomains[r]=filteredDomain(rpool,source[r]||[]);
+      if(!rowDomains[r].length)return 0;
+    }
+    for(c=0;c<8;c++){
+      var cm=maps.col[c],cpool=!ignoreSpecial&&cm.top!=null&&cm.bottom!=null?(clueBucketCache[cm.top+':'+cm.bottom]||[]):permutationCache;
+      var cg=Array(8);for(r=0;r<8;r++)cg[r]=(source[r]||[])[c]||0;
+      colDomains[c]=filteredDomain(cpool,cg);
+      if(!colDomains[c].length)return 0;
+    }
+
+    var assigned=Array(8).fill(false),found=0;
+
+    function allowedMask(domain,pos){
+      var mask=0;
+      for(var i=0;i<domain.length;i++)mask|=1<<domain[i][pos];
+      return mask;
+    }
+
+    function feasibleRows(rowIndex,cols){
+      var base=rowDomains[rowIndex],masks=Array(8),out=[];
+      for(var cc=0;cc<8;cc++)masks[cc]=allowedMask(cols[cc],rowIndex);
+      outer: for(var i=0;i<base.length;i++){
+        var p=base[i];
+        for(cc=0;cc<8;cc++)if(!(masks[cc]&(1<<p[cc])))continue outer;
+        out.push(p);
+      }
+      return out;
+    }
+
+    function visit(done,cols){
+      if(found>=limit)return;
+      if(done===8){found++;return;}
+
+      var bestRow=-1,best=null;
+      for(var rr=0;rr<8;rr++)if(!assigned[rr]){
+        var fr=feasibleRows(rr,cols);
+        if(!fr.length)return;
+        if(best===null||fr.length<best.length){bestRow=rr;best=fr;if(fr.length===1)break;}
+      }
+
+      assigned[bestRow]=true;
+      for(var i=0;i<best.length;i++){
+        var row=best[i],nextCols=Array(8),ok=true;
+        for(var cc=0;cc<8;cc++){
+          var old=cols[cc],filtered=[];
+          for(var j=0;j<old.length;j++)if(old[j][bestRow]===row[cc])filtered.push(old[j]);
+          if(!filtered.length){ok=false;break;}
+          nextCols[cc]=filtered;
+        }
+        if(ok)visit(done+1,nextCols);
+        if(found>=limit)break;
+      }
+      assigned[bestRow]=false;
+    }
+
+    visit(0,colDomains);
+    return found;
+  }
+
+  function countKey(source,variant,limit,ignoreSpecial){
+    if(!source||source.length!==8)return null;
+    var clues=(variant.data&&variant.data.clues)||[];
+    var ck=ignoreSpecial?'*':clues.map(function(c){return c.axis[0]+c.index+c.side[0]+c.count;}).join(',');
+    return JSON.stringify(source)+'|'+ck+'|'+(limit||2);
+  }
+
+  function countDouble(source,variant,limit,ignoreSpecial){
+    var n=source&&source.length;
+    if(n===8&&variant&&variant.data&&Number(variant.data.maxDigit)===4&&Number(variant.data.copiesPerLine)===2){
+      var key=countKey(source,variant,limit,!!ignoreSpecial);
+      if(key&&countCache.has(key))return countCache.get(key);
+      var result=fastCountEight(source,variant,limit||2,!!ignoreSpecial);
+      if(key)countCache.set(key,result);
+      return result;
+    }
+    return baseCount.call(generator,source,variant,limit,ignoreSpecial);
+  }
+
+  generator.countDoubleSkyscraperSolutions=countDouble;
+
+  function buildFamily(variant,seed){
+    var familyKey=String(seed>>>0);
+    if(familyCache.has(familyKey))return clone(familyCache.get(familyKey));
+
+    for(var attempt=0;attempt<16;attempt++){
+      var random=rng(((seed>>>0)^0xD08B1E8^Math.imul(attempt+1,0x9E3779B1))>>>0);
+      var solution=repeatedLatin8(random);
+      var data=clone(variant.data||{});
+      data.maxDigit=4;
+      data.inputMax=4;
+      data.copiesPerLine=2;
+      data.clues=outsideClues(solution);
+      data.p3Size=8;
+      data.p3SupportedSizes=supported.slice();
+
+      var working=Object.assign({},variant,{solution:solution,data:data});
+      var order=shuffle(Array.from({length:64},function(_,i){return i;}),random);
+      var grid=Array.from({length:8},function(){return Array(8).fill(0);});
+      var shown=0,pos=0,unique=false;
+
+      while(!unique&&pos<order.length&&shown<36){
+        for(var add=0;add<4&&pos<order.length;add++){
+          var idx=order[pos++];
+          var rr=Math.floor(idx/8),cc=idx%8;
+          if(!grid[rr][cc]){grid[rr][cc]=solution[rr][cc];shown++;}
+        }
+        unique=countDouble(grid,working,2,false)===1;
+      }
+      if(!unique)continue;
+      if(countDouble(grid,working,2,true)===1)continue;
+
+      var family={
+        solution:solution,
+        data:data,
+        working:working,
+        baseGrid:grid,
+        order:order,
+        nextPos:pos,
+        baseShown:shown
+      };
+      familyCache.set(familyKey,clone(family));
+      return family;
+    }
+
+    throw new Error('Double Skyscraper 8x8 base family generation failed for seed '+seed);
+  }
+
+  function makeEight(variant,seed,difficulty){
+    var key=[seed>>>0,difficulty].join(':');
+    if(cache.has(key))return clone(cache.get(key));
+
+    var family=buildFamily(variant,seed),solution=family.solution,data=family.data;
+    var working=Object.assign({},variant,{solution:solution,data:data});
+    var grid=family.baseGrid.map(function(row){return row.slice();});
+    var shown=family.baseShown,pos=family.nextPos,extras=extraGivens(difficulty),added=0;
+
+    while(added<extras&&pos<family.order.length){
+      var idx=family.order[pos++],r=Math.floor(idx/8),c=idx%8;
+      if(grid[r][c])continue;
+      grid[r][c]=solution[r][c];
+      if(countDouble(grid,working,2,true)===1){
+        grid[r][c]=0;
+        continue;
+      }
+      shown++;added++;
+    }
+
+    var out=clone(variant);
+    out.solution=solution;
+    out.puzzle=grid;
+    out.data=data;
+    out.generation={
+      seed:seed>>>0,
+      clues:shown+data.clues.length,
+      unique:true,
+      verification:'solver-verified-row-column-domain',
+      generatorFamily:'double-skyscraper-8x8-repeated-latin',
+      difficultyScore:shown,
+      mode:'seeded-variant-essential',
+      variantEssential:true,
+      boardSize:8
+    };
+    cache.set(key,clone(out));
+    return out;
+  }
+
+  var variant=root.SudokuBank.find(function(v){return v.id==='double-skyscrapers';});
+  if(variant){
+    variant.data=variant.data||{};
+    var remembered=null;
+    try{remembered=Number(root.localStorage&&root.localStorage.getItem('ildi-size-double-skyscrapers'));}catch(e){}
+    variant.data.p3SupportedSizes=supported.slice();
+    variant.data.p3Size=supported.indexOf(remembered)>=0?remembered:6;
+  }
+
+  generator.make=function(variant,seed,difficulty){
+    if(!variant||variant.id!=='double-skyscrapers')return baseMake.call(this,variant,seed,difficulty);
+    var requested=Number(variant.data&&variant.data.p3Size);
+    if(requested!==8)return baseMake.call(this,variant,seed,difficulty);
+    return makeEight(variant,seed>>>0,difficulty||'focused');
+  };
+
+  root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};
+  root.IldiP3SizeSupport['double-skyscrapers']=supported.slice();
 })(typeof window!=='undefined'?window:globalThis);
 
   </script>
