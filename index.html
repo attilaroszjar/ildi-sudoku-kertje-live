@@ -848,7 +848,7 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
       <section class="welcome-card" aria-label="Üdvözlés"><div class="welcome-flower" aria-hidden="true">❀</div><div><p class="welcome-kicker">ILDI SUDOKU KERTJE</p><h1 id="welcome-title">Üdv Ildi Sudoku Kertjében!</h1><p id="welcome-copy">Válassz kategóriát, találd meg a kedvenc Sudoku-változatodat, és élvezd a logikai kihívásokat.</p></div><div class="welcome-cat" aria-hidden="true"><svg viewBox="0 0 190 92" focusable="false"><path class="cat-cushion" d="M33 72c20-20 102-24 132 0-21 12-109 16-132 0z"/><path class="sleep-cat-body" d="M63 62c10-29 47-35 72-14 7 6 11 14 11 22-17 6-68 7-92 1 1-3 4-6 9-9z"/><path class="sleep-cat-head" d="M52 50l3-23 13 11c7-3 15-3 22 0l14-12 2 24c-2 18-13 27-28 27-16 0-27-10-26-27z"/><path class="sleep-cat-tail" d="M136 62c25-2 31-14 23-22-5-5-13-5-18 1 8-2 12 2 11 7-1 8-9 10-19 9"/><path class="sleep-cat-face" d="M64 53c4 3 7 3 11 0M86 53c4 3 7 3 11 0M77 58l3 2 3-2M80 60c0 4-4 6-8 4M80 60c0 4 4 6 8 4"/></svg><span class="floating-heart">♡</span></div></section>
       <section class="control-deck" aria-label="Feladvány beállításai"><label class="deck-field"><span id="category-label">Kategória</span><select id="category-select"></select></label><label class="deck-field variant-field"><span id="variant-label">Sudoku-változat</span><select id="variant-select"></select></label><span id="variant-count" class="variant-count">82 változat</span><div class="deck-actions"><label class="deck-field difficulty-field"><span id="difficulty-label">Nehézség</span><select id="difficulty-select"></select></label><button id="restart-button" class="button secondary" type="button">↻ <span>Újrakezdés</span></button><button id="new-button" class="button primary" type="button">❀ <span>Új feladvány</span></button></div></section>
       <section id="workspace" class="workspace sudoku-only-workspace" aria-labelledby="game-title"><div class="garden-layout"><aside class="garden-sidebar" aria-label="Sudoku kategóriák"><section class="garden-card categories-card"><div class="card-title-row"><h2 id="categories-heading">Kategóriák</h2><span aria-hidden="true">✿</span></div><div id="category-list" class="category-list"></div></section><section class="garden-card favorites-card"><div class="card-title-row"><h2 id="favorites-heading">Kedvenceim</h2><span aria-hidden="true">♡</span></div><div id="favorites-list" class="favorites-list"><p id="favorites-empty">Itt jelennek meg a kedvenc változataid.</p></div></section><section class="garden-card stats-card"><div class="card-title-row"><h2 id="stats-heading">Statisztikám</h2><span aria-hidden="true">▥</span></div><dl class="stats-list"><div><dt id="solved-label">Megoldott</dt><dd id="stat-solved">0</dd></div><div><dt id="best-label">Legjobb idő</dt><dd id="stat-best">--:--</dd></div><div><dt id="streak-label">Jelenlegi sorozat</dt><dd id="stat-streak">0 nap</dd></div><div><dt id="total-time-label">Összes játékidő</dt><dd id="stat-total">0:00:00</dd></div></dl></section></aside><div class="play-column"><section class="garden-card puzzle-card"><div class="puzzle-card-head"><div><p id="game-family" class="eyebrow">Sudoku-gyűjtemény</p><h2 id="game-title">Sudoku-változatok</h2></div><button id="favorite-button" class="favorite-button" type="button" aria-label="Hozzáadás a kedvencekhez" title="Kedvenc">♡</button></div><div class="play-surface"><div id="game-stage" class="game-stage" tabindex="-1"></div><div id="game-tools" class="game-tools tool-rail"></div></div></section></div><aside class="garden-card inspector" aria-label="Feladvány információ"><section class="inspector-heading"><h2 id="about-heading">A változatról</h2><span aria-hidden="true">✿</span></section><section><h3 id="objective-heading">Cél</h3><p id="game-objective"></p></section><section><h3 id="rules-heading">Játékszabály</h3><div id="game-rules"></div></section><section class="tip-card"><h3 id="tip-heading">Tipp</h3><p id="game-tip">Haladj nyugodtan, és először azokat a cellákat keresd, ahol a szabályok a legtöbb lehetőséget kizárják.</p></section><section class="status-compact"><div class="status-row"><span id="status-label">Állapot</span><strong id="game-status" role="status" aria-live="polite">Készen áll</strong></div><div class="status-row"><span id="counter-label">Lépések</span><strong id="game-counter">0</strong></div></section><div class="garden-bench" aria-hidden="true"><span class="garden-sprig">❀ ✿ ❀</span><svg viewBox="0 0 210 105" focusable="false"><path class="mini-ground" d="M18 87c34-11 142-12 177 0"/><path class="mini-cat" d="M60 76c8-20 31-26 49-15 13 8 19 19 15 27H52c0-5 3-9 8-12zM54 61l3-17 11 9c5-2 11-2 16 0l11-9 2 18c-1 13-10 20-22 20-13 0-22-8-21-21z"/><path class="mini-tail" d="M118 77c26 1 36-9 31-18-3-6-10-7-16-3 8-1 11 3 9 8-3 6-11 7-22 5"/><path class="mini-bench" d="M128 76h59M134 64h47M140 64v23M176 64v23"/></svg></div></aside></div></section>
-      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=33121f2" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
+      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=d81ef0d" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
     </main>
   </div><div id="toast" class="toast" role="status" aria-live="polite"></div>
   <dialog id="help-dialog" class="dialog"><form method="dialog"><div class="dialog-head"><div><p id="guide-eyebrow" class="eyebrow"></p><h2 id="guide-title"></h2></div><button class="icon-button" value="close" aria-label="Bezárás">×</button></div><div class="dialog-body"><p id="guide-p1"></p><dl><div><dt id="guide-pointer"></dt><dd id="guide-pointer-d"></dd></div><div><dt id="guide-keyboard"></dt><dd id="guide-keyboard-d"></dd></div><div><dt id="guide-feedback"></dt><dd id="guide-feedback-d"></dd></div></dl><p id="guide-quiet" class="quiet"></p></div><button id="guide-close" class="button primary dialog-close" value="close"></button></form></dialog>
@@ -10471,73 +10471,6 @@ root.SudokuBank.push(
   function parkConflict(v,grid,r,c){var clues=(v.data&&v.data.clues)||[],park=(v.data&&v.data.parkValue)||grid.length;for(var i=0;i<clues.length;i+=1){var cl=clues[i];if((cl.axis==='row'&&cl.index!==r)||(cl.axis==='col'&&cl.index!==c))continue;var line=skyscraperLine(grid,cl);if(!line.every(Boolean))continue;if((v.kind==='skyscraperparks'||v.kind==='skyscraperparks2')&&parkVisibleCount(line,park)!==cl.count)return true;if(v.kind==='sumskyscraperparks'&&parkVisibleSum(line,park)!==cl.sum)return true;}return false;}
   function evenOddSkyscraperConflict(v,grid,r,c){var d=v.data||{},pcs=d.parityCells||[],i;for(i=0;i<pcs.length;i++){var pc=pcs[i];if(pc.cell[0]===r&&pc.cell[1]===c){var value=grid[r][c];if(value&&((value%2?'odd':'even')!==pc.parity))return true;break;}}var clues=d.clues||[];for(i=0;i<clues.length;i++){var cl=clues[i];if((cl.axis==='row'&&cl.index!==r)||(cl.axis==='col'&&cl.index!==c))continue;var line=skyscraperLine(grid,cl);if(line.every(Boolean)&&((skyscraperVisibleCount(line)%2?'odd':'even')!==cl.parity))return true;}return false;}
 
-  function rotateCoord(cell, turns, n) {
-    var r=cell[0], c=cell[1], i;
-    for(i=0;i<turns;i+=1){ var nr=c, nc=n-1-r; r=nr; c=nc; }
-    return [r,c];
-  }
-  function rotateGrid(grid, turns) {
-    var n=grid.length, out=grid.map(function(row){return row.slice();}), t,r,c,next;
-    for(t=0;t<turns;t+=1){
-      next=Array.from({length:n},function(){return Array(n).fill(0);});
-      for(r=0;r<n;r+=1)for(c=0;c<n;c+=1)next[c][n-1-r]=out[r][c];
-      out=next;
-    }
-    return out;
-  }
-  function rotateSide(side, turns){
-    var cycle=['top','right','bottom','left'];
-    var i=cycle.indexOf(side); return cycle[(i+turns)%4];
-  }
-  function rotateDir(dir, turns){var r=dir[0],c=dir[1],t;for(t=0;t<turns;t+=1){var nr=c,nc=-r;r=nr;c=nc;}return [r,c];}
-  function rotateAxisIndex(axis,index,side,turns,n){
-    // Represent clue by a border-adjacent coordinate and facing side, rotate it, then decode.
-    var pos;
-    if(axis==='row') pos=[index, side==='left' ? -1 : n];
-    else pos=[side==='top' ? -1 : n, index];
-    var r=pos[0],c=pos[1],t;
-    for(t=0;t<turns;t+=1){ var nr=c, nc=n-1-r; r=nr;c=nc; }
-    var ns=rotateSide(side,turns);
-    if(ns==='left'||ns==='right') return {axis:'row',index:r,side:ns};
-    return {axis:'col',index:c,side:ns};
-  }
-  function transformedVariant(v, turns){
-    var x=clone(v), n=x.solution.length;
-    x.puzzle=rotateGrid(x.puzzle,turns); x.solution=rotateGrid(x.solution,turns);
-    function rot(cell){return rotateCoord(cell,turns,n);}
-    var d=x.data||{}, i, q;
-    if(d.cages) d.cages.forEach(function(c){c.cells=c.cells.map(rot);});
-    if(d.dominoes) d.dominoes=d.dominoes.map(function(dm){return dm.map(rot);});
-    if(d.thermos) d.thermos=d.thermos.map(function(line){return line.map(rot);});
-    if(d.arrows) d.arrows.forEach(function(a){a.circle=rot(a.circle);a.path=a.path.map(rot);});
-    if(d.edges) d.edges.forEach(function(e){e.a=rot(e.a);e.b=rot(e.b);});
-    if(d.lines) d.lines.forEach(function(line){
-      if(Array.isArray(line)) { for(i=0;i<line.length;i+=1) line[i]=rot(line[i]); }
-      else if(line.cells) line.cells=line.cells.map(rot);
-    });
-    if(d.cells) d.cells=d.cells.map(rot);
-    if(d.clones) d.clones=d.clones.map(function(group){return group.map(rot);});
-    if(d.quads) d.quads.forEach(function(qd){qd.at=rot(qd.at);qd.cells=qd.cells.map(rot);});
-    if(d.quadSums) d.quadSums=d.quadSums.map(function(p){var r=p[0],c=p[1],t;for(t=0;t<turns;t+=1){var nr=c,nc=n-r;r=nr;c=nc;}return [r,c];});
-    if(d.battenburg) d.battenburg=d.battenburg.map(function(p){var r=p[0],c=p[1],t;for(t=0;t<turns;t+=1){var nr=c,nc=n-r;r=nr;c=nc;}return [r,c];});
-    if(d.reflectionGroups)d.reflectionGroups.forEach(function(g){g.lines=g.lines.map(function(line){return line.map(rot);});});
-    if(d.slingshots)d.slingshots.forEach(function(sh){sh.cell=rot(sh.cell);sh.source=rot(sh.source);sh.dir=rotateDir(sh.dir,turns);});
-    if(d.axia)d.axia=d.axia.map(rot);
-    if(d.couples)d.couples.forEach(function(cp){cp.a=rot(cp.a);cp.b=rot(cp.b);});
-    if(d.extrema)d.extrema.forEach(function(ex){ex.cell=rot(ex.cell);});
-    if(d.parityCells)d.parityCells.forEach(function(pc){pc.cell=rot(pc.cell);});
-    if(d.sightClues)d.sightClues.forEach(function(cl){if(cl.source)cl.source=rot(cl.source);if(cl.start)cl.start=rot(cl.start);if(cl.cells)cl.cells=cl.cells.map(rot);if(cl.dir)cl.dir=rotateDir(cl.dir,turns);if(cl.arrow){var arrows={'↑':[ -1,0],'↓':[1,0],'←':[0,-1],'→':[0,1],'↖':[-1,-1],'↗':[-1,1],'↙':[1,-1],'↘':[1,1]},rv=rotateDir(arrows[cl.arrow]||cl.dir,turns),key=rv[0]+','+rv[1],sym={'-1,0':'↑','1,0':'↓','0,-1':'←','0,1':'→','-1,-1':'↖','-1,1':'↗','1,-1':'↙','1,1':'↘'};cl.arrow=sym[key]||cl.arrow;}});
-    if(x.kind==='parity'){
-      q={};Object.keys(d).forEach(function(k){var p=k.split(',').map(Number),z=rot(p);q[rcKey(z[0],z[1])]=d[k];});x.data=q;d=x.data;
-    }
-    if(d.toroidalClues)d.toroidalClues.forEach(function(cl){cl.cell=rot(cl.cell);cl.cells=cl.cells.map(rot);cl.dir=rotateDir(cl.dir,turns);var tk=cl.dir[0]+','+cl.dir[1],ts={'-1,0':'↑','1,0':'↓','0,-1':'←','0,1':'→'};cl.arrow=ts[tk]||cl.arrow;});
-    if(d.clues) d.clues.forEach(function(clue){
-      if(clue.cells) clue.cells=clue.cells.map(rot);
-      if(clue.axis){ var z=rotateAxisIndex(clue.axis,clue.index,clue.side|| (clue.axis==='row'?'left':'top'),turns,n); clue.axis=z.axis;clue.index=z.index;if(clue.side)clue.side=z.side; }
-    });
-    return x;
-  }
-
   function classicConflict(grid,r,c,vdef){
     var v=grid[r][c], n=grid.length, i, br,bc,rr,cc,dims=n===6?[2,3]:(n===12?[3,4]:(n===16?[4,4]:[Math.sqrt(n)|0,Math.sqrt(n)|0])),boxH=dims[0],boxW=dims[1];
     if(!v)return false;
@@ -11575,7 +11508,7 @@ root.SudokuBank.push(
     mount:function(api){
       root.SudokuLibraryState=root.SudokuLibraryState||{};
       var remembered=root.SudokuBank.find(function(v){return v.id===root.SudokuLibraryState.currentId;});
-      var wrap=LR.el('div',{className:'sudoku-library-wrap'}), play=LR.el('div',{className:'sudoku-play-area'}), rule=LR.el('p',{className:'sudoku-variant-rule'}), generation=LR.el('p',{className:'sudoku-generation-note'}), boardHost=LR.el('div',{className:'sudoku-board-host'}), current=remembered||root.SudokuBank[0], boardInst=null, lastVariant=null, moves=0, turns=api.seed%4;
+      var wrap=LR.el('div',{className:'sudoku-library-wrap'}), play=LR.el('div',{className:'sudoku-play-area'}), rule=LR.el('p',{className:'sudoku-variant-rule'}), generation=LR.el('p',{className:'sudoku-generation-note'}), boardHost=LR.el('div',{className:'sudoku-board-host'}), current=remembered||root.SudokuBank[0], boardInst=null, lastVariant=null, moves=0;
       var familySelect=document.getElementById('category-select'),variantSelect=document.getElementById('variant-select'),count=document.getElementById('variant-count'),categoryList=document.getElementById('category-list');
       var skyscraperIds=['classic-skyscrapers','skyscraper','skyscraper-sums','skyscraper-mixed','skyscraper-nontouching','skyscraper-parks','sum-skyscraper-parks','inside-skyscrapers','diagonal-skyscrapers','product-skyscrapers','killer-skyscrapers','domino-skyscrapers','skyscraper-parks2','evenodd-skyscrapers','toroidal-skyscrapers','double-skyscrapers'];
       function isSkyscraperVariant(v){return skyscraperIds.indexOf(v.id)!==-1;}
@@ -11615,14 +11548,14 @@ root.SudokuBank.push(
       }
       function selectCurrent(id){
         var next=root.SudokuBank.find(function(v){return v.id===id;});if(!next)return;
-        current=next;root.SudokuLibraryState.currentId=current.id;turns=api.seed%4;
+        current=next;root.SudokuLibraryState.currentId=current.id;
         if(familySelect){var group=groupFor(current);familySelect.value=group.id;fillVariants(group.id);}
         if(variantSelect)variantSelect.value=current.id;
         renderVariant();
       }
       fillFamilies();
-      if(familySelect)familySelect.addEventListener('change',function(){fillVariants(familySelect.value);current=root.SudokuBank.find(function(v){return v.id===variantSelect.value;})||current;root.SudokuLibraryState.currentId=current.id;turns=api.seed%4;renderVariant();});
-      if(variantSelect)variantSelect.addEventListener('change',function(){current=root.SudokuBank.find(function(v){return v.id===variantSelect.value;})||current;root.SudokuLibraryState.currentId=current.id;turns=api.seed%4;renderVariant();});
+      if(familySelect)familySelect.addEventListener('change',function(){fillVariants(familySelect.value);current=root.SudokuBank.find(function(v){return v.id===variantSelect.value;})||current;root.SudokuLibraryState.currentId=current.id;renderVariant();});
+      if(variantSelect)variantSelect.addEventListener('change',function(){current=root.SudokuBank.find(function(v){return v.id===variantSelect.value;})||current;root.SudokuLibraryState.currentId=current.id;renderVariant();});
       function externalSelect(e){if(e.detail&&e.detail.id)selectCurrent(e.detail.id);}
       function generationText(v){if(v&&v.kind==='masyu'&&v.generation)return (I&&I.lang==='hu'?'Generált Masyu':'Generated Masyu')+' #'+String(v.generation.seed).padStart(10,'0')+' · '+(I?I.t('unique'):'unique solution');if(v&&v.kind==='nonogram'&&v.generation)return (I&&I.lang==='hu'?'Generált Nonogram':'Generated Nonogram')+' #'+String(v.generation.seed).padStart(10,'0')+' · '+(I?I.t('unique'):'unique solution');if(v&&v.kind==='nurikabe'&&v.generation)return (I&&I.lang==='hu'?'Generált Nurikabe':'Generated Nurikabe')+' #'+String(v.generation.seed).padStart(10,'0')+' · '+(I?I.t('unique'):'unique solution');if(v&&v.kind==='akari'&&v.generation)return (I&&I.lang==='hu'?'Generált Akari':'Generated Akari')+' #'+String(v.generation.seed).padStart(10,'0')+' · '+(I?I.t('unique'):'unique solution');if(v&&v.kind==='slitherlink'&&v.generation)return (I&&I.lang==='hu'?'Generált Slitherlink':'Generated Slitherlink')+' #'+String(v.generation.seed).padStart(10,'0')+' · '+(I?I.t('unique'):'unique solution');if(v&&v.kind==='futoshiki'&&v.generation)return (I&&I.lang==='hu'?'Generált Futoshiki':'Generated Futoshiki')+' #'+String(v.generation.seed).padStart(10,'0')+' · '+(I?I.t('unique'):'unique solution');if(v&&v.kind==='fillomino'&&v.generation)return (I&&I.lang==='hu'?'Generált Fillomino':'Generated Fillomino')+' #'+String(v.generation.seed).padStart(10,'0')+' · '+(I?I.t('unique'):'unique solution');if(v&&v.kind==='bridges'&&v.generation)return (I&&I.lang==='hu'?'Generált Hidak':'Generated Bridges')+' #'+String(v.generation.seed).padStart(10,'0')+' · '+(I?I.t('unique'):'unique solution');if(v&&v.kind==='hitori'&&v.generation)return (I&&I.lang==='hu'?'Generált Hitori':'Generated Hitori')+' #'+String(v.generation.seed).padStart(10,'0')+' · '+(I?I.t('unique'):'unique solution');return v&&v.generation?((I?I.t('generated'):'Generated board')+' #'+String(v.generation.seed).padStart(10,'0')+' · '+v.generation.clues+' '+(I?I.t('givens'):'givens')+' · '+(I?I.t('unique'):'unique solution')+(v.generation.variantEssential?' · '+(I?I.t('variantEssential'):'variant-essential'):'')):(I?I.t('curated'):'Curated board');}
       function refreshLanguage(){
@@ -11644,7 +11577,7 @@ root.SudokuBank.push(
       function renderVariant(){
         boardHost.replaceChildren();api.tools.replaceChildren();
         var generated=root.SudokuGenerator?root.SudokuGenerator.make(current,(api.seed^LR.hashString(current.id))>>>0,api.difficulty):clone(current);
-        var v=(current.kind==='samurai'||current.kind==='bridges'||current.kind==='akari'||current.kind==='nurikabe'||current.kind==='nonogram'||current.kind==='masyu'||current.kind==='starbattle'||current.kind==='aquarium'||current.kind==='galaxies'||current.kind==='yajilin'||current.kind==='slitherlink'||current.kind==='shakashaka'||current.kind==='rippleeffect'||current.kind==='lits'||current.kind==='battleships'||current.kind==='heyawake')?generated:transformedVariant(generated,turns),vt=I?I.variant(v):v;
+        var v=generated,vt=I?I.variant(v):v;
         rule.textContent=vt.rule;
         lastVariant=v;generation.textContent=generationText(v);
         if(variantSelect)variantSelect.value=current.id;
