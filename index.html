@@ -848,7 +848,7 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
       <section class="welcome-card" aria-label="Üdvözlés"><div class="welcome-flower" aria-hidden="true">❀</div><div><p class="welcome-kicker">ILDI SUDOKU KERTJE</p><h1 id="welcome-title">Üdv Ildi Sudoku Kertjében!</h1><p id="welcome-copy">Válassz kategóriát, találd meg a kedvenc Sudoku-változatodat, és élvezd a logikai kihívásokat.</p></div><div class="welcome-cat" aria-hidden="true"><svg viewBox="0 0 190 92" focusable="false"><path class="cat-cushion" d="M33 72c20-20 102-24 132 0-21 12-109 16-132 0z"/><path class="sleep-cat-body" d="M63 62c10-29 47-35 72-14 7 6 11 14 11 22-17 6-68 7-92 1 1-3 4-6 9-9z"/><path class="sleep-cat-head" d="M52 50l3-23 13 11c7-3 15-3 22 0l14-12 2 24c-2 18-13 27-28 27-16 0-27-10-26-27z"/><path class="sleep-cat-tail" d="M136 62c25-2 31-14 23-22-5-5-13-5-18 1 8-2 12 2 11 7-1 8-9 10-19 9"/><path class="sleep-cat-face" d="M64 53c4 3 7 3 11 0M86 53c4 3 7 3 11 0M77 58l3 2 3-2M80 60c0 4-4 6-8 4M80 60c0 4 4 6 8 4"/></svg><span class="floating-heart">♡</span></div></section>
       <section class="control-deck" aria-label="Feladvány beállításai"><label class="deck-field"><span id="category-label">Kategória</span><select id="category-select"></select></label><label class="deck-field variant-field"><span id="variant-label">Sudoku-változat</span><select id="variant-select"></select></label><span id="variant-count" class="variant-count">82 változat</span><div class="deck-actions"><label class="deck-field difficulty-field"><span id="difficulty-label">Nehézség</span><select id="difficulty-select"></select></label><button id="restart-button" class="button secondary" type="button">↻ <span>Újrakezdés</span></button><button id="new-button" class="button primary" type="button">❀ <span>Új feladvány</span></button></div></section>
       <section id="workspace" class="workspace sudoku-only-workspace" aria-labelledby="game-title"><div class="garden-layout"><aside class="garden-sidebar" aria-label="Sudoku kategóriák"><section class="garden-card categories-card"><div class="card-title-row"><h2 id="categories-heading">Kategóriák</h2><span aria-hidden="true">✿</span></div><div id="category-list" class="category-list"></div></section><section class="garden-card favorites-card"><div class="card-title-row"><h2 id="favorites-heading">Kedvenceim</h2><span aria-hidden="true">♡</span></div><div id="favorites-list" class="favorites-list"><p id="favorites-empty">Itt jelennek meg a kedvenc változataid.</p></div></section><section class="garden-card stats-card"><div class="card-title-row"><h2 id="stats-heading">Statisztikám</h2><span aria-hidden="true">▥</span></div><dl class="stats-list"><div><dt id="solved-label">Megoldott</dt><dd id="stat-solved">0</dd></div><div><dt id="best-label">Legjobb idő</dt><dd id="stat-best">--:--</dd></div><div><dt id="streak-label">Jelenlegi sorozat</dt><dd id="stat-streak">0 nap</dd></div><div><dt id="total-time-label">Összes játékidő</dt><dd id="stat-total">0:00:00</dd></div></dl></section></aside><div class="play-column"><section class="garden-card puzzle-card"><div class="puzzle-card-head"><div><p id="game-family" class="eyebrow">Sudoku-gyűjtemény</p><h2 id="game-title">Sudoku-változatok</h2></div><button id="favorite-button" class="favorite-button" type="button" aria-label="Hozzáadás a kedvencekhez" title="Kedvenc">♡</button></div><div class="play-surface"><div id="game-stage" class="game-stage" tabindex="-1"></div><div id="game-tools" class="game-tools tool-rail"></div></div></section></div><aside class="garden-card inspector" aria-label="Feladvány információ"><section class="inspector-heading"><h2 id="about-heading">A változatról</h2><span aria-hidden="true">✿</span></section><section><h3 id="objective-heading">Cél</h3><p id="game-objective"></p></section><section><h3 id="rules-heading">Játékszabály</h3><div id="game-rules"></div></section><section class="tip-card"><h3 id="tip-heading">Tipp</h3><p id="game-tip">Haladj nyugodtan, és először azokat a cellákat keresd, ahol a szabályok a legtöbb lehetőséget kizárják.</p></section><section class="status-compact"><div class="status-row"><span id="status-label">Állapot</span><strong id="game-status" role="status" aria-live="polite">Készen áll</strong></div><div class="status-row"><span id="counter-label">Lépések</span><strong id="game-counter">0</strong></div></section><div class="garden-bench" aria-hidden="true"><span class="garden-sprig">❀ ✿ ❀</span><svg viewBox="0 0 210 105" focusable="false"><path class="mini-ground" d="M18 87c34-11 142-12 177 0"/><path class="mini-cat" d="M60 76c8-20 31-26 49-15 13 8 19 19 15 27H52c0-5 3-9 8-12zM54 61l3-17 11 9c5-2 11-2 16 0l11-9 2 18c-1 13-10 20-22 20-13 0-22-8-21-21z"/><path class="mini-tail" d="M118 77c26 1 36-9 31-18-3-6-10-7-16-3 8-1 11 3 9 8-3 6-11 7-22 5"/><path class="mini-bench" d="M128 76h59M134 64h47M140 64v23M176 64v23"/></svg></div></aside></div></section>
-      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=d81ef0d" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
+      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=161bd32" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
     </main>
   </div><div id="toast" class="toast" role="status" aria-live="polite"></div>
   <dialog id="help-dialog" class="dialog"><form method="dialog"><div class="dialog-head"><div><p id="guide-eyebrow" class="eyebrow"></p><h2 id="guide-title"></h2></div><button class="icon-button" value="close" aria-label="Bezárás">×</button></div><div class="dialog-body"><p id="guide-p1"></p><dl><div><dt id="guide-pointer"></dt><dd id="guide-pointer-d"></dd></div><div><dt id="guide-keyboard"></dt><dd id="guide-keyboard-d"></dd></div><div><dt id="guide-feedback"></dt><dd id="guide-feedback-d"></dd></div></dl><p id="guide-quiet" class="quiet"></p></div><button id="guide-close" class="button primary dialog-close" value="close"></button></form></dialog>
@@ -10046,8 +10046,155 @@ root.SudokuBank.push(
   }
 
   generator.countLittleKillerSolutions=countLittleKillerSolutions;generator._littleKillerSolveCount=solveCount;generator._compileLittleKillerClues=compileClues;generator._littleKillerFindAlternative=findAlternativeSolution;
-  generator.countVariantSolutions=function(grid,variant,limit){if(variant&&variant.kind==='littlekiller')return countLittleKillerSolutions(grid,variant,limit);return baseCountVariantSolutions.call(this,grid,variant,limit);};
+  generator.countVariantSolutions=function(grid,variant,limit,stats){if(variant&&variant.kind==='littlekiller')return countLittleKillerSolutions(grid,variant,limit);return baseCountVariantSolutions.call(this,grid,variant,limit,stats);};
   generator.make=function(variant,seed,difficulty){if(variant&&variant.kind==='littlekiller')return makeLittleKiller(variant,seed,difficulty);if(variant&&variant.kind==='clone')return makeClone(variant,seed,difficulty);return baseMake.call(this,variant,seed,difficulty);};
+})(typeof window!=='undefined'?window:globalThis);
+
+  </script>
+  <script data-source="games/nabner-hidden-single-runtime.js">
+(function(root){
+  'use strict';
+  if(!root.SudokuGenerator||root.NabnerHiddenSingleRuntime)return;
+  var generator=root.SudokuGenerator,baseCount=generator.countVariantSolutions;
+  if(typeof baseCount!=='function')return;
+
+  var lineIndexCache=typeof WeakMap!=='undefined'?new WeakMap():null;
+  function bitCount(x){var count=0;while(x){x&=x-1;count++;}return count;}
+  function bitToDigit(bit){return 1+Math.round(Math.log(bit)/Math.LN2);}
+  function cloneGrid(grid){return grid.map(function(row){return row.slice();});}
+  function lineIndex(variant,n){
+    if(lineIndexCache&&lineIndexCache.has(variant))return lineIndexCache.get(variant);
+    var raw=(variant.data&&variant.data.lines)||[],lines=[],cells=Array.from({length:n},function(){return Array.from({length:n},function(){return[];});});
+    for(var i=0;i<raw.length;i++){
+      var line=Array.isArray(raw[i])?raw[i]:(raw[i]&&raw[i].cells)||[],id=lines.length;
+      lines.push(line);
+      for(var j=0;j<line.length;j++){var p=line[j];cells[p[0]][p[1]].push(id);}
+    }
+    var out={lines:lines,cells:cells};if(lineIndexCache)lineIndexCache.set(variant,out);return out;
+  }
+  function expandedForbidden(mask,full){return(mask|((mask<<1)&full)|(mask>>>1))&full;}
+
+  function countNabnerSolutions(source,variant,limit,stats){
+    stats=stats||{};stats.nodes=0;stats.branches=0;stats.deadEnds=0;stats.propagated=0;stats.nakedSingles=0;stats.hiddenSingles=0;
+    var capture=stats.captureSolutions===true;if(capture)stats.witnesses=[];
+    var grid=cloneGrid(source),n=grid.length,full=(1<<n)-1,index=lineIndex(variant,n),bh=3,bw=3;
+    var rows=Array(n).fill(0),cols=Array(n).fill(0),boxes=Array(n).fill(0),lineMasks=Array(index.lines.length).fill(0);
+    function boxOf(r,c){return Math.floor(r/bh)*3+Math.floor(c/bw);}
+    for(var r=0;r<n;r++)for(var c=0;c<n;c++){
+      var value=grid[r][c];if(!value)continue;
+      var bit=1<<(value-1),box=boxOf(r,c);
+      if((rows[r]|cols[c]|boxes[box])&bit)return 0;
+      rows[r]|=bit;cols[c]|=bit;boxes[box]|=bit;
+      var memberships=index.cells[r][c]||[];
+      for(var mi=0;mi<memberships.length;mi++){
+        var lineId=memberships[mi],used=lineMasks[lineId];
+        if(expandedForbidden(used,full)&bit)return 0;
+        lineMasks[lineId]=used|bit;
+      }
+    }
+    function candidateMask(rr,cc){
+      var mask=full&~(rows[rr]|cols[cc]|boxes[boxOf(rr,cc)]),memberships=index.cells[rr][cc]||[];
+      for(var i=0;i<memberships.length&&mask;i++)mask&=~expandedForbidden(lineMasks[memberships[i]],full);
+      return mask&full;
+    }
+    function pressure(rr,cc){
+      var memberships=index.cells[rr][cc]||[],score=memberships.length*n;
+      for(var i=0;i<memberships.length;i++)score+=bitCount(expandedForbidden(lineMasks[memberships[i]],full));
+      return score;
+    }
+    function place(rr,cc,one,trail,kind){
+      var box=boxOf(rr,cc),memberships=index.cells[rr][cc]||[];
+      grid[rr][cc]=bitToDigit(one);rows[rr]|=one;cols[cc]|=one;boxes[box]|=one;
+      for(var i=0;i<memberships.length;i++)lineMasks[memberships[i]]|=one;
+      trail.push([rr,cc,one]);stats.propagated++;
+      if(kind==='naked')stats.nakedSingles++;else if(kind==='hidden')stats.hiddenSingles++;
+    }
+    function rollback(trail){
+      for(var i=trail.length-1;i>=0;i--){
+        var rr=trail[i][0],cc=trail[i][1],one=trail[i][2],box=boxOf(rr,cc),memberships=index.cells[rr][cc]||[];
+        for(var j=0;j<memberships.length;j++)lineMasks[memberships[j]]^=one;
+        rows[rr]^=one;cols[cc]^=one;boxes[box]^=one;grid[rr][cc]=0;
+      }
+    }
+    function hiddenInRow(rr){
+      var missing=full&~rows[rr];
+      for(var bits=missing;bits;bits&=bits-1){
+        var one=bits&-bits,hit=-1,count=0;
+        for(var cc=0;cc<n;cc++)if(!grid[rr][cc]&&(candidateMask(rr,cc)&one)){hit=cc;if(++count>1)break;}
+        if(count===0)return[-1,-1,0];
+        if(count===1)return[rr,hit,one];
+      }
+      return null;
+    }
+    function hiddenInCol(cc){
+      var missing=full&~cols[cc];
+      for(var bits=missing;bits;bits&=bits-1){
+        var one=bits&-bits,hit=-1,count=0;
+        for(var rr=0;rr<n;rr++)if(!grid[rr][cc]&&(candidateMask(rr,cc)&one)){hit=rr;if(++count>1)break;}
+        if(count===0)return[-1,-1,0];
+        if(count===1)return[hit,cc,one];
+      }
+      return null;
+    }
+    function hiddenInBox(box){
+      var missing=full&~boxes[box],r0=Math.floor(box/3)*3,c0=(box%3)*3;
+      for(var bits=missing;bits;bits&=bits-1){
+        var one=bits&-bits,hr=-1,hc=-1,count=0;
+        outer:for(var dr=0;dr<3;dr++)for(var dc=0;dc<3;dc++){
+          var rr=r0+dr,cc=c0+dc;if(!grid[rr][cc]&&(candidateMask(rr,cc)&one)){hr=rr;hc=cc;if(++count>1)break outer;}
+        }
+        if(count===0)return[-1,-1,0];
+        if(count===1)return[hr,hc,one];
+      }
+      return null;
+    }
+    function propagate(trail){
+      while(true){
+        var forced=null;
+        outer:for(var rr=0;rr<n;rr++)for(var cc=0;cc<n;cc++)if(!grid[rr][cc]){
+          var mask=candidateMask(rr,cc),cnt=bitCount(mask);
+          if(cnt===0)return false;
+          if(cnt===1){forced=[rr,cc,mask,'naked'];break outer;}
+        }
+        if(forced){place(forced[0],forced[1],forced[2],trail,forced[3]);continue;}
+        for(rr=0;rr<n&&!forced;rr++){var h=hiddenInRow(rr);if(h){if(!h[2])return false;forced=[h[0],h[1],h[2],'hidden'];}}
+        for(cc=0;cc<n&&!forced;cc++){h=hiddenInCol(cc);if(h){if(!h[2])return false;forced=[h[0],h[1],h[2],'hidden'];}}
+        for(var b=0;b<n&&!forced;b++){h=hiddenInBox(b);if(h){if(!h[2])return false;forced=[h[0],h[1],h[2],'hidden'];}}
+        if(!forced)return true;
+        place(forced[0],forced[1],forced[2],trail,forced[3]);
+      }
+    }
+    var found=0,cap=limit||2;
+    function visit(){
+      if(found>=cap)return;
+      stats.nodes++;
+      var forced=[];
+      if(!propagate(forced)){stats.deadEnds++;rollback(forced);return;}
+      var br=-1,bc=-1,bm=0,best=n+1,bestPressure=-1;
+      for(var rr=0;rr<n;rr++)for(var cc=0;cc<n;cc++)if(!grid[rr][cc]){
+        var mask=candidateMask(rr,cc),cnt=bitCount(mask),p=pressure(rr,cc);
+        if(cnt<best||(cnt===best&&p>bestPressure)){br=rr;bc=cc;bm=mask;best=cnt;bestPressure=p;}
+      }
+      if(br<0){found++;if(capture)stats.witnesses.push(grid.map(function(row){return row.join('');}).join(''));rollback(forced);return;}
+      if(bitCount(bm)>1)stats.branches++;
+      var box=boxOf(br,bc),memberships=index.cells[br][bc]||[];
+      for(var bits=bm;bits&&found<cap;bits&=bits-1){
+        var one=bits&-bits;grid[br][bc]=bitToDigit(one);rows[br]|=one;cols[bc]|=one;boxes[box]|=one;
+        for(var i=0;i<memberships.length;i++)lineMasks[memberships[i]]|=one;
+        visit();
+        for(i=0;i<memberships.length;i++)lineMasks[memberships[i]]^=one;
+        rows[br]^=one;cols[bc]^=one;boxes[box]^=one;grid[br][bc]=0;
+      }
+      rollback(forced);
+    }
+    visit();return found;
+  }
+
+  generator.countVariantSolutions=function(source,variant,limit,stats){
+    if(variant&&variant.id==='nabner')return countNabnerSolutions(source,variant,limit,stats);
+    return baseCount.call(this,source,variant,limit,stats);
+  };
+  root.NabnerHiddenSingleRuntime={count:countNabnerSolutions,baseCount:baseCount,verification:'nabner-hidden-single-mrv-exact-v3'};
 })(typeof window!=='undefined'?window:globalThis);
 
   </script>
@@ -10422,6 +10569,68 @@ root.SudokuBank.push(
   generator.make=function(variant,seed,difficulty){if(variant&&variant.id==='miracle')return makeMiracle(variant,seed>>>0,difficulty||'focused');return baseMake.call(generator,variant,seed,difficulty);};
   generator.makeSeededMiracleSolution=seededSolution;
   root.MiracleGeneratorHardening={maxAttempts:MAX_ATTEMPTS,nodeLimit:NODE_LIMIT,cellTieBreak:'seeded-mrv-ties'};
+})(typeof window!=='undefined'?window:globalThis);
+
+  </script>
+  <script data-source="games/skyscraper-parks-arc-runtime.js">
+(function(root){
+  'use strict';
+  if(!root.SudokuGenerator||root.SkyscraperParksArcRuntime)return;
+  var generator=root.SudokuGenerator;
+  var fallback=generator.countParkSolutions;
+  var baseMake=generator.make;
+  var VERIFICATION='skyscraper-parks-arc-exact-v1';
+  if(typeof fallback!=='function'||typeof baseMake!=='function')return;
+  var cache=new WeakMap();
+  function visible(line,park){var max=0,count=0;for(var i=0;i<line.length;i++){var v=line[i];if(v===park)continue;if(v>max){max=v;count++;}}return count;}
+  function cluePair(variant,axis,index){var clues=(variant.data&&variant.data.clues)||[],near=axis==='row'?'left':'top',far=axis==='row'?'right':'bottom',a=null,b=null;for(var i=0;i<clues.length;i++){var cl=clues[i];if(cl.axis!==axis||cl.index!==index)continue;if(cl.side===near)a=cl.count;else if(cl.side===far)b=cl.count;}if(!Number.isInteger(a)||!Number.isInteger(b))return null;return[a,b];}
+  function key(a,b){return a+','+b;}
+  function build(variant){
+    var n=variant.solution&&variant.solution.length||9,park=(variant.data&&variant.data.parkValue)||n,needed={},rowPairs=Array(n),colPairs=Array(n),i;
+    for(i=0;i<n;i++){rowPairs[i]=cluePair(variant,'row',i);colPairs[i]=cluePair(variant,'col',i);if(!rowPairs[i]||!colPairs[i])return null;needed[key(rowPairs[i][0],rowPairs[i][1])]=1;needed[key(colPairs[i][0],colPairs[i][1])]=1;}
+    var buckets={};Object.keys(needed).forEach(function(k){buckets[k]=[];});
+    var perm=Array(n).fill(0),used=Array(n+1).fill(false);
+    function emit(pos){if(pos===n){var a=visible(perm,park),b=visible(perm.slice().reverse(),park),bucket=buckets[key(a,b)];if(bucket)bucket.push(Uint8Array.from(perm));return;}for(var d=1;d<=n;d++)if(!used[d]){used[d]=true;perm[pos]=d;emit(pos+1);used[d]=false;}}
+    emit(0);
+    return{n:n,rowDomains:rowPairs.map(function(p){return buckets[key(p[0],p[1])];}),colDomains:colPairs.map(function(p){return buckets[key(p[0],p[1])];})};
+  }
+  function getBuilt(variant){var built=cache.get(variant);if(!built){built=build(variant);if(built)cache.set(variant,built);}return built;}
+  function initialActive(domain,line,n){var out=[];outer:for(var i=0;i<domain.length;i++){var p=domain[i];for(var k=0;k<n;k++)if(line[k]&&line[k]!==p[k])continue outer;out.push(i);}return out;}
+  function digitSupport(domain,active,pos){var mask=0;for(var i=0;i<active.length;i++)mask|=1<<(domain[active[i]][pos]-1);return mask;}
+  function filterLine(domain,active,allowed,n){var next=[];outer:for(var i=0;i<active.length;i++){var p=domain[active[i]];for(var k=0;k<n;k++)if(!(allowed[k]&(1<<(p[k]-1))))continue outer;next.push(active[i]);}return next;}
+  function cloneState(state){return{rows:state.rows.map(function(a){return a.slice();}),cols:state.cols.map(function(a){return a.slice();})};}
+  function countArc(source,variant,limit,stats){
+    var built=getBuilt(variant);if(!built)return fallback(source,variant,limit,false);
+    var n=built.n,rowDomains=built.rowDomains,colDomains=built.colDomains;
+    stats=stats||{};stats.nodes=0;stats.branches=0;stats.deadEnds=0;stats.solutions=0;stats.propagationRounds=0;stats.domainPrunes=0;stats.maxDepth=0;
+    var state={rows:Array(n),cols:Array(n)};
+    for(var r=0;r<n;r++){state.rows[r]=initialActive(rowDomains[r],source[r],n);if(!state.rows[r].length)return 0;}
+    for(var c=0;c<n;c++){var line=Array.from({length:n},function(_,rr){return source[rr][c];});state.cols[c]=initialActive(colDomains[c],line,n);if(!state.cols[c].length)return 0;}
+    function propagate(s){var changed=true;while(changed){changed=false;stats.propagationRounds++;
+      var colSupport=Array.from({length:n},function(_,cc){return Array.from({length:n},function(_,rr){return digitSupport(colDomains[cc],s.cols[cc],rr);});});
+      for(var rr=0;rr<n;rr++){var allowed=Array.from({length:n},function(_,cc){return colSupport[cc][rr];}),next=filterLine(rowDomains[rr],s.rows[rr],allowed,n);if(!next.length)return false;if(next.length!==s.rows[rr].length){stats.domainPrunes+=s.rows[rr].length-next.length;s.rows[rr]=next;changed=true;}}
+      var rowSupport=Array.from({length:n},function(_,rr){return Array.from({length:n},function(_,cc){return digitSupport(rowDomains[rr],s.rows[rr],cc);});});
+      for(var cc=0;cc<n;cc++){var allowedCol=Array.from({length:n},function(_,rr){return rowSupport[rr][cc];}),nextCol=filterLine(colDomains[cc],s.cols[cc],allowedCol,n);if(!nextCol.length)return false;if(nextCol.length!==s.cols[cc].length){stats.domainPrunes+=s.cols[cc].length-nextCol.length;s.cols[cc]=nextCol;changed=true;}}
+    }return true;}
+    var found=0,cap=limit||2;
+    function visit(s,depth){stats.nodes++;if(depth>stats.maxDepth)stats.maxDepth=depth;if(found>=cap)return;if(!propagate(s)){stats.deadEnds++;return;}var axis=null,line=-1,best=Infinity;
+      for(var rr=0;rr<n;rr++){var rk=s.rows[rr].length;if(rk>1&&rk<best){axis='row';line=rr;best=rk;}}
+      for(var cc=0;cc<n;cc++){var ck=s.cols[cc].length;if(ck>1&&ck<best){axis='col';line=cc;best=ck;}}
+      if(axis===null){found++;stats.solutions=found;return;}stats.branches++;
+      var choices=(axis==='row'?s.rows[line]:s.cols[line]).slice();for(var i=0;i<choices.length;i++){var child=cloneState(s);if(axis==='row')child.rows[line]=[choices[i]];else child.cols[line]=[choices[i]];visit(child,depth+1);if(found>=cap)return;}
+    }
+    visit(state,0);stats.solutions=found;return found;
+  }
+  generator.countParkSolutions=function(source,variant,limit,ignoreClues,stats){
+    if(ignoreClues||!variant||variant.kind!=='skyscraperparks')return fallback(source,variant,limit,ignoreClues);
+    return countArc(source,variant,limit||2,stats);
+  };
+  generator.make=function(variant,seed,difficulty){
+    var out=baseMake.call(generator,variant,seed,difficulty);
+    if(variant&&variant.id==='skyscraper-parks'&&out&&out.generation)out.generation.verification=VERIFICATION;
+    return out;
+  };
+  root.SkyscraperParksArcRuntime={countArc:countArc,fallback:fallback,verification:VERIFICATION};
 })(typeof window!=='undefined'?window:globalThis);
 
   </script>
