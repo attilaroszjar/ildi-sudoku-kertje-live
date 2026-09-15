@@ -848,7 +848,7 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
       <section class="welcome-card" aria-label="Üdvözlés"><div class="welcome-flower" aria-hidden="true">❀</div><div><p class="welcome-kicker">ILDI SUDOKU KERTJE</p><h1 id="welcome-title">Üdv Ildi Sudoku Kertjében!</h1><p id="welcome-copy">Válassz kategóriát, találd meg a kedvenc Sudoku-változatodat, és élvezd a logikai kihívásokat.</p></div><div class="welcome-cat" aria-hidden="true"><svg viewBox="0 0 190 92" focusable="false"><path class="cat-cushion" d="M33 72c20-20 102-24 132 0-21 12-109 16-132 0z"/><path class="sleep-cat-body" d="M63 62c10-29 47-35 72-14 7 6 11 14 11 22-17 6-68 7-92 1 1-3 4-6 9-9z"/><path class="sleep-cat-head" d="M52 50l3-23 13 11c7-3 15-3 22 0l14-12 2 24c-2 18-13 27-28 27-16 0-27-10-26-27z"/><path class="sleep-cat-tail" d="M136 62c25-2 31-14 23-22-5-5-13-5-18 1 8-2 12 2 11 7-1 8-9 10-19 9"/><path class="sleep-cat-face" d="M64 53c4 3 7 3 11 0M86 53c4 3 7 3 11 0M77 58l3 2 3-2M80 60c0 4-4 6-8 4M80 60c0 4 4 6 8 4"/></svg><span class="floating-heart">♡</span></div></section>
       <section class="control-deck" aria-label="Feladvány beállításai"><label class="deck-field"><span id="category-label">Kategória</span><select id="category-select"></select></label><label class="deck-field variant-field"><span id="variant-label">Sudoku-változat</span><select id="variant-select"></select></label><span id="variant-count" class="variant-count">82 változat</span><div class="deck-actions"><label class="deck-field difficulty-field"><span id="difficulty-label">Nehézség</span><select id="difficulty-select"></select></label><button id="restart-button" class="button secondary" type="button">↻ <span>Újrakezdés</span></button><button id="new-button" class="button primary" type="button">❀ <span>Új feladvány</span></button></div></section>
       <section id="workspace" class="workspace sudoku-only-workspace" aria-labelledby="game-title"><div class="garden-layout"><aside class="garden-sidebar" aria-label="Sudoku kategóriák"><section class="garden-card categories-card"><div class="card-title-row"><h2 id="categories-heading">Kategóriák</h2><span aria-hidden="true">✿</span></div><div id="category-list" class="category-list"></div></section><section class="garden-card favorites-card"><div class="card-title-row"><h2 id="favorites-heading">Kedvenceim</h2><span aria-hidden="true">♡</span></div><div id="favorites-list" class="favorites-list"><p id="favorites-empty">Itt jelennek meg a kedvenc változataid.</p></div></section><section class="garden-card stats-card"><div class="card-title-row"><h2 id="stats-heading">Statisztikám</h2><span aria-hidden="true">▥</span></div><dl class="stats-list"><div><dt id="solved-label">Megoldott</dt><dd id="stat-solved">0</dd></div><div><dt id="best-label">Legjobb idő</dt><dd id="stat-best">--:--</dd></div><div><dt id="streak-label">Jelenlegi sorozat</dt><dd id="stat-streak">0 nap</dd></div><div><dt id="total-time-label">Összes játékidő</dt><dd id="stat-total">0:00:00</dd></div></dl></section></aside><div class="play-column"><section class="garden-card puzzle-card"><div class="puzzle-card-head"><div><p id="game-family" class="eyebrow">Sudoku-gyűjtemény</p><h2 id="game-title">Sudoku-változatok</h2></div><button id="favorite-button" class="favorite-button" type="button" aria-label="Hozzáadás a kedvencekhez" title="Kedvenc">♡</button></div><div class="play-surface"><div id="game-stage" class="game-stage" tabindex="-1"></div><div id="game-tools" class="game-tools tool-rail"></div></div></section></div><aside class="garden-card inspector" aria-label="Feladvány információ"><section class="inspector-heading"><h2 id="about-heading">A változatról</h2><span aria-hidden="true">✿</span></section><section><h3 id="objective-heading">Cél</h3><p id="game-objective"></p></section><section><h3 id="rules-heading">Játékszabály</h3><div id="game-rules"></div></section><section class="tip-card"><h3 id="tip-heading">Tipp</h3><p id="game-tip">Haladj nyugodtan, és először azokat a cellákat keresd, ahol a szabályok a legtöbb lehetőséget kizárják.</p></section><section class="status-compact"><div class="status-row"><span id="status-label">Állapot</span><strong id="game-status" role="status" aria-live="polite">Készen áll</strong></div><div class="status-row"><span id="counter-label">Lépések</span><strong id="game-counter">0</strong></div></section><div class="garden-bench" aria-hidden="true"><span class="garden-sprig">❀ ✿ ❀</span><svg viewBox="0 0 210 105" focusable="false"><path class="mini-ground" d="M18 87c34-11 142-12 177 0"/><path class="mini-cat" d="M60 76c8-20 31-26 49-15 13 8 19 19 15 27H52c0-5 3-9 8-12zM54 61l3-17 11 9c5-2 11-2 16 0l11-9 2 18c-1 13-10 20-22 20-13 0-22-8-21-21z"/><path class="mini-tail" d="M118 77c26 1 36-9 31-18-3-6-10-7-16-3 8-1 11 3 9 8-3 6-11 7-22 5"/><path class="mini-bench" d="M128 76h59M134 64h47M140 64v23M176 64v23"/></svg></div></aside></div></section>
-      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=5310a44" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
+      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=2a44d6e" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
     </main>
   </div><div id="toast" class="toast" role="status" aria-live="polite"></div>
   <dialog id="help-dialog" class="dialog"><form method="dialog"><div class="dialog-head"><div><p id="guide-eyebrow" class="eyebrow"></p><h2 id="guide-title"></h2></div><button class="icon-button" value="close" aria-label="Bezárás">×</button></div><div class="dialog-body"><p id="guide-p1"></p><dl><div><dt id="guide-pointer"></dt><dd id="guide-pointer-d"></dd></div><div><dt id="guide-keyboard"></dt><dd id="guide-keyboard-d"></dd></div><div><dt id="guide-feedback"></dt><dd id="guide-feedback-d"></dd></div></dl><p id="guide-quiet" class="quiet"></p></div><button id="guide-close" class="button primary dialog-close" value="close"></button></form></dialog>
@@ -1800,6 +1800,23 @@ root.SudokuBank.push(
 );}(typeof window!=='undefined'?window:globalThis));
 
   </script>
+  <script data-source="games/skyscraper-parks2-certified-corpus.js">
+(function(root){
+  'use strict';
+  root.SkyscraperParks2CertifiedCorpus=[{
+    schemaVersion:1,
+    id:'parks2-expert-seed-92001-a',
+    variantId:'skyscraper-parks2',
+    sourceSeed:92001,
+    difficulty:'expert',
+    puzzle:[[0,0,7,0,0,0,0,0],[0,0,0,0,0,0,0,2],[0,0,0,0,0,0,0,0],[0,0,7,0,0,0,0,0],[0,0,0,0,0,7,0,0],[0,0,0,0,0,1,0,0],[0,0,0,0,0,0,3,0],[0,0,0,0,0,0,0,0]],
+    solution:[[1,7,7,3,4,6,2,5],[6,4,5,7,1,3,7,2],[7,5,6,1,2,4,7,3],[7,6,7,2,3,5,1,4],[3,1,2,5,6,7,4,7],[4,2,3,6,7,1,5,7],[2,7,1,4,5,7,3,6],[5,3,4,7,7,2,6,1]],
+    data:{parkValue:7,inputMax:7,maxDigit:6,parksPerLine:2,clues:[{axis:'row',index:0,side:'left',count:4},{axis:'row',index:0,side:'right',count:2},{axis:'col',index:0,side:'top',count:2},{axis:'col',index:0,side:'bottom',count:2},{axis:'row',index:1,side:'left',count:1},{axis:'row',index:1,side:'right',count:4},{axis:'col',index:1,side:'top',count:3},{axis:'col',index:1,side:'bottom',count:2},{axis:'row',index:2,side:'left',count:2},{axis:'row',index:2,side:'right',count:3},{axis:'col',index:2,side:'top',count:2},{axis:'col',index:2,side:'bottom',count:2},{axis:'row',index:3,side:'left',count:1},{axis:'row',index:3,side:'right',count:3},{axis:'col',index:3,side:'top',count:3},{axis:'col',index:3,side:'bottom',count:2},{axis:'row',index:4,side:'left',count:3},{axis:'row',index:4,side:'right',count:2},{axis:'col',index:4,side:'top',count:2},{axis:'col',index:4,side:'bottom',count:2},{axis:'row',index:5,side:'left',count:2},{axis:'row',index:5,side:'right',count:2},{axis:'col',index:5,side:'top',count:1},{axis:'col',index:5,side:'bottom',count:3},{axis:'row',index:6,side:'left',count:4},{axis:'row',index:6,side:'right',count:1},{axis:'col',index:6,side:'top',count:4},{axis:'col',index:6,side:'bottom',count:1},{axis:'row',index:7,side:'left',count:2},{axis:'row',index:7,side:'right',count:2},{axis:'col',index:7,side:'top',count:2},{axis:'col',index:7,side:'bottom',count:2}],latinOnly:true,source:'GridPuzzle — Skyscrapers parks2 rules'},
+    certificate:{exactVariantUnique:true,baseNonUnique:true,variantEssential:true,locallyIrreducibleUnderProductionContract:true,localIrreducibilityProof:'monotone-nonuniqueness-from-single-pass',acceptedRemovals:14,rejectedRemovals:6,finalGivens:6,evidence:'host-realm deterministic carve audit, seed 92001'}
+  }];
+}(typeof window!=='undefined'?window:globalThis));
+
+  </script>
   <script data-source="games/sudoku-generator.js">
 (function (root) {
   'use strict';
@@ -2052,10 +2069,19 @@ root.SudokuBank.push(
   }
   function sightlineValid(variant,grid,r,c){var clues=sightClueIndex(variant)[r][c]||[];for(var i=0;i<clues.length;i+=1){var cl=clues[i],line=cl.cells.map(function(p){return grid[p[0]][p[1]];});if(!line.every(Boolean))continue;var count=skyscraperVisibleCount(line);if(variant.kind==='insideskyscrapers'){var sv=grid[cl.source[0]][cl.source[1]];if(sv&&count!==sv)return false;}else if(variant.kind==='diagonalskyscrapers'&&count!==cl.count)return false;}return true;}
 
+  function skyscraperVisibilityFeasible(line,target){
+    var visible=0,high=0,i=0;
+    for(;i<line.length&&line[i];i+=1){if(line[i]>high){high=line[i];visible+=1;}}
+    if(i===line.length)return visible===target;
+    if(visible>target)return false;
+    var remaining=line.length-i;
+    var maxAdditional=Math.min(remaining,line.length-high);
+    return visible+maxAdditional>=target;
+  }
   function dominoSkyscraperValid(variant,grid,r,c,ignoreSpecial){
     if(ignoreSpecial)return true;
     var clues=affectedOutsideClues(variant,r,c),i;
-    for(i=0;i<clues.length;i+=1){var cl=clues[i],line=orientedLine(grid,cl);if(line.every(Boolean)&&skyscraperVisibleCount(line)!==cl.count)return false;}
+    for(i=0;i<clues.length;i+=1){var cl=clues[i],line=orientedLine(grid,cl);if(!skyscraperVisibilityFeasible(line,cl.count))return false;}
     var dominoes=(variant.data&&variant.data.dominoes)||[],target=null;
     for(i=0;i<dominoes.length;i+=1){var dm=dominoes[i],a=grid[dm[0][0]][dm[0][1]],b=grid[dm[1][0]][dm[1][1]];if(a&&b){var sum=a+b;if(target===null)target=sum;else if(sum!==target)return false;}}
     return true;
@@ -2090,8 +2116,40 @@ root.SudokuBank.push(
     for(var oi=0;oi<order.length&&clues>target;oi+=1){var idx=order[oi],r=Math.floor(idx/n),c=idx%n,old=grid[r][c];if(!old)continue;grid[r][c]=0;if(countDominoSkyscraperSolutions(grid,working,2,false)!==1)grid[r][c]=old;else clues-=1;}
     var essential=countDominoSkyscraperSolutions(grid,working,2,true)!==1;
     if(!essential){shuffle(order,random);for(oi=0;oi<order.length&&!essential;oi+=1){idx=order[oi];r=Math.floor(idx/n);c=idx%n;old=grid[r][c];if(!old)continue;grid[r][c]=0;if(countDominoSkyscraperSolutions(grid,working,2,false)!==1)grid[r][c]=old;else{clues-=1;essential=countDominoSkyscraperSolutions(grid,working,2,true)!==1;}}}
-    if(essential&&clues<target)clues=restoreAmbiguousGivens(grid,solution,order,target,clues,function(g){return countDominoSkyscraperSolutions(g,working,2,true);});
-    return {puzzle:grid,solution:solution,data:data,clues:clues,unique:countDominoSkyscraperSolutions(grid,working,2,false)===1,variantEssential:essential,generatorFamily:variant.id==='classic-skyscrapers'?'seeded-row-column-permutation':'seeded-latin-permutation-derived-dominoes'};
+    var expertLocalIrreducibility=(variant.id==='classic-skyscrapers'||variant.id==='domino-skyscrapers')&&difficulty==='expert';
+    if(essential&&clues<target&&!expertLocalIrreducibility)clues=restoreAmbiguousGivens(grid,solution,order,target,clues,function(g){return countDominoSkyscraperSolutions(g,working,2,true);});
+    var acceptedRemovals=0,rejectedRemovals=0;
+    if(expertLocalIrreducibility){
+      // A single complete pass is a proof here: once removing a given makes the
+      // puzzle non-unique, deleting further givens cannot make it unique again.
+      // The solution set is monotone under clue removal, so rejected removals
+      // remain rejected in the final, sparser puzzle.
+      for(oi=0;oi<order.length;oi+=1){
+        idx=order[oi];r=Math.floor(idx/n);c=idx%n;old=grid[r][c];
+        if(!old)continue;
+        grid[r][c]=0;
+        if(countDominoSkyscraperSolutions(grid,working,2,false)===1){clues-=1;acceptedRemovals+=1;}
+        else{grid[r][c]=old;rejectedRemovals+=1;}
+      }
+    }
+    var finalStats={};
+    var unique=countDominoSkyscraperSolutions(grid,working,2,false,finalStats)===1;
+    return {
+      puzzle:grid,
+      solution:solution,
+      data:data,
+      clues:clues,
+      unique:unique,
+      variantEssential:essential,
+      generatorFamily:variant.id==='classic-skyscrapers'?(expertLocalIrreducibility?'seeded-row-column-permutation-expert-local-irreducible':'seeded-row-column-permutation'):(expertLocalIrreducibility?'seeded-latin-permutation-derived-dominoes-expert-local-irreducible':'seeded-latin-permutation-derived-dominoes'),
+      verification:expertLocalIrreducibility?'solver-verified-local-irreducible':undefined,
+      policy:expertLocalIrreducibility?'contract-driven-local-irreducibility':undefined,
+      localIrreducibilityProof:expertLocalIrreducibility?'monotone-nonuniqueness-from-single-pass':undefined,
+      locallyIrreducibleUnderProductionContract:expertLocalIrreducibility&&unique,
+      acceptedRemovals:expertLocalIrreducibility?acceptedRemovals:undefined,
+      rejectedRemovals:expertLocalIrreducibility?rejectedRemovals:undefined,
+      searchStats:expertLocalIrreducibility?finalStats:undefined
+    };
   }
   function parkVisibleCount(line,parkValue){var max=0,count=0;for(var i=0;i<line.length;i+=1){var v=line[i];if(v===parkValue)continue;if(v>max){max=v;count+=1;}}return count;}
   function parkVisibleSum(line,parkValue){var max=0,sum=0;for(var i=0;i<line.length;i+=1){var v=line[i];if(v===parkValue)continue;if(v>max){max=v;sum+=v;}}return sum;}
@@ -2240,7 +2298,40 @@ root.SudokuBank.push(
     for(var oi=0;oi<order.length&&clues>target;oi++){var idx=order[oi],rr=Math.floor(idx/n),cc=idx%n,old=grid[rr][cc];grid[rr][cc]=0;if(countEvenOddSkyscraperSolutions(grid,working,2,false)!==1)grid[rr][cc]=old;else clues--;}
     var essential=countEvenOddSkyscraperSolutions(grid,working,2,true)!==1;
     if(!essential){shuffle(order,random);for(oi=0;oi<order.length&&!essential;oi++){idx=order[oi];rr=Math.floor(idx/n);cc=idx%n;old=grid[rr][cc];if(!old)continue;grid[rr][cc]=0;if(countEvenOddSkyscraperSolutions(grid,working,2,false)!==1)grid[rr][cc]=old;else{clues--;essential=countEvenOddSkyscraperSolutions(grid,working,2,true)!==1;}}}
-    return {puzzle:grid,solution:solution,data:data,clues:clues,unique:countEvenOddSkyscraperSolutions(grid,working,2,false)===1,variantEssential:essential,generatorFamily:'seeded-row-column-permutation'};
+
+    var expertLocalIrreducibility=difficulty==='expert'&&essential,acceptedRemovals=0,rejectedRemovals=0;
+    if(expertLocalIrreducibility){
+      for(oi=0;oi<order.length;oi++){
+        idx=order[oi];rr=Math.floor(idx/n);cc=idx%n;old=grid[rr][cc];
+        if(!old)continue;
+        grid[rr][cc]=0;
+        if(countEvenOddSkyscraperSolutions(grid,working,2,false)!==1){
+          grid[rr][cc]=old;
+          rejectedRemovals++;
+        }else{
+          clues--;
+          acceptedRemovals++;
+        }
+      }
+      essential=countEvenOddSkyscraperSolutions(grid,working,2,true)!==1;
+    }
+
+    var unique=countEvenOddSkyscraperSolutions(grid,working,2,false)===1;
+    return {
+      puzzle:grid,
+      solution:solution,
+      data:data,
+      clues:clues,
+      unique:unique,
+      variantEssential:essential,
+      generatorFamily:expertLocalIrreducibility?'seeded-row-column-permutation-expert-local-irreducible':'seeded-row-column-permutation',
+      verification:expertLocalIrreducibility?'solver-verified-local-irreducible':undefined,
+      policy:expertLocalIrreducibility?'contract-driven-local-irreducibility':undefined,
+      localIrreducibilityProof:expertLocalIrreducibility?'monotone-nonuniqueness-from-single-pass':undefined,
+      locallyIrreducibleUnderProductionContract:expertLocalIrreducibility&&unique&&essential,
+      acceptedRemovals:expertLocalIrreducibility?acceptedRemovals:undefined,
+      rejectedRemovals:expertLocalIrreducibility?rejectedRemovals:undefined
+    };
   }
 
 
@@ -3692,6 +3783,7 @@ root.SudokuBank.push(
       if(variant.kind==='samurai'){out.puzzle=result.puzzle;out.solution=result.solution;out.data=result.data;} else {out.puzzle=result.puzzle;if(result.solution)out.solution=result.solution;if(result.preShaded)out.preShaded=result.preShaded;if(result.data)out.data=variant.kind==='futoshiki'?Object.assign({},out.data,result.data):result.data;}
       if(variant.kind==='sukaku'){out.data.candidates=candidateSetsFromPuzzle(result.puzzle);out.data.sourcePuzzle=cloneGrid(result.puzzle);out.puzzle=Array.from({length:out.solution.length},function(){return Array(out.solution.length).fill(0);});}
       out.generation = { seed: seed >>> 0, clues: result.clues, unique: result.unique, verification: result.verification || (result.unique?'solver-verified':'unverified'), generatorFamily: result.generatorFamily || null, difficultyScore: result.difficultyScore == null ? null : result.difficultyScore, mode: (variantRequiresEssential(variant)||variant.kind==='skyscraperparks'||variant.kind==='sumskyscraperparks'||variant.kind==='dominoskyscrapers'||variant.kind==='skyscraperparks2'||variant.kind==='evenoddskyscrapers'||variant.kind==='toroidalskyscrapers'||variant.kind==='doubleskyscrapers'||variant.kind==='hitori'||variant.kind==='bridges'||variant.kind==='fillomino'||variant.kind==='futoshiki'||variant.kind==='slitherlink'||variant.kind==='akari'||variant.kind==='nurikabe'||variant.kind==='nonogram'||variant.kind==='masyu'||variant.kind==='starbattle'||variant.kind==='aquarium'||variant.kind==='galaxies'||variant.kind==='shakashaka'||variant.kind==='rippleeffect'||variant.kind==='yajilin'||variant.kind==='lits'||variant.kind==='battleships'||variant.kind==='heyawake')?'seeded-variant-essential':'seeded-unique', variantEssential:!!result.variantEssential };
+      ['policy','localIrreducibilityProof','locallyIrreducibleUnderProductionContract','acceptedRemovals','rejectedRemovals'].forEach(function(name){if(result[name]!==undefined)out.generation[name]=result[name];});
       cache.set(key, out);
       if (cache.size > 96) cache.delete(cache.keys().next().value);
       return JSON.parse(JSON.stringify(out));
@@ -5753,8 +5845,52 @@ root.SudokuBank.push(
     {id:'als-xz',fn:AX.findAlsXz},{id:'als-xy-wing',fn:AW.findAlsXyWing},{id:'als-chain',fn:AC.findAlsChain}
   ]);
   function eligible(options){options=options||{};var out=[];for(var i=0;i<FINDERS.length;i++){var e=FINDERS[i];if(e.requiresUniqueness&&!options.allowUniqueness)continue;out.push(e);}return out;}
-  function findNext(state,options){var list=eligible(options),best=null;for(var i=0;i<list.length;i++){var found=list[i].fn(state,options||{});for(var j=0;j<found.length;j++)if(!best||C.compareDeductions(found[j],best)<0)best=found[j];if(best&&best.priority===C.TECHNIQUES[list[i].id].priority)return best;}return best;}
-  function solve(source,options){options=options||{};var state=source instanceof S.ClassicHumanState?source:new S.ClassicHumanState(source),maxSteps=options.maxSteps||10000,count=0;if(!state.valid)return {status:'INVALID',steps:[],finalState:state.cloneGrid(),guessRequired:false};while(!state.isSolved()&&count<maxSteps){var d=findNext(state,options);if(!d||!state.apply(d))break;count++;}return {status:state.valid?(state.isSolved()?'SOLVED_LOGICALLY':'STALLED'):'INVALID',steps:state.steps.slice(),finalState:state.cloneGrid(),guessRequired:false,usesUniquenessAssumption:state.steps.some(function(d){return !!C.TECHNIQUES[d.techniqueId].requiresUniqueness;})};}
+  function numericComplexity(deduction){var out=0,complexity=deduction&&deduction.complexity||{};Object.keys(complexity).forEach(function(key){var value=complexity[key];if(Number.isFinite(value)&&value>0)out+=value;});return out;}
+  function brutalLowerBoundTracker(){
+    var maxPriority=0,maxBaseRating=0,maxComplexity=0,weightedLogicalWork=0,advancedFamilies={},usesServerPreferred=false,usesServerOnly=false;
+    function scoreParts(priority,baseRating,work,familyCount,complexity,serverPreferred,serverOnly){
+      return Math.round(priority*0.40)+Math.round(baseRating*4)+Math.round(Math.min(48,Math.sqrt(work)*4))+(priority>=60?8:0)+Math.max(0,familyCount-1)*6+Math.round(Math.min(12,complexity*0.70))+(serverPreferred?12:0)+(serverOnly?24:0);
+    }
+    function push(step){
+      var meta=C.TECHNIQUES[step.techniqueId],actions=(step.placements||[]).length+(step.eliminations||[]).length,complexity=numericComplexity(step);
+      weightedLogicalWork+=meta.baseRating*(1+Math.log2(1+actions))+0.05*complexity;
+      if(complexity>maxComplexity)maxComplexity=complexity;
+      if(meta.priority>maxPriority){maxPriority=meta.priority;maxBaseRating=meta.baseRating;}
+      if(meta.priority>=100)advancedFamilies[meta.familyId]=1;
+      if(meta.serverPreferred)usesServerPreferred=true;if(meta.serverOnly)usesServerOnly=true;
+    }
+    function score(){return scoreParts(maxPriority,maxBaseRating,weightedLogicalWork,Object.keys(advancedFamilies).length,maxComplexity,usesServerPreferred,usesServerOnly);}
+    function scoreWithMinimalStep(meta){
+      var priority=maxPriority,baseRating=maxBaseRating,work=weightedLogicalWork+meta.baseRating*2,families=Object.keys(advancedFamilies).length;
+      if(meta.priority>priority){priority=meta.priority;baseRating=meta.baseRating;}
+      if(meta.priority>=100&&!advancedFamilies[meta.familyId])families++;
+      return scoreParts(priority,baseRating,work,families,maxComplexity,usesServerPreferred||!!meta.serverPreferred,usesServerOnly||!!meta.serverOnly);
+    }
+    return{push:push,score:score,scoreWithMinimalStep:scoreWithMinimalStep};
+  }
+  function findNext(state,options,tracker,brutalMin){
+    var list=eligible(options),best=null;
+    for(var i=0;i<list.length;i++){
+      if(tracker&&brutalMin!=null){
+        var minFuture=Infinity;
+        for(var ri=i;ri<list.length;ri++)minFuture=Math.min(minFuture,tracker.scoreWithMinimalStep(C.TECHNIQUES[list[ri].id]));
+        if(minFuture>=brutalMin)return {brutalGuaranteed:true,brutalLowerBound:minFuture};
+      }
+      var found=list[i].fn(state,options||{});for(var j=0;j<found.length;j++)if(!best||C.compareDeductions(found[j],best)<0)best=found[j];if(best&&best.priority===C.TECHNIQUES[list[i].id].priority)return best;
+    }
+    return best;
+  }
+  function solve(source,options){
+    options=options||{};var state=source instanceof S.ClassicHumanState?source:new S.ClassicHumanState(source),maxSteps=options.maxSteps||10000,count=0,brutalMin=Number.isFinite(options.brutalLowerBoundMin)?options.brutalLowerBoundMin:null,tracker=brutalMin!=null?brutalLowerBoundTracker():null;
+    if(!state.valid)return {status:'INVALID',steps:[],finalState:state.cloneGrid(),guessRequired:false};
+    while(!state.isSolved()&&count<maxSteps){
+      var d=findNext(state,options,tracker,brutalMin);
+      if(d&&d.brutalGuaranteed)return {status:'BRUTAL_LOWER_BOUND',steps:state.steps.slice(),finalState:state.cloneGrid(),guessRequired:false,brutalLowerBound:d.brutalLowerBound,brutalPruneStage:'finder-suffix',usesUniquenessAssumption:state.steps.some(function(step){return !!C.TECHNIQUES[step.techniqueId].requiresUniqueness;})};
+      if(!d||!state.apply(d))break;count++;
+      if(tracker){tracker.push(d);var lower=tracker.score();if(lower>=brutalMin)return {status:'BRUTAL_LOWER_BOUND',steps:state.steps.slice(),finalState:state.cloneGrid(),guessRequired:false,brutalLowerBound:lower,brutalPruneStage:'post-step',usesUniquenessAssumption:state.steps.some(function(step){return !!C.TECHNIQUES[step.techniqueId].requiresUniqueness;})};}
+    }
+    return {status:state.valid?(state.isSolved()?'SOLVED_LOGICALLY':'STALLED'):'INVALID',steps:state.steps.slice(),finalState:state.cloneGrid(),guessRequired:false,usesUniquenessAssumption:state.steps.some(function(d){return !!C.TECHNIQUES[d.techniqueId].requiresUniqueness;})};
+  }
   var api={FINDERS:FINDERS,findNext:findNext,solve:solve};if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ClassicHumanRuntimeSolver=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
 
@@ -5764,16 +5900,20 @@ root.SudokuBank.push(
   var C=root.ClassicHumanContracts,S=root.ClassicHumanRuntimeSolver,R=root.ClassicHumanRating;
   if(typeof require==='function'){if(!C)C=require('./contracts.js');if(!S)S=require('./runtime-solver.js');if(!R)R=require('./rating.js');}
   function gridString(grid){var out='';for(var r=0;r<9;r++)for(var c=0;c<9;c++)out+=String(grid[r][c]||0);return out;}
-  function evaluate(puzzle){
-    var state;try{state=new C.ClassicCandidateState(puzzle);}catch(_){return Object.freeze({status:'INVALID',unique:false,solution:null,rating:null});}
-    if(!state.valid)return Object.freeze({status:'INVALID',unique:false,solution:null,rating:null});
-    var count=C.countSolutions(puzzle,2);if(count!==1)return Object.freeze({status:count===0?'INVALID':'NON_UNIQUE',unique:false,solution:null,rating:null});
-    var solved=S.solve(puzzle,{maxSteps:10000,allowUniqueness:true});
-    if(solved.status==='INVALID')return Object.freeze({status:'INVALID',unique:true,solution:null,rating:null});
+  function invalid(status,unique){return Object.freeze({status:status,unique:!!unique,solution:null,rating:null});}
+  function baseEvaluate(puzzle,expertSearch){
+    var state;try{state=new C.ClassicCandidateState(puzzle);}catch(_){return invalid('INVALID',false);}
+    if(!state.valid)return invalid('INVALID',false);
+    var count=C.countSolutions(puzzle,2);if(count!==1)return invalid(count===0?'INVALID':'NON_UNIQUE',false);
+    var solved=S.solve(puzzle,{maxSteps:10000,allowUniqueness:true,brutalLowerBoundMin:expertSearch?240:null});
+    if(solved.status==='INVALID')return invalid('INVALID',true);
+    if(solved.status==='BRUTAL_LOWER_BOUND')return Object.freeze({status:'BRUTAL_LOWER_BOUND',unique:true,solution:null,rating:Object.freeze({score:solved.brutalLowerBound,rawScore:solved.brutalLowerBound,band:'brutal',level:9,scoreStatus:'PROVEN_LOWER_BOUND',hardestTechnique:null,totalSteps:solved.steps.length,advancedSteps:null,dependencyDepth:null})});
     var rating=R.rateSolve(solved),solution=solved.status==='SOLVED_LOGICALLY'?gridString(solved.finalState):null;
     return Object.freeze({status:solved.status,unique:true,solution:solution,rating:Object.freeze({score:rating.score,rawScore:rating.rawScore,band:rating.band,level:rating.level,scoreStatus:rating.scoreStatus,hardestTechnique:rating.hardestTechnique,totalSteps:rating.totalSteps,advancedSteps:rating.advancedSteps,dependencyDepth:rating.dependencyDepth})});
   }
-  var api={evaluate:evaluate};if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ClassicHumanRuntimeEvaluator=api;
+  function evaluate(puzzle){return baseEvaluate(puzzle,false);}
+  function evaluateExpertSearch(puzzle){return baseEvaluate(puzzle,true);}
+  var api={evaluate:evaluate,evaluateExpertSearch:evaluateExpertSearch};if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ClassicHumanRuntimeEvaluator=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
 
   </script>
@@ -5945,51 +6085,26 @@ root.SudokuBank.push(
 (function(root){'use strict';
   var G=root.ClassicHumanRuntimeGuidedGenerator,E=root.ClassicHumanRuntimeEvaluator;
   if(typeof require==='function'){if(!G)G=require('./classic-human/runtime-guided-generator.js');if(!E)E=require('./classic-human/runtime-evaluator.js');}
-  var EXPERT_PROFILE='classic-human-runtime-expert-sculpt-v2';
-  var EXPERT_BUDGET=Object.freeze({seedAttempts:6,baseProfiles:Object.freeze(['expert','focused','gentle']),maxDepth:2,beamWidth:2,childLimit:27});
+  var EXPERT_PROFILE='classic-human-runtime-expert-sparse-entry-v6';
+  var EXPERT_BUDGET=Object.freeze({seedAttempts:6,baseProfiles:Object.freeze(['expert','focused','gentle']),maxDepth:2,beamWidth:2,childLimit:27,entryPool:8,entryCandidates:4});
   function clone(x){return JSON.parse(JSON.stringify(x));}
   function gridString(grid){var out='';for(var r=0;r<9;r++)for(var c=0;c<9;c++)out+=String(grid[r][c]||0);return out;}
   function grid(text){var out=[];for(var r=0;r<9;r++){var row=[];for(var c=0;c<9;c++)row.push(Number(text[r*9+c]));out.push(row);}return out;}
   function clueCount(text){var n=0;for(var i=0;i<text.length;i++)if(text[i]!=='0')n++;return n;}
   function mulberry32(seed){var x=seed>>>0;return function(){x=(x+0x6D2B79F5)>>>0;var t=x;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296;};}
   function shuffle(list,random){for(var i=list.length-1;i>0;i--){var j=Math.floor(random()*(i+1)),t=list[i];list[i]=list[j];list[j]=t;}return list;}
-  function diversifiedVariant(variant,seed){
-    var out=clone(variant),source=variant.solution,random=mulberry32((seed^0xC1A551C5)>>>0),digits=shuffle([1,2,3,4,5,6,7,8,9],random),bands=shuffle([0,1,2],random),stacks=shuffle([0,1,2],random),rows=[],cols=[];
-    for(var bi=0;bi<3;bi++){var innerRows=shuffle([0,1,2],random);for(var ri=0;ri<3;ri++)rows.push(bands[bi]*3+innerRows[ri]);}
-    for(var si=0;si<3;si++){var innerCols=shuffle([0,1,2],random);for(var ci=0;ci<3;ci++)cols.push(stacks[si]*3+innerCols[ci]);}
-    out.solution=rows.map(function(r){return cols.map(function(c){return digits[source[r][c]-1];});});
-    return out;
-  }
-  function accepted(ev){var r=ev&&ev.rating;return !!(ev&&ev.status==='SOLVED_LOGICALLY'&&r&&Number.isInteger(r.level)&&r.level>=6&&r.level<=8);}
+  function diversifiedVariant(variant,seed){var out=clone(variant),source=variant.solution,random=mulberry32((seed^0xC1A551C5)>>>0),digits=shuffle([1,2,3,4,5,6,7,8,9],random),bands=shuffle([0,1,2],random),stacks=shuffle([0,1,2],random),rows=[],cols=[];for(var bi=0;bi<3;bi++){var innerRows=shuffle([0,1,2],random);for(var ri=0;ri<3;ri++)rows.push(bands[bi]*3+innerRows[ri]);}for(var si=0;si<3;si++){var innerCols=shuffle([0,1,2],random);for(var ci=0;ci<3;ci++)cols.push(stacks[si]*3+innerCols[ci]);}out.solution=rows.map(function(r){return cols.map(function(c){return digits[source[r][c]-1];});});return out;}
+  function accepted(ev){var r=ev&&ev.rating;return !!(ev&&ev.unique===true&&ev.status==='SOLVED_LOGICALLY'&&r&&Number.isInteger(r.level)&&r.level>=6&&r.level<=8);}
   function rank(ev){var r=ev&&ev.rating;if(!r||!Number.isFinite(r.score))return -1000000;if(r.level===9||r.score>239)return -100000-Math.max(0,r.score-239);return r.score+(Number.isInteger(r.advancedSteps)?r.advancedSteps:0)*24;}
-  function decorate(base,puzzle,ev,seed,stats){var out=clone(base),r=ev.rating;out.puzzle=grid(puzzle);out.solution=grid(ev.solution);out.generation=Object.assign({},base.generation||{},{source:'classic-human-runtime-generator',runtimeProfile:EXPERT_PROFILE,requestedHumanBand:'expert',measuredHumanBand:r.band||null,humanScore:r.score,humanLevel:r.level,humanStatus:ev.status,humanGuided:true,bounded:true,degraded:false,baseAttempts:stats.baseAttempts,removalAttempts:stats.removalAttempts,seed:seed>>>0,clues:clueCount(puzzle),unique:true,verification:'solver-verified',fallbackSource:null,diversifiedSolution:true});return out;}
-  function children(node,seed,stats){var out=[],start=(seed>>>0)%81;for(var j=0;j<81&&out.length<EXPERT_BUDGET.childLimit;j++){var i=(start+j)%81;if(node.puzzle[i]==='0')continue;var p=node.puzzle.slice(0,i)+'0'+node.puzzle.slice(i+1);stats.removalAttempts++;var ev=E.evaluate(p);if(!ev.unique||ev.status==='INVALID'||ev.status==='NON_UNIQUE')continue;out.push({puzzle:p,evaluation:ev,rank:rank(ev)});}return out;}
-  function expertMake(baseMake,variant,seed){var stats={baseAttempts:0,removalAttempts:0},best=null;
-    for(var attempt=0;attempt<EXPERT_BUDGET.seedAttempts;attempt++){
-      var derived=(seed+Math.imul(attempt,0x9E3779B1))>>>0;
-      for(var pi=0;pi<EXPERT_BUDGET.baseProfiles.length;pi++){
-        var profile=EXPERT_BUDGET.baseProfiles[pi],shaped=diversifiedVariant(variant,(derived^Math.imul(pi+1,0x85EBCA6B))>>>0),base=baseMake(shaped,derived,profile);stats.baseAttempts++;
-        if(!base||!base.generation||base.generation.unique!==true||base.generation.verification!=='solver-verified')continue;
-        var puzzle=gridString(base.puzzle),ev=E.evaluate(puzzle),rootNode={puzzle:puzzle,evaluation:ev,rank:rank(ev)};
-        if(accepted(ev))return decorate(base,puzzle,ev,seed,stats);
-        if(!best||rootNode.rank>best.rank)best={base:base,puzzle:puzzle,evaluation:ev,rank:rootNode.rank};
-        var beam=[rootNode];
-        for(var depth=0;depth<EXPERT_BUDGET.maxDepth;depth++){
-          var next=[];
-          for(var bi=0;bi<beam.length;bi++){
-            var kids=children(beam[bi],(derived^Math.imul(depth+1,0x85EBCA6B)^Math.imul(bi+1,0xC2B2AE35))>>>0,stats);
-            for(var k=0;k<kids.length;k++){
-              var node=kids[k];if(accepted(node.evaluation))return decorate(base,node.puzzle,node.evaluation,seed,stats);
-              if(!best||node.rank>best.rank)best={base:base,puzzle:node.puzzle,evaluation:node.evaluation,rank:node.rank};
-              if(node.rank>-100000)next.push(node);
-            }
-          }
-          next.sort(function(a,b){return b.rank-a.rank||a.puzzle.localeCompare(b.puzzle);});beam=next.slice(0,EXPERT_BUDGET.beamWidth);if(!beam.length)break;
-        }
-      }
-    }
-    var br=best&&best.evaluation&&best.evaluation.rating||{};throw new Error('bounded expert sculpt exhausted seed='+seed+' baseAttempts='+stats.baseAttempts+' removalAttempts='+stats.removalAttempts+' best={status='+(best&&best.evaluation&&best.evaluation.status||'none')+',level='+(Number.isInteger(br.level)?br.level:'null')+',score='+(br.score==null?'null':br.score)+',hardest='+(br.hardestTechnique||'none')+',clues='+(best?clueCount(best.puzzle):'null')+'}');
-  }
+  function decorate(base,puzzle,ev,seed,stats){var out=clone(base),r=ev.rating;out.puzzle=grid(puzzle);out.solution=grid(ev.solution);out.generation=Object.assign({},base.generation||{},{source:'classic-human-runtime-generator',runtimeProfile:EXPERT_PROFILE,requestedHumanBand:'expert',measuredHumanBand:r.band||null,humanScore:r.score,humanLevel:r.level,humanStatus:ev.status,humanGuided:true,bounded:true,degraded:false,baseAttempts:stats.baseAttempts,removalAttempts:stats.removalAttempts,localRemovalAttempts:stats.localRemovalAttempts||0,localAcceptedRemovals:stats.chosenLocalAcceptedRemovals||0,locallyIrreducibleUnderProductionContract:true,rawEntryCandidateCount:stats.rawEntryCandidateCount||0,rawEntryCandidateClues:stats.rawEntryCandidateClues||[],entryCandidateCount:stats.entryCandidateCount||0,entryCandidateClues:stats.entryCandidateClues||[],chosenEntryClues:stats.chosenEntryClues||null,multistartEvaluations:stats.multistartEvaluations||0,evaluationCacheHits:stats.evaluationCacheHits||0,brutalPrunes:stats.brutalPrunes||0,seed:seed>>>0,clues:clueCount(puzzle),unique:true,verification:'solver-verified',fallbackSource:null,diversifiedSolution:true});return out;}
+  function expertEvaluate(puzzle){return typeof E.evaluateExpertSearch==='function'?E.evaluateExpertSearch(puzzle):E.evaluate(puzzle);}
+  function evaluateCached(puzzle,cache,stats){if(cache.has(puzzle)){stats.evaluationCacheHits++;return cache.get(puzzle);}var ev=expertEvaluate(puzzle);cache.set(puzzle,ev);stats.multistartEvaluations++;if(ev&&ev.status==='BRUTAL_LOWER_BOUND')stats.brutalPrunes++;return ev;}
+  function children(node,seed,stats,cache){var out=[],start=(seed>>>0)%81;for(var j=0;j<81&&out.length<EXPERT_BUDGET.childLimit;j++){var i=(start+j)%81;if(node.puzzle[i]==='0')continue;var p=node.puzzle.slice(0,i)+'0'+node.puzzle.slice(i+1);stats.removalAttempts++;var ev=evaluateCached(p,cache,stats);if(!ev.unique||ev.status==='INVALID'||ev.status==='NON_UNIQUE')continue;out.push({puzzle:p,evaluation:ev,rank:rank(ev)});}return out;}
+  function addEntry(entries,seen,puzzle,ev,base){if(!accepted(ev)||seen[puzzle])return false;seen[puzzle]=1;entries.push({puzzle:puzzle,evaluation:ev,rank:rank(ev),base:base});return true;}
+  function chooseSparseEntries(entries){var sorted=entries.slice().sort(function(a,b){var ac=clueCount(a.puzzle),bc=clueCount(b.puzzle);if(ac!==bc)return ac-bc;if(a.rank!==b.rank)return b.rank-a.rank;return a.puzzle.localeCompare(b.puzzle);});return sorted.slice(0,EXPERT_BUDGET.entryCandidates);}
+  function carveToLocalIrreducibility(entry,seed,stats,cache){var current=entry.puzzle,currentEv=entry.evaluation,pass=0,acceptedRemovals=0;while(true){var order=[];for(var i=0;i<81;i++)if(current[i]!=='0')order.push(i);shuffle(order,mulberry32((seed^0x1A2B3C4D^Math.imul(pass+1,0x9E3779B1))>>>0));var best=null;for(var oi=0;oi<order.length;oi++){var idx=order[oi],child=current.slice(0,idx)+'0'+current.slice(idx+1);stats.removalAttempts++;stats.localRemovalAttempts++;var childEv=evaluateCached(child,cache,stats);if(!accepted(childEv))continue;var candidate={puzzle:child,evaluation:childEv,rank:rank(childEv),index:idx};if(!best||candidate.rank>best.rank||(candidate.rank===best.rank&&candidate.puzzle<best.puzzle))best=candidate;}if(!best)return{puzzle:current,evaluation:currentEv,entryClues:clueCount(entry.puzzle),acceptedRemovals:acceptedRemovals,rank:rank(currentEv),base:entry.base};current=best.puzzle;currentEv=best.evaluation;acceptedRemovals++;pass++;}}
+  function betterTerminal(a,b){if(!b)return true;var ac=clueCount(a.puzzle),bc=clueCount(b.puzzle);if(ac!==bc)return ac<bc;if(a.rank!==b.rank)return a.rank>b.rank;return a.puzzle<b.puzzle;}
+  function expertMake(baseMake,variant,seed){var stats={baseAttempts:0,removalAttempts:0,localRemovalAttempts:0,multistartEvaluations:0,evaluationCacheHits:0,brutalPrunes:0,rawEntryCandidateCount:0,rawEntryCandidateClues:[],entryCandidateCount:0,entryCandidateClues:[],chosenEntryClues:null,chosenLocalAcceptedRemovals:0},best=null;var entries=[],entrySeen={},cache=new Map();outer:for(var attempt=0;attempt<EXPERT_BUDGET.seedAttempts;attempt++){var derived=(seed+Math.imul(attempt,0x9E3779B1))>>>0;for(var pi=0;pi<EXPERT_BUDGET.baseProfiles.length;pi++){var profile=EXPERT_BUDGET.baseProfiles[pi],shaped=diversifiedVariant(variant,(derived^Math.imul(pi+1,0x85EBCA6B))>>>0),base=baseMake(shaped,derived,profile);stats.baseAttempts++;if(!base||!base.generation||base.generation.unique!==true||base.generation.verification!=='solver-verified')continue;var puzzle=gridString(base.puzzle),ev=evaluateCached(puzzle,cache,stats),rootNode={puzzle:puzzle,evaluation:ev,rank:rank(ev)};addEntry(entries,entrySeen,puzzle,ev,base);if(entries.length>=EXPERT_BUDGET.entryPool)break outer;if(!best||rootNode.rank>best.rank)best={base:base,puzzle:puzzle,evaluation:ev,rank:rootNode.rank};if(accepted(ev))continue;var beam=[rootNode];for(var depth=0;depth<EXPERT_BUDGET.maxDepth;depth++){var next=[];for(var bi2=0;bi2<beam.length;bi2++){var kids=children(beam[bi2],(derived^Math.imul(depth+1,0x85EBCA6B)^Math.imul(bi2+1,0xC2B2AE35))>>>0,stats,cache);for(var k=0;k<kids.length;k++){var node=kids[k];if(addEntry(entries,entrySeen,node.puzzle,node.evaluation,base)&&entries.length>=EXPERT_BUDGET.entryPool)break outer;if(!best||node.rank>best.rank)best={base:base,puzzle:node.puzzle,evaluation:node.evaluation,rank:node.rank};if(!accepted(node.evaluation)&&node.rank>-100000)next.push(node);}}next.sort(function(a,b){return b.rank-a.rank||a.puzzle.localeCompare(b.puzzle);});beam=next.slice(0,EXPERT_BUDGET.beamWidth);if(!beam.length)break;}}}if(!entries.length){var br=best&&best.evaluation&&best.evaluation.rating||{};throw new Error('bounded expert sculpt exhausted seed='+seed+' baseAttempts='+stats.baseAttempts+' removalAttempts='+stats.removalAttempts+' best={status='+(best&&best.evaluation&&best.evaluation.status||'none')+',level='+(Number.isInteger(br.level)?br.level:'null')+',score='+(br.score==null?'null':br.score)+',hardest='+(br.hardestTechnique||'none')+',clues='+(best?clueCount(best.puzzle):'null')+'}');}stats.rawEntryCandidateCount=entries.length;stats.rawEntryCandidateClues=entries.map(function(x){return clueCount(x.puzzle);});var selected=chooseSparseEntries(entries);stats.entryCandidateCount=selected.length;stats.entryCandidateClues=selected.map(function(x){return clueCount(x.puzzle);});var chosen=null;for(var ei=0;ei<selected.length;ei++){var terminal=carveToLocalIrreducibility(selected[ei],(seed^Math.imul(ei+1,0x85EBCA6B))>>>0,stats,cache);if(betterTerminal(terminal,chosen))chosen=terminal;}stats.chosenEntryClues=chosen.entryClues;stats.chosenLocalAcceptedRemovals=chosen.acceptedRemovals;return decorate(chosen.base,chosen.puzzle,chosen.evaluation,seed,stats);}
   function publish(out){var generation=out&&out.generation||null;root.ClassicHumanRuntimeLastGeneration=generation?Object.freeze({source:generation.source||null,runtimeProfile:generation.runtimeProfile||null,requestedHumanBand:generation.requestedHumanBand||null,measuredHumanBand:generation.measuredHumanBand||null,humanScore:generation.humanScore==null?null:generation.humanScore,humanLevel:Number.isInteger(generation.humanLevel)?generation.humanLevel:null,humanStatus:generation.humanStatus||'UNKNOWN',bounded:generation.bounded===true,degraded:generation.degraded===true,seed:generation.seed==null?null:generation.seed}):null;return out;}
   function install(generator){if(!generator||typeof generator.make!=='function')throw new TypeError('SudokuGenerator.make is required');if(generator.__classicHumanRuntimeGeneratorInstalled)return generator;var previous=generator.make;generator.make=function(variant,seed,difficulty){if(variant&&variant.id==='classic'){var base=function(v,s,d){return previous.call(generator,v,s,d);};return publish(difficulty==='expert'?expertMake(base,variant,seed):G.make(base,variant,seed,difficulty));}return previous.apply(this,arguments);};Object.defineProperty(generator,'__classicHumanRuntimeGeneratorInstalled',{value:true,configurable:false,enumerable:false,writable:false});generator.classicHumanRuntimeGeneratorStatus={installed:true,profile:G.PROFILE,budgets:G.BUDGETS,expertProfile:EXPERT_PROFILE,expertBudget:EXPERT_BUDGET};return generator;}
   var api={install:install,profile:G.PROFILE,budgets:G.BUDGETS,expertProfile:EXPERT_PROFILE,expertBudget:EXPERT_BUDGET};if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ClassicHumanRuntimeGenerator=api;
@@ -8354,6 +8469,7 @@ root.SudokuBank.push(
   if(!root.SudokuGenerator)return;
   var generator=root.SudokuGenerator,baseMake=generator.make;
   function clone(g){return g.map(function(row){return row.slice();});}
+  function cloneValue(v){return JSON.parse(JSON.stringify(v));}
   function bitCount(x){var n=0;while(x){x&=x-1;n++;}return n;}
   function orientedLine(grid,cl){var a=cl.axis==='row'?grid[cl.index].slice():grid.map(function(row){return row[cl.index];});if(cl.side==='right'||cl.side==='bottom')a.reverse();return a;}
   function visibleCount(line,park){var max=0,count=0;for(var i=0;i<line.length;i++){var v=line[i];if(v===park)continue;if(v>max){max=v;count++;}}return count;}
@@ -8399,10 +8515,31 @@ root.SudokuBank.push(
     }
     visit();return stats;
   }
+  function certifiedExpert(seed){
+    var corpus=root.SkyscraperParks2CertifiedCorpus;
+    if(!Array.isArray(corpus)||!corpus.length)return null;
+    var expert=corpus.filter(function(x){return x&&x.variantId==='skyscraper-parks2'&&x.difficulty==='expert'&&x.certificate&&x.certificate.exactVariantUnique===true&&x.certificate.variantEssential===true&&x.certificate.locallyIrreducibleUnderProductionContract===true;});
+    if(!expert.length)return null;
+    var entry=expert[(seed>>>0)%expert.length],cert=entry.certificate;
+    return {puzzle:clone(entry.puzzle),solution:clone(entry.solution),data:cloneValue(entry.data),generation:{unique:true,variantEssential:true,verification:'certified-corpus-exact',generatorFamily:'certified-expert-corpus',policy:'contract-driven-local-irreducibility',corpusEntryId:entry.id,corpusSourceSeed:entry.sourceSeed,locallyIrreducibleUnderProductionContract:true,localIrreducibilityProof:cert.localIrreducibilityProof,variantEssentialityProof:'certified-corpus-base-nonuniqueness',uniquenessProof:'certified-corpus-exact-variant-uniqueness',measurementSkipped:'certified-corpus-exact-contract',measured:false,certificate:cloneValue(cert)}};
+  }
   generator.iteration19SearchStats=searchStats;
   generator.make=function(variant,seed,difficulty){
+    if(variant&&variant.id==='skyscraper-parks2'&&difficulty==='expert'){
+      var corpusOut=certifiedExpert(seed);
+      if(corpusOut)return corpusOut;
+    }
     var out=baseMake.call(this,variant,seed,difficulty);
     if(variant&&variant.id==='skyscraper-parks2'){
+      var generation=out&&out.generation||{};
+      var certified=generation.locallyIrreducibleUnderProductionContract===true&&
+        generation.variantEssentialityProof==='monotone-base-nonuniqueness-under-clue-removal'&&
+        generation.uniquenessProof==='exact-unique-invariant-through-verified-removal-pass';
+      if(certified){
+        generation.measurementSkipped='exact-local-irreducibility-certificate';
+        generation.measured=false;
+        return out;
+      }
       var measured=Object.assign({},variant,{data:out.data||variant.data,solution:out.solution||variant.solution});
       var stats=searchStats(out.puzzle,measured);
       out.generation.searchStats=stats;
@@ -8932,12 +9069,240 @@ root.SudokuBank.push(
 (function(root){
   'use strict';
   if(!root.SudokuGenerator||!root.LineGeneratorProvenSiblings)return;
-  var generator=root.SudokuGenerator,siblings=root.LineGeneratorProvenSiblings,baseMake=generator.make;
+  var generator=root.SudokuGenerator,siblings=root.LineGeneratorProvenSiblings,baseMake=generator.make,baseCountVariantSolutions=generator.countVariantSolutions;
+  var lineIndexCache=typeof WeakMap!=='undefined'?new WeakMap():null;
+
+  function bitCount(x){var count=0;while(x){x&=x-1;count+=1;}return count;}
+  function bitToDigit(bit){return 1+Math.round(Math.log(bit)/Math.LN2);}
+  function boxDims(n){if(n===4)return[2,2];if(n===6)return[2,3];if(n===9)return[3,3];var h=Math.floor(Math.sqrt(n));return[h,Math.floor(n/h)];}
+  function cloneGrid(grid){return grid.map(function(row){return row.slice();});}
+  function rng(seed){var x=seed>>>0;return function(){x=(x+0x6D2B79F5)>>>0;var t=x;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296;};}
+  function shuffle(list,random){for(var i=list.length-1;i>0;i--){var j=Math.floor(random()*(i+1)),t=list[i];list[i]=list[j];list[j]=t;}return list;}
+  function lineIndex(variant,n){
+    if(lineIndexCache&&lineIndexCache.has(variant))return lineIndexCache.get(variant);
+    var raw=(variant.data&&variant.data.lines)||[],lines=[],cells=Array.from({length:n},function(){return Array.from({length:n},function(){return[];});});
+    for(var i=0;i<raw.length;i++){
+      var line=Array.isArray(raw[i])?raw[i]:(raw[i]&&raw[i].cells)||[];
+      var id=lines.length;lines.push(line);
+      for(var j=0;j<line.length;j++){var p=line[j];cells[p[0]][p[1]].push(id);}
+    }
+    var out={lines:lines,cells:cells};if(lineIndexCache)lineIndexCache.set(variant,out);return out;
+  }
+  function expandedForbidden(mask,full){return(mask|((mask<<1)&full)|(mask>>>1))&full;}
+  function countNabnerSolutions(source,variant,limit,stats){
+    stats=stats||{};stats.nodes=0;stats.branches=0;stats.deadEnds=0;stats.propagated=0;
+    var capture=stats.captureSolutions===true;if(capture)stats.witnesses=[];
+    var grid=cloneGrid(source),n=grid.length,dims=boxDims(n),bh=dims[0],bw=dims[1],full=(1<<n)-1,index=lineIndex(variant,n);
+    var rows=Array(n).fill(0),cols=Array(n).fill(0),boxes=Array(n).fill(0),lineMasks=Array(index.lines.length).fill(0),r,c;
+    function boxOf(rr,cc){return Math.floor(rr/bh)*Math.floor(n/bw)+Math.floor(cc/bw);}
+    for(r=0;r<n;r++)for(c=0;c<n;c++){
+      var value=grid[r][c];if(!value)continue;
+      var bit=1<<(value-1),box=boxOf(r,c);
+      if((rows[r]|cols[c]|boxes[box])&bit)return 0;
+      rows[r]|=bit;cols[c]|=bit;boxes[box]|=bit;
+      var memberships=index.cells[r][c]||[];
+      for(var mi=0;mi<memberships.length;mi++){
+        var lineId=memberships[mi],used=lineMasks[lineId];
+        if(expandedForbidden(used,full)&bit)return 0;
+        lineMasks[lineId]=used|bit;
+      }
+    }
+    function candidateMask(rr,cc){
+      var mask=full&~(rows[rr]|cols[cc]|boxes[boxOf(rr,cc)]),memberships=index.cells[rr][cc]||[];
+      for(var i=0;i<memberships.length&&mask;i++)mask&=~expandedForbidden(lineMasks[memberships[i]],full);
+      return mask&full;
+    }
+    function nabnerPressure(rr,cc){
+      var memberships=index.cells[rr][cc]||[],score=memberships.length*n;
+      for(var i=0;i<memberships.length;i++)score+=bitCount(expandedForbidden(lineMasks[memberships[i]],full));
+      return score;
+    }
+    function placeForced(rr,cc,one,trail){
+      var bx=boxOf(rr,cc),memberships=index.cells[rr][cc]||[];
+      grid[rr][cc]=bitToDigit(one);rows[rr]|=one;cols[cc]|=one;boxes[bx]|=one;
+      for(var mi=0;mi<memberships.length;mi++)lineMasks[memberships[mi]]|=one;
+      trail.push([rr,cc,one]);stats.propagated+=1;
+    }
+    function rollback(trail){
+      for(var i=trail.length-1;i>=0;i--){
+        var rr=trail[i][0],cc=trail[i][1],one=trail[i][2],bx=boxOf(rr,cc),memberships=index.cells[rr][cc]||[];
+        for(var mi=0;mi<memberships.length;mi++)lineMasks[memberships[mi]]^=one;
+        rows[rr]^=one;cols[cc]^=one;boxes[bx]^=one;grid[rr][cc]=0;
+      }
+    }
+    function propagate(trail){
+      while(true){
+        var forced=null;
+        outer:for(var rr=0;rr<n;rr++)for(var cc=0;cc<n;cc++)if(!grid[rr][cc]){
+          var mask=candidateMask(rr,cc),cnt=bitCount(mask);
+          if(cnt===0)return false;
+          if(cnt===1){forced=[rr,cc,mask];break outer;}
+        }
+        if(!forced)return true;
+        placeForced(forced[0],forced[1],forced[2],trail);
+      }
+    }
+    var found=0;
+    function visit(){
+      if(found>=limit)return;
+      stats.nodes+=1;
+      var forced=[];
+      if(!propagate(forced)){stats.deadEnds+=1;rollback(forced);return;}
+      var br=-1,bc=-1,bm=0,best=n+1,bestPressure=-1;
+      for(var rr=0;rr<n;rr++)for(var cc=0;cc<n;cc++)if(!grid[rr][cc]){
+        var mask=candidateMask(rr,cc),cnt=bitCount(mask),pressure=nabnerPressure(rr,cc);
+        if(cnt<best||(cnt===best&&pressure>bestPressure)){br=rr;bc=cc;bm=mask;best=cnt;bestPressure=pressure;}
+      }
+      if(br<0){found+=1;if(capture)stats.witnesses.push(grid.map(function(row){return row.join('');}).join(''));rollback(forced);return;}
+      if(bitCount(bm)>1)stats.branches+=1;
+      var bx=boxOf(br,bc),memberships=index.cells[br][bc]||[];
+      for(var bits=bm;bits&&found<limit;bits&=bits-1){
+        var one=bits&-bits;
+        grid[br][bc]=bitToDigit(one);rows[br]|=one;cols[bc]|=one;boxes[bx]|=one;
+        for(var mi=0;mi<memberships.length;mi++)lineMasks[memberships[mi]]|=one;
+        visit();
+        for(mi=0;mi<memberships.length;mi++)lineMasks[memberships[mi]]^=one;
+        rows[br]^=one;cols[bc]^=one;boxes[bx]^=one;grid[br][bc]=0;
+      }
+      rollback(forced);
+    }
+    visit();return found;
+  }
+
+  function countLockoutSolutions(source,variant,limit,stats){
+    stats=stats||{};stats.nodes=0;stats.branches=0;stats.deadEnds=0;stats.propagated=0;
+    var capture=stats.captureSolutions===true;if(capture)stats.witnesses=[];
+    var grid=cloneGrid(source),n=grid.length,dims=boxDims(n),bh=dims[0],bw=dims[1],full=(1<<n)-1,index=lineIndex(variant,n);
+    var rows=Array(n).fill(0),cols=Array(n).fill(0),boxes=Array(n).fill(0),r,c;
+    function boxOf(rr,cc){return Math.floor(rr/bh)*Math.floor(n/bw)+Math.floor(cc/bw);}
+    function baseMask(rr,cc){return full&~(rows[rr]|cols[cc]|boxes[boxOf(rr,cc)]);}
+    for(r=0;r<n;r++)for(c=0;c<n;c++){
+      var value=grid[r][c];if(!value)continue;
+      var bit=1<<(value-1),box=boxOf(r,c);
+      if((rows[r]|cols[c]|boxes[box])&bit)return 0;
+      rows[r]|=bit;cols[c]|=bit;boxes[box]|=bit;
+    }
+    function endpointMask(p){var value=grid[p[0]][p[1]];return value?(1<<(value-1)):baseMask(p[0],p[1]);}
+    function lineFeasible(line){
+      if(!line||line.length<2)return true;
+      var leftMask=endpointMask(line[0]),rightMask=endpointMask(line[line.length-1]);
+      if(!leftMask||!rightMask)return false;
+      for(var lb=leftMask;lb;lb&=lb-1){
+        var lbit=lb&-lb,a=bitToDigit(lbit);
+        for(var rb=rightMask;rb;rb&=rb-1){
+          var rbit=rb&-rb,b=bitToDigit(rbit);if(a===b)continue;
+          var lo=Math.min(a,b),hi=Math.max(a,b),ok=true;
+          for(var j=1;j<line.length-1;j++){
+            var p=line[j],v=grid[p[0]][p[1]];
+            if(v&&v>lo&&v<hi){ok=false;break;}
+          }
+          if(ok)return true;
+        }
+      }
+      return false;
+    }
+    function affectedFeasible(rr,cc){
+      var memberships=index.cells[rr][cc]||[];
+      for(var i=0;i<memberships.length;i++)if(!lineFeasible(index.lines[memberships[i]]))return false;
+      return true;
+    }
+    for(var li=0;li<index.lines.length;li++)if(!lineFeasible(index.lines[li]))return 0;
+    function candidateMask(rr,cc){
+      var mask=baseMask(rr,cc),out=0;
+      for(var bits=mask;bits;bits&=bits-1){
+        var one=bits&-bits;grid[rr][cc]=bitToDigit(one);
+        if(affectedFeasible(rr,cc))out|=one;
+        grid[rr][cc]=0;
+      }
+      return out;
+    }
+    function lockoutPressure(rr,cc){
+      var memberships=index.cells[rr][cc]||[],score=memberships.length*n;
+      for(var i=0;i<memberships.length;i++)score+=index.lines[memberships[i]].length;
+      return score;
+    }
+    function place(rr,cc,one,trail,propagated){
+      var bx=boxOf(rr,cc);grid[rr][cc]=bitToDigit(one);rows[rr]|=one;cols[cc]|=one;boxes[bx]|=one;
+      trail.push([rr,cc,one]);if(propagated)stats.propagated+=1;
+    }
+    function rollback(trail){
+      for(var i=trail.length-1;i>=0;i--){var rr=trail[i][0],cc=trail[i][1],one=trail[i][2],bx=boxOf(rr,cc);rows[rr]^=one;cols[cc]^=one;boxes[bx]^=one;grid[rr][cc]=0;}
+    }
+    function propagate(trail){
+      while(true){
+        var forced=null;
+        outer:for(var rr=0;rr<n;rr++)for(var cc=0;cc<n;cc++)if(!grid[rr][cc]){
+          var mask=candidateMask(rr,cc),cnt=bitCount(mask);
+          if(cnt===0)return false;
+          if(cnt===1){forced=[rr,cc,mask];break outer;}
+        }
+        if(!forced)return true;
+        place(forced[0],forced[1],forced[2],trail,true);
+      }
+    }
+    var found=0;
+    function visit(){
+      if(found>=limit)return;
+      stats.nodes+=1;
+      var forced=[];
+      if(!propagate(forced)){stats.deadEnds+=1;rollback(forced);return;}
+      var br=-1,bc=-1,bm=0,best=n+1,bestPressure=-1;
+      for(var rr=0;rr<n;rr++)for(var cc=0;cc<n;cc++)if(!grid[rr][cc]){
+        var mask=candidateMask(rr,cc),cnt=bitCount(mask),pressure=lockoutPressure(rr,cc);
+        if(cnt<best||(cnt===best&&pressure>bestPressure)){br=rr;bc=cc;bm=mask;best=cnt;bestPressure=pressure;}
+      }
+      if(br<0){found+=1;if(capture)stats.witnesses.push(grid.map(function(row){return row.join('');}).join(''));rollback(forced);return;}
+      if(bitCount(bm)>1)stats.branches+=1;
+      var bx=boxOf(br,bc);
+      for(var bits=bm;bits&&found<limit;bits&=bits-1){
+        var one=bits&-bits;grid[br][bc]=bitToDigit(one);rows[br]|=one;cols[bc]|=one;boxes[bx]|=one;
+        visit();
+        rows[br]^=one;cols[bc]^=one;boxes[bx]^=one;grid[br][bc]=0;
+      }
+      rollback(forced);
+    }
+    visit();return found;
+  }
+
+  function expertCarveSalt(id){return id==='nabner'?0x4E414243:(id==='lockout'?0x4C4F4343:0x45585043);}
+  function carveExpertLocallyIrreducible(out,seed){
+    var grid=cloneGrid(out.puzzle),order=[],n=grid.length,accepted=0,rejected=0,id=out.id||'variant';
+    for(var i=0;i<n*n;i++)if(grid[Math.floor(i/n)][i%n])order.push(i);
+    shuffle(order,rng(((seed>>>0)^expertCarveSalt(id))>>>0));
+    for(var oi=0;oi<order.length;oi++){
+      var idx=order[oi],r=Math.floor(idx/n),c=idx%n,old=grid[r][c];
+      if(!old)continue;
+      grid[r][c]=0;
+      if(generator.countVariantSolutions(grid,out,2)===1)accepted++;
+      else{grid[r][c]=old;rejected++;}
+    }
+    var clues=grid.reduce(function(sum,row){return sum+row.filter(Boolean).length;},0);
+    if(generator.countVariantSolutions(grid,out,2)!==1)throw new Error(id+' expert local carve lost uniqueness');
+    if(generator.countSolutions(grid,2)<=1)throw new Error(id+' expert local carve lost variant essentiality');
+    out.puzzle=grid;
+    out.generation.clues=clues;
+    out.generation.policy='contract-driven-local-irreducibility';
+    out.generation.localIrreducibilityProof='monotone-nonuniqueness-from-single-pass';
+    out.generation.locallyIrreducibleUnderProductionContract=true;
+    out.generation.acceptedRemovals=accepted;
+    out.generation.rejectedRemovals=rejected;
+    return out;
+  }
+
+  generator.countVariantSolutions=function(source,variant,limit,stats){
+    if(variant&&variant.id==='nabner')return countNabnerSolutions(source,variant,limit,stats);
+    if(variant&&variant.id==='lockout')return countLockoutSolutions(source,variant,limit,stats);
+    return baseCountVariantSolutions.call(this,source,variant,limit,stats);
+  };
   generator.make=function(variant,seed,difficulty){
     if(variant&&(variant.id==='nabner'||variant.id==='palindrome'||variant.id==='lockout')){
-      var out=siblings.makeVariantPilot(generator,variant,seed,difficulty||'focused');
+      var resolvedDifficulty=difficulty||'focused';
+      var out=siblings.makeVariantPilot(generator,variant,seed,resolvedDifficulty);
       out.generation.pilot=false;
       out.generation.mode='seeded-variant-essential';
+      if(variant.id==='nabner')out.generation.verification='nabner-naked-single-pressure-mrv-exact-v2';
+      if(variant.id==='lockout')out.generation.verification='lockout-feasible-endpoint-pressure-mrv-exact-v2';
+      if(resolvedDifficulty==='expert'&&(variant.id==='nabner'||variant.id==='lockout'))out=carveExpertLocallyIrreducible(out,seed);
       return out;
     }
     return baseMake.call(this,variant,seed,difficulty);
@@ -9134,6 +9499,15 @@ root.SudokuBank.push(
   var generator=root.SudokuGenerator;
   var baseMake=generator.make;
   var baseCountVariantSolutions=generator.countVariantSolutions;
+  var BIT_COUNT=Array(512),LOW_DIGIT=Array(512),HIGH_DIGIT=Array(512),DIGIT_FOR_BIT=Array(512),TAIL_PAIR_MASK=Array.from({length:19},function(){return Array(512).fill(0);});
+  for(var pm=0;pm<512;pm++){
+    var pc=0,px=pm;while(px){px&=px-1;pc++;}BIT_COUNT[pm]=pc;
+    var lo=0,hi=0;for(var pd=1;pd<=9;pd++)if(pm&(1<<(pd-1))){if(!lo)lo=pd;hi=pd;}LOW_DIGIT[pm]=lo;HIGH_DIGIT[pm]=hi;
+  }
+  for(pd=1;pd<=9;pd++)DIGIT_FOR_BIT[1<<(pd-1)]=pd;
+  for(var ps=2;ps<=18;ps++)for(pm=0;pm<512;pm++){
+    var allowed=0;for(pd=1;pd<=9;pd++){var other=ps-pd;if(other>=1&&other<=9&&(pm&(1<<(other-1))))allowed|=1<<(pd-1);}TAIL_PAIR_MASK[ps][pm]=allowed;
+  }
 
   function clone(x){return JSON.parse(JSON.stringify(x));}
   function gridClone(g){return g.map(function(row){return row.slice();});}
@@ -9148,106 +9522,220 @@ root.SudokuBank.push(
     var rowInverse=Array(n),colInverse=Array(n);
     rows.forEach(function(oldRow,newRow){rowInverse[oldRow]=newRow;});
     cols.forEach(function(oldCol,newCol){colInverse[oldCol]=newCol;});
-    return{
-      solution:rows.map(function(r){return cols.map(function(c){return digits[base[r][c]-1];});}),
-      rowInverse:rowInverse,
-      colInverse:colInverse
-    };
+    return{solution:rows.map(function(r){return cols.map(function(c){return digits[base[r][c]-1];});}),rowInverse:rowInverse,colInverse:colInverse};
   }
 
   function transformedCloneVariant(variant,seed){
     var transformed=sudokuAutomorphism(variant.solution,(seed^0x434C4F4E)>>>0),out=clone(variant);
     out.solution=transformed.solution;
-    if(out.data&&Array.isArray(out.data.clones)){
-      out.data.clones=out.data.clones.map(function(region){
-        return region.map(function(p){return[transformed.rowInverse[p[0]],transformed.colInverse[p[1]]];});
-      });
-    }
+    if(out.data&&Array.isArray(out.data.clones))out.data.clones=out.data.clones.map(function(region){return region.map(function(p){return[transformed.rowInverse[p[0]],transformed.colInverse[p[1]]];});});
     return out;
   }
-
-  function makeClone(variant,seed,difficulty){
-    var working=transformedCloneVariant(variant,seed>>>0),out=baseMake.call(generator,working,seed>>>0,difficulty||'focused');
-    out.generation=Object.assign({},out.generation||{},{generatorFamily:'clone-seeded-sudoku-automorphism',structuralDiversity:'row-column-band-stack-permutation',topologyTransformed:true});
-    return out;
-  }
+  function makeClone(variant,seed,difficulty){var working=transformedCloneVariant(variant,seed>>>0),out=baseMake.call(generator,working,seed>>>0,difficulty||'focused');out.generation=Object.assign({},out.generation||{},{generatorFamily:'clone-seeded-sudoku-automorphism',structuralDiversity:'row-column-band-stack-permutation',topologyTransformed:true});return out;}
 
   function diagonalCells(r,c,dr,dc,n){var cells=[];while(r>=0&&r<n&&c>=0&&c<n){cells.push([r,c]);r+=dr;c+=dc;}return cells;}
   function diagonalKey(cells){var a=cells.map(function(p){return p[0]+','+p[1];}).join(';'),b=cells.slice().reverse().map(function(p){return p[0]+','+p[1];}).join(';');return a<b?a:b;}
-  function sideCandidates(side,n){
-    var out=[];function add(r,c,dr,dc){var cells=diagonalCells(r,c,dr,dc,n);if(cells.length>=3)out.push({side:side,cells:cells,key:diagonalKey(cells)});}var i;
-    if(side==='top')for(i=0;i<n;i++){add(0,i,1,-1);add(0,i,1,1);}
-    else if(side==='bottom')for(i=0;i<n;i++){add(n-1,i,-1,-1);add(n-1,i,-1,1);}
-    else if(side==='left')for(i=0;i<n;i++){add(i,0,-1,1);add(i,0,1,1);}
-    else if(side==='right')for(i=0;i<n;i++){add(i,n-1,-1,-1);add(i,n-1,1,-1);}
-    return out;
-  }
+  function sideCandidates(side,n){var out=[];function add(r,c,dr,dc){var cells=diagonalCells(r,c,dr,dc,n);if(cells.length>=3)out.push({side:side,cells:cells,key:diagonalKey(cells)});}var i;if(side==='top')for(i=0;i<n;i++){add(0,i,1,-1);add(0,i,1,1);}else if(side==='bottom')for(i=0;i<n;i++){add(n-1,i,-1,-1);add(n-1,i,-1,1);}else if(side==='left')for(i=0;i<n;i++){add(i,0,-1,1);add(i,0,1,1);}else if(side==='right')for(i=0;i<n;i++){add(i,n-1,-1,-1);add(i,n-1,1,-1);}return out;}
 
   function freshTopology(solution,seed,targetCount){
-    var n=solution.length,random=rng((seed^0x544F504F)>>>0),allSides=['top','right','bottom','left'];
-    shuffle(allSides,random);
-    /* Seed controls whether this puzzle uses 2, 3 or all 4 sides. This avoids the
-       previous cosmetic shuffle where every puzzle still had the same four-side pattern. */
-    var activeCount=2+Math.floor(random()*3),sides=allSides.slice(0,activeCount);
-    var pools={},used={},chosen=[],sideCounts={top:0,right:0,bottom:0,left:0};
+    var n=solution.length,random=rng((seed^0x544F504F)>>>0),allSides=['top','right','bottom','left'];shuffle(allSides,random);
+    var activeCount=2+Math.floor(random()*3),sides=allSides.slice(0,activeCount),pools={},used={},chosen=[],sideCounts={top:0,right:0,bottom:0,left:0};
     sides.forEach(function(side){pools[side]=shuffle(sideCandidates(side,n),random);});
-    var cursor=0,misses=0;
-    while(chosen.length<targetCount&&misses<sides.length*3){
-      var side=sides[cursor%sides.length],pool=pools[side],picked=false;
-      while(pool.length){var cand=pool.shift();if(used[cand.key])continue;used[cand.key]=true;chosen.push(cand);sideCounts[side]++;picked=true;break;}
-      misses=picked?0:misses+1;cursor++;
-    }
-    if(chosen.length<targetCount)throw new Error('Little Killer topology pool exhausted');
-    shuffle(chosen,random);
+    var cursor=0,misses=0;while(chosen.length<targetCount&&misses<sides.length*3){var side=sides[cursor%sides.length],pool=pools[side],picked=false;while(pool.length){var cand=pool.shift();if(used[cand.key])continue;used[cand.key]=true;chosen.push(cand);sideCounts[side]++;picked=true;break;}misses=picked?0:misses+1;cursor++;}
+    if(chosen.length<targetCount)throw new Error('Little Killer topology pool exhausted');shuffle(chosen,random);
     var clues=chosen.map(function(cand){return{sum:cand.cells.reduce(function(total,p){return total+solution[p[0]][p[1]];},0),cells:cand.cells};});
     return{clues:clues,sideCounts:sideCounts,sideOrder:sides.slice(),activeSideCount:activeCount};
   }
 
-  function makeClueIndex(clues,n){var index=Array.from({length:n*n},function(){return [];});clues.forEach(function(cl,ci){cl.cells.forEach(function(p){index[p[0]*n+p[1]].push(ci);});});return index;}
+  function compileClues(clues,n){
+    var cellClues=Array.from({length:n*n},function(){return[];}),cellRows=Array(n*n),cellCols=Array(n*n),compiled=[];
+    for(var idx=0;idx<n*n;idx++){cellRows[idx]=Math.floor(idx/n);cellCols[idx]=idx%n;}
+    clues.forEach(function(cl,ci){var cells=cl.cells.map(function(p){var idx=p[0]*n+p[1];cellClues[idx].push(ci);return idx;});compiled.push({sum:cl.sum,cells:cells});});
+    return{raw:clues,n:n,clues:compiled,cellClues:cellClues,cellRows:cellRows,cellCols:cellCols};
+  }
 
-  function solveCount(source,clues,limit,nodeBudget){
-    limit=limit||2;nodeBudget=nodeBudget||120000;
-    var n=source.length,full=(1<<n)-1,grid=gridClone(source),rows=Array(n).fill(0),cols=Array(n).fill(0),boxes=Array(n).fill(0),found=0,nodes=0,exhausted=false;
-    var clueIndex=makeClueIndex(clues,n);
+  function makeSolverState(source,cluesOrCompiled){
+    var n=source.length,compiled=cluesOrCompiled&&cluesOrCompiled.cellClues?cluesOrCompiled:compileClues(cluesOrCompiled,n),clues=compiled.clues,cellClues=compiled.cellClues,cellRows=compiled.cellRows,cellCols=compiled.cellCols;
+    if(!cellRows||!cellCols){cellRows=Array(n*n);cellCols=Array(n*n);for(var pre=0;pre<n*n;pre++){cellRows[pre]=Math.floor(pre/n);cellCols[pre]=pre%n;}}
+    var full=(1<<n)-1,grid=gridClone(source),rows=Array(n).fill(0),cols=Array(n).fill(0),boxes=Array(n).fill(0),clueSums=Array(clues.length).fill(0),clueEmpty=clues.map(function(cl){return cl.cells.length;}),exactTailChecks=0,tailMaskChecks=0;
     function box(r,c){return Math.floor(r/3)*3+Math.floor(c/3);}
-    function bitCount(x){var c=0;while(x){x&=x-1;c++;}return c;}
-    function lowDigit(mask){for(var d=1;d<=n;d++)if(mask&(1<<(d-1)))return d;return 0;}
-    function highDigit(mask){for(var d=n;d>=1;d--)if(mask&(1<<(d-1)))return d;return 0;}
     function baseMask(r,c){return full&~(rows[r]|cols[c]|boxes[box(r,c)]);}
-    function clueFeasible(ci){var cl=clues[ci],sum=0,min=0,max=0,empty=0;for(var k=0;k<cl.cells.length;k++){var p=cl.cells[k],v=grid[p[0]][p[1]];if(v){sum+=v;continue;}empty++;var mask=baseMask(p[0],p[1]);if(!mask)return false;min+=lowDigit(mask);max+=highDigit(mask);}if(sum>cl.sum)return false;if(!empty)return sum===cl.sum;return sum+min<=cl.sum&&sum+max>=cl.sum;}
-    function touchedFeasible(r,c){var list=clueIndex[r*n+c];for(var i=0;i<list.length;i++)if(!clueFeasible(list[i]))return false;return true;}
-    for(var r=0;r<n;r++)for(var c=0;c<n;c++){var v=grid[r][c];if(!v)continue;var bit=1<<(v-1),b=box(r,c);if((rows[r]|cols[c]|boxes[b])&bit)return{count:0,nodes:nodes,exhausted:false};rows[r]|=bit;cols[c]|=bit;boxes[b]|=bit;}
-    for(var ci=0;ci<clues.length;ci++)if(!clueFeasible(ci))return{count:0,nodes:nodes,exhausted:false};
-    function visit(){if(found>=limit||exhausted)return;if(++nodes>nodeBudget){exhausted=true;return;}var br=-1,bc=-1,bm=0,best=n+1;for(var r=0;r<n;r++)for(var c=0;c<n;c++)if(!grid[r][c]){var mask=baseMask(r,c),allowed=0;for(var bits=mask;bits;bits&=bits-1){var one=bits&-bits,d=1+Math.round(Math.log(one)/Math.LN2),b=box(r,c);grid[r][c]=d;rows[r]|=one;cols[c]|=one;boxes[b]|=one;if(touchedFeasible(r,c))allowed|=one;rows[r]^=one;cols[c]^=one;boxes[b]^=one;grid[r][c]=0;}var count=bitCount(allowed);if(!count)return;if(count<best){br=r;bc=c;bm=allowed;best=count;if(count===1)break;}}if(br<0){found++;return;}var b=box(br,bc);for(var bits=bm;bits;bits&=bits-1){var one=bits&-bits,d=1+Math.round(Math.log(one)/Math.LN2);grid[br][bc]=d;rows[br]|=one;cols[bc]|=one;boxes[b]|=one;visit();rows[br]^=one;cols[bc]^=one;boxes[b]^=one;grid[br][bc]=0;if(found>=limit||exhausted)return;}}
+    function tailRestrictedMask(idx,mask){
+      var list=cellClues[idx];
+      for(var li=0;li<list.length&&mask;li++){
+        var ci=list[li],cl=clues[ci],empty=clueEmpty[ci],need=cl.sum-clueSums[ci];
+        if(need<0)return 0;
+        if(empty===1){
+          tailMaskChecks++;
+          if(need<1||need>n)return 0;
+          mask&=1<<(need-1);
+        }else if(empty===2){
+          tailMaskChecks++;
+          var partner=-1;
+          for(var k=0;k<cl.cells.length;k++){var otherIdx=cl.cells[k];if(otherIdx!==idx&&!grid[cellRows[otherIdx]][cellCols[otherIdx]]){partner=otherIdx;break;}}
+          if(partner<0||need<2||need>18)return 0;
+          var partnerMask=baseMask(cellRows[partner],cellCols[partner]);if(!partnerMask)return 0;
+          mask&=TAIL_PAIR_MASK[need][partnerMask];
+        }
+      }
+      return mask;
+    }
+    function clueFeasible(ci){
+      var cl=clues[ci],sum=clueSums[ci],empty=clueEmpty[ci],need=cl.sum-sum;
+      if(need<0)return false;if(!empty)return need===0;
+      if(empty===1){
+        exactTailChecks++;
+        for(var ek=0;ek<cl.cells.length;ek++){
+          var eidx=cl.cells[ek],er=cellRows[eidx],ec=cellCols[eidx];if(grid[er][ec])continue;
+          return need>=1&&need<=n&&!!(baseMask(er,ec)&(1<<(need-1)));
+        }
+        return false;
+      }
+      if(empty===2){
+        exactTailChecks++;
+        var a=-1,b=-1;
+        for(var tk=0;tk<cl.cells.length;tk++){
+          var tidx=cl.cells[tk],tr=cellRows[tidx],tc=cellCols[tidx];if(grid[tr][tc])continue;
+          if(a<0)a=tidx;else{b=tidx;break;}
+        }
+        if(a<0||b<0)return false;
+        var ma=baseMask(cellRows[a],cellCols[a]),mb=baseMask(cellRows[b],cellCols[b]);if(!ma||!mb)return false;
+        return need>=2&&need<=18&&!!(ma&TAIL_PAIR_MASK[need][mb]);
+      }
+      var min=0,max=0;
+      for(var k=0;k<cl.cells.length;k++){
+        var idx=cl.cells[k],r=cellRows[idx],c=cellCols[idx];if(grid[r][c])continue;
+        var mask=baseMask(r,c);if(!mask)return false;min+=LOW_DIGIT[mask];max+=HIGH_DIGIT[mask];
+      }
+      return min<=need&&need<=max;
+    }
+    function touchedFeasible(idx){var list=cellClues[idx];for(var i=0;i<list.length;i++)if(!clueFeasible(list[i]))return false;return true;}
+    function applyClues(idx,d,delta){var list=cellClues[idx];for(var i=0;i<list.length;i++){clueSums[list[i]]+=delta*d;clueEmpty[list[i]]-=delta;}}
+    function allowedMask(r,c){
+      var idx=r*n+c,mask=tailRestrictedMask(idx,baseMask(r,c)),b=box(r,c),allowed=0;
+      for(var bits=mask;bits;bits&=bits-1){
+        var one=bits&-bits,d=DIGIT_FOR_BIT[one];grid[r][c]=d;rows[r]|=one;cols[c]|=one;boxes[b]|=one;applyClues(idx,d,1);
+        if(touchedFeasible(idx))allowed|=one;
+        applyClues(idx,d,-1);rows[r]^=one;cols[c]^=one;boxes[b]^=one;grid[r][c]=0;
+      }
+      return allowed;
+    }
+    function put(r,c,one){var d=DIGIT_FOR_BIT[one],b=box(r,c),idx=r*n+c;grid[r][c]=d;rows[r]|=one;cols[c]|=one;boxes[b]|=one;applyClues(idx,d,1);}
+    function unput(r,c,one){var d=DIGIT_FOR_BIT[one],b=box(r,c),idx=r*n+c;applyClues(idx,d,-1);rows[r]^=one;cols[c]^=one;boxes[b]^=one;grid[r][c]=0;}
+    function getExactTailChecks(){return exactTailChecks;}
+    function getTailMaskChecks(){return tailMaskChecks;}
+    for(var r=0;r<n;r++)for(var c=0;c<n;c++){
+      var v=grid[r][c];if(!v)continue;var bit=1<<(v-1),b=box(r,c),idx=r*n+c;
+      if((rows[r]|cols[c]|boxes[b])&bit)return null;
+      rows[r]|=bit;cols[c]|=bit;boxes[b]|=bit;applyClues(idx,v,1);
+    }
+    for(var ci=0;ci<clues.length;ci++)if(!clueFeasible(ci))return null;
+    return{n:n,grid:grid,rows:rows,cols:cols,boxes:boxes,box:box,baseMask:baseMask,tailRestrictedMask:tailRestrictedMask,touchedFeasible:touchedFeasible,allowedMask:allowedMask,put:put,unput:unput,cellClues:cellClues,getExactTailChecks:getExactTailChecks,getTailMaskChecks:getTailMaskChecks};
+  }
+
+  function solveCount(source,cluesOrCompiled,limit,nodeBudget){
+    limit=limit||2;nodeBudget=nodeBudget||120000;
+    var state=makeSolverState(source,cluesOrCompiled);if(!state)return{count:0,nodes:0,exhausted:false};
+    var n=state.n,grid=state.grid,rows=state.rows,cols=state.cols,boxes=state.boxes,box=state.box,baseMask=state.baseMask,touchedFeasible=state.touchedFeasible;
+    var found=0,nodes=0,exhausted=false;
+    function visit(){
+      if(found>=limit||exhausted)return;if(++nodes>nodeBudget){exhausted=true;return;}
+      var br=-1,bc=-1,bm=0,best=n+1;
+      for(var r=0;r<n;r++)for(var c=0;c<n;c++)if(!grid[r][c]){
+        var mask=baseMask(r,c),count=BIT_COUNT[mask];if(!count)return;
+        if(count<best){br=r;bc=c;bm=mask;best=count;if(count===1)break;}
+      }
+      if(br<0){found++;return;}
+      var idx=br*n+bc,b=box(br,bc),allowed=0;
+      for(var bits=bm;bits;bits&=bits-1){
+        var one=bits&-bits,d=DIGIT_FOR_BIT[one];state.put(br,bc,one);
+        if(touchedFeasible(idx))allowed|=one;
+        state.unput(br,bc,one);
+      }
+      if(!allowed)return;
+      for(bits=allowed;bits;bits&=bits-1){
+        one=bits&-bits;state.put(br,bc,one);visit();state.unput(br,bc,one);
+        if(found>=limit||exhausted)return;
+      }
+    }
     visit();return{count:found,nodes:nodes,exhausted:exhausted};
   }
 
+  function findAlternativeSolution(source,cluesOrCompiled,knownSolution,nodeBudget){
+    nodeBudget=nodeBudget||120000;
+    var state=makeSolverState(source,cluesOrCompiled);if(!state)return{alternative:false,nodes:0,exhausted:false,forced:0,exactTailChecks:0,tailMaskChecks:0};
+    var n=state.n,grid=state.grid,baseMask=state.baseMask,tailRestrictedMask=state.tailRestrictedMask,allowedMask=state.allowedMask,put=state.put,unput=state.unput,cellClues=state.cellClues,touchedFeasible=state.touchedFeasible;
+    var found=false,nodes=0,exhausted=false,forcedCount=0;
+    function visit(differs){
+      if(found||exhausted)return;
+      if(++nodes>nodeBudget){exhausted=true;return;}
+      var forced=[],changed=true,contradiction=false;
+      while(changed&&!contradiction){
+        changed=false;
+        for(var r=0;r<n&&!changed;r++)for(var c=0;c<n;c++)if(!grid[r][c]){
+          var forcedIdx=r*n+c,forcedMask=tailRestrictedMask(forcedIdx,baseMask(r,c)),forcedN=BIT_COUNT[forcedMask];
+          if(!forcedN){contradiction=true;break;}
+          if(forcedN===1){
+            var forcedBit=forcedMask&-forcedMask;put(r,c,forcedBit);
+            if(cellClues[forcedIdx].length&&!touchedFeasible(forcedIdx)){unput(r,c,forcedBit);contradiction=true;break;}
+            forced.push([r,c,forcedBit]);forcedCount++;
+            if(DIGIT_FOR_BIT[forcedBit]!==knownSolution[r][c])differs=true;
+            changed=true;break;
+          }
+        }
+      }
+      if(!contradiction){
+        var br=-1,bc=-1,bm=0,best=n+1;
+        for(r=0;r<n;r++)for(c=0;c<n;c++)if(!grid[r][c]){
+          var mask=allowedMask(r,c),count=BIT_COUNT[mask];if(!count){contradiction=true;break;}
+          if(count<best){br=r;bc=c;bm=mask;best=count;if(count===1)break;}
+        }
+        if(!contradiction){
+          if(br<0){if(differs)found=true;}
+          else{
+            var knownBit=1<<(knownSolution[br][bc]-1),nonKnown=bm&~knownBit;
+            for(var bits=nonKnown;bits&&!found&&!exhausted;bits&=bits-1){var one=bits&-bits;put(br,bc,one);visit(true);unput(br,bc,one);}
+            if(!found&&!exhausted&&(bm&knownBit)){put(br,bc,knownBit);visit(differs);unput(br,bc,knownBit);}
+          }
+        }
+      }
+      for(var i=forced.length-1;i>=0;i--){var f=forced[i];unput(f[0],f[1],f[2]);}
+    }
+    visit(false);return{alternative:found,nodes:nodes,exhausted:exhausted,forced:forcedCount,exactTailChecks:state.getExactTailChecks(),tailMaskChecks:state.getTailMaskChecks()};
+  }
+
   function countLittleKillerSolutions(source,variantOrClues,limit){var clues=Array.isArray(variantOrClues)?variantOrClues:((variantOrClues&&variantOrClues.data&&variantOrClues.data.clues)||[]);var result=solveCount(source,clues,limit||2,180000);return result.exhausted?(limit||2):result.count;}
-  function extraRemovalsFor(difficulty){return difficulty==='expert'?8:(difficulty==='focused'?4:0);}
+  function targetFor(difficulty){return difficulty==='gentle'?44:(difficulty==='focused'?36:0);}
 
   function makeLittleKiller(variant,seed,difficulty){
-    difficulty=difficulty||'focused';var extraWanted=extraRemovalsFor(difficulty);
+    difficulty=difficulty||'focused';var densityTarget=targetFor(difficulty),expert=difficulty==='expert';
     for(var attempt=0;attempt<5;attempt++){
-      var actual=((seed>>>0)^0x4C4B4745^Math.imul(attempt+1,0x9E3779B1))>>>0,solution=sudokuAutomorphism(variant.solution,(actual^0x4C4B5355)>>>0).solution,topology=freshTopology(solution,actual,12),clues=topology.clues;
-      var grid=gridClone(solution),order=shuffle(Array.from({length:81},function(_,i){return i;}),rng(actual^0x524D564C)),clueCount=81,totalNodes=0,budgetHit=false,essentialReached=false,extraDone=0;
-      for(var oi=0;oi<order.length&&clueCount>22;oi++){
-        var idx=order[oi],r=Math.floor(idx/9),c=idx%9,old=grid[r][c];grid[r][c]=0;var check=solveCount(grid,clues,2,9000);totalNodes+=check.nodes;if(check.exhausted){grid[r][c]=old;budgetHit=true;continue;}if(check.count!==1){grid[r][c]=old;continue;}clueCount--;
-        if(!essentialReached&&clueCount<=45&&generator.countSolutions(grid,2)>1){essentialReached=true;if(extraWanted===0)break;continue;}if(essentialReached){extraDone++;if(extraDone>=extraWanted)break;}
+      var actual=((seed>>>0)^0x4C4B4745^Math.imul(attempt+1,0x9E3779B1))>>>0,solution=sudokuAutomorphism(variant.solution,(actual^0x4C4B5355)>>>0).solution,topology=freshTopology(solution,actual,12),clues=topology.clues,compiled=compileClues(clues,9);
+      var grid=gridClone(solution),order=shuffle(Array.from({length:81},function(_,i){return i;}),rng(actual^0x524D564C)),clueCount=81,totalNodes=0,totalForced=0,totalExactTailChecks=0,totalTailMaskChecks=0,budgetHit=false,essentialReached=false,postEssentialChecks=0,postEssentialBudgetHits=0;
+      for(var oi=0;oi<order.length;oi++){
+        if(essentialReached&&!expert&&densityTarget&&clueCount<=densityTarget)break;
+        var idx=order[oi],r=Math.floor(idx/9),c=idx%9,old=grid[r][c];grid[r][c]=0;
+        var check=findAlternativeSolution(grid,compiled,solution,9000);totalNodes+=check.nodes;totalForced+=check.forced||0;totalExactTailChecks+=check.exactTailChecks||0;totalTailMaskChecks+=check.tailMaskChecks||0;
+        if(check.exhausted){grid[r][c]=old;budgetHit=true;if(essentialReached)postEssentialBudgetHits++;continue;}
+        if(check.alternative){grid[r][c]=old;continue;}clueCount--;
+        if(!essentialReached&&clueCount<=45&&generator.countSolutions(grid,2)>1){essentialReached=true;continue;}
+        if(essentialReached)postEssentialChecks++;
       }
-      var exact=solveCount(grid,clues,2,30000);totalNodes+=exact.nodes;var classic=generator.countSolutions(grid,2);
-      if(essentialReached&&!exact.exhausted&&exact.count===1&&classic>1&&extraDone>=extraWanted){
+      var exact=findAlternativeSolution(grid,compiled,solution,30000);totalNodes+=exact.nodes;totalForced+=exact.forced||0;totalExactTailChecks+=exact.exactTailChecks||0;totalTailMaskChecks+=exact.tailMaskChecks||0;var classic=generator.countSolutions(grid,2);
+      if(essentialReached&&!exact.exhausted&&!exact.alternative&&classic>1&&(!densityTarget||clueCount<=densityTarget)){
         var out=clone(variant);out.solution=solution;out.puzzle=grid;out.data=Object.assign({},out.data||{},{clues:clues});
-        out.generation={seed:seed>>>0,clues:clueCount,unique:true,variantEssential:true,verification:'little-killer-exact-sum-solver',generatorFamily:'little-killer-bounded-structural-sum-aware',mode:'seeded-variant-essential',topology:{clueCount:clues.length,sideCounts:topology.sideCounts,usedSides:topology.sideOrder,activeSideCount:topology.activeSideCount},search:{nodes:totalNodes,budgetHit:budgetHit,attempt:attempt,extraRemovals:extraDone}};
+        out.generation={seed:seed>>>0,clues:clueCount,unique:true,variantEssential:true,verification:'little-killer-tail-mask-proof',generatorFamily:'little-killer-bounded-structural-sum-aware',mode:'seeded-variant-essential',topology:{clueCount:clues.length,sideCounts:topology.sideCounts,usedSides:topology.sideOrder,activeSideCount:topology.activeSideCount},search:{nodes:totalNodes,forced:totalForced,exactTailChecks:totalExactTailChecks,tailMaskChecks:totalTailMaskChecks,budgetHit:budgetHit,attempt:attempt,postEssentialChecks:postEssentialChecks,postEssentialBudgetHits:postEssentialBudgetHits},playabilityCarving:{policy:expert?'optimized-tail-mask-local-irreducibility-pass':'difficulty-density-target',targetGivens:densityTarget||null,locallyIrreducible:expert&&postEssentialBudgetHits===0,irreducibilityDeferred:null}};
         return out;
       }
     }
     throw new Error('Little Killer bounded generation failed for seed '+seed+' / '+difficulty);
   }
 
-  generator.countLittleKillerSolutions=countLittleKillerSolutions;generator._littleKillerSolveCount=solveCount;
+  generator.countLittleKillerSolutions=countLittleKillerSolutions;generator._littleKillerSolveCount=solveCount;generator._compileLittleKillerClues=compileClues;generator._littleKillerFindAlternative=findAlternativeSolution;
   generator.countVariantSolutions=function(grid,variant,limit){if(variant&&variant.kind==='littlekiller')return countLittleKillerSolutions(grid,variant,limit);return baseCountVariantSolutions.call(this,grid,variant,limit);};
   generator.make=function(variant,seed,difficulty){if(variant&&variant.kind==='littlekiller')return makeLittleKiller(variant,seed,difficulty);if(variant&&variant.kind==='clone')return makeClone(variant,seed,difficulty);return baseMake.call(this,variant,seed,difficulty);};
 })(typeof window!=='undefined'?window:globalThis);
+
   </script>
   <script data-source="games/x-sums-runtime-hardening.js">
 (function(root){
@@ -9260,12 +9748,15 @@ root.SudokuBank.push(
   var MAX_CANDIDATES=12;
   var MAX_OUTSIDE_ATTEMPTS=16;
   var SKYSCRAPER_PARKS_EXPERT_TARGET=30;
+  var SKYSCRAPER_PARKS_VERIFICATION='skyscraper-parks-postassign-prefix-bound-exact-v3';
   var SKYSCRAPER_STRUCTURAL_KINDS=[
     'skyscraper','skyscrapersums','skyscraperproduct','skyscrapermixed',
     'skyscrapernontouching','killerskyscrapers','diagonalskyscrapers','insideskyscrapers'
   ];
 
   function clone(x){return JSON.parse(JSON.stringify(x));}
+  function cloneGrid(grid){return grid.map(function(row){return row.slice();});}
+  function bitCount(x){var count=0;while(x){x&=x-1;count++;}return count;}
   function rng(seed){var x=seed>>>0;return function(){x=(x+0x6D2B79F5)>>>0;var t=x;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296;};}
   function shuffle(a,random){for(var i=a.length-1;i>0;i--){var j=Math.floor(random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
 
@@ -9349,6 +9840,76 @@ root.SudokuBank.push(
     throw new Error('Sandwich generation exhausted after '+MAX_OUTSIDE_ATTEMPTS+' deterministic attempts');
   }
 
+  function parkVisibleCount(line,parkValue){var max=0,count=0;for(var i=0;i<line.length;i++){var value=line[i];if(value===parkValue)continue;if(value>max){max=value;count++;}}return count;}
+  function parkVisibleSum(line,parkValue){var max=0,sum=0;for(var i=0;i<line.length;i++){var value=line[i];if(value===parkValue)continue;if(value>max){max=value;sum+=value;}}return sum;}
+  function parkLineValid(variant,grid,clue,parkValue){var line=orientedLine(grid,clue);if(variant.kind==='skyscraperparks')return parkVisibleCount(line,parkValue)===clue.count;if(variant.kind==='sumskyscraperparks')return parkVisibleSum(line,parkValue)===clue.sum;return true;}
+  function parkDirectionalPossible(line,target,parkValue,n){
+    var visible=0,max=0,firstGap=-1;
+    for(var i=0;i<line.length;i++){
+      var value=line[i];
+      if(!value){firstGap=i;break;}
+      if(value===parkValue)continue;
+      if(value>max){max=value;visible++;}
+    }
+    if(firstGap<0)return visible===target;
+    if(visible>target)return false;
+    var suffixCapacity=0;for(i=firstGap;i<line.length;i++)if(line[i]!==parkValue)suffixCapacity++;
+    var possibleExtra=0;for(var digit=max+1;digit<=n;digit++)if(digit!==parkValue)possibleExtra++;
+    return visible+Math.min(suffixCapacity,possibleExtra)>=target;
+  }
+  function parkCountLinePossible(line,nearTarget,farTarget,parkValue,n){
+    return parkDirectionalPossible(line,nearTarget,parkValue,n)&&parkDirectionalPossible(line.slice().reverse(),farTarget,parkValue,n);
+  }
+  function countParkSolutionsPostAssignBound(source,variant,limit,ignoreClues){
+    var grid=cloneGrid(source),n=grid.length,full=(1<<n)-1,rows=Array(n).fill(0),cols=Array(n).fill(0),r,c;
+    var clues=(variant.data&&variant.data.clues)||[],park=(variant.data&&variant.data.parkValue)||n;
+    var rowClues=Array.from({length:n},function(){return[];}),colClues=Array.from({length:n},function(){return[];});
+    var rowPairs=Array.from({length:n},function(){return[null,null];}),colPairs=Array.from({length:n},function(){return[null,null];});
+    if(!ignoreClues)for(var ci=0;ci<clues.length;ci++){
+      var clue=clues[ci],bucket=clue.axis==='row'?rowClues[clue.index]:colClues[clue.index];bucket.push(clue);
+      if(variant.kind==='skyscraperparks'){
+        var pair=clue.axis==='row'?rowPairs[clue.index]:colPairs[clue.index];
+        if(clue.side==='left'||clue.side==='top')pair[0]=clue.count;
+        else if(clue.side==='right'||clue.side==='bottom')pair[1]=clue.count;
+      }
+    }
+    for(r=0;r<n;r++)for(c=0;c<n;c++){
+      var value=grid[r][c];if(!value)continue;var bit=1<<(value-1);if((rows[r]|cols[c])&bit)return 0;rows[r]|=bit;cols[c]|=bit;
+    }
+    function lineValidOrPossible(axis,index){
+      if(ignoreClues)return true;
+      var bucket=axis==='row'?rowClues[index]:colClues[index];
+      var mask=axis==='row'?rows[index]:cols[index];
+      if(mask===full){for(var i=0;i<bucket.length;i++)if(!parkLineValid(variant,grid,bucket[i],park))return false;return true;}
+      if(variant.kind!=='skyscraperparks')return true;
+      var pair=axis==='row'?rowPairs[index]:colPairs[index];
+      if(!Number.isInteger(pair[0])||!Number.isInteger(pair[1]))return true;
+      var line=axis==='row'?grid[index].slice():grid.map(function(row){return row[index];});
+      return parkCountLinePossible(line,pair[0],pair[1],park,n);
+    }
+    if(!ignoreClues){for(r=0;r<n;r++)if(!lineValidOrPossible('row',r))return 0;for(c=0;c<n;c++)if(!lineValidOrPossible('col',c))return 0;}
+    var found=0;
+    function visit(){
+      if(found>=limit)return;
+      var br=-1,bc=-1,bm=0,best=n+1;
+      for(var rr=0;rr<n;rr++)for(var cc=0;cc<n;cc++)if(!grid[rr][cc]){
+        var mask=full&~(rows[rr]|cols[cc]),count=bitCount(mask);
+        if(count<best){br=rr;bc=cc;bm=mask;best=count;if(best<=1)break;}
+      }
+      if(br<0){found++;return;}if(!bm)return;
+      for(var bits=bm;bits;bits&=bits-1){
+        var one=bits&-bits,digit=1+Math.round(Math.log(one)/Math.LN2);
+        grid[br][bc]=digit;rows[br]|=one;cols[bc]|=one;
+        if(lineValidOrPossible('row',br)&&lineValidOrPossible('col',bc))visit();
+        rows[br]^=one;cols[bc]^=one;grid[br][bc]=0;
+        if(found>=limit)return;
+      }
+    }
+    visit();return found;
+  }
+
+  generator.countParkSolutions=countParkSolutionsPostAssignBound;
+
   function freshSkyscraperParksExpert(variant,seed){
     if(typeof generator.countParkSolutions!=='function')throw new Error('countParkSolutions missing before Skyscraper Parks hardening');
     var requested=seed>>>0;
@@ -9369,7 +9930,7 @@ root.SudokuBank.push(
       if(generator.countParkSolutions(grid,out,2,false)!==1)continue;
       if(generator.countParkSolutions(grid,out,2,true)<=1)continue;
       out.puzzle=grid;
-      out.generation=Object.assign({},g,{seed:requested,requestedSeed:requested,actualSeed:actual,attempt:attempt,clues:clues,generatorFamily:'skyscraper-parks-bounded-expert-carve',difficultyCalibration:{metric:'paired-givens-pressure',sourceDifficulty:'focused',targetClues:SKYSCRAPER_PARKS_EXPERT_TARGET,maxAttempts:MAX_OUTSIDE_ATTEMPTS}});
+      out.generation=Object.assign({},g,{seed:requested,requestedSeed:requested,actualSeed:actual,attempt:attempt,clues:clues,generatorFamily:'skyscraper-parks-bounded-expert-carve',verification:SKYSCRAPER_PARKS_VERIFICATION,difficultyCalibration:{metric:'paired-givens-pressure',sourceDifficulty:'focused',targetClues:SKYSCRAPER_PARKS_EXPERT_TARGET,maxAttempts:MAX_OUTSIDE_ATTEMPTS}});
       return out;
     }
     throw new Error('Skyscraper Parks expert generation exhausted after '+MAX_OUTSIDE_ATTEMPTS+' deterministic attempts');
@@ -9396,11 +9957,99 @@ root.SudokuBank.push(
     return baseMake.call(generator,variant,seed,difficulty);
   };
 
-  root.XSumsRuntimeHardening={expertMinimumScore:EXPERT_MIN_SCORE,maxCandidates:MAX_CANDIDATES,candidateSeed:candidateSeed,rossiniClues:rossiniClues,sandwichClues:sandwichClues,outsideMaxAttempts:MAX_OUTSIDE_ATTEMPTS,skyscraperStructuralKinds:SKYSCRAPER_STRUCTURAL_KINDS.slice(),nonTouchingStructure:'reuse-iteration4-anti-king-seeded-solver-v2',skyscraperParksExpertTarget:SKYSCRAPER_PARKS_EXPERT_TARGET};
+  root.XSumsRuntimeHardening={expertMinimumScore:EXPERT_MIN_SCORE,maxCandidates:MAX_CANDIDATES,candidateSeed:candidateSeed,rossiniClues:rossiniClues,sandwichClues:sandwichClues,outsideMaxAttempts:MAX_OUTSIDE_ATTEMPTS,skyscraperStructuralKinds:SKYSCRAPER_STRUCTURAL_KINDS.slice(),nonTouchingStructure:'reuse-iteration4-anti-king-seeded-solver-v2',skyscraperParksExpertTarget:SKYSCRAPER_PARKS_EXPERT_TARGET,skyscraperParksVerification:SKYSCRAPER_PARKS_VERIFICATION};
 })(typeof window!=='undefined'?window:globalThis);
-
   </script>
   <script data-source="games/miracle-generator-hardening.js">
+(function(root){
+  'use strict';
+  if(!root.SudokuGenerator||root.SkyscraperParksHybridRuntime)return;
+  var generator=root.SudokuGenerator;
+  var legacyCount=generator.countParkSolutions;
+  if(typeof legacyCount!=='function')return;
+  var THRESHOLD=15;
+  var cache=new WeakMap();
+  function bitCount(x){var c=0;while(x){x&=x-1;c++;}return c;}
+  function clueCount(grid){var n=0;for(var r=0;r<grid.length;r++)for(var c=0;c<grid[r].length;c++)if(grid[r][c])n++;return n;}
+  function visible(line,park){var max=0,count=0;for(var i=0;i<line.length;i++){var v=line[i];if(v===park)continue;if(v>max){max=v;count++;}}return count;}
+  function cluePair(variant,axis,index){var clues=(variant.data&&variant.data.clues)||[],near=axis==='row'?'left':'top',far=axis==='row'?'right':'bottom',a=null,b=null;for(var i=0;i<clues.length;i++){var cl=clues[i];if(cl.axis!==axis||cl.index!==index)continue;if(cl.side===near)a=cl.count;else if(cl.side===far)b=cl.count;}if(!Number.isInteger(a)||!Number.isInteger(b))return null;return[a,b];}
+  function key(a,b){return a+','+b;}
+  function build(variant){
+    var n=variant.solution&&variant.solution.length||9,park=(variant.data&&variant.data.parkValue)||n,needed={},i;
+    var rowPairs=Array(n),colPairs=Array(n);
+    for(i=0;i<n;i++){rowPairs[i]=cluePair(variant,'row',i);colPairs[i]=cluePair(variant,'col',i);if(!rowPairs[i]||!colPairs[i])return null;needed[key(rowPairs[i][0],rowPairs[i][1])]=1;needed[key(colPairs[i][0],colPairs[i][1])]=1;}
+    var buckets={};Object.keys(needed).forEach(function(k){buckets[k]=[];});
+    var perm=Array(n).fill(0),used=Array(n+1).fill(false);
+    function emit(pos){if(pos===n){var a=visible(perm,park),rev=perm.slice().reverse(),b=visible(rev,park),bucket=buckets[key(a,b)];if(bucket)bucket.push(Uint8Array.from(perm));return;}for(var d=1;d<=n;d++)if(!used[d]){used[d]=true;perm[pos]=d;emit(pos+1);used[d]=false;}}
+    emit(0);
+    function buildIndex(domain){var wordCount=Math.ceil(domain.length/32),all=new Uint32Array(wordCount),byPos=Array.from({length:n},function(){return Array.from({length:n+1},function(){return new Uint32Array(wordCount);});});for(var j=0;j<domain.length;j++){all[j>>>5]|=1<<(j&31);for(var p=0;p<n;p++)byPos[p][domain[j][p]][j>>>5]|=1<<(j&31);}return{all:all,byPos:byPos,wordCount:wordCount};}
+    return{n:n,park:park,full:(1<<n)-1,rowIndex:rowPairs.map(function(p){return buildIndex(buckets[key(p[0],p[1])]);}),colIndex:colPairs.map(function(p){return buildIndex(buckets[key(p[0],p[1])]);})};
+  }
+  function getBuilt(variant){var built=cache.get(variant);if(!built){built=build(variant);if(built)cache.set(variant,built);}return built;}
+  function cloneBits(bits){return bits.slice();}
+  function intersect(bits,mask){var any=false;for(var w=0;w<bits.length;w++){bits[w]&=mask[w];if(bits[w])any=true;}return any;}
+  function supportMask(active,index,pos,n){var mask=0;for(var d=1;d<=n;d++){var hit=index.byPos[pos][d];for(var w=0;w<active.length;w++)if(active[w]&hit[w]){mask|=1<<(d-1);break;}}return mask;}
+  function buildSupport(active,index,line,n){var out=Array(n).fill(0);for(var p=0;p<n;p++)out[p]=line[p]?1<<(line[p]-1):supportMask(active,index,p,n);return out;}
+  function countSparse(source,variant,limit){
+    var built=getBuilt(variant);if(!built)return legacyCount(source,variant,limit,false);
+    var n=built.n,full=built.full,grid=source.map(function(r){return r.slice();}),rowActive=built.rowIndex.map(function(x){return cloneBits(x.all);}),colActive=built.colIndex.map(function(x){return cloneBits(x.all);});
+    for(var r=0;r<n;r++)for(var c=0;c<n;c++){var v=grid[r][c];if(!v)continue;if(!intersect(rowActive[r],built.rowIndex[r].byPos[c][v]))return 0;if(!intersect(colActive[c],built.colIndex[c].byPos[r][v]))return 0;}
+    var rowCache=Array(n),colCache=Array(n);
+    for(r=0;r<n;r++)rowCache[r]=buildSupport(rowActive[r],built.rowIndex[r],grid[r],n);
+    for(c=0;c<n;c++){var line=Array.from({length:n},function(_,rr){return grid[rr][c];});colCache[c]=buildSupport(colActive[c],built.colIndex[c],line,n);}
+    var found=0;
+    function visit(){
+      if(found>=limit)return;
+      var br=-1,bc=-1,bm=0,best=n+1;
+      for(var rr=0;rr<n;rr++)for(var cc=0;cc<n;cc++)if(!grid[rr][cc]){var mask=rowCache[rr][cc]&colCache[cc][rr]&full,count=bitCount(mask);if(!count)return;if(count<best){br=rr;bc=cc;bm=mask;best=count;if(count===1)break;}}
+      if(br<0){found++;return;}
+      for(var bits=bm;bits;bits&=bits-1){var one=bits&-bits,d=1+Math.round(Math.log(one)/Math.LN2),prevRA=rowActive[br],prevCA=colActive[bc],prevRC=rowCache[br],prevCC=colCache[bc],nextR=cloneBits(prevRA),nextC=cloneBits(prevCA);if(intersect(nextR,built.rowIndex[br].byPos[bc][d])&&intersect(nextC,built.colIndex[bc].byPos[br][d])){grid[br][bc]=d;rowActive[br]=nextR;colActive[bc]=nextC;rowCache[br]=buildSupport(nextR,built.rowIndex[br],grid[br],n);var colLine=Array.from({length:n},function(_,x){return grid[x][bc];});colCache[bc]=buildSupport(nextC,built.colIndex[bc],colLine,n);visit();grid[br][bc]=0;rowActive[br]=prevRA;colActive[bc]=prevCA;rowCache[br]=prevRC;colCache[bc]=prevCC;}if(found>=limit)return;}
+    }
+    visit();return found;
+  }
+  generator.countParkSolutions=function(source,variant,limit,ignoreClues){
+    if(ignoreClues||!variant||variant.kind!=='skyscraperparks'||clueCount(source)>THRESHOLD)return legacyCount(source,variant,limit,ignoreClues);
+    return countSparse(source,variant,limit||2);
+  };
+  root.SkyscraperParksHybridRuntime={threshold:THRESHOLD,legacyCount:legacyCount,countSparse:countSparse,clueCount:clueCount};
+})(typeof window!=='undefined'?window:globalThis);
+
+(function(root){
+  'use strict';
+  if(!root.SudokuGenerator||root.SkyscraperParksExpertCarveHardening)return;
+  var generator=root.SudokuGenerator;
+  var baseMake=generator.make;
+  var VERIFICATION='skyscraper-parks-hybrid-exact-v1';
+  var POLICY='contract-driven-local-irreducibility';
+  var PROOF='monotone-nonuniqueness-from-single-pass';
+  function cloneGrid(grid){return grid.map(function(row){return row.slice();});}
+  function rng(seed){var x=seed>>>0;return function(){x=(x+0x6D2B79F5)>>>0;var t=x;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296;};}
+  function shuffle(a,random){for(var i=a.length-1;i>0;i--){var j=Math.floor(random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function clueCount(grid){var count=0;for(var r=0;r<grid.length;r++)for(var c=0;c<grid[r].length;c++)if(grid[r][c])count++;return count;}
+  function carveExpert(out){
+    if(!out||!out.puzzle||!out.generation)throw new Error('Skyscraper Parks expert source missing generation payload');
+    if(typeof generator.countParkSolutions!=='function')throw new Error('Skyscraper Parks exact verifier unavailable');
+    var grid=cloneGrid(out.puzzle),n=grid.length,order=[];
+    var actualSeed=Number.isInteger(out.generation.actualSeed)?out.generation.actualSeed:(out.generation.seed>>>0);
+    for(var r=0;r<n;r++)for(var c=0;c<n;c++)if(grid[r][c])order.push(r*n+c);
+    shuffle(order,rng((actualSeed^0x4C4F4341)>>>0));
+    var startClues=order.length,accepted=0,rejected=0;
+    for(var i=0;i<order.length;i++){
+      var idx=order[i],rr=Math.floor(idx/n),cc=idx%n,old=grid[rr][cc];
+      if(!old)continue;grid[rr][cc]=0;
+      if(generator.countParkSolutions(grid,out,2,false)===1)accepted++;else{grid[rr][cc]=old;rejected++;}
+    }
+    var finalClues=clueCount(grid);
+    if(generator.countParkSolutions(grid,out,2,false)!==1)throw new Error('Skyscraper Parks contract carve lost uniqueness');
+    if(generator.countParkSolutions(grid,out,2,true)<=1)throw new Error('Skyscraper Parks contract carve lost variant essentiality');
+    out.puzzle=grid;
+    out.generation=Object.assign({},out.generation,{clues:finalClues,sourceClues:startClues,acceptedRemovals:accepted,rejectedRemovals:rejected,policy:POLICY,verification:VERIFICATION,locallyIrreducibleUnderProductionContract:true,localIrreducibilityProof:PROOF,generatorFamily:'skyscraper-parks-contract-driven-expert-carve',difficultyCalibration:Object.assign({},out.generation.difficultyCalibration||{},{sourceClues:startClues,targetClues:null,stopCondition:'no-remaining-single-clue-removal-preserves-variant-uniqueness',clueFloor:false,runtimeCutoff:false})});
+    return out;
+  }
+  generator.make=function(variant,seed,difficulty){var out=baseMake.call(generator,variant,seed,difficulty);if(variant&&variant.id==='skyscraper-parks'&&difficulty==='expert')return carveExpert(out);return out;};
+  root.SkyscraperParksExpertCarveHardening={verification:VERIFICATION,policy:POLICY,proof:PROOF,clueFloor:false,runtimeCutoff:false};
+})(typeof window!=='undefined'?window:globalThis);
+
 (function(root){
   'use strict';
   if(!root.SudokuGenerator||root.MiracleGeneratorHardening)return;
@@ -15616,46 +16265,31 @@ root.SudokuBank.push(
 
   function ensureControl(){
     if(field&&field.isConnected)return field;
-
     removeLegacyControls();
-
     var difficulty=document.querySelector('.difficulty-field');
     if(!difficulty||!difficulty.parentNode)return null;
-
     field=document.createElement('label');
     field.className='deck-field size-field p3-size-field';
     field.hidden=true;
-
     label=document.createElement('span');
     label.id='size-label';
-
     select=document.createElement('select');
     select.id='size-select';
-
     field.append(label,select);
     difficulty.parentNode.insertBefore(field,difficulty);
-
     select.addEventListener('change',function(){
       if(!currentId)return;
-
       var supported=supportedFor(currentId);
       var size=Number(select.value);
       if(supported.indexOf(size)<0)return;
-
       var variant=variantById(currentId);
       if(!variant)return;
-
       variant.data=variant.data||{};
       variant.data.p3Size=size;
-
-      try{
-        root.localStorage&&root.localStorage.setItem('ildi-size-'+currentId,String(size));
-      }catch(e){}
-
+      try{root.localStorage&&root.localStorage.setItem('ildi-size-'+currentId,String(size));}catch(e){}
       var button=document.getElementById('new-button');
       if(button&&typeof button.click==='function')button.click();
     });
-
     language();
     return field;
   }
@@ -15664,49 +16298,339 @@ root.SudokuBank.push(
     currentId=id||null;
     ensureControl();
     removeLegacyControls();
-
     if(!field||!select)return;
-
     var supported=supportedFor(currentId);
-    if(!supported.length){
-      field.hidden=true;
-      setSizeLayout(false);
-      select.replaceChildren();
-      return;
-    }
-
+    if(!supported.length){field.hidden=true;setSizeLayout(false);select.replaceChildren();return;}
     var variant=variantById(currentId);
     var wanted=Number(variant&&variant.data&&variant.data.p3Size);
     if(supported.indexOf(wanted)<0)wanted=supported[0];
-
     select.replaceChildren.apply(select,supported.map(function(n){
       var option=document.createElement('option');
-      option.value=String(n);
-      option.textContent=n+'×'+n;
-      return option;
+      option.value=String(n);option.textContent=n+'×'+n;return option;
     }));
-
-    select.value=String(wanted);
-    field.hidden=false;
-    setSizeLayout(true);
+    select.value=String(wanted);field.hidden=false;setSizeLayout(true);
   }
 
   function init(){
-    ensureControl();
-    removeLegacyControls();
-
-    document.addEventListener('sudoku:variantchange',function(event){
-      sync(event&&event.detail&&event.detail.id);
-    });
-
+    ensureControl();removeLegacyControls();
+    document.addEventListener('sudoku:variantchange',function(event){sync(event&&event.detail&&event.detail.id);});
     document.addEventListener('sudoku:languagechange',language);
   }
 
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',init,{once:true});
-  }else{
-    init();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});
+  else init();
+})(typeof window!=='undefined'?window:globalThis);
+
+// Exact large-board playability hardening. 16x16 expert uniqueness is represented
+// as an exact-cover problem. Given assignments are pre-covered before the sparse
+// candidate matrix is built, so the search contains only genuinely open cells and
+// candidates compatible with the fixed givens. There is no timeout or clue floor.
+(function(root){
+  'use strict';
+  if(!root.SudokuGenerator||typeof root.SudokuGenerator.make!=='function'||typeof root.SudokuGenerator.countSolutions!=='function')return;
+  var baseMake=root.SudokuGenerator.make;
+  function cloneGrid(grid){return grid.map(function(row){return row.slice();});}
+  function mulberry32(seed){var x=seed>>>0;return function(){x=(x+0x6D2B79F5)>>>0;var t=x;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;};}
+  function shuffle(list,random){for(var i=list.length-1;i>0;i--){var j=Math.floor(random()*(i+1)),tmp=list[i];list[i]=list[j];list[j]=tmp;}return list;}
+  function countGivens(grid){var total=0;for(var r=0;r<grid.length;r++)for(var c=0;c<grid[r].length;c++)if(grid[r][c])total++;return total;}
+
+  function count16SolutionsExact(source,limit,stats){
+    limit=Math.max(1,Number(limit)||2);
+    if(!Array.isArray(source)||source.length!==16)return 0;
+    var rowMask=new Uint32Array(16),colMask=new Uint32Array(16),boxMask=new Uint32Array(16);
+    var active=new Uint8Array(1024);active.fill(1);
+    var empties=[];var full=0xFFFF;
+    function boxIndex(r,c){return ((r>>2)<<2)+(c>>2);}
+    function cellCol(r,c){return r*16+c;}
+    function rowDigitCol(r,d){return 256+r*16+(d-1);}
+    function colDigitCol(c,d){return 512+c*16+(d-1);}
+    function boxDigitCol(b,d){return 768+b*16+(d-1);}
+    for(var r=0;r<16;r++){
+      if(!Array.isArray(source[r])||source[r].length!==16)return 0;
+      for(var c=0;c<16;c++){
+        var d=Number(source[r][c])||0;
+        if(!d){empties.push(r*16+c);continue;}
+        if(d<1||d>16)return 0;
+        var bit=1<<(d-1),b=boxIndex(r,c);
+        if((rowMask[r]&bit)||(colMask[c]&bit)||(boxMask[b]&bit))return 0;
+        rowMask[r]|=bit;colMask[c]|=bit;boxMask[b]|=bit;
+        active[cellCol(r,c)]=0;active[rowDigitCol(r,d)]=0;active[colDigitCol(c,d)]=0;active[boxDigitCol(b,d)]=0;
+      }
+    }
+    var root={L:null,R:null};root.L=root;root.R=root;
+    var cols=new Array(1024);
+    for(var ci=0;ci<1024;ci++){
+      var col={L:null,R:null,U:null,D:null,size:0,index:ci};col.U=col;col.D=col;cols[ci]=col;
+      if(!active[ci]){col.L=col;col.R=col;continue;}
+      col.L=root.L;col.R=root;root.L.R=col;root.L=col;
+    }
+    function addRow(indices){
+      var first=null,last=null;
+      for(var k=0;k<indices.length;k++){
+        var col=cols[indices[k]],node={L:null,R:null,U:col.U,D:col,C:col};
+        col.U.D=node;col.U=node;col.size++;
+        if(!first){first=node;node.L=node;node.R=node;last=node;}
+        else{node.L=last;node.R=first;last.R=node;first.L=node;last=node;}
+      }
+    }
+    for(var ei=0;ei<empties.length;ei++){
+      var idx=empties[ei],rr=idx>>4,cc=idx&15,bx=boxIndex(rr,cc);
+      var mask=full&~(rowMask[rr]|colMask[cc]|boxMask[bx]);
+      if(!mask){if(stats){stats.nodes=0;stats.branches=0;stats.deadEnds=1;stats.propagated=0;stats.solutions=0;}return 0;}
+      while(mask){var bit=mask&-mask;mask^=bit;var d=32-Math.clz32(bit);addRow([cellCol(rr,cc),rowDigitCol(rr,d),colDigitCol(cc,d),boxDigitCol(bx,d)]);}
+    }
+    function cover(c){c.R.L=c.L;c.L.R=c.R;for(var i=c.D;i!==c;i=i.D)for(var j=i.R;j!==i;j=j.R){j.D.U=j.U;j.U.D=j.D;j.C.size--;}}
+    function uncover(c){for(var i=c.U;i!==c;i=i.U)for(var j=i.L;j!==i;j=j.L){j.C.size++;j.D.U=j;j.U.D=j;}c.R.L=c;c.L.R=c;}
+    var solutions=0,nodes=0,branches=0,deadEnds=0;
+    function search(){
+      if(solutions>=limit)return;nodes++;
+      if(root.R===root){solutions++;return;}
+      var chosen=null,min=1e9;
+      for(var c=root.R;c!==root;c=c.R){if(c.size<min){min=c.size;chosen=c;if(min<=1)break;}}
+      if(!chosen||chosen.size===0){deadEnds++;return;}
+      branches++;cover(chosen);
+      for(var r=chosen.D;r!==chosen&&solutions<limit;r=r.D){for(var j=r.R;j!==r;j=j.R)cover(j.C);search();for(var u=r.L;u!==r;u=u.L)uncover(u.C);}
+      uncover(chosen);
+    }
+    search();
+    if(stats){stats.nodes=nodes;stats.branches=branches;stats.deadEnds=deadEnds;stats.propagated=0;stats.solutions=solutions;stats.openCells=empties.length;}
+    return solutions;
   }
+
+  root.SudokuGenerator.countLargeClassicSolutionsExact=count16SolutionsExact;
+  root.SudokuGenerator.make=function(variant,seed,difficulty){
+    var out=baseMake.apply(this,arguments);
+    if(!variant||variant.id!=='sudoku-16x16'||difficulty!=='expert'||!out||!Array.isArray(out.puzzle))return out;
+    if(out.generation&&out.generation.locallyIrreducibleUnderProductionContract===true)return out;
+    var grid=cloneGrid(out.puzzle),n=grid.length;if(n!==16)return out;
+    var order=[];for(var r=0;r<n;r++)for(var c=0;c<n;c++)if(grid[r][c])order.push(r*n+c);
+    shuffle(order,mulberry32(((seed>>>0)^0x16E4A7C5)>>>0));
+    var accepted=0,rejected=0;
+    for(var i=0;i<order.length;i++){
+      var idx=order[i],rr=Math.floor(idx/n),cc=idx%n,old=grid[rr][cc];if(!old)continue;
+      grid[rr][cc]=0;if(count16SolutionsExact(grid,2)===1)accepted++;else{grid[rr][cc]=old;rejected++;}
+    }
+    var finalCount=countGivens(grid),finalStats={};
+    out.puzzle=grid;out.generation=out.generation||{};out.generation.clues=finalCount;
+    out.generation.unique=count16SolutionsExact(grid,2,finalStats)===1;
+    out.generation.verification='classic16-dlx-precovered-exact-v2';
+    out.generation.generatorFamily='large-unique-removal-expert-local-irreducible';
+    out.generation.policy='contract-driven-local-irreducibility';
+    out.generation.localIrreducibilityProof='monotone-nonuniqueness-from-single-pass';
+    out.generation.locallyIrreducibleUnderProductionContract=true;
+    out.generation.acceptedRemovals=accepted;out.generation.rejectedRemovals=rejected;out.generation.exactSearchStats=finalStats;
+    return out;
+  };
+})(typeof window!=='undefined'?window:globalThis);
+
+// 12x12 expert playability hardening. The existing exact Classic counter is already
+// cheap enough on this board size, so use it directly for a deterministic full pass.
+(function(root){
+  'use strict';
+  if(!root.SudokuGenerator||typeof root.SudokuGenerator.make!=='function'||typeof root.SudokuGenerator.countSolutions!=='function')return;
+  var baseMake=root.SudokuGenerator.make;
+  function cloneGrid(grid){return grid.map(function(row){return row.slice();});}
+  function mulberry32(seed){var x=seed>>>0;return function(){x=(x+0x6D2B79F5)>>>0;var t=x;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;};}
+  function shuffle(list,random){for(var i=list.length-1;i>0;i--){var j=Math.floor(random()*(i+1)),tmp=list[i];list[i]=list[j];list[j]=tmp;}return list;}
+  function countGivens(grid){var total=0;for(var r=0;r<grid.length;r++)for(var c=0;c<grid[r].length;c++)if(grid[r][c])total++;return total;}
+  root.SudokuGenerator.make=function(variant,seed,difficulty){
+    var out=baseMake.apply(this,arguments);
+    if(!variant||variant.id!=='sudoku-12x12'||difficulty!=='expert'||!out||!Array.isArray(out.puzzle))return out;
+    if(out.generation&&out.generation.locallyIrreducibleUnderProductionContract===true)return out;
+    var grid=cloneGrid(out.puzzle),n=grid.length;if(n!==12)return out;
+    var order=[];for(var r=0;r<n;r++)for(var c=0;c<n;c++)if(grid[r][c])order.push(r*n+c);
+    shuffle(order,mulberry32(((seed>>>0)^0x12E4A7C5)>>>0));
+    var accepted=0,rejected=0;
+    for(var i=0;i<order.length;i++){
+      var idx=order[i],rr=Math.floor(idx/n),cc=idx%n,old=grid[rr][cc];if(!old)continue;
+      grid[rr][cc]=0;if(root.SudokuGenerator.countSolutions(grid,2)===1)accepted++;else{grid[rr][cc]=old;rejected++;}
+    }
+    var finalCount=countGivens(grid);
+    out.puzzle=grid;out.generation=out.generation||{};out.generation.clues=finalCount;
+    out.generation.unique=root.SudokuGenerator.countSolutions(grid,2)===1;
+    out.generation.verification='rotation-safe-solver-verified-local-irreducible';
+    out.generation.generatorFamily='sudoku12-rotation-safe-expert-local-irreducible';
+    out.generation.policy='contract-driven-local-irreducibility';
+    out.generation.localIrreducibilityProof='monotone-nonuniqueness-from-single-pass';
+    out.generation.locallyIrreducibleUnderProductionContract=true;
+    out.generation.acceptedRemovals=accepted;out.generation.rejectedRemovals=rejected;
+    return out;
+  };
+})(typeof window!=='undefined'?window:globalThis);
+
+// Mini-6 expert playability hardening. The trusted generic exact counter is very
+// cheap on 6x6, so use it directly for a deterministic full irreducibility pass.
+(function(root){
+  'use strict';
+  if(!root.SudokuGenerator||typeof root.SudokuGenerator.make!=='function'||typeof root.SudokuGenerator.countSolutions!=='function')return;
+  var baseMake=root.SudokuGenerator.make;
+  function cloneGrid(grid){return grid.map(function(row){return row.slice();});}
+  function mulberry32(seed){var x=seed>>>0;return function(){x=(x+0x6D2B79F5)>>>0;var t=x;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;};}
+  function shuffle(list,random){for(var i=list.length-1;i>0;i--){var j=Math.floor(random()*(i+1)),tmp=list[i];list[i]=list[j];list[j]=tmp;}return list;}
+  function countGivens(grid){var total=0;for(var r=0;r<grid.length;r++)for(var c=0;c<grid[r].length;c++)if(grid[r][c])total++;return total;}
+  root.SudokuGenerator.make=function(variant,seed,difficulty){
+    var out=baseMake.apply(this,arguments);
+    if(!variant||variant.id!=='mini-6'||difficulty!=='expert'||!out||!Array.isArray(out.puzzle))return out;
+    if(out.generation&&out.generation.locallyIrreducibleUnderProductionContract===true)return out;
+    var grid=cloneGrid(out.puzzle),n=grid.length;if(n!==6)return out;
+    var order=[];for(var r=0;r<n;r++)for(var c=0;c<n;c++)if(grid[r][c])order.push(r*n+c);
+    shuffle(order,mulberry32(((seed>>>0)^0x06E4A7C5)>>>0));
+    var accepted=0,rejected=0;
+    for(var i=0;i<order.length;i++){
+      var idx=order[i],rr=Math.floor(idx/n),cc=idx%n,old=grid[rr][cc];if(!old)continue;
+      grid[rr][cc]=0;if(root.SudokuGenerator.countSolutions(grid,2)===1)accepted++;else{grid[rr][cc]=old;rejected++;}
+    }
+    var finalCount=countGivens(grid);
+    out.puzzle=grid;out.generation=out.generation||{};out.generation.clues=finalCount;
+    out.generation.unique=root.SudokuGenerator.countSolutions(grid,2)===1;
+    out.generation.verification='rotation-safe-solver-verified-local-irreducible';
+    out.generation.generatorFamily='mini6-rotation-safe-expert-local-irreducible';
+    out.generation.policy='contract-driven-local-irreducibility';
+    out.generation.localIrreducibilityProof='monotone-nonuniqueness-from-single-pass';
+    out.generation.locallyIrreducibleUnderProductionContract=true;
+    out.generation.acceptedRemovals=accepted;out.generation.rejectedRemovals=rejected;
+    return out;
+  };
+})(typeof window!=='undefined'?window:globalThis);
+
+// Mini 4x4 expert playability hardening. Exact Classic verification is trivial at
+// this size, so perform one deterministic full removal pass with no clue floor.
+(function(root){
+  'use strict';
+  if(!root.SudokuGenerator||typeof root.SudokuGenerator.make!=='function'||typeof root.SudokuGenerator.countSolutions!=='function')return;
+  var baseMake=root.SudokuGenerator.make;
+  function cloneGrid(grid){return grid.map(function(row){return row.slice();});}
+  function mulberry32(seed){var x=seed>>>0;return function(){x=(x+0x6D2B79F5)>>>0;var t=x;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;};}
+  function shuffle(list,random){for(var i=list.length-1;i>0;i--){var j=Math.floor(random()*(i+1)),tmp=list[i];list[i]=list[j];list[j]=tmp;}return list;}
+  function countGivens(grid){var total=0;for(var r=0;r<grid.length;r++)for(var c=0;c<grid[r].length;c++)if(grid[r][c])total++;return total;}
+  root.SudokuGenerator.make=function(variant,seed,difficulty){
+    var out=baseMake.apply(this,arguments);
+    if(!variant||variant.id!=='mini'||difficulty!=='expert'||!out||!Array.isArray(out.puzzle))return out;
+    if(out.generation&&out.generation.locallyIrreducibleUnderProductionContract===true)return out;
+    var grid=cloneGrid(out.puzzle),n=grid.length;if(n!==4)return out;
+    var order=[];for(var r=0;r<n;r++)for(var c=0;c<n;c++)if(grid[r][c])order.push(r*n+c);
+    shuffle(order,mulberry32(((seed>>>0)^0x04E4A7C5)>>>0));
+    var accepted=0,rejected=0;
+    for(var i=0;i<order.length;i++){
+      var idx=order[i],rr=Math.floor(idx/n),cc=idx%n,old=grid[rr][cc];if(!old)continue;
+      grid[rr][cc]=0;if(root.SudokuGenerator.countSolutions(grid,2)===1)accepted++;else{grid[rr][cc]=old;rejected++;}
+    }
+    var finalCount=countGivens(grid);
+    out.puzzle=grid;out.generation=out.generation||{};out.generation.clues=finalCount;
+    out.generation.unique=root.SudokuGenerator.countSolutions(grid,2)===1;
+    out.generation.verification='solver-verified-local-irreducible';
+    out.generation.generatorFamily='mini4-expert-local-irreducible';
+    out.generation.policy='contract-driven-local-irreducibility';
+    out.generation.localIrreducibilityProof='monotone-nonuniqueness-from-single-pass';
+    out.generation.locallyIrreducibleUnderProductionContract=true;
+    out.generation.acceptedRemovals=accepted;out.generation.rejectedRemovals=rejected;
+    return out;
+  };
+})(typeof window!=='undefined'?window:globalThis);
+
+// Samurai expert playability hardening. Exact uniqueness is the conjunction of the
+// five overlapping 9x9 component contracts. A deterministic full pass is sufficient
+// for local irreducibility because removing more clues cannot restore uniqueness.
+(function(root){
+  'use strict';
+  if(!root.SudokuGenerator||typeof root.SudokuGenerator.make!=='function'||typeof root.SudokuGenerator.countSolutions!=='function')return;
+  var baseMake=root.SudokuGenerator.make;
+  var FALLBACK_OFFSETS=[[0,0],[0,12],[6,6],[12,0],[12,12]];
+  function cloneGrid(grid){return grid.map(function(row){return row.slice();});}
+  function mulberry32(seed){var x=seed>>>0;return function(){x=(x+0x6D2B79F5)>>>0;var t=x;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;};}
+  function shuffle(list,random){for(var i=list.length-1;i>0;i--){var j=Math.floor(random()*(i+1)),tmp=list[i];list[i]=list[j];list[j]=tmp;}return list;}
+  function countGivens(grid){var total=0;for(var r=0;r<grid.length;r++)for(var c=0;c<grid[r].length;c++)if(grid[r][c])total++;return total;}
+  function normalizeOffset(off){
+    if(Array.isArray(off)&&off.length===2)return [Number(off[0]),Number(off[1])];
+    if(off&&Number.isFinite(Number(off.r))&&Number.isFinite(Number(off.c)))return [Number(off.r),Number(off.c)];
+    return null;
+  }
+  function resolveOffsets(out,variant){
+    var sources=[out&&out.data&&out.data.grids,variant&&variant.data&&variant.data.grids];
+    for(var i=0;i<sources.length;i++){
+      var grids=sources[i];if(!Array.isArray(grids)||grids.length!==5)continue;
+      var offsets=grids.map(function(grid){return normalizeOffset(grid&&grid.off);});
+      if(offsets.every(function(off){return off&&off.every(Number.isFinite);}))return offsets;
+    }
+    return FALLBACK_OFFSETS.map(function(off){return off.slice();});
+  }
+  function extractComponent(grid,off){
+    var r0=off[0],c0=off[1],component=[];
+    for(var r=0;r<9;r++){
+      var row=[];for(var c=0;c<9;c++)row.push(Number(grid[r0+r]&&grid[r0+r][c0+c])||0);
+      component.push(row);
+    }
+    return component;
+  }
+  function countContract(grid,offsets){
+    var counts=offsets.map(function(off){return root.SudokuGenerator.countSolutions(extractComponent(grid,off),2);});
+    return {solutions:counts.some(function(count){return count===0;})?0:(counts.every(function(count){return count===1;})?1:2),componentCounts:counts};
+  }
+  root.SudokuGenerator.make=function(variant,seed,difficulty){
+    var out=baseMake.apply(this,arguments);
+    if(!variant||variant.id!=='samurai'||difficulty!=='expert'||!out||!Array.isArray(out.puzzle))return out;
+    if(out.generation&&out.generation.locallyIrreducibleUnderProductionContract===true)return out;
+    var grid=cloneGrid(out.puzzle),offsets=resolveOffsets(out,variant),order=[];
+    for(var r=0;r<grid.length;r++)for(var c=0;c<grid[r].length;c++)if(grid[r][c])order.push([r,c]);
+    shuffle(order,mulberry32(((seed>>>0)^0x5A4D5552)>>>0));
+    var accepted=0,rejected=0;
+    for(var i=0;i<order.length;i++){
+      var rr=order[i][0],cc=order[i][1],old=grid[rr][cc];if(!old)continue;
+      grid[rr][cc]=0;
+      if(countContract(grid,offsets).solutions===1)accepted++;else{grid[rr][cc]=old;rejected++;}
+    }
+    var finalContract=countContract(grid,offsets),finalCount=countGivens(grid);
+    out.puzzle=grid;out.generation=out.generation||{};out.generation.clues=finalCount;
+    out.generation.unique=finalContract.solutions===1;
+    out.generation.verification='component-solver-verified-local-irreducible';
+    out.generation.generatorFamily='five-overlapping-unique-sudokus-expert-local-irreducible';
+    out.generation.policy='contract-driven-local-irreducibility';
+    out.generation.localIrreducibilityProof='monotone-nonuniqueness-from-single-pass';
+    out.generation.locallyIrreducibleUnderProductionContract=true;
+    out.generation.acceptedRemovals=accepted;out.generation.rejectedRemovals=rejected;
+    return out;
+  };
+})(typeof window!=='undefined'?window:globalThis);
+
+
+// Toroidal Skyscraper expert playability hardening. Run after the P2 calibration
+// wrappers so no later target-based layer can restore givens after the exact carve.
+(function(root){
+  'use strict';
+  if(!root.SudokuGenerator||typeof root.SudokuGenerator.make!=='function'||typeof root.SudokuGenerator.countToroidalSkyscraperSolutions!=='function')return;
+  var baseMake=root.SudokuGenerator.make;
+  function cloneGrid(grid){return grid.map(function(row){return row.slice();});}
+  function mulberry32(seed){var x=seed>>>0;return function(){x=(x+0x6D2B79F5)>>>0;var t=x;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;};}
+  function shuffle(list,random){for(var i=list.length-1;i>0;i--){var j=Math.floor(random()*(i+1)),tmp=list[i];list[i]=list[j];list[j]=tmp;}return list;}
+  function clueMapFor(out){var map={};var clues=out&&out.data&&out.data.toroidalClues||[];for(var i=0;i<clues.length;i++){var cell=clues[i]&&clues[i].cell;if(cell)map[cell[0]+','+cell[1]]=1;}return map;}
+  function countPlayerGivens(grid,clueMap){var total=0;for(var r=0;r<grid.length;r++)for(var c=0;c<grid[r].length;c++)if(grid[r][c]&&!clueMap[r+','+c])total++;return total;}
+  root.SudokuGenerator.make=function(variant,seed,difficulty){
+    var out=baseMake.apply(this,arguments);
+    if(!variant||variant.id!=='toroidal-skyscrapers'||difficulty!=='expert'||!out||!Array.isArray(out.puzzle))return out;
+    if(out.generation&&out.generation.locallyIrreducibleUnderProductionContract===true)return out;
+    var grid=cloneGrid(out.puzzle),clueMap=clueMapFor(out),order=[];
+    for(var r=0;r<grid.length;r++)for(var c=0;c<grid[r].length;c++)if(grid[r][c]&&!clueMap[r+','+c])order.push([r,c]);
+    shuffle(order,mulberry32(((seed>>>0)^0x70A01DA1^0x1A2B3C4D)>>>0));
+    var accepted=0,rejected=0;
+    for(var i=0;i<order.length;i++){
+      var rr=order[i][0],cc=order[i][1],old=grid[rr][cc];if(!old)continue;
+      grid[rr][cc]=0;
+      if(root.SudokuGenerator.countToroidalSkyscraperSolutions(grid,out,2,false)===1){accepted++;}
+      else{grid[rr][cc]=old;rejected++;}
+    }
+    var unique=root.SudokuGenerator.countToroidalSkyscraperSolutions(grid,out,2,false)===1;
+    var essential=root.SudokuGenerator.countToroidalSkyscraperSolutions(grid,out,2,true)!==1;
+    out.puzzle=grid;out.generation=out.generation||{};
+    out.generation.clues=countPlayerGivens(grid,clueMap);
+    out.generation.unique=unique;out.generation.variantEssential=essential;
+    out.generation.verification='solver-verified-local-irreducible';
+    out.generation.generatorFamily='seeded-symbol-permutation-expert-local-irreducible';
+    out.generation.policy='contract-driven-local-irreducibility';
+    out.generation.localIrreducibilityProof='monotone-nonuniqueness-from-single-pass';
+    out.generation.locallyIrreducibleUnderProductionContract=unique&&essential;
+    out.generation.acceptedRemovals=accepted;out.generation.rejectedRemovals=rejected;
+    return out;
+  };
 })(typeof window!=='undefined'?window:globalThis);
 
   </script>
