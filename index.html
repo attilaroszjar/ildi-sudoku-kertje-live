@@ -848,7 +848,7 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
       <section class="welcome-card" aria-label="Üdvözlés"><div class="welcome-flower" aria-hidden="true">❀</div><div><p class="welcome-kicker">ILDI SUDOKU KERTJE</p><h1 id="welcome-title">Üdv Ildi Sudoku Kertjében!</h1><p id="welcome-copy">Válassz kategóriát, találd meg a kedvenc Sudoku-változatodat, és élvezd a logikai kihívásokat.</p></div><div class="welcome-cat" aria-hidden="true"><svg viewBox="0 0 190 92" focusable="false"><path class="cat-cushion" d="M33 72c20-20 102-24 132 0-21 12-109 16-132 0z"/><path class="sleep-cat-body" d="M63 62c10-29 47-35 72-14 7 6 11 14 11 22-17 6-68 7-92 1 1-3 4-6 9-9z"/><path class="sleep-cat-head" d="M52 50l3-23 13 11c7-3 15-3 22 0l14-12 2 24c-2 18-13 27-28 27-16 0-27-10-26-27z"/><path class="sleep-cat-tail" d="M136 62c25-2 31-14 23-22-5-5-13-5-18 1 8-2 12 2 11 7-1 8-9 10-19 9"/><path class="sleep-cat-face" d="M64 53c4 3 7 3 11 0M86 53c4 3 7 3 11 0M77 58l3 2 3-2M80 60c0 4-4 6-8 4M80 60c0 4 4 6 8 4"/></svg><span class="floating-heart">♡</span></div></section>
       <section class="control-deck" aria-label="Feladvány beállításai"><label class="deck-field"><span id="category-label">Kategória</span><select id="category-select"></select></label><label class="deck-field variant-field"><span id="variant-label">Sudoku-változat</span><select id="variant-select"></select></label><span id="variant-count" class="variant-count">82 változat</span><div class="deck-actions"><label class="deck-field difficulty-field"><span id="difficulty-label">Nehézség</span><select id="difficulty-select"></select></label><button id="restart-button" class="button secondary" type="button">↻ <span>Újrakezdés</span></button><button id="new-button" class="button primary" type="button">❀ <span>Új feladvány</span></button></div></section>
       <section id="workspace" class="workspace sudoku-only-workspace" aria-labelledby="game-title"><div class="garden-layout"><aside class="garden-sidebar" aria-label="Sudoku kategóriák"><section class="garden-card categories-card"><div class="card-title-row"><h2 id="categories-heading">Kategóriák</h2><span aria-hidden="true">✿</span></div><div id="category-list" class="category-list"></div></section><section class="garden-card favorites-card"><div class="card-title-row"><h2 id="favorites-heading">Kedvenceim</h2><span aria-hidden="true">♡</span></div><div id="favorites-list" class="favorites-list"><p id="favorites-empty">Itt jelennek meg a kedvenc változataid.</p></div></section><section class="garden-card stats-card"><div class="card-title-row"><h2 id="stats-heading">Statisztikám</h2><span aria-hidden="true">▥</span></div><dl class="stats-list"><div><dt id="solved-label">Megoldott</dt><dd id="stat-solved">0</dd></div><div><dt id="best-label">Legjobb idő</dt><dd id="stat-best">--:--</dd></div><div><dt id="streak-label">Jelenlegi sorozat</dt><dd id="stat-streak">0 nap</dd></div><div><dt id="total-time-label">Összes játékidő</dt><dd id="stat-total">0:00:00</dd></div></dl></section></aside><div class="play-column"><section class="garden-card puzzle-card"><div class="puzzle-card-head"><div><p id="game-family" class="eyebrow">Sudoku-gyűjtemény</p><h2 id="game-title">Sudoku-változatok</h2></div><button id="favorite-button" class="favorite-button" type="button" aria-label="Hozzáadás a kedvencekhez" title="Kedvenc">♡</button></div><div class="play-surface"><div id="game-stage" class="game-stage" tabindex="-1"></div><div id="game-tools" class="game-tools tool-rail"></div></div></section></div><aside class="garden-card inspector" aria-label="Feladvány információ"><section class="inspector-heading"><h2 id="about-heading">A változatról</h2><span aria-hidden="true">✿</span></section><section><h3 id="objective-heading">Cél</h3><p id="game-objective"></p></section><section><h3 id="rules-heading">Játékszabály</h3><div id="game-rules"></div></section><section class="tip-card"><h3 id="tip-heading">Tipp</h3><p id="game-tip">Haladj nyugodtan, és először azokat a cellákat keresd, ahol a szabályok a legtöbb lehetőséget kizárják.</p></section><section class="status-compact"><div class="status-row"><span id="status-label">Állapot</span><strong id="game-status" role="status" aria-live="polite">Készen áll</strong></div><div class="status-row"><span id="counter-label">Lépések</span><strong id="game-counter">0</strong></div></section><div class="garden-bench" aria-hidden="true"><span class="garden-sprig">❀ ✿ ❀</span><svg viewBox="0 0 210 105" focusable="false"><path class="mini-ground" d="M18 87c34-11 142-12 177 0"/><path class="mini-cat" d="M60 76c8-20 31-26 49-15 13 8 19 19 15 27H52c0-5 3-9 8-12zM54 61l3-17 11 9c5-2 11-2 16 0l11-9 2 18c-1 13-10 20-22 20-13 0-22-8-21-21z"/><path class="mini-tail" d="M118 77c26 1 36-9 31-18-3-6-10-7-16-3 8-1 11 3 9 8-3 6-11 7-22 5"/><path class="mini-bench" d="M128 76h59M134 64h47M140 64v23M176 64v23"/></svg></div></aside></div></section>
-      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=2a44d6e" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
+      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=1f7e31a" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
     </main>
   </div><div id="toast" class="toast" role="status" aria-live="polite"></div>
   <dialog id="help-dialog" class="dialog"><form method="dialog"><div class="dialog-head"><div><p id="guide-eyebrow" class="eyebrow"></p><h2 id="guide-title"></h2></div><button class="icon-button" value="close" aria-label="Bezárás">×</button></div><div class="dialog-body"><p id="guide-p1"></p><dl><div><dt id="guide-pointer"></dt><dd id="guide-pointer-d"></dd></div><div><dt id="guide-keyboard"></dt><dd id="guide-keyboard-d"></dd></div><div><dt id="guide-feedback"></dt><dd id="guide-feedback-d"></dd></div></dl><p id="guide-quiet" class="quiet"></p></div><button id="guide-close" class="button primary dialog-close" value="close"></button></form></dialog>
@@ -10819,7 +10819,7 @@ root.SudokuBank.push(
     function battleshipStateLabel(r,c,x){var hu=I&&I.lang==='hu',state=x===1?(hu?'hajó':'ship'):(x===2?(hu?'víz':'water'):(hu?'üres':'empty')),pos=hu?((r+1)+'. sor, '+(c+1)+'. oszlop'):('Row '+(r+1)+', column '+(c+1));return pos+': '+state+(fixed[r+','+c]?(hu?', adott':', given'):'');}
     function shadeStateLabel(r,c,x){var hu=I&&I.lang==='hu',state=x===1?(hu?'fekete':'shaded'):(x===2?(hu?'X-szel jelölt fehér':'white marked X'):(hu?'üres':'empty')),pos=hu?((r+1)+'. sor, '+(c+1)+'. oszlop'):('Row '+(r+1)+', column '+(c+1));return pos+': '+state+(fixed[r+','+c]?(hu?', adott':', given'):'');}
     for(var r=0;r<n;r++)for(var c=0;c<n;c++)(function(rr,cc){var b=LR.el('button',{type:'button',className:'newlogic-cell iteration52-cell',role:'gridcell',onclick:function(){if(fixed[rr+','+cc])return;if(v.kind==='battleships'||v.kind==='heyawake')grid[rr][cc]=(grid[rr][cc]+1)%3;else grid[rr][cc]=grid[rr][cc]===1?0:1;moves++;render();api.setCounter(moves,I&&I.lang==='hu'?'Lépések':'Moves');if(solved())api.solved();}});regionBorder(b,rr,cc);if(fixed[rr+','+cc]){b.classList.add('given');b.setAttribute('aria-disabled','true');}cells.push(b);board.appendChild(b);}(r,c));
-    if(v.kind==='heyawake'){var labels={};for(r=0;r<n;r++)for(c=0;c<n;c++){var id=reg[r][c];if(labels[id])continue;labels[id]=1;var lab=LR.el('span',{className:'heyawake-room-clue',text:String(v.puzzle.roomClues[id])});lab.style.left=((c+.12)*100/n)+'%';lab.style.top=((r+.08)*100/n)+'%';board.appendChild(lab);}}
+    if(v.kind==='heyawake'){var labels={};for(r=0;r<n;r++)for(c=0;c<n;c++){var id=reg[r][c];if(labels[id])continue;labels[id]=1;var roomClue=v.puzzle.roomClues[id];if(roomClue==null)continue;var lab=LR.el('span',{className:'heyawake-room-clue',text:String(roomClue)});lab.style.left=((c+.12)*100/n)+'%';lab.style.top=((r+.08)*100/n)+'%';board.appendChild(lab);}}
     if(v.kind==='battleships'){var top=LR.el('div',{className:'battleship-top'});v.puzzle.colClues.forEach(function(x){top.appendChild(LR.el('span',{text:String(x)}));});wrap.insertBefore(top,board);var side=LR.el('div',{className:'battleship-side'});v.puzzle.rowClues.forEach(function(x){side.appendChild(LR.el('span',{text:String(x)}));});wrap.appendChild(side);var fleet=LR.el('p',{className:'newlogic-fleet',text:(I&&I.lang==='hu'?'Flotta: ':'Fleet: ')+v.puzzle.fleet.map(function(x){return '▰'.repeat(x);}).join('  ')});host.appendChild(fleet);}
     function render(){cells.forEach(function(b,i){var r=Math.floor(i/n),c=i%n,x=grid[r][c];b.classList.toggle('shade',x===1);b.classList.toggle('water-mark',x===2);b.textContent=x===1?(v.kind==='battleships'?'●':''):x===2?'×':'';b.setAttribute('aria-pressed',x===1?'true':((v.kind==='battleships'||v.kind==='heyawake')&&x===2?'mixed':'false'));if(v.kind==='battleships')b.setAttribute('aria-label',battleshipStateLabel(r,c,x));else b.setAttribute('aria-label',shadeStateLabel(r,c,x));});}
     var clearButton=null,checkButton=null;
@@ -13094,6 +13094,14 @@ root.SudokuBank.push(
       variantEssential:true,
       boardSize:size
     };
+    if(difficulty==='expert'){
+      out.generation.policy='complete-grid-symbol-topology';
+      out.generation.playabilityMetric='solution-state-exposure-and-exact-search-effort';
+      out.generation.removableAtomPolicy='none-complete-grid-is-puzzle-definition';
+      out.generation.localIrreducibilityApplicability='not-applicable-complete-grid-definition';
+      out.generation.startingAnswerCount=0;
+      out.generation.clueDensityInterpretation='full-grid-symbols-are-not-prefilled-answers';
+    }
     cache.set(key,clone(out));
     return out;
   }
@@ -13230,6 +13238,31 @@ root.SudokuBank.push(
     };
   }
 
+  function carveExpert(seed,puzzle,inequalities){
+    puzzle=clone(puzzle);inequalities=clone(inequalities);
+    var random=rng(((seed>>>0)^0x45585054)>>>0);
+    var clues=[];
+    for(var r=0;r<puzzle.length;r++)for(var c=0;c<puzzle.length;c++)if(puzzle[r][c])clues.push({kind:'given',r:r,c:c});
+    for(var i=0;i<inequalities.length;i++)clues.push({kind:'inequality',value:inequalities[i]});
+    shuffle(clues,random);
+    var accepted=0,rejected=0,acceptedGivens=0,acceptedInequalities=0;
+    for(i=0;i<clues.length;i++){
+      var clue=clues[i],saved,index;
+      if(clue.kind==='given'){
+        saved=puzzle[clue.r][clue.c];puzzle[clue.r][clue.c]=0;
+        if(generator.countFutoshikiSolutions(puzzle,inequalities,2,{})===1){accepted++;acceptedGivens++;}
+        else{puzzle[clue.r][clue.c]=saved;rejected++;}
+      }else{
+        index=inequalities.indexOf(clue.value);
+        if(index<0)continue;
+        inequalities.splice(index,1);
+        if(generator.countFutoshikiSolutions(puzzle,inequalities,2,{})===1){accepted++;acceptedInequalities++;}
+        else{inequalities.splice(index,0,clue.value);rejected++;}
+      }
+    }
+    return {puzzle:puzzle,inequalities:inequalities,accepted:accepted,rejected:rejected,acceptedGivens:acceptedGivens,acceptedInequalities:acceptedInequalities};
+  }
+
   function makeFutoshiki(variant,seed,difficulty,size){
     var key=[variant.id,seed>>>0,difficulty,size].join(':');
     if(cache.has(key))return clone(cache.get(key));
@@ -13245,18 +13278,22 @@ root.SudokuBank.push(
     candidates.sort(function(a,b){if(a.score!==b.score)return a.score-b.score;return a.topology<b.topology?-1:(a.topology>b.topology?1:0);});
     var picked=difficulty==='gentle'?candidates[0]:(difficulty==='expert'?candidates[candidates.length-1]:candidates[Math.floor((candidates.length-1)/2)]);
 
+    var expertCarve=difficulty==='expert'?carveExpert(seed,picked.puzzle,picked.inequalities):null;
+    var finalPuzzle=expertCarve?expertCarve.puzzle:picked.puzzle;
+    var finalInequalities=expertCarve?expertCarve.inequalities:picked.inequalities;
+    var finalClues=0;for(var r=0;r<size;r++)for(var c=0;c<size;c++)if(finalPuzzle[r][c])finalClues++;
     var out=clone(variant);
     out.data=Object.assign({},out.data||{}, {
-      inequalities:clone(picked.inequalities),
+      inequalities:clone(finalInequalities),
       inputMax:size,
       p3Size:size,
       p3SupportedSizes:supported.slice()
     });
-    out.puzzle=clone(picked.puzzle);
+    out.puzzle=clone(finalPuzzle);
     out.solution=clone(picked.solution);
     out.generation={
       seed:seed>>>0,
-      clues:picked.clues,
+      clues:finalClues,
       unique:true,
       verification:'solver-verified',
       generatorFamily:'futoshiki-multisize-latin-inequality-removal',
@@ -13265,8 +13302,19 @@ root.SudokuBank.push(
       mode:'seeded-variant-essential',
       variantEssential:true,
       boardSize:size,
-      inequalityCount:picked.inequalities.length
+      inequalityCount:finalInequalities.length
     };
+    if(expertCarve){
+      out.generation.verification='solver-verified-local-irreducible';
+      out.generation.generatorFamily='futoshiki-multisize-latin-inequality-removal-expert-local-irreducible';
+      out.generation.locallyIrreducibleUnderProductionContract=true;
+      out.generation.localIrreducibilityProof='monotone-nonuniqueness-from-single-pass';
+      out.generation.policy='contract-driven-local-irreducibility';
+      out.generation.acceptedRemovals=expertCarve.accepted;
+      out.generation.rejectedRemovals=expertCarve.rejected;
+      out.generation.acceptedGivenRemovals=expertCarve.acceptedGivens;
+      out.generation.acceptedInequalityRemovals=expertCarve.acceptedInequalities;
+    }
 
     cache.set(key,clone(out));
     return out;
@@ -13402,28 +13450,19 @@ root.SudokuBank.push(
     function visit(left,parts){
       if(left===0){
         var row=[];
-        for(var i=0;i<parts.length;i++){
-          for(var j=0;j<parts[i];j++)row.push(parts[i]);
-        }
-        out.push(row);
-        return;
+        for(var i=0;i<parts.length;i++)for(var j=0;j<parts[i];j++)row.push(parts[i]);
+        out.push(row);return;
       }
       for(var size=1;size<=Math.min(6,left);size++){
         if(parts.length&&parts[parts.length-1]===size)continue;
-        parts.push(size);
-        visit(left-size,parts);
-        parts.pop();
+        parts.push(size);visit(left-size,parts);parts.pop();
       }
     }
-    visit(n,[]);
-    return out;
+    visit(n,[]);return out;
   }
 
   var patternCache={};
-  function patternsFor(n){
-    if(!patternCache[n])patternCache[n]=rowPatterns(n);
-    return patternCache[n];
-  }
+  function patternsFor(n){if(!patternCache[n])patternCache[n]=rowPatterns(n);return patternCache[n];}
 
   function transformGrid(grid,turns,mirror){
     var out=clone(grid),n=out.length;
@@ -13437,122 +13476,173 @@ root.SudokuBank.push(
   }
 
   function buildSolution(n,random){
-    var patterns=patternsFor(n);
+    var patterns=patternsFor(n),rows=[];
     if(!patterns.length)return null;
-
-    var rows=[];
-    function compatible(a,b){
-      if(!a)return true;
-      for(var c=0;c<n;c++)if(a[c]===b[c])return false;
-      return true;
-    }
+    function compatible(a,b){if(!a)return true;for(var c=0;c<n;c++)if(a[c]===b[c])return false;return true;}
     function visit(r){
       if(r===n)return true;
       var choices=shuffle(patterns.slice(),random);
       for(var i=0;i<choices.length;i++){
-        var row=choices[i];
-        if(!compatible(rows[r-1],row))continue;
-        rows.push(row.slice());
-        if(visit(r+1))return true;
-        rows.pop();
+        var row=choices[i];if(!compatible(rows[r-1],row))continue;
+        rows.push(row.slice());if(visit(r+1))return true;rows.pop();
       }
       return false;
     }
-
     if(!visit(0))return null;
-
     var transformed=transformGrid(rows,Math.floor(random()*4),random()<0.5);
     return fullValid(transformed)?transformed:null;
   }
 
-  function carve(solution,seed,difficulty){
+  var regionUniverseCache=new Map();
+  function regionUniverse(n,maxValue){
+    var bySize=Array.from({length:maxValue+1},function(){return [];});
+    function cellBit(i){return 1n<<BigInt(i);}
+    var neighbors=Array.from({length:n*n},function(_,i){
+      var r=Math.floor(i/n),c=i%n,out=[];
+      if(r>0)out.push(i-n);if(r+1<n)out.push(i+n);if(c>0)out.push(i-1);if(c+1<n)out.push(i+1);return out;
+    });
+    for(var k=1;k<=maxValue;k++){
+      var current=new Map();
+      for(var i=0;i<n*n;i++){var m=cellBit(i);current.set(m.toString(),m);}
+      if(k===1){bySize[k]=Array.from(current.values());continue;}
+      for(var step=1;step<k;step++){
+        var next=new Map();
+        current.forEach(function(mask){
+          var frontier=0n;
+          for(var x=0;x<n*n;x++)if(mask&cellBit(x)){
+            var ns=neighbors[x];for(var y=0;y<ns.length;y++)frontier|=cellBit(ns[y]);
+          }
+          frontier&=~mask;
+          for(var j=0;j<n*n;j++)if(frontier&cellBit(j)){
+            var nm=mask|cellBit(j),key=nm.toString();if(!next.has(key))next.set(key,nm);
+          }
+        });
+        current=next;
+      }
+      bySize[k]=Array.from(current.values());
+    }
+    return {bySize:bySize,neighbors:neighbors,cellBit:cellBit};
+  }
+
+  function countRegionExact(puzzle,limit,stats){
+    limit=Math.max(1,Number(limit)||2);stats=stats||{};
+    var n=puzzle.length,maxClue=1;
+    for(var r=0;r<n;r++)for(var c=0;c<n;c++)maxClue=Math.max(maxClue,Number(puzzle[r][c])||0);
+    var maxValue=Math.max(6,maxClue),cacheKey=n+':'+maxValue;
+    if(!regionUniverseCache.has(cacheKey))regionUniverseCache.set(cacheKey,regionUniverse(n,maxValue));
+    var universe=regionUniverseCache.get(cacheKey),bySize=universe.bySize,neighbors=universe.neighbors,cellBit=universe.cellBit;
+    var clues=[];for(r=0;r<n;r++)for(c=0;c<n;c++)clues.push(Number(puzzle[r][c])||0);
+    var candidates=[],byCell=Array.from({length:n*n},function(){return [];});
+    for(var k=1;k<=maxValue;k++)for(var ui=0;ui<bySize[k].length;ui++){
+      var mask=bySize[k][ui],valid=true,adj=0n;
+      for(var i=0;i<n*n&&valid;i++)if(mask&cellBit(i)){
+        var clue=clues[i];if(clue&&clue!==k){valid=false;break;}
+        var ns=neighbors[i];for(var ni=0;ni<ns.length;ni++)if(!(mask&cellBit(ns[ni])))adj|=cellBit(ns[ni]);
+      }
+      if(!valid)continue;
+      for(i=0;i<n*n&&valid;i++)if(!(mask&cellBit(i))&&clues[i]===k){
+        ns=neighbors[i];for(ni=0;ni<ns.length;ni++)if(mask&cellBit(ns[ni])){valid=false;break;}
+      }
+      if(!valid)continue;
+      var idx=candidates.length;candidates.push({mask:mask,size:k,adj:adj});
+      for(i=0;i<n*n;i++)if(mask&cellBit(i))byCell[i].push(idx);
+    }
+    var full=(1n<<BigInt(n*n))-1n,blocked=Array(maxValue+1).fill(0n),found=0,nodes=0,branches=0;
+    function search(covered){
+      if(found>=limit)return;nodes++;
+      if(covered===full){found++;return;}
+      var bestList=null;
+      for(var cell=0;cell<n*n;cell++)if(!(covered&cellBit(cell))){
+        var list=[];
+        for(var bi=0;bi<byCell[cell].length;bi++){
+          var ci=byCell[cell][bi],cand=candidates[ci];
+          if(cand.mask&covered)continue;if(cand.mask&blocked[cand.size])continue;list.push(ci);
+        }
+        if(!list.length)return;
+        if(bestList===null||list.length<bestList.length){bestList=list;if(list.length===1)break;}
+      }
+      if(bestList.length>1)branches++;
+      for(var li=0;li<bestList.length;li++){
+        cand=candidates[bestList[li]];var old=blocked[cand.size];blocked[cand.size]=old|cand.adj;
+        search(covered|cand.mask);blocked[cand.size]=old;if(found>=limit)return;
+      }
+    }
+    search(0n);stats.nodes=nodes;stats.branches=branches;stats.candidates=candidates.length;stats.solutions=found;return found;
+  }
+  generator.countFillominoRegionSolutions=countRegionExact;
+
+  function initialCarve(solution,seed,difficulty){
     var n=solution.length,grid=clone(solution),random=rng(seed>>>0);
     var order=shuffle(Array.from({length:n*n},function(_,i){return i;}),random);
     var target=targetClues(n,difficulty),clues=n*n;
-
     for(var oi=0;oi<order.length&&clues>target;oi++){
-      var idx=order[oi],r=Math.floor(idx/n),c=idx%n,saved=grid[r][c];
-      grid[r][c]=0;
-      if(generator.countFillominoSolutions(grid,2)!==1)grid[r][c]=saved;
-      else clues--;
+      var idx=order[oi],r=Math.floor(idx/n),c=idx%n,saved=grid[r][c];grid[r][c]=0;
+      if(generator.countFillominoSolutions(grid,2)!==1)grid[r][c]=saved;else clues--;
     }
+    return generator.countFillominoSolutions(grid,2)===1?{puzzle:grid,clues:clues}:null;
+  }
 
-    return generator.countFillominoSolutions(grid,2)===1
-      ?{puzzle:grid,clues:clues}
-      :null;
+  function expertIrreducibleCarve(grid,seed){
+    var n=grid.length,out=clone(grid),order=[];
+    for(var r=0;r<n;r++)for(var c=0;c<n;c++)if(out[r][c])order.push(r*n+c);
+    shuffle(order,rng(((seed>>>0)^0xF11E0A1D)>>>0));
+    var accepted=0,rejected=0;
+    for(var i=0;i<order.length;i++){
+      var idx=order[i],rr=Math.floor(idx/n),cc=idx%n,saved=out[rr][cc];if(!saved)continue;
+      out[rr][cc]=0;
+      if(countRegionExact(out,2)===1)accepted++;else{out[rr][cc]=saved;rejected++;}
+    }
+    var clues=0;for(r=0;r<n;r++)for(c=0;c<n;c++)if(out[r][c])clues++;
+    return {puzzle:out,clues:clues,accepted:accepted,rejected:rejected};
   }
 
   function build(seed,n,difficulty){
     var wanted=3,candidates=[],seen={};
     for(var attempt=0;attempt<240&&candidates.length<wanted;attempt++){
       var random=rng(((seed>>>0)^0x50334649^Math.imul(n,0x85EBCA6B)^Math.imul(attempt+1,0x9E3779B1))>>>0);
-      var solution=buildSolution(n,random);
-      if(!solution)continue;
-      var topology=JSON.stringify(solution);
-      if(seen[topology])continue;
-      seen[topology]=1;
-      var carved=carve(solution,((seed>>>0)^Math.imul(attempt+1,0x27D4EB2D))>>>0,difficulty);
-      if(!carved)continue;
-      candidates.push({
-        puzzle:carved.puzzle,
-        solution:solution,
-        clues:carved.clues,
-        topology:topology
-      });
+      var solution=buildSolution(n,random);if(!solution)continue;
+      var topology=JSON.stringify(solution);if(seen[topology])continue;seen[topology]=1;
+      var carved=initialCarve(solution,((seed>>>0)^Math.imul(attempt+1,0x27D4EB2D))>>>0,difficulty);if(!carved)continue;
+      candidates.push({puzzle:carved.puzzle,solution:solution,clues:carved.clues,topology:topology});
     }
     if(!candidates.length)return null;
-    candidates.sort(function(a,b){
-      if(a.clues!==b.clues)return a.clues-b.clues;
-      return a.topology<b.topology?-1:(a.topology>b.topology?1:0);
-    });
-    if(difficulty==='expert')return candidates[0];
-    if(difficulty==='gentle')return candidates[candidates.length-1];
-    return candidates[Math.floor((candidates.length-1)/2)];
+    candidates.sort(function(a,b){if(a.clues!==b.clues)return a.clues-b.clues;return a.topology<b.topology?-1:(a.topology>b.topology?1:0);});
+    var picked=difficulty==='expert'?candidates[0]:(difficulty==='gentle'?candidates[candidates.length-1]:candidates[Math.floor((candidates.length-1)/2)]);
+    if(difficulty==='expert'){
+      var hardened=expertIrreducibleCarve(picked.puzzle,seed>>>0);
+      picked=Object.assign({},picked,{puzzle:hardened.puzzle,clues:hardened.clues,acceptedRemovals:hardened.accepted,rejectedRemovals:hardened.rejected});
+    }
+    return picked;
   }
 
   function makeFillomino(variant,seed,difficulty,n){
-    var key=[seed>>>0,difficulty,n].join(':');
-    if(cache.has(key))return clone(cache.get(key));
-    var built=build(seed>>>0,n,difficulty);
-    if(!built)throw new Error('Fillomino multi-size generation failed for seed '+seed+' / '+difficulty+' / '+n+'x'+n);
-
-    var out=clone(variant);
-    out.data=Object.assign({},out.data||{}, {p3Size:n,p3SupportedSizes:supported.slice()});
-    out.puzzle=built.puzzle;
-    out.solution=built.solution;
-    out.generation={
-      seed:seed>>>0,
-      clues:built.clues,
-      unique:true,
-      verification:'solver-verified',
-      generatorFamily:'fillomino-multisize-procedural-partition',
-      difficultyScore:n*n-built.clues,
-      mode:'seeded-variant-essential',
-      variantEssential:true,
-      boardSize:n
-    };
-    cache.set(key,clone(out));
-    return out;
+    var key=[seed>>>0,difficulty,n].join(':');if(cache.has(key))return clone(cache.get(key));
+    var built=build(seed>>>0,n,difficulty);if(!built)throw new Error('Fillomino multi-size generation failed for seed '+seed+' / '+difficulty+' / '+n+'x'+n);
+    var out=clone(variant);out.data=Object.assign({},out.data||{}, {p3Size:n,p3SupportedSizes:supported.slice()});out.puzzle=built.puzzle;out.solution=built.solution;
+    out.generation={seed:seed>>>0,clues:built.clues,unique:true,verification:difficulty==='expert'?'fillomino-region-exact-local-irreducible':'solver-verified',generatorFamily:'fillomino-multisize-procedural-partition',difficultyScore:n*n-built.clues,mode:'seeded-variant-essential',variantEssential:true,boardSize:n};
+    if(difficulty==='expert'){
+      out.generation.policy='contract-driven-local-irreducibility';
+      out.generation.localIrreducibilityProof='monotone-nonuniqueness-from-single-pass';
+      out.generation.locallyIrreducibleUnderProductionContract=true;
+      out.generation.acceptedRemovals=built.acceptedRemovals||0;out.generation.rejectedRemovals=built.rejectedRemovals||0;
+    }
+    cache.set(key,clone(out));return out;
   }
 
   var variant=root.SudokuBank.find(function(v){return v.id==='fillomino';});
   if(variant){
-    variant.data=variant.data||{};
-    var remembered=null;
+    variant.data=variant.data||{};var remembered=null;
     try{remembered=Number(root.localStorage&&root.localStorage.getItem('ildi-size-fillomino'));}catch(e){}
-    variant.data.p3SupportedSizes=supported.slice();
-    variant.data.p3Size=supported.indexOf(remembered)>=0?remembered:6;
+    variant.data.p3SupportedSizes=supported.slice();variant.data.p3Size=supported.indexOf(remembered)>=0?remembered:6;
   }
 
   generator.make=function(variant,seed,difficulty){
     if(!variant||variant.id!=='fillomino')return baseMake.call(this,variant,seed,difficulty);
-    var requested=Number(variant.data&&variant.data.p3Size);
-    if(supported.indexOf(requested)<0)requested=6;
+    var requested=Number(variant.data&&variant.data.p3Size);if(supported.indexOf(requested)<0)requested=6;
     return makeFillomino(variant,seed>>>0,difficulty||'focused',requested);
   };
 
-  root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};
-  root.IldiP3SizeSupport.fillomino=supported.slice();
+  root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};root.IldiP3SizeSupport.fillomino=supported.slice();
 })(typeof window!=='undefined'?window:globalThis);
 
   </script>
@@ -13924,18 +14014,45 @@ root.SudokuBank.push(
     return null;
   }
 
+  function carveExpert(seed,puzzle){
+    puzzle=clone(puzzle);
+    var random=rng(((seed>>>0)^0x45585048)>>>0);
+    var atoms=puzzle.starters.map(function(starter){return {kind:'starter',value:starter};});
+    Object.keys(puzzle.roomClues).forEach(function(id){if(puzzle.roomClues[id]!=null)atoms.push({kind:'room',id:id});});
+    shuffle(atoms,random);
+    var accepted=0,rejected=0,acceptedStarters=0,acceptedRoomClues=0;
+    for(var i=0;i<atoms.length;i++){
+      var atom=atoms[i],index,saved;
+      if(atom.kind==='starter'){
+        index=puzzle.starters.indexOf(atom.value);
+        if(index<0)continue;
+        puzzle.starters.splice(index,1);
+        if(generator.countHeyawakeSolutions(puzzle,2,{})===1){accepted++;acceptedStarters++;}
+        else{puzzle.starters.splice(index,0,atom.value);rejected++;}
+      }else{
+        saved=puzzle.roomClues[atom.id];puzzle.roomClues[atom.id]=null;
+        if(generator.countHeyawakeSolutions(puzzle,2,{})===1){accepted++;acceptedRoomClues++;}
+        else{puzzle.roomClues[atom.id]=saved;rejected++;}
+      }
+    }
+    return {puzzle:puzzle,accepted:accepted,rejected:rejected,acceptedStarters:acceptedStarters,acceptedRoomClues:acceptedRoomClues};
+  }
+
   function makeHeyawake(variant,seed,difficulty,n){
     var key=[seed>>>0,difficulty,n].join(':');
     if(cache.has(key))return clone(cache.get(key));
     var built=build(seed>>>0,n,difficulty);
     if(!built)throw new Error('Heyawake multi-size generation failed for seed '+seed+' / '+difficulty+' / '+n+'x'+n);
+    var expertCarve=difficulty==='expert'?carveExpert(seed,built.puzzle):null;
+    var finalPuzzle=expertCarve?expertCarve.puzzle:built.puzzle;
+    var visibleRoomClues=Object.keys(finalPuzzle.roomClues).filter(function(id){return finalPuzzle.roomClues[id]!=null;}).length;
     var out=clone(variant);
     out.data=Object.assign({},out.data||{}, {p3Size:n,p3SupportedSizes:supported.slice()});
-    out.puzzle=built.puzzle;
+    out.puzzle=finalPuzzle;
     out.solution=built.solution;
     out.generation={
       seed:seed>>>0,
-      clues:Object.keys(built.puzzle.roomClues).length+built.puzzle.starters.length,
+      clues:visibleRoomClues+finalPuzzle.starters.length,
       unique:true,
       verification:'solver-verified',
       generatorFamily:'heyawake-multisize-room-partition',
@@ -13944,6 +14061,19 @@ root.SudokuBank.push(
       variantEssential:true,
       boardSize:n
     };
+    if(expertCarve){
+      out.generation.verification='solver-verified-local-irreducible';
+      out.generation.generatorFamily='heyawake-multisize-room-partition-expert-local-irreducible';
+      out.generation.locallyIrreducibleUnderProductionContract=true;
+      out.generation.localIrreducibilityProof='monotone-nonuniqueness-from-single-pass';
+      out.generation.policy='contract-driven-local-irreducibility';
+      out.generation.acceptedRemovals=expertCarve.accepted;
+      out.generation.rejectedRemovals=expertCarve.rejected;
+      out.generation.acceptedStarterRemovals=expertCarve.acceptedStarters;
+      out.generation.acceptedRoomClueRemovals=expertCarve.acceptedRoomClues;
+      out.generation.starterCount=finalPuzzle.starters.length;
+      out.generation.roomClueCount=visibleRoomClues;
+    }
     cache.set(key,clone(out));
     return out;
   }
@@ -14127,24 +14257,25 @@ root.SudokuBank.push(
 
   function removalTarget(wallCount,difficulty){
     if(difficulty==='gentle')return 0;
-    if(difficulty==='expert')return Math.max(2,Math.round(wallCount*0.28));
+    if(difficulty==='expert')return wallCount;
     return Math.max(1,Math.round(wallCount*0.14));
   }
 
   function thinClues(puzzle,spots,random,difficulty){
     var target=removalTarget(spots.length,difficulty),removed=0;
-    if(!target)return {puzzle:puzzle,removed:0};
+    if(!target)return {puzzle:puzzle,removed:0,locallyIrreducible:false};
     var order=shuffle(spots.slice(),random);
-    var maxChecks=Math.min(order.length,target*3+4);
+    var expert=difficulty==='expert';
+    var maxChecks=expert?order.length:Math.min(order.length,target*3+4);
 
-    for(var i=0;i<maxChecks&&removed<target;i++){
+    for(var i=0;i<maxChecks&&(expert||removed<target);i++){
       var idx=order[i],n=puzzle.length,r=Math.floor(idx/n),c=idx%n,saved=puzzle[r][c];
       puzzle[r][c]=null;
       if(generator.countAkariSolutions(puzzle,2)!==1)puzzle[r][c]=saved;
       else removed++;
     }
 
-    return {puzzle:puzzle,removed:removed};
+    return {puzzle:puzzle,removed:removed,locallyIrreducible:expert};
   }
 
   function build(seed,n,difficulty){
@@ -14170,6 +14301,7 @@ root.SudokuBank.push(
         solution:rawSolution,
         wallCount:numbered.spots.length,
         removed:thinned.removed,
+        locallyIrreducible:thinned.locallyIrreducible,
         topology:key
       };
     }
@@ -14191,15 +14323,103 @@ root.SudokuBank.push(
       seed:seed>>>0,
       clues:built.wallCount-built.removed,
       unique:true,
-      verification:'solver-verified',
+      verification:built.locallyIrreducible?'solver-verified-local-irreducible':'solver-verified',
       generatorFamily:'akari-multisize-procedural-wall-layout',
       difficultyScore:built.removed,
       mode:'seeded-variant-essential',
       variantEssential:true,
-      boardSize:n
+      boardSize:n,
+      locallyIrreducibleUnderProductionContract:built.locallyIrreducible,
+      policy:built.locallyIrreducible?'contract-driven-local-irreducibility':'difficulty-targeted-clue-thinning'
     };
 
     cache.set(key,clone(out));
+    return out;
+  }
+
+  function countAquariumOptional(puzzle,limit){
+    limit=limit||2;
+    var n=puzzle.size,reg=puzzle.regions,ids=[];
+    for(var r=0;r<n;r++)for(var c=0;c<n;c++)if(ids.indexOf(reg[r][c])<0)ids.push(reg[r][c]);
+    var grid=Array.from({length:n},function(){return Array(n).fill(0);}),states={},found=0;
+    for(var ii=0;ii<ids.length;ii++){
+      var id=ids[ii],seen={},arr=[];
+      for(var lev=0;lev<=n;lev++){
+        var cells=[];
+        for(r=0;r<n;r++)for(c=0;c<n;c++)if(reg[r][c]===id)cells.push([r,c,(n-r)<=lev?1:0]);
+        var stateKey=cells.map(function(q){return q[2];}).join('');
+        if(!seen[stateKey]){seen[stateKey]=1;arr.push(cells);}
+      }
+      states[id]=arr;
+    }
+    function known(v){return Number.isInteger(v);}
+    function feasible(){
+      for(var rr=0;rr<n;rr++)if(known(puzzle.rowClues[rr])){
+        var rowSum=grid[rr].reduce(function(a,x){return a+x;},0);
+        if(rowSum>puzzle.rowClues[rr])return false;
+      }
+      for(var cc=0;cc<n;cc++)if(known(puzzle.colClues[cc])){
+        var colSum=0;for(rr=0;rr<n;rr++)colSum+=grid[rr][cc];
+        if(colSum>puzzle.colClues[cc])return false;
+      }
+      return true;
+    }
+    function finalValid(){
+      for(var rr=0;rr<n;rr++)if(known(puzzle.rowClues[rr])&&grid[rr].reduce(function(a,x){return a+x;},0)!==puzzle.rowClues[rr])return false;
+      for(var cc=0;cc<n;cc++)if(known(puzzle.colClues[cc])){
+        var colSum=0;for(rr=0;rr<n;rr++)colSum+=grid[rr][cc];
+        if(colSum!==puzzle.colClues[cc])return false;
+      }
+      return true;
+    }
+    function go(k){
+      if(found>=limit)return;
+      if(k===ids.length){if(finalValid())found++;return;}
+      var options=states[ids[k]];
+      for(var z=0;z<options.length;z++){
+        var cells=options[z];
+        cells.forEach(function(q){grid[q[0]][q[1]]=q[2];});
+        if(feasible())go(k+1);
+        cells.forEach(function(q){grid[q[0]][q[1]]=0;});
+        if(found>=limit)return;
+      }
+    }
+    go(0);
+    return found;
+  }
+
+  function hardenAquariumExpert(source,seed){
+    var out=clone(source),puzzle=out.puzzle,n=puzzle.size;
+    if(generator.countAquariumSolutions(puzzle,2,{})!==1||countAquariumOptional(puzzle,2)!==1)throw new Error('Aquarium source parity/uniqueness failure');
+    var atoms=[];
+    for(var i=0;i<n;i++)atoms.push({axis:'row',index:i});
+    for(i=0;i<n;i++)atoms.push({axis:'col',index:i});
+    shuffle(atoms,rng(((seed>>>0)^0x41514352)>>>0));
+    var accepted=0,rejected=0;
+    for(i=0;i<atoms.length;i++){
+      var atom=atoms[i],key=atom.axis==='row'?'rowClues':'colClues',saved=puzzle[key][atom.index];
+      puzzle[key][atom.index]=null;
+      if(countAquariumOptional(puzzle,2)===1)accepted++;
+      else{puzzle[key][atom.index]=saved;rejected++;}
+    }
+    if(countAquariumOptional(puzzle,2)!==1)throw new Error('Aquarium expert carve lost uniqueness');
+    var base=clone(puzzle);base.rowClues=Array(n).fill(null);base.colClues=Array(n).fill(null);
+    if(countAquariumOptional(base,2)===1)throw new Error('Aquarium expert carve lost variant essentiality');
+    var visible=0;
+    for(i=0;i<n;i++){if(Number.isInteger(puzzle.rowClues[i]))visible++;if(Number.isInteger(puzzle.colClues[i]))visible++;}
+    out.generation=Object.assign({},out.generation||{}, {
+      clues:visible,
+      unique:true,
+      verification:'solver-verified-local-irreducible',
+      generatorFamily:'seeded-water-levels-calibrated-regions-expert-local-irreducible',
+      mode:'seeded-variant-essential',
+      variantEssential:true,
+      locallyIrreducibleUnderProductionContract:true,
+      localIrreducibilityProof:'monotone-nonuniqueness-from-single-pass',
+      policy:'contract-driven-local-irreducibility',
+      acceptedRemovals:accepted,
+      rejectedRemovals:rejected
+    });
     return out;
   }
 
@@ -14213,10 +14433,12 @@ root.SudokuBank.push(
   }
 
   generator.make=function(variant,seed,difficulty){
+    difficulty=difficulty||'focused';
+    if(variant&&variant.id==='aquarium'&&difficulty==='expert')return hardenAquariumExpert(baseMake.call(this,variant,seed,difficulty),seed>>>0);
     if(!variant||variant.id!=='akari')return baseMake.call(this,variant,seed,difficulty);
     var requested=Number(variant.data&&variant.data.p3Size);
     if(supported.indexOf(requested)<0)requested=6;
-    return makeAkari(variant,seed>>>0,difficulty||'focused',requested);
+    return makeAkari(variant,seed>>>0,difficulty,requested);
   };
 
   root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};
@@ -14623,6 +14845,7 @@ root.SudokuBank.push(
     return a;
   }
   function key(r,c){return r+','+c;}
+  function known(v){return Number.isInteger(v);}
 
   function fleetFor(n){
     if(n===5)return [3,2,1,1];
@@ -14675,6 +14898,8 @@ root.SudokuBank.push(
     return {grid:grid,ships:ships.map(function(s){return s.map(function(p){return p.slice();});})};
   }
 
+  // Exact fleet-placement verifier. Null row/column totals are intentionally omitted
+  // constraints so the same verifier can certify sparse Expert clue sets.
   function countFast(puzzle,limit,stats){
     limit=limit||2;stats=stats||{};
     stats.nodes=0;stats.branches=0;stats.deadEnds=0;stats.solutions=0;
@@ -14694,7 +14919,9 @@ root.SudokuBank.push(
       var own={};cells.forEach(function(p){own[key(p[0],p[1])]=1;});
       for(var i=0;i<cells.length;i++){
         var p=cells[i],r=p[0],c=p[1];
-        if(occ[key(r,c)]||rows[r]>=puzzle.rowClues[r]||cols[c]>=puzzle.colClues[c])return false;
+        if(occ[key(r,c)])return false;
+        if(known(puzzle.rowClues[r])&&rows[r]>=puzzle.rowClues[r])return false;
+        if(known(puzzle.colClues[c])&&cols[c]>=puzzle.colClues[c])return false;
         for(var dr=-1;dr<=1;dr++)for(var dc=-1;dc<=1;dc++){
           var z=key(r+dr,c+dc);
           if(occ[z]&&!own[z])return false;
@@ -14706,13 +14933,21 @@ root.SudokuBank.push(
     function deficitsPossible(k){
       var remaining=0;
       for(var i=k;i<fleet.length;i++)remaining+=fleet[i];
-      var rowNeed=0,colNeed=0;
+      var rowNeed=0,colNeed=0,rowUnknown=false,colUnknown=false;
       for(var r=0;r<n;r++){
-        if(rows[r]>puzzle.rowClues[r]||cols[r]>puzzle.colClues[r])return false;
-        rowNeed+=puzzle.rowClues[r]-rows[r];
-        colNeed+=puzzle.colClues[r]-cols[r];
+        if(known(puzzle.rowClues[r])){
+          if(rows[r]>puzzle.rowClues[r])return false;
+          rowNeed+=puzzle.rowClues[r]-rows[r];
+        }else rowUnknown=true;
+        if(known(puzzle.colClues[r])){
+          if(cols[r]>puzzle.colClues[r])return false;
+          colNeed+=puzzle.colClues[r]-cols[r];
+        }else colUnknown=true;
       }
-      return rowNeed===remaining&&colNeed===remaining;
+      if(rowNeed>remaining||colNeed>remaining)return false;
+      if(!rowUnknown&&rowNeed!==remaining)return false;
+      if(!colUnknown&&colNeed!==remaining)return false;
+      return true;
     }
 
     function mustShipsReachable(k){
@@ -14732,7 +14967,10 @@ root.SudokuBank.push(
     }
 
     function finalOk(){
-      for(var i=0;i<n;i++)if(rows[i]!==puzzle.rowClues[i]||cols[i]!==puzzle.colClues[i])return false;
+      for(var i=0;i<n;i++){
+        if(known(puzzle.rowClues[i])&&rows[i]!==puzzle.rowClues[i])return false;
+        if(known(puzzle.colClues[i])&&cols[i]!==puzzle.colClues[i])return false;
+      }
       var required=Object.keys(mustShip);
       for(i=0;i<required.length;i++)if(!occ[required[i]])return false;
       return true;
@@ -14766,6 +15004,34 @@ root.SudokuBank.push(
   function extraGivenCount(difficulty,n){
     var f=difficulty==='gentle'?0.24:(difficulty==='focused'?0.12:0.04);
     return Math.max(0,Math.round(n*n*f));
+  }
+
+  function carveExpert(puzzle,seed){
+    var n=puzzle.size,atoms=[],accepted=0,rejected=0,acceptedGivens=0,acceptedOutside=0;
+    for(var i=0;i<puzzle.givens.length;i++)atoms.push({type:'given',given:clone(puzzle.givens[i])});
+    for(i=0;i<n;i++)atoms.push({type:'outside',axis:'row',index:i});
+    for(i=0;i<n;i++)atoms.push({type:'outside',axis:'col',index:i});
+    shuffle(atoms,rng(((seed>>>0)^0x42544352)>>>0));
+    for(i=0;i<atoms.length;i++){
+      var atom=atoms[i],restore;
+      if(atom.type==='given'){
+        var gi=puzzle.givens.findIndex(function(g){return g.r===atom.given.r&&g.c===atom.given.c&&g.state===atom.given.state;});
+        if(gi<0)continue;
+        restore={idx:gi,value:puzzle.givens[gi]};puzzle.givens.splice(gi,1);
+      }else{
+        var clueKey=atom.axis==='row'?'rowClues':'colClues';
+        restore={key:clueKey,value:puzzle[clueKey][atom.index]};puzzle[clueKey][atom.index]=null;
+      }
+      if(countFast(puzzle,2,{})===1){
+        accepted++;
+        if(atom.type==='given')acceptedGivens++;else acceptedOutside++;
+      }else{
+        rejected++;
+        if(atom.type==='given')puzzle.givens.splice(restore.idx,0,restore.value);
+        else puzzle[restore.key][atom.index]=restore.value;
+      }
+    }
+    return {accepted:accepted,rejected:rejected,acceptedGivens:acceptedGivens,acceptedOutside:acceptedOutside};
   }
 
   function makeBattleships(variant,seed,difficulty,n){
@@ -14802,24 +15068,37 @@ root.SudokuBank.push(
       puzzle.givens.push({r:p[0],c:p[1],state:made.grid[p[0]][p[1]]});
     }
 
+    var expertCarve=null;
+    if(difficulty==='expert')expertCarve=carveExpert(puzzle,seed>>>0);
+
     var stats={};
     if(countFast(puzzle,2,stats)!==1)throw new Error('Battleships final uniqueness regression for '+n+'x'+n);
+    var visibleOutside=puzzle.rowClues.filter(known).length+puzzle.colClues.filter(known).length;
     var out=clone(variant);
     out.data=Object.assign({},out.data||{}, {p3Size:n,p3SupportedSizes:supported.slice()});
     out.puzzle=puzzle;
     out.solution=made.grid;
     out.generation={
       seed:seed>>>0,
-      clues:2*n+puzzle.givens.length,
+      clues:visibleOutside+puzzle.givens.length,
       unique:true,
-      verification:'solver-verified',
-      generatorFamily:'battleships-multisize-bounded-fleet',
+      verification:expertCarve?'solver-verified-local-irreducible':'solver-verified',
+      generatorFamily:expertCarve?'battleships-multisize-bounded-fleet-expert-local-irreducible':'battleships-multisize-bounded-fleet',
       difficultyScore:Number(stats.nodes||0)+Number(stats.branches||0)*3+Number(stats.deadEnds||0)*2,
       searchStats:clone(stats),
       mode:'seeded-variant-essential',
       variantEssential:true,
       boardSize:n
     };
+    if(expertCarve){
+      out.generation.locallyIrreducibleUnderProductionContract=true;
+      out.generation.localIrreducibilityProof='monotone-nonuniqueness-from-single-pass';
+      out.generation.policy='contract-driven-local-irreducibility';
+      out.generation.acceptedRemovals=expertCarve.accepted;
+      out.generation.rejectedRemovals=expertCarve.rejected;
+      out.generation.acceptedGivenRemovals=expertCarve.acceptedGivens;
+      out.generation.acceptedOutsideRemovals=expertCarve.acceptedOutside;
+    }
     cache.set(cacheKey,clone(out));
     return out;
   }
@@ -15575,6 +15854,8 @@ root.SudokuBank.push(
   var cache=new Map();
 
   function clone(x){return JSON.parse(JSON.stringify(x));}
+  function mulberry32(seed){var x=seed>>>0;return function(){x=(x+0x6D2B79F5)>>>0;var t=x;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;};}
+  function shuffle(list,random){for(var i=list.length-1;i>0;i--){var j=Math.floor(random()*(i+1)),tmp=list[i];list[i]=list[j];list[j]=tmp;}return list;}
 
   function transformPoint(r,c,n,t){
     var rr=r,cc=c;
@@ -15596,6 +15877,40 @@ root.SudokuBank.push(
       if(bestD)edges.push([i,bestD.idx]);
     }
     return edges;
+  }
+
+  function bridgesCross(islands,e1,e2){
+    var a=islands[e1[0]],b=islands[e1[1]],c=islands[e2[0]],d=islands[e2[1]],h1=a.r===b.r,h2=c.r===d.r;
+    if(h1===h2)return false;
+    var h=h1?[a,b]:[c,d],v=h1?[c,d]:[a,b],hr=h[0].r,vc=v[0].c;
+    return vc>Math.min(h[0].c,h[1].c)&&vc<Math.max(h[0].c,h[1].c)&&hr>Math.min(v[0].r,v[1].r)&&hr<Math.max(v[0].r,v[1].r);
+  }
+
+  function countSparseSolutions(puzzle,limit,stats){
+    limit=Math.max(1,Number(limit)||2);stats=stats||null;
+    if(stats){stats.nodes=0;stats.branches=0;stats.deadEnds=0;stats.solutions=0;}
+    var islands=puzzle.islands||puzzle,edges=bridgeEdges(islands),n=islands.length,vals=Array(edges.length).fill(0),found=0;
+    var known=islands.map(function(x){return Number.isInteger(x.clue);});
+    var remaining=islands.map(function(x,i){return known[i]?x.clue:0;});
+    function possibleFrom(k,node){var m=0;for(var e=k;e<edges.length;e++)if(edges[e][0]===node||edges[e][1]===node)m+=2;return m;}
+    function connected(){var adj=Array.from({length:n},function(){return[];});for(var e=0;e<edges.length;e++)if(vals[e]){var a=edges[e][0],b=edges[e][1];adj[a].push(b);adj[b].push(a);}var seen={0:1},q=[0];while(q.length){var x=q.shift();adj[x].forEach(function(y){if(!seen[y]){seen[y]=1;q.push(y);}});}return Object.keys(seen).length===n;}
+    function visit(k){
+      if(stats)stats.nodes++;if(found>=limit)return;
+      if(k===edges.length){if(known.every(function(yes,i){return !yes||remaining[i]===0;})&&connected()){found++;if(stats)stats.solutions++;}else if(stats)stats.deadEnds++;return;}
+      var a=edges[k][0],b=edges[k][1],max=2;
+      if(known[a])max=Math.min(max,remaining[a]);if(known[b])max=Math.min(max,remaining[b]);
+      if(stats&&max>0)stats.branches+=max;
+      for(var v=0;v<=max;v++){
+        if(v>0){var crossing=false;for(var pe=0;pe<k;pe++)if(vals[pe]>0&&bridgesCross(islands,edges[k],edges[pe])){crossing=true;break;}if(crossing)continue;}
+        if(known[a])remaining[a]-=v;if(known[b])remaining[b]-=v;vals[k]=v;
+        var ok=true;for(var node=0;node<n;node++)if(known[node]&&(remaining[node]<0||remaining[node]>possibleFrom(k+1,node))){ok=false;break;}
+        if(ok)visit(k+1);
+        if(known[a])remaining[a]+=v;if(known[b])remaining[b]+=v;
+        if(found>=limit)return;
+      }
+      vals[k]=0;
+    }
+    visit(0);return found;
   }
 
   function makeTopology(n,seed){
@@ -15638,22 +15953,45 @@ root.SudokuBank.push(
       throw new Error('Hashiwokakero exact uniqueness failed for '+n+'x'+n+' seed '+seed);
     }
 
+    var accepted=0,rejected=0;
+    if(difficulty==='expert'){
+      var order=islands.map(function(_,i){return i;});
+      shuffle(order,mulberry32(((seed>>>0)^0x48A51E7D^Math.imul(n,0x9E3779B1))>>>0));
+      for(var oi=0;oi<order.length;oi++){
+        var idx=order[oi],old=islands[idx].clue;
+        islands[idx].clue=null;
+        if(countSparseSolutions(puzzle,2)===1)accepted++;
+        else{islands[idx].clue=old;rejected++;}
+      }
+    }
+
+    var finalStats={},finalCount=difficulty==='expert'?countSparseSolutions(puzzle,2,finalStats):generator.countBridgesSolutions(puzzle,2,finalStats);
+    if(finalCount!==1)throw new Error('Hashiwokakero final exact uniqueness failed for '+n+'x'+n+' seed '+seed);
+    var clueCount=islands.filter(function(x){return Number.isInteger(x.clue);}).length;
+
     var out=clone(variant);
     out.data=Object.assign({},out.data||{}, {p3Size:n,p3SupportedSizes:supported.slice()});
     out.puzzle=puzzle;
     out.solution=solution;
     out.generation={
       seed:seed>>>0,
-      clues:islands.length,
+      clues:clueCount,
       unique:true,
-      verification:'solver-verified',
+      verification:difficulty==='expert'?'solver-verified-local-irreducible':'solver-verified',
       generatorFamily:'hashiwokakero-multisize-tree-staircase',
-      difficultyScore:Number(stats.nodes||0)+Number(stats.branches||0)*2+Number(stats.deadEnds||0),
-      searchStats:clone(stats),
+      difficultyScore:Number(finalStats.nodes||0)+Number(finalStats.branches||0)*2+Number(finalStats.deadEnds||0),
+      searchStats:clone(finalStats),
       mode:'seeded-variant-essential',
       variantEssential:true,
       boardSize:n
     };
+    if(difficulty==='expert'){
+      out.generation.policy='contract-driven-local-irreducibility';
+      out.generation.localIrreducibilityProof='monotone-nonuniqueness-from-single-pass';
+      out.generation.locallyIrreducibleUnderProductionContract=true;
+      out.generation.acceptedRemovals=accepted;
+      out.generation.rejectedRemovals=rejected;
+    }
 
     cache.set(key,clone(out));
     return out;
@@ -15668,6 +16006,7 @@ root.SudokuBank.push(
     variant.data.p3Size=supported.indexOf(remembered)>=0?remembered:7;
   }
 
+  generator.countBridgesSparseSolutions=countSparseSolutions;
   generator.make=function(variant,seed,difficulty){
     if(!variant||variant.id!=='hashiwokakero')return baseMake.call(this,variant,seed,difficulty);
     var requested=Number(variant.data&&variant.data.p3Size);
