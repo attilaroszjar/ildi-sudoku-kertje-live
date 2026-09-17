@@ -511,6 +511,32 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
   .nurikabe-cell{min-height:44px;min-width:44px}
 }
 
+
+/* Ildi Futoshiki candidate notes */
+.futoshiki-cell {
+  position: relative;
+}
+.futoshiki-notes {
+  position: absolute;
+  inset: 3px;
+  display: grid;
+  grid-template-columns: repeat(var(--futo-note-cols), minmax(0, 1fr));
+  grid-auto-rows: minmax(0, 1fr);
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+  pointer-events: none;
+  font: 650 clamp(8px, 1.35vw, 12px)/1 monospace;
+  color: var(--muted);
+}
+.futoshiki-note {
+  min-width: 0;
+  min-height: 0;
+}
+.futoshiki-note.on {
+  color: var(--ink);
+}
+
   </style>
   <style data-source="assets/sudoku-mobile.css">
 /* Post-hardening: keep standard 9x9 Sudoku cells touch-sized on narrow viewports. */
@@ -1020,7 +1046,7 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
       <section class="welcome-card" aria-label="Üdvözlés"><div class="welcome-flower" aria-hidden="true">❀</div><div><p class="welcome-kicker">ILDI SUDOKU KERTJE</p><h1 id="welcome-title">Üdv Ildi Sudoku Kertjében!</h1><p id="welcome-copy">Válassz kategóriát, találd meg a kedvenc Sudoku-változatodat, és élvezd a logikai kihívásokat.</p></div><div class="welcome-cat" aria-hidden="true"><svg viewBox="0 0 190 92" focusable="false"><path class="cat-cushion" d="M33 72c20-20 102-24 132 0-21 12-109 16-132 0z"/><path class="sleep-cat-body" d="M63 62c10-29 47-35 72-14 7 6 11 14 11 22-17 6-68 7-92 1 1-3 4-6 9-9z"/><path class="sleep-cat-head" d="M52 50l3-23 13 11c7-3 15-3 22 0l14-12 2 24c-2 18-13 27-28 27-16 0-27-10-26-27z"/><path class="sleep-cat-tail" d="M136 62c25-2 31-14 23-22-5-5-13-5-18 1 8-2 12 2 11 7-1 8-9 10-19 9"/><path class="sleep-cat-face" d="M64 53c4 3 7 3 11 0M86 53c4 3 7 3 11 0M77 58l3 2 3-2M80 60c0 4-4 6-8 4M80 60c0 4 4 6 8 4"/></svg><span class="floating-heart">♡</span></div></section>
       <section class="control-deck" aria-label="Feladvány beállításai"><label class="deck-field"><span id="category-label">Kategória</span><select id="category-select"></select></label><label class="deck-field variant-field"><span id="variant-label">Sudoku-változat</span><select id="variant-select"></select></label><span id="variant-count" class="variant-count">82 változat</span><div class="deck-actions"><label class="deck-field difficulty-field"><span id="difficulty-label">Nehézség</span><select id="difficulty-select"></select></label><button id="restart-button" class="button secondary" type="button">↻ <span>Újrakezdés</span></button><button id="new-button" class="button primary" type="button">❀ <span>Új feladvány</span></button></div></section>
       <section id="workspace" class="workspace sudoku-only-workspace" aria-labelledby="game-title"><div class="garden-layout"><aside class="garden-sidebar" aria-label="Sudoku kategóriák"><section class="garden-card categories-card"><div class="card-title-row"><h2 id="categories-heading">Kategóriák</h2><span aria-hidden="true">✿</span></div><div id="category-list" class="category-list"></div></section><section class="garden-card favorites-card"><div class="card-title-row"><h2 id="favorites-heading">Kedvenceim</h2><span aria-hidden="true">♡</span></div><div id="favorites-list" class="favorites-list"><p id="favorites-empty">Itt jelennek meg a kedvenc változataid.</p></div></section><section class="garden-card stats-card"><div class="card-title-row"><h2 id="stats-heading">Statisztikám</h2><span aria-hidden="true">▥</span></div><dl class="stats-list"><div><dt id="solved-label">Megoldott</dt><dd id="stat-solved">0</dd></div><div><dt id="best-label">Legjobb idő</dt><dd id="stat-best">--:--</dd></div><div><dt id="streak-label">Jelenlegi sorozat</dt><dd id="stat-streak">0 nap</dd></div><div><dt id="total-time-label">Összes játékidő</dt><dd id="stat-total">0:00:00</dd></div></dl></section></aside><div class="play-column"><section class="garden-card puzzle-card"><div class="puzzle-card-head"><div><p id="game-family" class="eyebrow">Sudoku-gyűjtemény</p><h2 id="game-title">Sudoku-változatok</h2></div><button id="favorite-button" class="favorite-button" type="button" aria-label="Hozzáadás a kedvencekhez" title="Kedvenc">♡</button></div><div class="play-surface"><div id="game-stage" class="game-stage" tabindex="-1"></div><div id="game-tools" class="game-tools tool-rail"></div></div></section></div><aside class="garden-card inspector" aria-label="Feladvány információ"><section class="inspector-heading"><h2 id="about-heading">A változatról</h2><span aria-hidden="true">✿</span></section><section><h3 id="objective-heading">Cél</h3><p id="game-objective"></p></section><section><h3 id="rules-heading">Játékszabály</h3><div id="game-rules"></div></section><section class="tip-card"><h3 id="tip-heading">Tipp</h3><p id="game-tip">Haladj nyugodtan, és először azokat a cellákat keresd, ahol a szabályok a legtöbb lehetőséget kizárják.</p></section><section class="status-compact"><div class="status-row"><span id="status-label">Állapot</span><strong id="game-status" role="status" aria-live="polite">Készen áll</strong></div><div class="status-row"><span id="counter-label">Lépések</span><strong id="game-counter">0</strong></div></section><div class="garden-bench" aria-hidden="true"><span class="garden-sprig">❀ ✿ ❀</span><svg viewBox="0 0 210 105" focusable="false"><path class="mini-ground" d="M18 87c34-11 142-12 177 0"/><path class="mini-cat" d="M60 76c8-20 31-26 49-15 13 8 19 19 15 27H52c0-5 3-9 8-12zM54 61l3-17 11 9c5-2 11-2 16 0l11-9 2 18c-1 13-10 20-22 20-13 0-22-8-21-21z"/><path class="mini-tail" d="M118 77c26 1 36-9 31-18-3-6-10-7-16-3 8-1 11 3 9 8-3 6-11 7-22 5"/><path class="mini-bench" d="M128 76h59M134 64h47M140 64v23M176 64v23"/></svg></div></aside></div></section>
-      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=295a6c0" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
+      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=30d706d" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
     </main>
   </div><div id="toast" class="toast" role="status" aria-live="polite"></div>
   <dialog id="help-dialog" class="dialog"><form method="dialog"><div class="dialog-head"><div><p id="guide-eyebrow" class="eyebrow"></p><h2 id="guide-title"></h2></div><button class="icon-button" value="close" aria-label="Bezárás">×</button></div><div class="dialog-body"><p id="guide-p1"></p><dl><div><dt id="guide-pointer"></dt><dd id="guide-pointer-d"></dd></div><div><dt id="guide-keyboard"></dt><dd id="guide-keyboard-d"></dd></div><div><dt id="guide-feedback"></dt><dd id="guide-feedback-d"></dd></div></dl><p id="guide-quiet" class="quiet"></p></div><button id="guide-close" class="button primary dialog-close" value="close"></button></form></dialog>
@@ -11338,16 +11364,248 @@ root.SudokuBank.push(
 
 
   function mountFutoshiki(host,v,api){
-    var n=v.puzzle.length,grid=clone(v.puzzle),selected=[0,0],moves=0,cells=[],I=root.SudokuI18n,ineq=(v.data&&v.data.inequalities)||[];
-    var shell=LR.el('div',{className:'futoshiki-shell'}),board=LR.el('div',{className:'futoshiki-board',role:'grid','aria-label':(I?I.variant(v).title:v.title)+' board'});board.style.setProperty('--futo-size',n);shell.appendChild(board);host.appendChild(shell);
-    function idx(r,c){return r*n+c;}function render(){for(var r=0;r<n;r++)for(var c=0;c<n;c++){var b=cells[idx(r,c)],given=!!v.puzzle[r][c];b.textContent=grid[r][c]?String(grid[r][c]):'';b.classList.toggle('given',given);b.classList.toggle('selected',selected[0]===r&&selected[1]===c);b.classList.remove('wrong');b.setAttribute('aria-label',(I&&I.lang==='hu'?'Sor ':'Row ')+(r+1)+', '+(I&&I.lang==='hu'?'oszlop ':'column ')+(c+1)+(grid[r][c]?', '+grid[r][c]:', '+(I&&I.lang==='hu'?'üres':'empty'))+(given?(I&&I.lang==='hu'?', adott':', given'):''));}}
-    function solvedGrid(){for(var rr=0;rr<n;rr++)for(var cc=0;cc<n;cc++)if(grid[rr][cc]!==v.solution[rr][cc])return false;return true;}
-    function setCell(r,c,val){if(v.puzzle[r][c])return;grid[r][c]=val;moves++;api.setCounter(moves,I&&I.lang==='hu'?'Lépések':'Moves');render();if(solvedGrid())api.solved();}
-    for(var r=0;r<n;r++)for(var c=0;c<n;c++)(function(rr,cc){var b=LR.el('button',{type:'button',className:'futoshiki-cell',role:'gridcell',onclick:function(){selected=[rr,cc];render();}});b.addEventListener('keydown',function(e){var value=Number(e.key);if(/^[1-9]$/.test(e.key)&&value>=1&&value<=n){e.preventDefault();setCell(rr,cc,value);}else if(e.key==='Backspace'||e.key==='Delete'||e.key==='0'){e.preventDefault();setCell(rr,cc,0);}});cells.push(b);board.appendChild(b);}(r,c));
-    ineq.forEach(function(q){var a=q.a,b=q.b,m=LR.el('span',{className:'futoshiki-sign',text:q.op,'aria-hidden':'true'});var horizontal=a[0]===b[0];m.style.left=(((a[1]+b[1]+1)/2)*100/n)+'%';m.style.top=(((a[0]+b[0]+1)/2)*100/n)+'%';if(!horizontal)m.classList.add('vertical');shell.appendChild(m);});
-    var hint=LR.el('p',{className:'fillomino-hint futoshiki-hint',text:I&&I.lang==='hu'?'Minden sorban és oszlopban 1–'+n+' egyszer; közben figyeld a < és > jeleket.':'Use 1–'+n+' once in every row and column, while obeying every < and > sign.'});host.appendChild(hint);
-    var tools=LR.el('div',{className:'sudoku-tools fillomino-number-pad'});for(var d=1;d<=n;d++)(function(x){tools.appendChild(LR.el('button',{type:'button',className:'tool-button',text:String(x),onclick:function(){setCell(selected[0],selected[1],x);}}));}(d));tools.appendChild(LR.el('button',{type:'button',className:'tool-button clear-futoshiki-button',text:I&&I.lang==='hu'?'Törlés':'Clear',onclick:function(){setCell(selected[0],selected[1],0);}}));tools.appendChild(LR.el('button',{type:'button',className:'tool-button check-button',text:I?I.t('check'):'Check',onclick:function(){var wrong=0,empty=0;for(var r=0;r<n;r++)for(var c=0;c<n;c++){var bad=grid[r][c]&&grid[r][c]!==v.solution[r][c];cells[idx(r,c)].classList.toggle('wrong',!!bad);if(bad)wrong++;if(!grid[r][c])empty++;}api.toast(wrong?(I&&I.lang==='hu'?'Van még javítandó cella.':'Some cells still need attention.'):(empty?(I&&I.lang==='hu'?'Az eddigi számok rendben vannak.':'Current entries look good.'):(I&&I.lang==='hu'?'Kész a Futoshiki!':'Futoshiki complete!')));}}));api.tools.appendChild(tools);render();api.setStatus(I&&I.lang==='hu'?'Készen áll':'Ready');api.setCounter(0,I&&I.lang==='hu'?'Lépések':'Moves');
-    return {moves:function(){return moves;},refreshLanguage:function(){board.setAttribute('aria-label',(I?I.variant(v).title:v.title)+' board');hint.textContent=I&&I.lang==='hu'?'Minden sorban és oszlopban 1–'+n+' egyszer; közben figyeld a < és > jeleket.':'Use 1–'+n+' once in every row and column, while obeying every < and > sign.';tools.querySelector('.clear-futoshiki-button').textContent=I&&I.lang==='hu'?'Törlés':'Clear';tools.querySelector('.check-button').textContent=I?I.t('check'):'Check';render();},destroy:function(){}};
+    var n=v.puzzle.length,grid=clone(v.puzzle),selected=[0,0],moves=0,cells=[],I=root.SudokuI18n,ineq=(v.data&&v.data.inequalities)||[],noteMode=false,noteButton=null;
+    var notes=Array.from({length:n},function(){return Array.from({length:n},function(){return new Set();});});
+    var shell=LR.el('div',{className:'futoshiki-shell'}),board=LR.el('div',{className:'futoshiki-board',role:'grid','aria-label':(I?I.variant(v).title:v.title)+' board'});
+    board.style.setProperty('--futo-size',n);
+    board.style.setProperty('--futo-note-cols',n<=4?2:3);
+    shell.appendChild(board);
+    host.appendChild(shell);
+
+    function idx(r,c){return r*n+c;}
+
+    function render(){
+      for(var r=0;r<n;r++)for(var c=0;c<n;c++){
+        var b=cells[idx(r,c)],given=!!v.puzzle[r][c],marks=Array.from(notes[r][c]).sort(function(a,b){return a-b;});
+        b.replaceChildren();
+
+        if(grid[r][c]){
+          b.textContent=String(grid[r][c]);
+        }else if(marks.length){
+          var noteGrid=LR.el('span',{className:'futoshiki-notes','aria-hidden':'true'});
+          for(var d=1;d<=n;d++){
+            noteGrid.appendChild(LR.el('span',{
+              className:'futoshiki-note'+(notes[r][c].has(d)?' on':''),
+              text:notes[r][c].has(d)?String(d):''
+            }));
+          }
+          b.appendChild(noteGrid);
+        }
+
+        b.classList.toggle('given',given);
+        b.classList.toggle('selected',selected[0]===r&&selected[1]===c);
+        b.classList.remove('wrong');
+
+        b.setAttribute(
+          'aria-label',
+          (I&&I.lang==='hu'?'Sor ':'Row ')+(r+1)+', '+
+          (I&&I.lang==='hu'?'oszlop ':'column ')+(c+1)+
+          (grid[r][c]
+            ? ', '+grid[r][c]
+            : ', '+(I&&I.lang==='hu'?'üres':'empty'))+
+          (marks.length
+            ? ', '+(I&&I.lang==='hu'?'jegyzet ':'notes ')+marks.join(' ')
+            : '')+
+          (given
+            ? (I&&I.lang==='hu'?', adott':', given')
+            : '')
+        );
+      }
+
+      if(noteButton){
+        noteButton.classList.toggle('active',noteMode);
+        noteButton.setAttribute('aria-pressed',noteMode?'true':'false');
+      }
+    }
+
+    function solvedGrid(){
+      for(var rr=0;rr<n;rr++)for(var cc=0;cc<n;cc++)
+        if(grid[rr][cc]!==v.solution[rr][cc])return false;
+      return true;
+    }
+
+    function prunePeerNotes(r,c,val){
+      for(var i=0;i<n;i++){
+        if(i!==c)notes[r][i].delete(val);
+        if(i!==r)notes[i][c].delete(val);
+      }
+    }
+
+    function setCell(r,c,val){
+      if(v.puzzle[r][c])return;
+      grid[r][c]=val;
+      notes[r][c].clear();
+      if(val)prunePeerNotes(r,c,val);
+      moves++;
+      api.setCounter(moves,I&&I.lang==='hu'?'Lépések':'Moves');
+      render();
+      if(solvedGrid())api.solved();
+    }
+
+    function toggleNote(r,c,val){
+      if(v.puzzle[r][c]||grid[r][c]||val<1||val>n)return;
+      if(notes[r][c].has(val))notes[r][c].delete(val);
+      else notes[r][c].add(val);
+      moves++;
+      api.setCounter(moves,I&&I.lang==='hu'?'Lépések':'Moves');
+      render();
+    }
+
+    function clearCell(r,c){
+      if(v.puzzle[r][c])return;
+      setCell(r,c,0);
+    }
+
+    function setNoteMode(on,announce){
+      noteMode=!!on;
+      render();
+      if(announce){
+        api.toast(
+          noteMode
+            ? (I&&I.lang==='hu'?'Jegyzet mód bekapcsolva.':'Notes mode on.')
+            : (I&&I.lang==='hu'?'Jegyzet mód kikapcsolva.':'Notes mode off.')
+        );
+      }
+    }
+
+    for(var r=0;r<n;r++)for(var c=0;c<n;c++)(function(rr,cc){
+      var b=LR.el('button',{
+        type:'button',
+        className:'futoshiki-cell',
+        role:'gridcell',
+        onclick:function(){
+          selected=[rr,cc];
+          render();
+        }
+      });
+
+      b.addEventListener('keydown',function(e){
+        var value=Number(e.key);
+
+        if(e.key==='n'||e.key==='N'){
+          e.preventDefault();
+          setNoteMode(!noteMode,true);
+          return;
+        }
+
+        if(/^[1-9]$/.test(e.key)&&value>=1&&value<=n){
+          e.preventDefault();
+          selected=[rr,cc];
+          if(noteMode||e.shiftKey)toggleNote(rr,cc,value);
+          else setCell(rr,cc,value);
+          return;
+        }
+
+        if(e.key==='Backspace'||e.key==='Delete'||e.key==='0'){
+          e.preventDefault();
+          selected=[rr,cc];
+          clearCell(rr,cc);
+        }
+      });
+
+      cells.push(b);
+      board.appendChild(b);
+    }(r,c));
+
+    ineq.forEach(function(q){
+      var a=q.a,b=q.b,m=LR.el('span',{
+        className:'futoshiki-sign',
+        text:q.op,
+        'aria-hidden':'true'
+      });
+      var horizontal=a[0]===b[0];
+      m.style.left=(((a[1]+b[1]+1)/2)*100/n)+'%';
+      m.style.top=(((a[0]+b[0]+1)/2)*100/n)+'%';
+      if(!horizontal)m.classList.add('vertical');
+      shell.appendChild(m);
+    });
+
+    var hint=LR.el('p',{
+      className:'fillomino-hint futoshiki-hint',
+      text:I&&I.lang==='hu'
+        ? 'Minden sorban és oszlopban 1–'+n+' egyszer; közben figyeld a < és > jeleket.'
+        : 'Use 1–'+n+' once in every row and column, while obeying every < and > sign.'
+    });
+    host.appendChild(hint);
+
+    var tools=LR.el('div',{
+      className:'sudoku-tools fillomino-number-pad futoshiki-number-pad'
+    });
+
+    for(var d=1;d<=n;d++)(function(x){
+      tools.appendChild(LR.el('button',{
+        type:'button',
+        className:'tool-button futoshiki-digit-button',
+        text:String(x),
+        onclick:function(){
+          if(noteMode)toggleNote(selected[0],selected[1],x);
+          else setCell(selected[0],selected[1],x);
+        },
+        'aria-label':(I&&I.lang==='hu'?'Beírás ':'Enter ')+x
+      }));
+    }(d));
+
+    noteButton=LR.el('button',{
+      type:'button',
+      className:'tool-button note-mode-button futoshiki-note-mode-button',
+      text:'✎ '+(I&&I.lang==='hu'?'Jegyzet':'Notes'),
+      onclick:function(){setNoteMode(!noteMode,true);},
+      'aria-pressed':'false',
+      'aria-label':I&&I.lang==='hu'?'Jegyzet mód':'Notes mode'
+    });
+    tools.appendChild(noteButton);
+
+    tools.appendChild(LR.el('button',{
+      type:'button',
+      className:'tool-button clear-futoshiki-button',
+      text:I&&I.lang==='hu'?'Törlés':'Clear',
+      onclick:function(){clearCell(selected[0],selected[1]);}
+    }));
+
+    tools.appendChild(LR.el('button',{
+      type:'button',
+      className:'tool-button check-button',
+      text:I?I.t('check'):'Check',
+      onclick:function(){
+        var wrong=0,empty=0;
+        for(var r=0;r<n;r++)for(var c=0;c<n;c++){
+          var bad=grid[r][c]&&grid[r][c]!==v.solution[r][c];
+          cells[idx(r,c)].classList.toggle('wrong',!!bad);
+          if(bad)wrong++;
+          if(!grid[r][c])empty++;
+        }
+        api.toast(
+          wrong
+            ? (I&&I.lang==='hu'?'Van még javítandó cella.':'Some cells still need attention.')
+            : (
+                empty
+                  ? (I&&I.lang==='hu'?'Az eddigi számok rendben vannak.':'Current entries look good.')
+                  : (I&&I.lang==='hu'?'Kész a Futoshiki!':'Futoshiki complete!')
+              )
+        );
+      }
+    }));
+
+    api.tools.appendChild(tools);
+    render();
+    api.setStatus(I&&I.lang==='hu'?'Készen áll':'Ready');
+    api.setCounter(0,I&&I.lang==='hu'?'Lépések':'Moves');
+
+    return {
+      moves:function(){return moves;},
+      refreshLanguage:function(){
+        board.setAttribute('aria-label',(I?I.variant(v).title:v.title)+' board');
+        hint.textContent=I&&I.lang==='hu'
+          ? 'Minden sorban és oszlopban 1–'+n+' egyszer; közben figyeld a < és > jeleket.'
+          : 'Use 1–'+n+' once in every row and column, while obeying every < and > sign.';
+        tools.querySelector('.clear-futoshiki-button').textContent=I&&I.lang==='hu'?'Törlés':'Clear';
+        tools.querySelector('.check-button').textContent=I?I.t('check'):'Check';
+        noteButton.textContent='✎ '+(I&&I.lang==='hu'?'Jegyzet':'Notes');
+        noteButton.setAttribute('aria-label',I&&I.lang==='hu'?'Jegyzet mód':'Notes mode');
+        render();
+      },
+      destroy:function(){}
+    };
   }
 
   function mountFillomino(host,v,api){
@@ -11436,11 +11694,11 @@ root.SudokuBank.push(
 
     if(type==='aquarium'){
       var top=LR.el('div',{className:'aquarium-top'});
-      v.puzzle.colClues.forEach(function(x){top.appendChild(LR.el('span',{text:String(x)}));});
+      v.puzzle.colClues.forEach(function(x){top.appendChild(LR.el('span',{text:x===0?'':String(x)}));});
       wrap.insertBefore(top,board);
 
       var side=LR.el('div',{className:'aquarium-side'});
-      v.puzzle.rowClues.forEach(function(x){side.appendChild(LR.el('span',{text:String(x)}));});
+      v.puzzle.rowClues.forEach(function(x){side.appendChild(LR.el('span',{text:x===0?'':String(x)}));});
       wrap.appendChild(side);
     }
 
@@ -12731,6 +12989,10 @@ root.SudokuBank.push(
       '.newlogic-board{grid-template-rows:repeat(var(--newlogic-size),minmax(0,1fr));}',
       '.futoshiki-board{grid-template-rows:repeat(var(--futo-size),minmax(0,1fr));}',
       '.futoshiki-cell{min-height:0;overflow:hidden;}',
+      '.akari-board{grid-template-rows:repeat(var(--akari-size),minmax(0,1fr));}',
+      '.akari-cell{min-height:0;overflow:hidden;line-height:1;}',
+      '.fillomino-board{grid-template-rows:repeat(var(--fillomino-size),minmax(0,1fr));}',
+      '.fillomino-cell{min-height:0;overflow:hidden;line-height:1;}',
       '.masyu-board{background-position:0 0;}'
     ].join('');
     var target=document.head||document.documentElement;
