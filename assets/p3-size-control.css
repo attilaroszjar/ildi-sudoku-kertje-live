@@ -1,0 +1,18 @@
+@import url("./domino-skyscraper.css");
+@import url("./sudoku-line-visibility.css");
+@import url("./sukaku-legibility.css");
+@import url("./samurai-layout.css");
+@import url("./bishopsgate-legibility.css");
+
+.p3-size-field{min-width:96px;max-width:116px;flex:0 0 104px}
+.p3-size-field[hidden]{display:none!important}
+.p3-size-field select{min-width:0;width:100%;padding-left:12px;padding-right:30px;text-align-last:center;font-variant-numeric:tabular-nums}
+
+.control-deck.has-p3-size .deck-actions .button{white-space:nowrap;flex-shrink:0}
+
+@media(min-width:1281px){
+  .control-deck.has-p3-size{grid-template-columns:minmax(170px,.75fr) minmax(240px,1.15fr) auto minmax(520px,1.35fr)}
+}
+@media(max-width:1280px){.p3-size-field{flex-basis:112px;max-width:112px}}
+@media(max-width:820px){.p3-size-field{flex:1 1 120px;max-width:none}.control-deck.has-p3-size .deck-actions .button{flex:1 1 auto}}
+@media(max-width:560px){.p3-size-field{grid-column:1/-1;max-width:none;width:100%}}

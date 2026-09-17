@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "items": {
+    "little-killer": {"status":"READY","note":"Production generátor és render hardening kész; többoldalas jelölés, pontos nyilak, ütközéskezelés."},
+    "quadruple": {"status":"READY","note":"Generátor és jelölés javítva; csak belső metszéspontok, célzott regressziók."},
+    "fortress": {"status":"READY","note":"Fortress generálás javítva; korábbi értékhiba nem reprodukálható."},
+    "between-lines": {"status":"READY","note":"Generátor és megjelenítés hardening elkészült."},
+    "x-sums": {"status":"READY","note":"Expert nehézség kalibrálva mért score floorral; exact és variant-essential gate."},
+    "clone": {"status":"READY","note":"Valódi clone-topológia és variant-essential generálás elkészült."},
+    "region-sum-line": {"status":"READY","note":"Region Sum szegmens-szemantika és production generálás hardening elkészült."},
+    "hyper": {"status":"READY","note":"10/10 audit lezárva: variant-essential generálás, mért nehézség, látható Hyper régiók és renderer/conflict regressziók."},
+    "thermo": {"status":"READY","note":"10/10 audit lezárva: variant-essential Thermo generálás, mért nehézség és renderer/conflict regressziók."},
+    "kropki": {"status":"READY","note":"10/10 audit lezárva: variant-essential Kropki generálás, mért nehézség és renderer edge-rule regressziók."},
+    "xv": {"status":"READY","note":"10/10 audit lezárva: variant-essential XV generálás, mért nehézség és renderer edge-rule regressziók."},
+    "rossini": {"status":"READY","note":"10/10 audit lezárva: Rossini-szemantika, variant-essential generálás, mért nehézség, látható iránynyilak és runtime conflict regressziók."},
+    "hashiwokakero": {"status":"READY","note":"10/10 audit lezárva; a quality ledger Bridges néven tartja nyilván ezt a játékot."},
+    "samurai": {"status":"READY","note":"10/10 audit lezárva; a quality ledger Samurai Sudoku néven tartja nyilván ezt a játékot."}
+  }
+}

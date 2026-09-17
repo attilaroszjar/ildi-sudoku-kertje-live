@@ -1,0 +1,11 @@
+'use strict';
+const fs=require('fs'),path=require('path'),assert=require('assert');
+const root=path.join(__dirname,'..');
+const app=fs.readFileSync(path.join(root,'assets/app.js'),'utf8');
+const lib=fs.readFileSync(path.join(root,'games/sudoku-library.js'),'utf8');
+assert.ok(!app.includes("I.set(I.other());location.reload()"),'language switch must not reload the page');
+assert.ok(app.includes("sudoku:languagechange"),'language switch must refresh the mounted game in place');
+assert.ok(lib.includes("document.addEventListener('sudoku:languagechange',refreshLanguage)"),'Sudoku library must handle in-place language changes');
+assert.ok(lib.includes('lastVariant=v;generation.textContent=generationText(v)'),'generated puzzle metadata must be retranslated without regeneration');
+assert.ok(lib.includes("document.removeEventListener('sudoku:languagechange',refreshLanguage)"),'language listener must be cleaned up');
+console.log('PASS iteration 29: language switching preserves the active puzzle and progress');

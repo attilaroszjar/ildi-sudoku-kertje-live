@@ -1,0 +1,12 @@
+(function(root){'use strict';if(!root.SudokuBank)return;var bank=root.SudokuBank;function cp(x){return JSON.parse(JSON.stringify(x));}function classic(){return bank.find(function(v){return v.id==='classic';});}function add(v){bank.push(v);}var c=classic();
+var miracle=[[1,4,7,5,8,2,9,3,6],[5,8,2,9,3,6,4,7,1],[9,3,6,4,7,1,8,2,5],[4,7,1,8,2,5,3,6,9],[8,2,5,3,6,9,7,1,4],[3,6,9,7,1,4,2,5,8],[7,1,4,2,5,8,6,9,3],[2,5,8,6,9,3,1,4,7],[6,9,3,1,4,7,5,8,2]];
+add({id:'miracle',title:'Miracle Sudoku',family:'Anti-constraints',rule:'Normal Sudoku plus anti-knight, anti-king, and orthogonally adjacent digits may not be consecutive.',kind:'combined',kinds:['anti-knight','anti-king','nonconsecutive'],data:{},puzzle:cp(c.puzzle),solution:miracle});
+var magic=[[1,2,3,5,4,8,6,7,9],[4,5,6,1,7,9,2,3,8],[7,8,9,2,6,3,1,4,5],[2,3,4,8,1,6,5,9,7],[6,9,1,3,5,7,4,8,2],[5,7,8,4,9,2,3,1,6],[3,1,2,7,8,5,9,6,4],[8,6,5,9,3,4,7,2,1],[9,4,7,6,2,1,8,5,3]];
+add({id:'magic-square',title:'Magic Square Sudoku',family:'Extra regions',rule:'The shaded centre 3×3 box is a Lo Shu magic square: every row, column, and diagonal inside it sums to 15.',kind:'magicsquare',data:{cells:[[3,3],[3,4],[3,5],[4,3],[4,4],[4,5],[5,3],[5,4],[5,5]]},puzzle:cp(c.puzzle),solution:magic});
+var cells=[[0,0],[1,1],[2,7],[3,2],[4,5],[5,6],[6,8],[7,4],[8,3]];
+add({id:'asterisk',title:'Asterisk Sudoku',family:'Extra regions',rule:'The nine marked asterisk cells also contain digits 1–9 exactly once.',kind:'extracells',data:{cells:cells},puzzle:cp(c.puzzle),solution:cp(c.solution)});
+var argLines=[];[[[0,0],[1,1],[2,2],[3,3],[4,4]],[[0,8],[1,7],[2,6],[3,5],[4,4]],[[4,4],[5,5],[6,6],[7,7],[8,8]],[[4,4],[5,3],[6,2],[7,1],[8,0]]].forEach(function(line){var vals=line.map(function(p){return c.solution[p[0]][p[1]];});if(new Set(vals).size===vals.length)argLines.push(line);});
+add({id:'argyle',title:'Argyle Sudoku',family:'Lines',rule:'Digits may not repeat along each marked diagonal Argyle line.',kind:'uniqueline',data:{lines:argLines},puzzle:cp(c.puzzle),solution:cp(c.solution)});
+var regions=[[0,0,0,1,1,1,2,2,2],[0,0,0,1,1,2,2,2,2],[0,0,0,1,1,1,1,2,2],[3,3,4,4,4,4,4,5,5],[3,3,3,4,4,4,5,5,5],[3,3,3,6,4,5,5,5,5],[3,6,6,6,7,7,8,8,8],[6,6,6,7,7,7,7,8,8],[6,6,7,7,7,8,8,8,8]];
+add({id:'jigsaw',title:'Jigsaw / Irregular Sudoku',family:'Grid',rule:'The standard 3×3 boxes are replaced by nine irregular connected regions; each region contains 1–9 exactly once.',kind:'jigsaw',data:{regions:regions},puzzle:cp(c.puzzle),solution:cp(c.solution)});
+}(typeof window!=='undefined'?window:globalThis));

@@ -1,0 +1,35 @@
+/* Shared Sudoku line visibility hardening.
+ * Use one light neutral stroke for line constraints so digits remain legible even where
+ * a line crosses the centre of a cell. Colour no longer carries rule semantics here;
+ * shape, endpoint markers and rule text do.
+ */
+:where(.sudoku-overlay polyline,
+       .sudoku-overlay path,
+       .sudoku-overlay line){
+  stroke:#b4bab6!important;
+  stroke-opacity:.88!important;
+}
+
+/* Reflection previously used the heaviest line in the family and placed an opaque group
+ * badge directly over the first cell's digit. Keep its geometry readable without making
+ * the puzzle unusable at ordinary board scale. */
+.sudoku-overlay .reflection-line{
+  stroke-width:1.25!important;
+  opacity:1!important;
+}
+.sudoku-reflection-symbol{
+  width:14px!important;
+  height:14px!important;
+  margin-left:-13px;
+  margin-top:-13px;
+  background:color-mix(in srgb,var(--surface) 72%,transparent)!important;
+  border-color:#b4bab6!important;
+  color:#7f8782!important;
+  box-shadow:none!important;
+  font-size:8px!important;
+}
+:root[data-theme="dark"] .sudoku-reflection-symbol{
+  background:color-mix(in srgb,var(--surface) 72%,transparent)!important;
+  border-color:#b4bab6!important;
+  color:#d5dad7!important;
+}

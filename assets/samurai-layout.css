@@ -1,0 +1,54 @@
+/* Hard-playtest #9: Samurai / Gattai-5 must never crowd the tool rail off-screen. */
+.play-surface:has(.samurai-shell){
+  grid-template-columns:minmax(0,1fr);
+}
+.play-surface:has(.samurai-shell) .game-tools.tool-rail{
+  padding-top:0;
+  width:min(100%,760px);
+  justify-self:center;
+}
+.play-surface:has(.samurai-shell) .sudoku-tools{
+  grid-template-columns:repeat(6,minmax(44px,1fr));
+}
+.play-surface:has(.samurai-shell) .sudoku-tools .check-button,
+.play-surface:has(.samurai-shell) .sudoku-tools .tool-button:nth-last-child(2){
+  grid-column:auto;
+}
+.sudoku-board-host:has(.samurai-shell){
+  width:100%;
+  max-width:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+}
+.samurai-shell{
+  width:min(760px,100%);
+  max-width:100%;
+  margin-inline:auto;
+}
+
+@media(max-width:800px){
+  .play-surface:has(.samurai-shell) .sudoku-tools{
+    grid-template-columns:repeat(4,minmax(44px,1fr));
+  }
+}
+
+@media(max-width:650px){
+  .samurai-shell{
+    width:100%;
+    min-width:0;
+    overflow:auto;
+  }
+  .samurai-board{
+    width:760px;
+    min-width:760px;
+    height:760px;
+    min-height:760px;
+  }
+  .samurai-cell{
+    min-width:0;
+    min-height:0;
+  }
+  .play-surface:has(.samurai-shell) .sudoku-tools{
+    grid-template-columns:repeat(3,minmax(44px,1fr));
+  }
+}

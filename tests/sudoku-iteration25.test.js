@@ -1,0 +1,9 @@
+const test=require('node:test');const assert=require('node:assert/strict');const fs=require('fs'),vm=require('vm');
+const ctx={globalThis:{}};ctx.globalThis=ctx;vm.createContext(ctx);for(const f of ['games/sudoku-bank.js','games/sudoku-bank-iteration20.js','games/sudoku-bank-iteration21.js','games/sudoku-generator.js'])vm.runInContext(fs.readFileSync(f,'utf8'),ctx);
+const v=ctx.SudokuBank.find(x=>x.id==='classic-skyscrapers');
+function visible(a){let m=0,n=0;for(const x of a)if(x>m){m=x;n++}return n}
+test('iteration 25 expands catalogue from 85 to 86 systems',()=>assert.ok(v));
+test('Classic Skyscrapers is a 6x6 Latin square without Sudoku boxes',()=>{assert.equal(v.solution.length,6);for(const r of v.solution)assert.equal(JSON.stringify([...r].sort()),JSON.stringify([1,2,3,4,5,6]));for(let c=0;c<6;c++)assert.equal(JSON.stringify(v.solution.map(r=>r[c]).sort()),JSON.stringify([1,2,3,4,5,6]));assert.equal(v.data.dominoes.length,0)});
+test('all outside clues equal visible building counts',()=>{for(const cl of v.data.clues){let line=cl.axis==='row'?[...v.solution[cl.index]]:v.solution.map(r=>r[cl.index]);if(cl.side==='right'||cl.side==='bottom')line.reverse();assert.equal(visible(line),cl.count)}});
+test('generator is deterministic, unique, and clue-essential',()=>{for(const d of ['gentle','focused','fiendish']){const a=ctx.SudokuGenerator.make(v,250025,d),b=ctx.SudokuGenerator.make(v,250025,d);assert.deepEqual(a.puzzle,b.puzzle);assert.equal(a.generation.unique,true);assert.equal(a.generation.variantEssential,true)}});
+test('Classic Skyscrapers is wired into bilingual Cat Garden skyscraper subgroup',()=>{const i=fs.readFileSync('assets/i18n.js','utf8'),l=fs.readFileSync('games/sudoku-library.js','utf8');assert.match(i,/Klasszikus Lakótelep/);assert.match(fs.readFileSync('games/sudoku-bank-iteration21.js','utf8'),/Classic Skyscrapers/);assert.match(l,/classic-skyscrapers/)});

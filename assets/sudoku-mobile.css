@@ -1,0 +1,302 @@
+/* Post-hardening: keep standard 9x9 Sudoku cells touch-sized on narrow viewports. */
+@media(max-width:650px){
+  .sudoku-board-shell:has(.sudoku-board[style*="--sudoku-size: 9"]){min-width:410px}
+  .sudoku-board-host:has(.sudoku-board[style*="--sudoku-size: 9"]){max-width:100%;overflow-x:auto;overflow-y:hidden}
+}
+
+/* Thermometer overlays must never hide digits beneath the SVG. */
+.thermo-line,.slowthermo-line{stroke-opacity:.32}
+.thermo-line-bulb,.slowthermo-line-bulb{fill-opacity:.16;stroke-opacity:.42}
+
+/* Circular SVG clues must be rings, never opaque discs over Sudoku digits. */
+.sudoku-overlay .arrow-line-bulb,
+.sudoku-overlay .between-line-bulb,
+.sudoku-overlay .zipper-line-bulb,
+.sudoku-overlay .lockout-line-bulb{
+  fill:none;
+  fill-opacity:0;
+  stroke-opacity:.96;
+}
+.sudoku-overlay .arrow-line-bulb{stroke:#687069}
+.sudoku-overlay .between-line-bulb{stroke:#647486;stroke-width:.8}
+.sudoku-overlay .zipper-line-bulb{stroke:#875c8e;stroke-width:.8}
+.sudoku-overlay .lockout-line-bulb{stroke:#526b80;stroke-width:.9}
+
+/* Lines still need to be obvious, but must not paint over the values they cross. */
+.sudoku-overlay .between-line{stroke:#647486;stroke-width:.9;stroke-opacity:.58}
+.sudoku-overlay .zipper-line{stroke:#9a6da0;stroke-width:1.35;stroke-opacity:.58}
+.sudoku-overlay .lockout-line{stroke:#526b80;stroke-width:1.05;stroke-opacity:.62}
+
+/* Quadruple intersection clues need to be readable at normal board scale. */
+.sudoku-quad-marker{
+  min-width:30px;
+  min-height:30px;
+  padding:3px 4px;
+  border:2px solid #79536a;
+  background:color-mix(in srgb,var(--surface) 88%,transparent);
+  color:#592440;
+  font:900 clamp(9px,1.45vw,11px)/1 monospace;
+  letter-spacing:-.08em;
+  box-shadow:0 0 0 1px color-mix(in srgb,var(--surface) 82%,transparent);
+}
+:root[data-theme="dark"] .sudoku-quad-marker{
+  border-color:#e2a7c3;
+  color:#f4d7e5;
+  background:color-mix(in srgb,var(--surface) 86%,transparent);
+}
+
+/* Clone pairs must read as deliberate matching regions rather than faint cell tint. */
+.sudoku-cell.clone-cell{
+  background:
+    repeating-linear-gradient(135deg,transparent 0 8px,color-mix(in srgb,#c46b99 14%,transparent) 8px 11px),
+    color-mix(in srgb,#efb8d2 58%,var(--surface));
+  box-shadow:inset 0 0 0 2px color-mix(in srgb,#b24d80 56%,transparent);
+}
+:root[data-theme="dark"] .sudoku-cell.clone-cell{
+  background:
+    repeating-linear-gradient(135deg,transparent 0 8px,color-mix(in srgb,#ff9bc7 17%,transparent) 8px 11px),
+    color-mix(in srgb,#7f4561 54%,var(--surface));
+  box-shadow:inset 0 0 0 2px color-mix(in srgb,#f088b6 62%,transparent);
+}
+
+/* Odd/even rule clues must be obvious at normal board scale, not tiny corner dots. */
+.sudoku-cell.parity-odd::after,.sudoku-cell.parity-even::after{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:50%;
+  right:auto;
+  bottom:auto;
+  width:clamp(16px,3vw,22px);
+  height:clamp(16px,3vw,22px);
+  transform:translate(-50%,-50%);
+  border:2px solid var(--muted);
+  pointer-events:none;
+}
+.sudoku-cell.parity-odd::after{border-radius:50%}
+.sudoku-cell.parity-even::after{border-radius:2px}
+
+/* Always explain parity symbols next to any board that uses them. */
+.sudoku-board-host:has(.sudoku-cell.parity-odd,.sudoku-cell.parity-even)::after{
+  content:'○ = páratlan / odd   ·   □ = páros / even';
+  display:block;
+  margin-top:2px;
+  color:var(--muted);
+  font:750 12px/1.35 system-ui;
+  letter-spacing:.01em;
+  text-align:left;
+  align-self:flex-start;
+}
+
+/* Outside-clue hardening: diagonal Little Killer clues belong beside the grid. */
+.sudoku-board-shell.has-littlekiller-clues{margin:28px;overflow:visible}
+.sudoku-littlekiller-clue{position:absolute;z-index:9;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;color:var(--accent-strong);font:800 clamp(10px,1.8vw,14px)/1 monospace;text-shadow:0 1px 0 var(--surface)}
+
+/* Hyper Sudoku: the four extra 3x3 houses must read as regions, not just as tinted cells. */
+.sudoku-board.show-hyper .sudoku-cell.hyper-cell{
+  background:color-mix(in srgb,var(--accent-soft) 42%,var(--surface));
+}
+.sudoku-board.show-hyper .sudoku-cell:nth-child(11),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(12),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(13),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(15),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(16),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(17),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(47),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(48),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(49),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(51),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(52),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(53){border-top:2px solid var(--accent-strong)}
+.sudoku-board.show-hyper .sudoku-cell:nth-child(29),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(30),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(31),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(33),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(34),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(35),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(65),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(66),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(67),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(69),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(70),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(71){border-bottom:2px solid var(--accent-strong)}
+.sudoku-board.show-hyper .sudoku-cell:nth-child(11),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(20),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(29),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(15),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(24),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(33),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(47),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(56),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(65),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(51),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(60),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(69){border-left:2px solid var(--accent-strong)}
+.sudoku-board.show-hyper .sudoku-cell:nth-child(13),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(22),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(31),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(17),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(26),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(35),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(49),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(58),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(67),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(53),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(62),
+.sudoku-board.show-hyper .sudoku-cell:nth-child(71){border-right:2px solid var(--accent-strong)}
+
+/* Killer Sudoku: strong dedicated cage colour, distinct from both cell and 3x3 grid lines. */
+.sudoku-board:has(.sudoku-cell.cage-cell){--killer-cage:#c2185b}
+:root[data-theme="dark"] .sudoku-board:has(.sudoku-cell.cage-cell){--killer-cage:#ff78ad}
+.sudoku-cell.cage-top{border-top:0}
+.sudoku-cell.cage-bottom{border-bottom:0}
+.sudoku-cell.cage-left{border-left:0}
+.sudoku-cell.cage-right{border-right:0}
+.sudoku-cell.box-right{border-right:2px solid var(--ink)}
+.sudoku-cell.box-bottom{border-bottom:2px solid var(--ink)}
+.sudoku-cell.cage-cell::after{
+  content:'';
+  position:absolute;
+  left:3px;
+  top:3px;
+  right:3px;
+  bottom:3px;
+  width:auto;
+  height:auto;
+  transform:none;
+  border:2px dashed transparent;
+  border-radius:0;
+  pointer-events:none;
+  z-index:1;
+}
+/* If a cage continues into a neighbouring cell, extend the perimeter to that cell edge.
+   This removes the cell-by-cell gaps while retaining a 3px inset only at real cage walls. */
+.sudoku-cell.cage-cell:not(.cage-left)::after{left:-1px}
+.sudoku-cell.cage-cell:not(.cage-right)::after{right:-1px}
+.sudoku-cell.cage-cell:not(.cage-top)::after{top:-1px}
+.sudoku-cell.cage-cell:not(.cage-bottom)::after{bottom:-1px}
+.sudoku-cell.cage-top::after{border-top-color:var(--killer-cage)}
+.sudoku-cell.cage-bottom::after{border-bottom-color:var(--killer-cage)}
+.sudoku-cell.cage-left::after{border-left-color:var(--killer-cage)}
+.sudoku-cell.cage-right::after{border-right-color:var(--killer-cage)}
+.sudoku-cell[data-cage-sum]::before{
+  left:5px;
+  top:4px;
+  z-index:3;
+  padding:0 2px;
+  border-radius:2px;
+  background:var(--surface);
+  color:var(--killer-cage);
+  font:900 clamp(10px,1.7vw,13px)/1 monospace;
+}
+
+
+/* Ildi feedback: explicit paired Clone regions. */
+.sudoku-cell.clone-cell{position:relative}
+.sudoku-cell.clone-a{
+  background:
+    repeating-linear-gradient(135deg,transparent 0 7px,color-mix(in srgb,#bd477f 22%,transparent) 7px 10px),
+    color-mix(in srgb,#efb8d2 62%,var(--surface));
+  box-shadow:inset 0 0 0 3px color-mix(in srgb,#a83d72 72%,transparent);
+}
+.sudoku-cell.clone-b{
+  background:
+    repeating-linear-gradient(45deg,transparent 0 7px,color-mix(in srgb,#5477aa 22%,transparent) 7px 10px),
+    color-mix(in srgb,#bfd5ef 62%,var(--surface));
+  box-shadow:inset 0 0 0 3px color-mix(in srgb,#426994 72%,transparent);
+}
+
+/* Between Lines: both endpoint circles must remain visible and transparent. */
+.sudoku-overlay .between-line-endcap{stroke:transparent;stroke-width:0}
+.sudoku-overlay .between-line-endcap-bulb{
+  fill:none;
+  fill-opacity:0;
+  stroke:#647486;
+  stroke-width:.8;
+  stroke-opacity:.96;
+}
+
+/* Little Killer: move close diagonal clues farther outside the grid and give them a legible plate. */
+.sudoku-board-shell.has-littlekiller-clues{margin:42px;overflow:visible}
+.sudoku-littlekiller-clue{
+  z-index:12;
+  padding:3px 5px;
+  border:1px solid color-mix(in srgb,var(--accent-strong) 34%,transparent);
+  border-radius:4px;
+  background:color-mix(in srgb,var(--surface) 94%,transparent);
+  box-shadow:0 1px 4px #0002;
+  font:900 clamp(11px,1.9vw,15px)/1 monospace;
+}
+
+/* Quadruple: four digits should read as four separate clue values. */
+.sudoku-quad-marker{
+  min-width:44px;
+  min-height:34px;
+  padding:4px 6px;
+  font:900 clamp(10px,1.65vw,13px)/1 monospace;
+  letter-spacing:0;
+  white-space:nowrap;
+}
+
+/* Fortress: clear shading without obscuring the actual digit. */
+.sudoku-cell.fortress-cell{
+  background:
+    linear-gradient(135deg,color-mix(in srgb,#e6bd63 28%,transparent),transparent 58%),
+    color-mix(in srgb,#f3deb0 52%,var(--surface));
+  box-shadow:inset 0 0 0 3px color-mix(in srgb,#9b6c14 58%,transparent);
+}
+
+/* Ildi feedback hardening — shared Sudoku rendering. */
+
+/*
+ * Cell gaps can disappear unevenly at fractional browser zoom.
+ * Draw the common grid from cell borders instead of 1px CSS grid gaps.
+ */
+.sudoku-board{
+  gap:0!important;
+  background:var(--surface)!important;
+}
+.sudoku-cell{
+  border-right:1px solid var(--line-strong)!important;
+  border-bottom:1px solid var(--line-strong)!important;
+}
+/* Preserve structural 3x3 dividers where that rule really exists. */
+.sudoku-cell.box-right{
+  border-right:3px solid var(--ink)!important;
+}
+.sudoku-cell.box-bottom{
+  border-bottom:3px solid var(--ink)!important;
+}
+
+/* Double Skyscrapers is a Latin-style rule: no decorative 2x3 boxes. */
+.sudoku-board.ildi-no-box-grid .sudoku-cell.box-right{
+  border-right:1px solid var(--line-strong)!important;
+}
+.sudoku-board.ildi-no-box-grid .sudoku-cell.box-bottom{
+  border-bottom:1px solid var(--line-strong)!important;
+}
+
+/* Inside Skyscrapers: make direction arrows easier to see. */
+.sudoku-inside-sky-marker{
+  font-size:clamp(15px,2vw,22px)!important;
+  line-height:1!important;
+  filter:drop-shadow(0 1px 0 var(--surface));
+}
+
+/* Diagonal Skyscrapers: give outside clues enough visual room. */
+.sudoku-diagonal-sky-marker{
+  min-width:32px!important;
+  min-height:24px;
+  padding:4px 6px!important;
+  font-size:clamp(11px,1.5vw,15px)!important;
+  z-index:12!important;
+}
+
+/* Even/Odd clues: larger ring/square while leaving the digit readable. */
+.sudoku-cell.parity-odd::after,
+.sudoku-cell.parity-even::after{
+  width:clamp(22px,3.7vw,30px)!important;
+  height:clamp(22px,3.7vw,30px)!important;
+  border-width:2px!important;
+  border-color:color-mix(in srgb,var(--muted) 72%,transparent)!important;
+}

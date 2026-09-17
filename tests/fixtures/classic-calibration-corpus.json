@@ -1,0 +1,23 @@
+[
+  {
+    "id": "solved-grid",
+    "puzzle": "123456789456789123789123456214365897365897214897214365531642978642978531978531642",
+    "expectedBand": "gentle",
+    "source": "synthetic-controlled",
+    "tags": ["baseline", "solved"]
+  },
+  {
+    "id": "single-missing-cell",
+    "puzzle": ".23456789456789123789123456214365897365897214897214365531642978642978531978531642",
+    "expectedBand": "gentle",
+    "source": "synthetic-controlled",
+    "tags": ["baseline", "single"]
+  },
+  {
+    "id": "diagonal-nine-missing",
+    "puzzle": ".234567894.678912378.123456214.658973658.721489721.365531642.786429785.197853164.",
+    "expectedBand": "gentle",
+    "source": "synthetic-controlled",
+    "tags": ["baseline", "multi-single"]
+  }
+]

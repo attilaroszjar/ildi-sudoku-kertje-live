@@ -1,0 +1,30 @@
+[
+  {
+    "id": "arto-inkala-2012",
+    "puzzle": "8..........36......7..9.2...5...7.......457.....1...3...1....68..85...1..9....4..",
+    "expectedBand": "brutal",
+    "source": "external-curated-benchmark",
+    "tags": ["brutal", "curated", "full-puzzle", "inkala", "published-benchmark"],
+    "metadata": {
+      "creator": "Arto Inkala",
+      "year": 2012,
+      "benchmarkRole": "external-hardness-anchor",
+      "sourceReference": "widely published as Arto Inkala's 2012 hardest Sudoku; grid cross-checked against public benchmark reproductions",
+      "evidenceNote": "External sources describe this puzzle as requiring deep chains / forcing-style reasoning. The repository must independently verify uniqueness, human-solver status and measured band."
+    }
+  },
+  {
+    "id": "ai-escargot-2006",
+    "puzzle": "1....7.9..3..2...8..96..5....53..9...1..8...26....4...3......1..4......7..7...3..",
+    "expectedBand": "brutal",
+    "source": "external-curated-benchmark",
+    "tags": ["ai-escargot", "brutal", "curated", "full-puzzle", "inkala", "published-benchmark"],
+    "metadata": {
+      "creator": "Arto Inkala",
+      "year": 2006,
+      "benchmarkRole": "external-hardness-anchor",
+      "sourceReference": "AI Escargot public benchmark grid, attributed to Arto Inkala",
+      "evidenceNote": "External sources describe this puzzle as an exceptionally difficult human Sudoku. The repository must independently verify uniqueness, human-solver status and measured band."
+    }
+  }
+]

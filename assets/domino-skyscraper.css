@@ -1,0 +1,28 @@
+/* Hard-playtest #13: Domino Skyscrapers domino cells must stay visually distinct from ordinary entered/fixed cells. */
+:root{
+  --domino-sky-border:#1f7782;
+  --domino-sky-fill:#bfe7ec;
+  --domino-sky-ink:#245f68;
+}
+:root[data-theme="dark"]{
+  --domino-sky-border:#85d8df;
+  --domino-sky-fill:#28555b;
+  --domino-sky-ink:#d7f6f8;
+}
+
+.sudoku-cell.domino-cell{
+  background:color-mix(in srgb,var(--domino-sky-fill) 82%,var(--surface,#fff))!important;
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--domino-sky-border) 26%,transparent);
+  position:relative;
+  z-index:1;
+}
+.sudoku-cell.domino-cell.fixed{
+  background:color-mix(in srgb,var(--domino-sky-fill) 88%,var(--surface,#fff))!important;
+  color:var(--domino-sky-ink)!important;
+}
+/* Shared Sudoku grid hardening uses !important borders, so domino perimeter edges must
+   explicitly win on the sides that form the outside of each paired region. */
+.sudoku-cell.domino-top{border-top:3px solid var(--domino-sky-border)!important}
+.sudoku-cell.domino-bottom{border-bottom:3px solid var(--domino-sky-border)!important}
+.sudoku-cell.domino-left{border-left:3px solid var(--domino-sky-border)!important}
+.sudoku-cell.domino-right{border-right:3px solid var(--domino-sky-border)!important}

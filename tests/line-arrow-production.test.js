@@ -1,0 +1,7 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const root=path.resolve(__dirname,'..');
+function context(){const c={console,globalThis:null,window:null,Map,Set,WeakMap};c.globalThis=c;c.window=c;vm.createContext(c);for(const f of ['games/sudoku-bank.js','games/sudoku-generator.js','games/line-generator-core.js','games/line-generator-arrow.js','games/line-generator-arrow-hardening.js'])vm.runInContext(fs.readFileSync(path.join(root,f),'utf8'),c);return c;}
+function variant(c){const v=c.SudokuBank.find(x=>x.id==='arrow');assert.ok(v);return v;}
+test('production make() routes Arrow through fresh generator',()=>{const c=context(),v=variant(c);for(const d of ['gentle','focused','expert']){const p=c.SudokuGenerator.make(v,0x41525277,d);assert.equal(p.generation.pilot,false);assert.equal(p.generation.mode,'seeded-variant-essential');assert.equal(p.generation.variantEssential,true);assert.equal(c.SudokuGenerator.countVariantSolutions(p.puzzle,p,2),1);assert.ok(c.SudokuGenerator.countSolutions(p.puzzle,2)>1);for(const a of p.data.arrows)assert.ok(c.LineGeneratorArrow.arrowValid(p.solution,a));}});
+test('production Arrow is deterministic',()=>{const c=context(),v=variant(c),a=c.SudokuGenerator.make(v,0x41525555,'focused'),b=c.SudokuGenerator.make(v,0x41525555,'focused');assert.deepEqual(a.puzzle,b.puzzle);assert.deepEqual(a.solution,b.solution);assert.deepEqual(a.data,b.data);});

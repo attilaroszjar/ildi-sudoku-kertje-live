@@ -1,0 +1,91 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {performance} from 'node:perf_hooks';
+import {fileURLToPath,pathToFileURL} from 'node:url';
+
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const seed=92001;
+const difficulty='expert';
+const id='toroidal-skyscrapers';
+
+function cloneGrid(grid){return grid.map(row=>row.slice());}
+function countGivens(grid,clueMap){let total=0;for(let r=0;r<grid.length;r++)for(let c=0;c<grid[r].length;c++)if(grid[r][c]&&!clueMap.has(`${r},${c}`))total++;return total;}
+function round1(value){return Math.round(value*10)/10;}
+
+const index=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const refs=[...index.matchAll(/<script src="([^"]+)"><\/script>/g)].map(match=>match[1]).filter(ref=>ref.startsWith('games/'));
+const bankRefs=refs.filter(ref=>/^games\/sudoku-bank(?:-iteration\d+)?\.js$/.test(ref));
+const firstGenerator=refs.indexOf('games/sudoku-generator.js');
+const lastGenerator=refs.indexOf('games/p3-size-control.js');
+if(firstGenerator<0||lastGenerator<firstGenerator)throw new Error('production Sudoku runtime range not found');
+const generatorRefs=refs.slice(firstGenerator,lastGenerator+1);
+const loadRefs=[...bankRefs,...generatorRefs.filter(ref=>!bankRefs.includes(ref))];
+
+globalThis.window=globalThis;
+globalThis.localStorage={getItem(){return null;},setItem(){},removeItem(){}};
+for(const ref of loadRefs)await import(pathToFileURL(path.join(root,ref)).href);
+
+const generator=globalThis.SudokuGenerator;
+if(!generator||!Array.isArray(globalThis.SudokuBank))throw new Error('production Sudoku runtime failed to load');
+if(typeof generator.countToroidalSkyscraperSolutions!=='function')throw new Error('countToroidalSkyscraperSolutions is unavailable');
+const variant=globalThis.SudokuBank.find(entry=>entry&&entry.id===id);
+if(!variant)throw new Error(`${id} not found in production SudokuBank`);
+
+const generationStart=performance.now();
+const generated=generator.make(variant,seed,difficulty);
+const generationMs=performance.now()-generationStart;
+if(!generated||!Array.isArray(generated.puzzle))throw new Error('Toroidal Skyscraper production generator returned no puzzle');
+
+const toroidalClues=Array.isArray(generated.data?.toroidalClues)?generated.data.toroidalClues:[];
+const clueMap=new Set(toroidalClues.map(cl=>`${cl.cell?.[0]},${cl.cell?.[1]}`));
+function countVariant(grid,ignoreSpecial=false){return generator.countToroidalSkyscraperSolutions(grid,generated,2,ignoreSpecial);}
+
+const givens=countGivens(generated.puzzle,clueMap);
+const total=generated.puzzle.reduce((sum,row)=>sum+row.length,0)-clueMap.size;
+const baselineStart=performance.now();
+const baseline=countVariant(generated.puzzle,false);
+const baselineMs=performance.now()-baselineStart;
+const baseWithoutSpecial=countVariant(generated.puzzle,true);
+
+console.log(`TOROIDAL_SKYSCRAPER_EXPERT_FRONTIER seed=${seed} difficulty=${difficulty} hostRealm=true`);
+console.log(`START givens=${givens}/${total} density=${(givens/total).toFixed(3)} generationMs=${round1(generationMs).toFixed(1)}`);
+console.log(`BASELINE variantSolutions=${baseline} baseSolutions=${baseWithoutSpecial} variantEssential=${baseline===1&&baseWithoutSpecial!==1} runtimeMs=${round1(baselineMs).toFixed(1)} counter=countToroidalSkyscraperSolutions`);
+console.log(`STRUCTURE toroidalClues=${toroidalClues.length} clueCells=${clueMap.size}`);
+console.log(`GENERATOR_METADATA ${JSON.stringify(generated.generation||{})}`);
+
+const checks=[];
+for(let r=0;r<generated.puzzle.length;r++){
+  for(let c=0;c<generated.puzzle[r].length;c++){
+    if(clueMap.has(`${r},${c}`))continue;
+    const value=generated.puzzle[r][c];
+    if(!value)continue;
+    const candidate=cloneGrid(generated.puzzle);
+    candidate[r][c]=0;
+    const t0=performance.now();
+    const variantSolutions=countVariant(candidate,false);
+    const elapsedMs=performance.now()-t0;
+    const removableByUniqueness=variantSolutions===1;
+    let baseSolutions=null;
+    let variantEssential=null;
+    if(removableByUniqueness){baseSolutions=countVariant(candidate,true);variantEssential=baseSolutions!==1;}
+    checks.push({row:r+1,col:c+1,value,variantSolutions,baseSolutions,variantEssential,removable:removableByUniqueness&&variantEssential!==false,elapsedMs});
+  }
+}
+
+const removable=checks.filter(check=>check.removable);
+const rejected=checks.filter(check=>!check.removable);
+const slowest=checks.slice().sort((a,b)=>b.elapsedMs-a.elapsedMs).slice(0,10);
+for(const check of checks)console.log(`FRONTIER_CHECK r${check.row}c${check.col} value=${check.value} variantSolutions=${check.variantSolutions} baseSolutions=${check.baseSolutions===null?'n/a':check.baseSolutions} variantEssential=${check.variantEssential===null?'n/a':check.variantEssential} removable=${check.removable} runtimeMs=${round1(check.elapsedMs).toFixed(1)}`);
+for(const check of slowest)console.log(`SLOWEST_CHECK r${check.row}c${check.col} removable=${check.removable} runtimeMs=${round1(check.elapsedMs).toFixed(1)}`);
+console.log(`FRONTIER_SUMMARY startingGivens=${givens} removable=${removable.length} rejected=${rejected.length} locallyIrreducible=${baseline===1&&baseWithoutSpecial!==1&&removable.length===0} slowestMs=${round1(slowest[0]?.elapsedMs||0).toFixed(1)}`);
+
+const failures=[];
+if(baseline!==1)failures.push(`baseline variant solutions=${baseline}, expected 1`);
+if(baseWithoutSpecial===1)failures.push('baseline is not variant-essential without Toroidal Skyscraper special rules');
+if(generated.generation?.unique!==true)failures.push('generation.unique is not true');
+if(generated.generation?.seed!==seed)failures.push(`generation.seed=${generated.generation?.seed}, expected ${seed}`);
+if(generated.generation?.variantEssential!==true)failures.push('generation.variantEssential is not true');
+if(toroidalClues.length===0)failures.push('toroidal clue structure is empty');
+
+if(failures.length){for(const failure of failures)console.error(`TOROIDAL_SKYSCRAPER_EXPERT_FRONTIER_FAILURE ${failure}`);console.log('TOROIDAL_SKYSCRAPER_EXPERT_FRONTIER:FAIL');process.exitCode=1;}
+else console.log('TOROIDAL_SKYSCRAPER_EXPERT_FRONTIER:PASS');

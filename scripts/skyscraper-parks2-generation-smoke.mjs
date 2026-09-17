@@ -1,0 +1,37 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {performance} from 'node:perf_hooks';
+import {fileURLToPath,pathToFileURL} from 'node:url';
+
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const seed=92001,difficulty='expert',id='skyscraper-parks2';
+const index=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const refs=[...index.matchAll(/<script src="([^"]+)"><\/script>/g)].map(m=>m[1]).filter(ref=>ref.startsWith('games/'));
+const bankRefs=refs.filter(ref=>/^games\/sudoku-bank(?:-iteration\d+)?\.js$/.test(ref));
+const firstGenerator=refs.indexOf('games/sudoku-generator.js');
+const lastGenerator=refs.indexOf('games/p3-size-control.js');
+if(firstGenerator<0||lastGenerator<firstGenerator)throw new Error('production Sudoku runtime range not found');
+const generatorRefs=refs.slice(firstGenerator,lastGenerator+1);
+const loadRefs=[...bankRefs,...generatorRefs.filter(ref=>!bankRefs.includes(ref))];
+globalThis.window=globalThis;
+globalThis.localStorage={getItem(){return null;},setItem(){},removeItem(){}};
+for(const ref of loadRefs)await import(pathToFileURL(path.join(root,ref)).href);
+const generator=globalThis.SudokuGenerator;
+const variant=globalThis.SudokuBank.find(entry=>entry&&entry.id===id);
+if(!generator||!variant)throw new Error('Parks2 production runtime unavailable');
+const t0=performance.now();
+const out=generator.make(variant,seed,difficulty);
+const ms=performance.now()-t0;
+if(!out||!Array.isArray(out.puzzle))throw new Error('Parks2 generator returned no puzzle');
+let givens=0;for(const row of out.puzzle)for(const v of row)if(v)givens++;
+console.log(`PARKS2_GENERATION_SMOKE seed=${seed} difficulty=${difficulty} givens=${givens} generationMs=${ms.toFixed(1)}`);
+console.log(`PARKS2_GENERATION_METADATA ${JSON.stringify(out.generation||{})}`);
+const g=out.generation||{};
+const failures=[];
+if(g.verification!=='solver-verified-local-irreducible')failures.push(`verification=${g.verification}`);
+if(g.policy!=='contract-driven-local-irreducibility')failures.push(`policy=${g.policy}`);
+if(g.locallyIrreducibleUnderProductionContract!==true)failures.push('locallyIrreducibleUnderProductionContract is not true');
+if(g.variantEssentialityProof!=='monotone-base-nonuniqueness-under-clue-removal')failures.push(`variantEssentialityProof=${g.variantEssentialityProof}`);
+if(g.uniquenessProof!=='exact-unique-invariant-through-verified-removal-pass')failures.push(`uniquenessProof=${g.uniquenessProof}`);
+if(failures.length){for(const f of failures)console.error(`PARKS2_GENERATION_SMOKE_FAILURE ${f}`);console.log('PARKS2_GENERATION_SMOKE:FAIL');process.exitCode=1;}
+else console.log('PARKS2_GENERATION_SMOKE:PASS');

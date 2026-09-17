@@ -1,0 +1,328 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-09-14",
+  "statusValues": [
+    "OPEN",
+    "IN_PROGRESS",
+    "VERIFY",
+    "CLOSED"
+  ],
+  "priorityValues": [
+    "P0",
+    "P1",
+    "P2",
+    "P3"
+  ],
+  "items": [
+    {
+      "id": "JP-SIZE-HITORI",
+      "gameId": "hitori",
+      "status": "CLOSED",
+      "priority": "P3",
+      "type": "SIZE",
+      "summary": "Többféle és nagyobb táblaméret.",
+      "closedAt": "2026-09-10",
+      "evidence": "Hitori now supports independent 5x5, 6x6, 7x7, 8x8 and 9x9 board sizes. The 9x9 generator uses a strengthened duplicate-witness constraint topology; all generated puzzles are exact-unique under countHitoriSolutions. Difficulty remains independent from size and is selected by measured solver effort. Runtime dimensions derive from the generated puzzle size and a dedicated size selector is exposed. Targeted production gate PASS at implementation source 1bb3383."
+    },
+    {
+      "id": "JP-SIZE-HASHI",
+      "gameId": "hashiwokakero",
+      "status": "CLOSED",
+      "priority": "P3",
+      "type": "SIZE",
+      "summary": "Többféle és nagyobb Hidak / Hashiwokakero tábla.",
+      "closedAt": "2026-09-13",
+      "evidence": "Hashiwokakero now supports independent 6x6, 7x7, 8x8, 9x9 and 10x10 board sizes through the shared P3 size selector. Generation uses a deterministic seeded staircase/tree visibility topology with legal 1/2 bridge multiplicities, no crossings and exact island clue derivation. The visibility graph is constructed as a tree, making the bridge counts structurally well constrained, while countBridgesSolutions remains the authoritative exact uniqueness certificate. Deterministic replay, structural diversity, clue consistency, difficulty independence and shared size-selector integration are covered by tests/p3-hashiwokakero-complete.test.js. The only observed targeted failure was a VM cross-realm deepStrictEqual assertion artifact; after normalizing that test comparison the previously failing cases PASS. Implementation source 29739fa."
+    },
+    {
+      "id": "JP-SIZE-FILLOMINO",
+      "gameId": "fillomino",
+      "status": "CLOSED",
+      "priority": "P3",
+      "type": "SIZE",
+      "summary": "Többféle és nagyobb táblaméret.",
+      "closedAt": "2026-09-10",
+      "evidence": "Fillomino now supports independent 5x5, 6x6, 7x7 and 8x8 board sizes. The production solution generator uses deterministic valid row-partition construction with seeded transformations, then exact-unique clue carving certified by countFillominoSolutions. Size is independent from difficulty and uses the shared P3 size selector. Deterministic replay, seed diversity, solution validity and exact uniqueness are covered by tests/p3-fillomino-complete.test.js. Implementation source bbcfddc."
+    },
+    {
+      "id": "JP-SIZE-SLITHERLINK",
+      "gameId": "slitherlink",
+      "status": "CLOSED",
+      "priority": "P3",
+      "type": "SIZE",
+      "summary": "Többféle és nagyobb táblaméret.",
+      "closedAt": "2026-09-13",
+      "evidence": "Slitherlink now supports independent 4x4, 5x5, 6x6, 7x7 and 8x8 board sizes through the shared P3 size selector. Generation uses seeded connected polyomino boundaries to synthesize a genuine single loop, derives clues from that loop and performs only bounded exact-uniqueness-preserving clue carving. The exact Slitherlink solver was performance-hardened with constraint propagation for cell clues and vertex degrees, followed by tightness-based branching. Targeted production gate PASS 4/4 in approximately 270 ms at source 439512b."
+    },
+    {
+      "id": "JP-SIZE-AKARI",
+      "gameId": "akari",
+      "status": "CLOSED",
+      "priority": "P3",
+      "type": "SIZE",
+      "summary": "Többféle és nagyobb táblaméret.",
+      "closedAt": "2026-09-10",
+      "evidence": "Akari now supports independent 5x5, 6x6, 7x7, 8x8 and 9x9 board sizes using the shared P3 size selector. Generation creates seeded wall layouts, derives a valid bulb solution, numbers walls from that solution and performs bounded clue reduction. Every final puzzle is exact-unique under countAkariSolutions. Deterministic replay, size independence, seed/topology diversity, solution validity and shared-selector integration are covered by tests/p3-akari-complete.test.js. Targeted gate PASS 4/4 in about 258 ms at source e0a5107."
+    },
+    {
+      "id": "JP-SIZE-NURIKABE",
+      "gameId": "nurikabe",
+      "status": "CLOSED",
+      "priority": "P3",
+      "type": "SIZE",
+      "summary": "Többféle és nagyobb táblaméret.",
+      "closedAt": "2026-09-10",
+      "evidence": "Nurikabe now supports independent 5x5, 6x6, 7x7 and 8x8 board sizes using the shared P3 size selector. Generation creates seeded connected sea topologies with no 2x2 sea blocks, derives one numbered clue per island and validates exact uniqueness through countNurikabeSolutions. The generator was performance-hardened with deterministic sea starters, batched ambiguity reduction and bounded attempts. Targeted production gate PASS 4/4 in about 315 ms at source b6e6830."
+    },
+    {
+      "id": "JP-SIZE-NONOGRAM",
+      "gameId": "nonogram",
+      "status": "CLOSED",
+      "priority": "P3",
+      "type": "SIZE",
+      "summary": "Többféle és nagyobb Nonogram.",
+      "closedAt": "2026-09-10",
+      "evidence": "Nonogram now supports independent 5x5, 6x6, 8x8 and 10x10 board sizes. Puzzle generation is size-aware and solver-certified by countNonogramSolutions. Size is independent from difficulty and the shared P3 size selector is used. Deterministic replay, seed diversity, valid row/column clues and exact uniqueness are covered by tests/p3-nonogram-complete.test.js. Implementation source 00c407c."
+    },
+    {
+      "id": "JP-UX-NONOGRAM-ROW",
+      "gameId": "nonogram",
+      "status": "CLOSED",
+      "priority": "P1",
+      "type": "UX",
+      "summary": "Az X jelölés ne változtassa meg a sormagasságot.",
+      "closedAt": "2026-09-10",
+      "evidence": "Fixed explicit Nonogram row tracks and cell sizing; P1_LAYOUT_GATE:PASS at 6fd7995."
+    },
+    {
+      "id": "JP-SIZE-MASYU",
+      "gameId": "masyu",
+      "status": "CLOSED",
+      "priority": "P3",
+      "type": "SIZE",
+      "summary": "Többféle és nagyobb Masyu.",
+      "closedAt": "2026-09-13",
+      "evidence": "Masyu now supports independent 4x4, 5x5, 6x6, 7x7 and 8x8 board sizes through the shared P3 size selector. The multi-size generator creates deterministic seeded loop topologies and derives valid white and black circle clues from the generated loop. Exact uniqueness is certified by a propagation-first Masyu solver that applies vertex degree constraints and Masyu clue semantics before branching. The existing independent Masyu correctness audit remains authoritative. Targeted production gate PASS 4/4 in approximately 516 ms at source 7707649."
+    },
+    {
+      "id": "JP-UX-MASYU-CIRCLE",
+      "gameId": "masyu",
+      "status": "CLOSED",
+      "priority": "P1",
+      "type": "UX",
+      "summary": "A körök legyenek pontosan a cellák közepén.",
+      "closedAt": "2026-09-10",
+      "evidence": "Masyu clue coordinates are mathematical cell centres and the half-cell background-grid offset was removed; P1_LAYOUT_GATE:PASS at 6fd7995."
+    },
+    {
+      "id": "JP-CORRECT-MASYU",
+      "gameId": "masyu",
+      "status": "CLOSED",
+      "priority": "P0",
+      "type": "CORRECTNESS",
+      "summary": "A generált pályák megoldhatóságának és helyességének auditja.",
+      "closedAt": "2026-09-10",
+      "evidence": "Independent Masyu rule audit and uniqueness corpus PASS; test:recent PASS at 217178e."
+    },
+    {
+      "id": "JP-SIZE-STARBATTLE",
+      "gameId": "star-battle",
+      "status": "CLOSED",
+      "priority": "P3",
+      "type": "SIZE",
+      "summary": "Többféle és nagyobb Csillagkert.",
+      "closedAt": "2026-09-10",
+      "evidence": "Star Battle now supports independent 5x5, 6x6, 7x7, 8x8 and 9x9 board sizes. Size is independent from difficulty. Region synthesis is uniqueness-guided and every generated puzzle is certified by countStarBattleSolutions. Deterministic replay, seed/topology diversity, solution validity, exact uniqueness, difficulty independence, runtime dimension handling and the dedicated size selector are covered by tests/p3-star-battle-complete.test.js. Implementation source 216c6a9."
+    },
+    {
+      "id": "JP-UX-STARBATTLE-ROW",
+      "gameId": "star-battle",
+      "status": "CLOSED",
+      "priority": "P1",
+      "type": "UX",
+      "summary": "A jelölés ne változtassa meg a sor magasságát.",
+      "closedAt": "2026-09-10",
+      "evidence": "Fixed explicit newlogic row tracks so marker content cannot resize Star Battle rows; P1_LAYOUT_GATE:PASS at 6fd7995."
+    },
+    {
+      "id": "JP-SIZE-GALAXIES",
+      "gameId": "tentai-show",
+      "status": "CLOSED",
+      "priority": "P3",
+      "type": "SIZE",
+      "summary": "Többféle és nagyobb Csillaggalaxisok.",
+      "closedAt": "2026-09-10",
+      "evidence": "Tentaisho / Galaxies now supports independent 4x4, 5x5, 6x6, 7x7 and 8x8 board sizes. Size is independent from difficulty. Seeded rectangular galaxy tilings are solver-certified by countGalaxiesSolutions; deterministic replay, topology diversity, exact uniqueness, measured difficulty ordering, runtime sizing and the dedicated size selector are covered by tests/p3-galaxies-complete.test.js. Implementation source 926a904."
+    },
+    {
+      "id": "JP-SIZE-RIPPLE",
+      "gameId": "ripple-effect",
+      "status": "CLOSED",
+      "priority": "P3",
+      "type": "SIZE",
+      "summary": "Többféle és nagyobb Hullámhatás.",
+      "closedAt": "2026-09-13",
+      "evidence": "Ripple Effect now supports independent 5x5, 6x6, 7x7 and 8x8 board sizes through the shared P3 size selector. The final generator uses a deterministic solver-valid cyclic construction with seed-dependent orientation, offset and value permutation, followed by bounded clue carving under exact countRippleEffectSolutions uniqueness checks. The initial arbitrary-room implementation was rejected because some 6x6-8x8 topologies had no complete solution; the final construction eliminates that failure mode by construction. Targeted production gate PASS 4/4 in approximately 249 ms at source 507673b."
+    },
+    {
+      "id": "JP-SIZE-BATTLESHIPS",
+      "gameId": "battleships",
+      "status": "CLOSED",
+      "priority": "P3",
+      "type": "SIZE",
+      "summary": "Többféle és nagyobb Rejtett Flotta.",
+      "closedAt": "2026-09-13",
+      "evidence": "Battleships / Rejtett Flotta now supports independent 5x5, 6x6, 7x7 and 8x8 board sizes through the shared P3 size selector. The generator uses size-specific fleets, deterministic seeded fleet placement and bounded uniqueness-given construction. The exact solver uses row/column deficit pruning, given-state pruning and mandatory-cell reachability pruning. Every generated puzzle is exact-unique under the Battleships rules. Deterministic replay, seed diversity, fleet validity, difficulty independence and shared size-selector integration are covered by tests/p3-battleships-complete.test.js. Targeted production gate PASS 4/4 in approximately 577 ms at source 7a0a6f1."
+    },
+    {
+      "id": "JP-SIZE-HEYAWAKE",
+      "gameId": "heyawake",
+      "status": "CLOSED",
+      "priority": "P3",
+      "type": "SIZE",
+      "summary": "Többféle és nagyobb Szobakert.",
+      "closedAt": "2026-09-10",
+      "evidence": "Heyawake now supports independent 5x5, 6x6, 7x7, 8x8 and 9x9 board sizes using the shared P3 size selector. Generation creates seeded room partitions and valid black-cell solutions, derives room clues and adds only the starter information required for exact uniqueness. The generator was performance-hardened by replacing per-cell repeated uniqueness searches and reverse minimization with batched deterministic starter seeding and bounded refinement. countHeyawakeSolutions remains the final exact certificate. Targeted multi-size/runtime gate PASS 4/4 in about 168 ms at source e7b8e8c."
+    },
+    {
+      "id": "JP-UX-HEYAWAKE-X",
+      "gameId": "heyawake",
+      "status": "CLOSED",
+      "priority": "P1",
+      "type": "UX",
+      "summary": "Explicit X jelölés támogatása.",
+      "closedAt": "2026-09-10",
+      "evidence": "Heyawake now cycles empty -> shaded -> X -> empty with accessible mixed state and updated hint; P1_RULES_HEYAWAKE_GATE:PASS at 495e5c0."
+    },
+    {
+      "id": "JP-SIZE-FUTOSHIKI",
+      "gameId": "futoshiki",
+      "status": "CLOSED",
+      "priority": "P3",
+      "type": "SIZE",
+      "summary": "Kisebb és többféle Futoshiki táblaméret.",
+      "closedAt": "2026-09-10",
+      "evidence": "Futoshiki now supports independent 4x4, 5x5, 6x6, 7x7 and 8x8 board sizes. Seeded Latin-square generation and derived inequality topology are validated by countFutoshikiSolutions. Size is independent from difficulty; givens are reduced under exact uniqueness and measured solver effort is retained for difficulty ordering. Runtime dimensions derive from puzzle length and a dedicated size selector is exposed. Targeted production gate PASS at implementation source 347589b."
+    },
+    {
+      "id": "JP-CORRECT-AQUARIUM-LOCK",
+      "gameId": "aquarium",
+      "status": "CLOSED",
+      "priority": "P0",
+      "type": "CORRECTNESS",
+      "summary": "Megoldás után a játék ne maradjon szerkeszthető.",
+      "closedAt": "2026-09-10",
+      "evidence": "Global solved-state immutability guard implemented; solved-state runtime regression PASS; test:recent PASS at 217178e."
+    },
+    {
+      "id": "JP-RULE-SHAKASHAKA",
+      "gameId": "shakashaka",
+      "status": "CLOSED",
+      "priority": "P1",
+      "type": "RULES",
+      "summary": "A számozott mező melletti háromszögek szabályának pontosítása és ellenőrzése.",
+      "closedAt": "2026-09-10",
+      "evidence": "Rule text now states orthogonal-only numbered adjacency and orientation-independent triangle counting, matching solver semantics; P1_RULES_HEYAWAKE_GATE:PASS at 495e5c0."
+    },
+    {
+      "id": "JP-CORRECT-YAJILIN",
+      "gameId": "yajilin",
+      "status": "CLOSED",
+      "priority": "P0",
+      "type": "CORRECTNESS",
+      "summary": "Generátor- és szabályhelyességi audit.",
+      "closedAt": "2026-09-10",
+      "evidence": "Independent Yajilin rule audit across all difficulty bands PASS; targeted 6/6 and test:recent PASS at 217178e."
+    },
+    {
+      "id": "JP-RULE-LITS",
+      "gameId": "lits",
+      "status": "CLOSED",
+      "priority": "P1",
+      "type": "RULES",
+      "summary": "A Tetrominókert szabályleírásának és játéklogikájának auditja.",
+      "closedAt": "2026-09-10",
+      "evidence": "Rule text now exposes all solver-enforced LITS constraints: one L/I/T/S tetromino per region, global shaded connectivity, no 2x2 shaded block, and no orthogonally touching equal shapes across regions; P1_RULES_HEYAWAKE_GATE:PASS at 495e5c0."
+    },
+    {
+      "id": "SUD-DIFF-SKY",
+      "gameId": "skyscraper",
+      "status": "CLOSED",
+      "priority": "P2",
+      "type": "DIFFICULTY",
+      "summary": "A nehéz 6×6 szint túl könnyű; újrakalibrálás.",
+      "closedAt": "2026-09-10",
+      "evidence": "Expert recalibrated to 20 outside clues while retaining 27 givens; targeted P2 gate 2/2 PASS at 32761b5; post-calibration census 4/4 PASS."
+    },
+    {
+      "id": "SUD-SIZE-SKY-7-8",
+      "gameId": "skyscraper",
+      "status": "CLOSED",
+      "priority": "P3",
+      "type": "SIZE",
+      "summary": "7×7 és 8×8 méret támogatása.",
+      "closedAt": "2026-09-13",
+      "evidence": "Classic Skyscraper now supports independent 7x7, 8x8 and the established 9x9 production size through the shared P3 size selector. The new 7x7 and 8x8 path uses deterministic seeded Latin-square generation with exact four-side Skyscraper visibility clues. Generated puzzles are solver-certified unique under the Latin plus visibility rules and deliberately remain ambiguous without the visibility clues, proving variant essentiality. The existing 9x9 P2-calibrated production path is preserved unchanged. Deterministic replay, seed diversity, size/difficulty independence and shared-selector integration are covered by tests/p3-skyscraper-complete.test.js. Targeted production gate PASS 5/5 in approximately 686 ms at implementation source e9de9a1."
+    },
+    {
+      "id": "SUD-DIFF-DOUBLE-SKY",
+      "gameId": "double-skyscrapers",
+      "status": "CLOSED",
+      "priority": "P2",
+      "type": "DIFFICULTY",
+      "summary": "A nehéz szint túl könnyű; újrakalibrálás.",
+      "closedAt": "2026-09-10",
+      "evidence": "Expert outside clues reduced from 24 to 12 while retaining 3 givens; targeted P2 gate 2/2 PASS at 32761b5; post-calibration census 4/4 PASS."
+    },
+    {
+      "id": "SUD-SIZE-DOUBLE-SKY-8",
+      "gameId": "double-skyscrapers",
+      "status": "CLOSED",
+      "priority": "P3",
+      "type": "SIZE",
+      "summary": "8×8 méret támogatásának vizsgálata és bevezetése.",
+      "closedAt": "2026-09-14",
+      "evidence": "Double Skyscraper now supports both the established 6x6 production path and a new independent 8x8 size through the shared P3 size selector. The 8x8 model uses digits 1-4 exactly twice per row and column, seeded repeated-Latin construction, four-side visibility clues and exact variant-essential uniqueness certification. Runtime performance was hardened by replacing expensive cell-by-cell 8x8 search with a row-pattern solver over valid 1,1,2,2,3,3,4,4 permutations plus column-count and visibility pruning. The remaining targeted production gate passed 3/3 in approximately 365 ms. Implementation source 094334b."
+    },
+    {
+      "id": "SUD-VERIFY-DOUBLE-SKY-SOLVED",
+      "gameId": "double-skyscrapers",
+      "status": "CLOSED",
+      "priority": "P1",
+      "type": "VERIFY",
+      "summary": "A korábban jelzett Folyamatban → Megoldva problémát újra kell reprodukálni.",
+      "closedAt": "2026-09-10",
+      "evidence": "Not reproducible; explicit regression verifies Double Skyscraper uses the generic Sudoku completion path, an exactly solved grid triggers completion, and the shared callback changes the visible status to Solved. Targeted 3/3 PASS at e980c73."
+    },
+    {
+      "id": "SUD-DIFF-TOROIDAL-SKY",
+      "gameId": "toroidal-skyscrapers",
+      "status": "CLOSED",
+      "priority": "P2",
+      "type": "DIFFICULTY",
+      "summary": "A nehéz szint túl könnyű; újrakalibrálás.",
+      "closedAt": "2026-09-10",
+      "evidence": "Expert givens reduced from 20 to 10 with all 6 toroidal clues retained; targeted P2 gate 2/2 PASS at 32761b5; post-calibration census 4/4 PASS."
+    },
+    {
+      "id": "SUD-DIFF-ODD-EVEN",
+      "gameId": "odd-even",
+      "status": "CLOSED",
+      "priority": "P2",
+      "type": "DIFFICULTY",
+      "summary": "A nehéz szint tényleges nehezítése.",
+      "closedAt": "2026-09-10",
+      "evidence": "Expert calibrated toward 16 givens subject to exact uniqueness; post-calibration corpus median 17 givens with 27 parity markers; targeted P2 gate 2/2 PASS at 32761b5 and census 4/4 PASS."
+    },
+    {
+      "id": "GLOBAL-SOLVED-IMMUTABILITY",
+      "gameId": "*",
+      "status": "CLOSED",
+      "priority": "P0",
+      "type": "GLOBAL_AUDIT",
+      "summary": "Globális audit: megoldott játék ne maradjon szerkeszthető.",
+      "closedAt": "2026-09-10",
+      "evidence": "Global input guard covers board/tool pointer, context-menu, keyboard/input and tool mutations while outer controls remain available; regression PASS at 217178e."
+    }
+  ]
+}

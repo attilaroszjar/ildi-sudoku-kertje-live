@@ -1,0 +1,35 @@
+[Unit]
+Description=Ildi Sudoku Brutal background search
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=daniel
+Group=daniel
+WorkingDirectory=/home/daniel/ildi-sudoku-kertje/server/brutal-search
+EnvironmentFile=/home/daniel/infra/env/ildi-sudoku-brutal.env
+ExecStart=@NODE_BIN@ /home/daniel/ildi-sudoku-kertje/server/brutal-search/worker.mjs
+Restart=on-failure
+RestartSec=60s
+Nice=19
+IOSchedulingClass=idle
+CPUAccounting=true
+CPUQuota=15%
+CPUWeight=10
+MemoryAccounting=true
+MemoryMax=512M
+IOAccounting=true
+IOWeight=10
+TasksMax=32
+TimeoutStopSec=30s
+KillSignal=SIGTERM
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadOnlyPaths=/home/daniel/infra/env/ildi-sudoku-brutal.env
+ReadWritePaths=/home/daniel/ildi-sudoku-kertje/server/brutal-search
+
+[Install]
+WantedBy=multi-user.target

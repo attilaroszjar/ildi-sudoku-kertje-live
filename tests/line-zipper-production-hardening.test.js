@@ -1,0 +1,13 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('fs'),path=require('path'),vm=require('vm');
+const root=path.join(__dirname,'..');
+function load(){const ctx={console,globalThis:null,window:null,Map,Set,WeakMap};ctx.globalThis=ctx;ctx.window=ctx;vm.createContext(ctx);for(const f of ['games/sudoku-bank.js','games/sudoku-bank-iteration2.js','games/sudoku-generator.js','games/line-generator-core.js','games/line-generator-whole-set.js','games/line-generator-hardening.js'])vm.runInContext(fs.readFileSync(path.join(root,f),'utf8'),ctx,{filename:f});return ctx;}
+function variant(ctx,id){const v=ctx.SudokuBank.find(x=>x.id===id);assert.ok(v,`missing ${id}`);return v;}
+function solutionKey(grid){return grid.map(r=>r.join('')).join('/');}
+function assertZipper(ctx,g){for(const entry of g.data.lines){const line=entry.cells||entry;assert.equal(line.length%2,1);assert.equal(ctx.LineGeneratorCore.validateSimplePath(line,{minLength:3,maxLength:7}),true);const mid=(line.length-1)/2,target=g.solution[line[mid][0]][line[mid][1]];for(let i=0;i<mid;i++){const j=line.length-1-i,a=g.solution[line[i][0]][line[i][1]],b=g.solution[line[j][0]][line[j][1]];assert.equal(a+b,target);}}}
+
+test('production make routes Zipper through fresh symmetric generator',()=>{const ctx=load(),v=variant(ctx,'zipper');for(const seed of [1,17,101,2026]){const g=ctx.SudokuGenerator.make(v,seed,'focused');assert.equal(g.generation.generatorFamily,'line-zipper-fresh-fill-mrv');assert.equal(g.generation.pilot,false);assert.equal(g.generation.variantEssential,true);assert.equal(ctx.SudokuGenerator.countVariantSolutions(g.puzzle,g,2),1);assert.ok(ctx.SudokuGenerator.countSolutions(g.puzzle,2)>1);assertZipper(ctx,g);}});
+
+test('production Zipper replay is exact and pilot seeds vary solution/topology',()=>{const ctx=load(),v=variant(ctx,'zipper'),solutions=new Set(),topologies=new Set();for(const seed of [1,17,101,2026]){const a=ctx.SudokuGenerator.make(v,seed,'focused'),b=ctx.SudokuGenerator.make(v,seed,'focused');assert.deepEqual(a.solution,b.solution);assert.deepEqual(a.puzzle,b.puzzle);assert.deepEqual(a.data.lines,b.data.lines);solutions.add(solutionKey(a.solution));topologies.add(a.generation.topologyFingerprint);}assert.ok(solutions.size>=3);assert.ok(topologies.size>=3);});
+
+test('completed line production routes remain intact after Zipper wiring',()=>{const ctx=load();for(const id of ['whispers','renban','between']){const v=variant(ctx,id),g=ctx.SudokuGenerator.make(v,17,'focused');assert.equal(g.generation.pilot,false);assert.equal(g.generation.variantEssential,true);assert.ok(String(g.generation.generatorFamily).startsWith('line-'));}});

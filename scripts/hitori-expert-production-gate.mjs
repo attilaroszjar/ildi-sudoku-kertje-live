@@ -1,0 +1,33 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {performance} from 'node:perf_hooks';
+import {fileURLToPath,pathToFileURL} from 'node:url';
+
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const seed=Number(process.argv[2]||99001)>>>0,size=Number(process.argv[3]||6);
+const index=fs.readFileSync(path.join(root,'index.html'),'utf8');
+const refs=[...index.matchAll(/<script src="([^"]+)"><\/script>/g)].map(m=>m[1]).filter(x=>x.startsWith('games/'));
+const banks=refs.filter(x=>/^games\/sudoku-bank(?:-iteration\d+)?\.js$/.test(x));
+const a=refs.indexOf('games/sudoku-generator.js'),b=refs.indexOf('games/p3-hitori-complete.js');
+if(a<0||b<a)throw new Error('Hitori production runtime range not found');
+const load=[...banks,...refs.slice(a,b+1).filter(x=>!banks.includes(x))];
+globalThis.window=globalThis;globalThis.localStorage={getItem(){return null;},setItem(){},removeItem(){}};
+for(const ref of load)await import(pathToFileURL(path.join(root,ref)).href);
+const G=globalThis.SudokuGenerator,v=globalThis.SudokuBank.find(x=>x&&x.id==='hitori');
+v.data=v.data||{};v.data.p3Size=size;
+const t0=performance.now(),out=G.make(v,seed,'expert'),makeMs=performance.now()-t0,g=out.generation||{};
+const t1=performance.now(),count=G.countHitoriSolutions(out.puzzle,2,{}),verifyMs=performance.now()-t1;
+const symbols=out.puzzle.flat(),black=out.solution.flat().filter(Boolean).length;
+const complete=symbols.length===size*size&&symbols.every(x=>Number.isInteger(x)&&x>=1&&x<=size);
+console.log(`HITORI_EXPERT_PRODUCTION seed=${seed} size=${size}x${size} makeMs=${makeMs.toFixed(1)}`);
+console.log(`HITORI_EXPERT_PRODUCTION_RESULT symbols=${symbols.length} completeDefinition=${complete} startingAnswers=${g.startingAnswerCount??'n/a'} solutionBlack=${black} fullCount=${count} verifyMs=${verifyMs.toFixed(1)} score=${g.difficultyScore??'n/a'}`);
+console.log(`HITORI_EXPERT_PRODUCTION_POLICY policy=${g.policy||'n/a'} removableAtoms=${g.removableAtomPolicy||'n/a'} localIrreducibility=${g.localIrreducibilityApplicability||'n/a'} metric=${g.playabilityMetric||'n/a'}`);
+const failures=[];
+if(count!==1)failures.push(`fullCount=${count}`);
+if(!complete)failures.push('incomplete Hitori symbol grid');
+if(g.startingAnswerCount!==0)failures.push(`startingAnswerCount=${g.startingAnswerCount}`);
+if(g.policy!=='complete-grid-symbol-topology')failures.push(`policy=${g.policy}`);
+if(g.removableAtomPolicy!=='none-complete-grid-is-puzzle-definition')failures.push(`removableAtomPolicy=${g.removableAtomPolicy}`);
+if(g.localIrreducibilityApplicability!=='not-applicable-complete-grid-definition')failures.push(`localIrreducibilityApplicability=${g.localIrreducibilityApplicability}`);
+if(failures.length){for(const f of failures)console.error(`HITORI_EXPERT_PRODUCTION_FAILURE ${f}`);console.log('HITORI_EXPERT_PRODUCTION:FAIL');process.exitCode=1;}
+else console.log('HITORI_EXPERT_PRODUCTION:PASS');
