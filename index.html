@@ -880,7 +880,6 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
   border-color:color-mix(in srgb,var(--muted) 72%,transparent)!important;
 }
 
-
   </style>
   <style data-source="assets/p3-size-control.css">
 /* inlined CSS import: ./domino-skyscraper.css */
@@ -912,7 +911,6 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
 .sudoku-cell.domino-bottom{border-bottom:3px solid var(--domino-sky-border)!important}
 .sudoku-cell.domino-left{border-left:3px solid var(--domino-sky-border)!important}
 .sudoku-cell.domino-right{border-right:3px solid var(--domino-sky-border)!important}
-
 
 /* inlined CSS import: ./sudoku-line-visibility.css */
 /* Shared Sudoku line visibility hardening.
@@ -951,7 +949,6 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
   color:#d5dad7!important;
 }
 
-
 /* inlined CSS import: ./sukaku-legibility.css */
 /* Sukaku starting candidates should read like ordinary pencil marks, not tiny inline text. */
 .sukaku-cell:empty::before{content:none!important}
@@ -976,7 +973,6 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
   min-width:0;
 }
 .sudoku-cell.selected .sukaku-start-candidates{color:var(--ink)}
-
 
 /* inlined CSS import: ./samurai-layout.css */
 /* Hard-playtest #9: Samurai / Gattai-5 must never crowd the tool rail off-screen. */
@@ -1034,7 +1030,6 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
   }
 }
 
-
 /* inlined CSS import: ./bishopsgate-legibility.css */
 /* Hard-playtest #10: Bishopsgate rule cells must stay visually distinct from entered/fixed cells. */
 .sudoku-cell.bishopsgate-cell{
@@ -1058,7 +1053,6 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
 }
 
 
-
 /* Keep generator diagnostics available to runtime/tests without exposing
    implementation metadata (seed, givens, uniqueness) to players. */
 .sudoku-generation-note{display:none!important}
@@ -1075,7 +1069,6 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
 @media(max-width:1280px){.p3-size-field{flex-basis:112px;max-width:112px}}
 @media(max-width:820px){.p3-size-field{flex:1 1 120px;max-width:none}.control-deck.has-p3-size .deck-actions .button{flex:1 1 auto}}
 @media(max-width:560px){.p3-size-field{grid-column:1/-1;max-width:none;width:100%}}
-
   </style>
 </head>
 <body>
@@ -1091,7 +1084,7 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
       <section class="welcome-card" aria-label="Üdvözlés"><div class="welcome-flower" aria-hidden="true">❀</div><div><p class="welcome-kicker">ILDI SUDOKU KERTJE</p><h1 id="welcome-title">Üdv Ildi Sudoku Kertjében!</h1><p id="welcome-copy">Válassz kategóriát, találd meg a kedvenc Sudoku-változatodat, és élvezd a logikai kihívásokat.</p></div><div class="welcome-cat" aria-hidden="true"><svg viewBox="0 0 190 92" focusable="false"><path class="cat-cushion" d="M33 72c20-20 102-24 132 0-21 12-109 16-132 0z"/><path class="sleep-cat-body" d="M63 62c10-29 47-35 72-14 7 6 11 14 11 22-17 6-68 7-92 1 1-3 4-6 9-9z"/><path class="sleep-cat-head" d="M52 50l3-23 13 11c7-3 15-3 22 0l14-12 2 24c-2 18-13 27-28 27-16 0-27-10-26-27z"/><path class="sleep-cat-tail" d="M136 62c25-2 31-14 23-22-5-5-13-5-18 1 8-2 12 2 11 7-1 8-9 10-19 9"/><path class="sleep-cat-face" d="M64 53c4 3 7 3 11 0M86 53c4 3 7 3 11 0M77 58l3 2 3-2M80 60c0 4-4 6-8 4M80 60c0 4 4 6 8 4"/></svg><span class="floating-heart">♡</span></div></section>
       <section class="control-deck" aria-label="Feladvány beállításai"><label class="deck-field"><span id="category-label">Kategória</span><select id="category-select"></select></label><label class="deck-field variant-field"><span id="variant-label">Sudoku-változat</span><select id="variant-select"></select></label><span id="variant-count" class="variant-count">82 változat</span><div class="deck-actions"><label class="deck-field difficulty-field"><span id="difficulty-label">Nehézség</span><select id="difficulty-select"></select></label><button id="restart-button" class="button secondary" type="button">↻ <span>Újrakezdés</span></button><button id="new-button" class="button primary" type="button">❀ <span>Új feladvány</span></button></div></section>
       <section id="workspace" class="workspace sudoku-only-workspace" aria-labelledby="game-title"><div class="garden-layout"><aside class="garden-sidebar" aria-label="Sudoku kategóriák"><section class="garden-card categories-card"><div class="card-title-row"><h2 id="categories-heading">Kategóriák</h2><span aria-hidden="true">✿</span></div><div id="category-list" class="category-list"></div></section><section class="garden-card favorites-card"><div class="card-title-row"><h2 id="favorites-heading">Kedvenceim</h2><span aria-hidden="true">♡</span></div><div id="favorites-list" class="favorites-list"><p id="favorites-empty">Itt jelennek meg a kedvenc változataid.</p></div></section><section class="garden-card stats-card"><div class="card-title-row"><h2 id="stats-heading">Statisztikám</h2><span aria-hidden="true">▥</span></div><dl class="stats-list"><div><dt id="solved-label">Megoldott</dt><dd id="stat-solved">0</dd></div><div><dt id="best-label">Legjobb idő</dt><dd id="stat-best">--:--</dd></div><div><dt id="streak-label">Jelenlegi sorozat</dt><dd id="stat-streak">0 nap</dd></div><div><dt id="total-time-label">Összes játékidő</dt><dd id="stat-total">0:00:00</dd></div></dl></section></aside><div class="play-column"><section class="garden-card puzzle-card"><div class="puzzle-card-head"><div><p id="game-family" class="eyebrow">Sudoku-gyűjtemény</p><h2 id="game-title">Sudoku-változatok</h2></div><button id="favorite-button" class="favorite-button" type="button" aria-label="Hozzáadás a kedvencekhez" title="Kedvenc">♡</button></div><div class="play-surface"><div id="game-stage" class="game-stage" tabindex="-1"></div><div id="game-tools" class="game-tools tool-rail"></div></div></section></div><aside class="garden-card inspector" aria-label="Feladvány információ"><section class="inspector-heading"><h2 id="about-heading">A változatról</h2><span aria-hidden="true">✿</span></section><section><h3 id="objective-heading">Cél</h3><p id="game-objective"></p></section><section><h3 id="rules-heading">Játékszabály</h3><div id="game-rules"></div></section><section class="tip-card"><h3 id="tip-heading">Tipp</h3><p id="game-tip">Haladj nyugodtan, és először azokat a cellákat keresd, ahol a szabályok a legtöbb lehetőséget kizárják.</p></section><section class="status-compact"><div class="status-row"><span id="status-label">Állapot</span><strong id="game-status" role="status" aria-live="polite">Készen áll</strong></div><div class="status-row"><span id="counter-label">Lépések</span><strong id="game-counter">0</strong></div></section><div class="garden-bench" aria-hidden="true"><span class="garden-sprig">❀ ✿ ❀</span><svg viewBox="0 0 210 105" focusable="false"><path class="mini-ground" d="M18 87c34-11 142-12 177 0"/><path class="mini-cat" d="M60 76c8-20 31-26 49-15 13 8 19 19 15 27H52c0-5 3-9 8-12zM54 61l3-17 11 9c5-2 11-2 16 0l11-9 2 18c-1 13-10 20-22 20-13 0-22-8-21-21z"/><path class="mini-tail" d="M118 77c26 1 36-9 31-18-3-6-10-7-16-3 8-1 11 3 9 8-3 6-11 7-22 5"/><path class="mini-bench" d="M128 76h59M134 64h47M140 64v23M176 64v23"/></svg></div></aside></div></section>
-      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=a16e346" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
+      <footer class="garden-footer"><span id="generator-note">❀ Generátor: szabályok szerint · Egyedi megoldás garantált</span><span id="dedication">♥ Készült szeretettel, neked Ildi ❀</span><a href="status.html?v=b624927" style="margin-left:auto;color:inherit;font-weight:700;text-decoration:none">Fejlesztési állapot</a></footer>
     </main>
   </div><div id="toast" class="toast" role="status" aria-live="polite"></div>
   <dialog id="help-dialog" class="dialog"><form method="dialog"><div class="dialog-head"><div><p id="guide-eyebrow" class="eyebrow"></p><h2 id="guide-title"></h2></div><button class="icon-button" value="close" aria-label="Bezárás">×</button></div><div class="dialog-body"><p id="guide-p1"></p><dl><div><dt id="guide-pointer"></dt><dd id="guide-pointer-d"></dd></div><div><dt id="guide-keyboard"></dt><dd id="guide-keyboard-d"></dd></div><div><dt id="guide-feedback"></dt><dd id="guide-feedback-d"></dd></div></dl><p id="guide-quiet" class="quiet"></p></div><button id="guide-close" class="button primary dialog-close" value="close"></button></form></dialog>
@@ -1331,7 +1324,6 @@ body::before{left:-35px;top:155px}body::after{right:-42px;bottom:70px;transform:
   };
 }(window));
 
-
   </script>
   <script data-source="assets/i18n.js">
 (function(root){
@@ -1357,7 +1349,6 @@ root.SudokuI18n={get lang(){return lang;},t:t,variant:variant,set:function(next)
   </script>
   <script data-source="games/sudoku-bank.js">
 (function(root){'use strict';root.SudokuBank=[{"id":"classic","title":"Classic Sudoku","family":"Core","rule":"Every row, column, and 3\u00d73 box contains 1\u20139 exactly once.","kind":"classic","data":{},"puzzle":[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],[8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],[0,6,0,0,0,0,2,8,0],[0,0,0,4,1,9,0,0,5],[0,0,0,0,8,0,0,7,9]],"solution":[[5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],[8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],[9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]]},{"id":"mini","title":"Mini Sudoku 4\u00d74","family":"Grid","rule":"Use 1\u20134 once in every row, column, and 2\u00d72 box.","kind":"mini","data":{},"puzzle":[[1,0,0,4],[0,4,1,0],[0,1,4,0],[4,0,0,1]],"solution":[[1,2,3,4],[3,4,1,2],[2,1,4,3],[4,3,2,1]]},{"id":"diagonal","title":"Diagonal / X Sudoku","family":"Extra regions","rule":"Both long diagonals also contain 1\u20139 exactly once.","kind":"diagonal","data":{},"puzzle":[[0,3,0,0,5,0,0,4,8],[0,5,8,3,0,7,9,1,0],[0,0,2,8,4,9,3,0,5],[9,6,7,4,0,5,2,8,1],[8,0,4,1,7,0,5,9,3],[0,1,5,9,0,8,0,7,6],[7,9,6,5,8,0,1,2,4],[0,4,1,0,9,2,8,3,7],[2,8,3,0,0,4,6,5,0]],"solution":[[6,3,9,2,5,1,7,4,8],[4,5,8,3,6,7,9,1,2],[1,7,2,8,4,9,3,6,5],[9,6,7,4,3,5,2,8,1],[8,2,4,1,7,6,5,9,3],[3,1,5,9,2,8,4,7,6],[7,9,6,5,8,3,1,2,4],[5,4,1,6,9,2,8,3,7],[2,8,3,7,1,4,6,5,9]]},{"id":"hyper","title":"Hyper / Windoku","family":"Extra regions","rule":"The four shaded 3\u00d73 windows also contain 1\u20139 exactly once.","kind":"hyper","data":{},"puzzle":[[6,3,9,0,5,0,7,0,8],[4,5,0,0,6,0,0,1,2],[0,7,2,9,0,4,6,3,0],[7,1,4,6,3,5,2,0,0],[9,8,6,0,7,0,3,5,0],[0,0,5,8,4,9,0,0,6],[5,9,0,7,2,8,4,6,0],[0,6,1,0,9,3,5,2,7],[2,4,7,5,1,6,8,9,3]],"solution":[[6,3,9,2,5,1,7,4,8],[4,5,8,3,6,7,9,1,2],[1,7,2,9,8,4,6,3,5],[7,1,4,6,3,5,2,8,9],[9,8,6,1,7,2,3,5,4],[3,2,5,8,4,9,1,7,6],[5,9,3,7,2,8,4,6,1],[8,6,1,4,9,3,5,2,7],[2,4,7,5,1,6,8,9,3]]},{"id":"killer","title":"Killer Sudoku","family":"Cages","rule":"Digits in each cage do not repeat and sum to the cage clue.","kind":"killer","data":{"cages":[{"cells":[[6,1],[7,1]],"sum":14},{"cells":[[2,1],[1,1]],"sum":16},{"cells":[[2,4],[3,4]],"sum":10},{"cells":[[8,1],[8,0],[8,2]],"sum":12},{"cells":[[5,2],[5,3],[5,1]],"sum":13},{"cells":[[5,0],[4,0]],"sum":11},{"cells":[[7,2],[7,3]],"sum":11},{"cells":[[3,0],[2,0]],"sum":9},{"cells":[[3,3],[3,2]],"sum":16},{"cells":[[4,7],[4,8],[5,7]],"sum":15},{"cells":[[8,7],[8,8],[7,8]],"sum":21},{"cells":[[3,7],[2,7],[3,6]],"sum":12},{"cells":[[1,3],[1,4]],"sum":10},{"cells":[[1,8],[0,8],[2,8]],"sum":17},{"cells":[[4,4],[4,3],[4,5]],"sum":16},{"cells":[[6,3],[6,2]],"sum":6},{"cells":[[0,4],[0,3],[0,2]],"sum":17},{"cells":[[2,3],[2,2]],"sum":11},{"cells":[[8,6],[7,6]],"sum":7},{"cells":[[5,5],[5,6]],"sum":12},{"cells":[[4,6]],"sum":7},{"cells":[[5,8],[6,8],[6,7]],"sum":18},{"cells":[[0,6],[1,6]],"sum":12},{"cells":[[3,5],[2,5]],"sum":3},{"cells":[[7,5],[6,5]],"sum":16},{"cells":[[2,6]],"sum":5},{"cells":[[8,3],[8,4]],"sum":10},{"cells":[[7,0],[6,0]],"sum":11},{"cells":[[3,1],[4,1]],"sum":7},{"cells":[[6,4],[7,4]],"sum":4},{"cells":[[0,0],[1,0]],"sum":11},{"cells":[[0,5],[1,5]],"sum":13},{"cells":[[7,7]],"sum":3},{"cells":[[5,4]],"sum":2},{"cells":[[1,2]],"sum":2},{"cells":[[3,8]],"sum":3},{"cells":[[0,1]],"sum":3},{"cells":[[8,5]],"sum":6},{"cells":[[4,2]],"sum":6},{"cells":[[1,7],[0,7]],"sum":5},{"cells":[[6,6]],"sum":2}]},"puzzle":[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],[8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],[0,6,0,0,0,0,2,8,0],[0,0,0,4,1,9,0,0,5],[0,0,0,0,8,0,0,7,9]],"solution":[[5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],[8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],[9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]]},{"id":"thermo","title":"Thermo Sudoku","family":"Lines","rule":"Digits strictly increase from each thermometer bulb to its tip.","kind":"thermo","data":{"thermos":[[[7,3],[7,2],[7,1]],[[7,4],[7,3],[7,2],[7,1]],[[5,5],[6,5],[7,5]],[[3,3],[4,3],[5,3]],[[5,4],[5,5],[5,6]],[[5,2],[4,2],[3,2]],[[4,5],[5,5],[6,5]]]},"puzzle":[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],[8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],[0,6,0,0,0,0,2,8,0],[0,0,0,4,1,9,0,0,5],[0,0,0,0,8,0,0,7,9]],"solution":[[5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],[8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],[9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]]},{"id":"arrow","title":"Arrow Sudoku","family":"Lines","rule":"Digits on each arrow sum to the digit in its circle.","kind":"arrow","data":{"arrows":[{"circle":[7,5],"path":[[7,6],[7,7]]},{"circle":[3,2],"path":[[4,2],[5,2]]},{"circle":[5,3],"path":[[6,3],[7,3]]},{"circle":[4,2],"path":[[4,1],[4,0]]},{"circle":[4,4],"path":[[5,4],[6,4]]},{"circle":[5,6],"path":[[6,6],[7,6]]},{"circle":[5,5],"path":[[4,5],[3,5]]}]},"puzzle":[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],[8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],[0,6,0,0,0,0,2,8,0],[0,0,0,4,1,9,0,0,5],[0,0,0,0,8,0,0,7,9]],"solution":[[5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],[8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],[9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]]},{"id":"kropki","title":"Kropki Sudoku","family":"Cell relations","rule":"White dots mean consecutive digits; black dots mean a 1:2 ratio.","kind":"kropki","data":{"edges":[{"a":[3,3],"b":[4,3],"type":"white"},{"a":[5,7],"b":[5,8],"type":"white"},{"a":[2,3],"b":[2,4],"type":"white"},{"a":[2,4],"b":[2,5],"type":"black"},{"a":[1,7],"b":[1,8],"type":"black"},{"a":[8,0],"b":[8,1],"type":"white"},{"a":[1,8],"b":[2,8],"type":"white"},{"a":[2,5],"b":[3,5],"type":"white"},{"a":[7,6],"b":[7,7],"type":"black"},{"a":[4,0],"b":[4,1],"type":"black"},{"a":[6,8],"b":[7,8],"type":"white"},{"a":[7,1],"b":[7,2],"type":"white"},{"a":[4,6],"b":[5,6],"type":"white"},{"a":[1,2],"b":[1,3],"type":"white"},{"a":[0,0],"b":[1,0],"type":"white"},{"a":[3,3],"b":[3,4],"type":"white"},{"a":[2,7],"b":[2,8],"type":"white"},{"a":[2,1],"b":[2,2],"type":"white"},{"a":[3,6],"b":[3,7],"type":"black"},{"a":[6,7],"b":[6,8],"type":"black"},{"a":[8,1],"b":[8,2],"type":"white"},{"a":[4,2],"b":[5,2],"type":"black"},{"a":[6,3],"b":[7,3],"type":"white"},{"a":[2,6],"b":[3,6],"type":"white"},{"a":[0,1],"b":[0,2],"type":"white"},{"a":[4,5],"b":[5,5],"type":"white"},{"a":[2,6],"b":[2,7],"type":"white"},{"a":[4,3],"b":[5,3],"type":"white"},{"a":[1,0],"b":[1,1],"type":"white"},{"a":[5,4],"b":[6,4],"type":"white"}]},"puzzle":[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],[8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],[0,6,0,0,0,0,2,8,0],[0,0,0,4,1,9,0,0,5],[0,0,0,0,8,0,0,7,9]],"solution":[[5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],[8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],[9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]]},{"id":"xv","title":"XV Sudoku","family":"Cell relations","rule":"X marks adjacent cells summing to 10; V marks cells summing to 5.","kind":"xv","data":{"edges":[{"a":[7,0],"b":[7,1],"sum":10},{"a":[6,6],"b":[6,7],"sum":10},{"a":[6,4],"b":[6,5],"sum":10},{"a":[1,2],"b":[2,2],"sum":10},{"a":[3,7],"b":[3,8],"sum":5},{"a":[2,0],"b":[2,1],"sum":10},{"a":[2,3],"b":[3,3],"sum":10},{"a":[0,7],"b":[1,7],"sum":5},{"a":[4,5],"b":[4,6],"sum":10},{"a":[5,6],"b":[6,6],"sum":10},{"a":[7,7],"b":[8,7],"sum":10},{"a":[4,7],"b":[4,8],"sum":10},{"a":[5,8],"b":[6,8],"sum":10},{"a":[0,1],"b":[1,1],"sum":10},{"a":[2,4],"b":[3,4],"sum":10},{"a":[7,4],"b":[7,5],"sum":10},{"a":[7,0],"b":[8,0],"sum":5},{"a":[5,4],"b":[6,4],"sum":5},{"a":[8,3],"b":[8,4],"sum":10},{"a":[7,3],"b":[7,4],"sum":5},{"a":[0,6],"b":[0,7],"sum":10},{"a":[0,2],"b":[0,3],"sum":10},{"a":[1,3],"b":[1,4],"sum":10},{"a":[0,8],"b":[1,8],"sum":10},{"a":[3,5],"b":[3,6],"sum":5},{"a":[2,8],"b":[3,8],"sum":10},{"a":[1,7],"b":[2,7],"sum":10}]},"puzzle":[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],[8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],[0,6,0,0,0,0,2,8,0],[0,0,0,4,1,9,0,0,5],[0,0,0,0,8,0,0,7,9]],"solution":[[5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],[8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],[9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]]},{"id":"consecutive","title":"Consecutive Sudoku","family":"Cell relations","rule":"Marked adjacent cells contain consecutive digits.","kind":"consecutive","data":{"edges":[{"a":[7,1],"b":[7,2]},{"a":[2,6],"b":[3,6]},{"a":[1,8],"b":[2,8]},{"a":[8,0],"b":[8,1]},{"a":[8,1],"b":[8,2]},{"a":[3,3],"b":[4,3]},{"a":[2,5],"b":[3,5]},{"a":[5,4],"b":[6,4]},{"a":[0,4],"b":[0,5]},{"a":[5,7],"b":[5,8]},{"a":[3,7],"b":[3,8]},{"a":[1,0],"b":[1,1]},{"a":[4,3],"b":[5,3]},{"a":[1,2],"b":[1,3]},{"a":[2,2],"b":[3,2]},{"a":[6,8],"b":[7,8]},{"a":[2,3],"b":[2,4]},{"a":[0,1],"b":[0,2]},{"a":[3,3],"b":[3,4]},{"a":[4,6],"b":[5,6]},{"a":[0,3],"b":[0,4]},{"a":[3,4],"b":[4,4]},{"a":[2,6],"b":[2,7]},{"a":[2,7],"b":[2,8]},{"a":[2,1],"b":[2,2]},{"a":[0,0],"b":[1,0]},{"a":[4,1],"b":[5,1]},{"a":[6,3],"b":[7,3]},{"a":[0,7],"b":[0,8]},{"a":[0,5],"b":[0,6]},{"a":[1,6],"b":[1,7]},{"a":[4,5],"b":[5,5]}]},"puzzle":[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],[8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],[0,6,0,0,0,0,2,8,0],[0,0,0,4,1,9,0,0,5],[0,0,0,0,8,0,0,7,9]],"solution":[[5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],[8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],[9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]]},{"id":"greater","title":"Greater Than Sudoku","family":"Cell relations","rule":"Inequality marks show which adjacent cell contains the larger digit.","kind":"greater","data":{"edges":[{"a":[5,6],"b":[5,7],"op":">"},{"a":[2,0],"b":[2,1],"op":"<"},{"a":[7,0],"b":[7,1],"op":"<"},{"a":[8,4],"b":[8,5],"op":">"},{"a":[1,4],"b":[1,5],"op":">"},{"a":[7,4],"b":[8,4],"op":"<"},{"a":[4,4],"b":[4,5],"op":">"},{"a":[4,5],"b":[5,5],"op":"<"},{"a":[0,6],"b":[1,6],"op":">"},{"a":[0,3],"b":[0,4],"op":"<"},{"a":[1,3],"b":[1,4],"op":"<"},{"a":[2,5],"b":[2,6],"op":"<"},{"a":[1,7],"b":[1,8],"op":"<"},{"a":[5,4],"b":[6,4],"op":"<"},{"a":[0,0],"b":[1,0],"op":"<"},{"a":[4,2],"b":[4,3],"op":"<"},{"a":[6,4],"b":[7,4],"op":">"},{"a":[7,1],"b":[8,1],"op":">"},{"a":[4,7],"b":[4,8],"op":">"},{"a":[0,8],"b":[1,8],"op":"<"},{"a":[3,5],"b":[3,6],"op":"<"},{"a":[1,7],"b":[2,7],"op":"<"},{"a":[5,1],"b":[6,1],"op":"<"},{"a":[5,2],"b":[5,3],"op":"<"},{"a":[6,0],"b":[6,1],"op":">"},{"a":[1,0],"b":[2,0],"op":">"}]},"puzzle":[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],[8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],[0,6,0,0,0,0,2,8,0],[0,0,0,4,1,9,0,0,5],[0,0,0,0,8,0,0,7,9]],"solution":[[5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],[8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],[9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]]},{"id":"odd-even","title":"Odd / Even Sudoku","family":"Cell marks","rule":"Marked cells are restricted to odd or even digits.","kind":"parity","data":{"0,0":"odd","0,3":"even","0,6":"odd","1,2":"even","1,5":"odd","1,8":"even","2,1":"odd","2,4":"even","2,7":"even","3,0":"even","3,3":"odd","3,6":"even","4,2":"even","4,5":"odd","4,8":"odd","5,1":"odd","5,4":"even","5,7":"odd","6,0":"odd","6,3":"odd","6,6":"even","7,2":"odd","7,5":"odd","7,8":"odd","8,1":"even","8,4":"even","8,7":"odd"},"puzzle":[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],[8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],[0,6,0,0,0,0,2,8,0],[0,0,0,4,1,9,0,0,5],[0,0,0,0,8,0,0,7,9]],"solution":[[5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],[8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],[9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]]},{"id":"anti-knight","title":"Anti-Knight Sudoku","family":"Anti-constraints","rule":"Equal digits may not be a chess knight move apart.","kind":"anti-knight","data":{},"puzzle":[[1,4,5,8,9,6,0,3,7],[0,3,7,1,0,5,8,0,6],[8,0,6,0,3,7,1,0,5],[0,8,9,0,2,3,7,0,0],[7,1,4,5,0,9,0,0,3],[0,0,3,7,1,4,0,8,9],[4,5,8,9,6,2,3,7,1],[0,7,1,4,5,0,9,0,2],[0,6,0,3,7,1,0,5,8]],"solution":[[1,4,5,8,9,6,2,3,7],[2,3,7,1,4,5,8,9,6],[8,9,6,2,3,7,1,4,5],[5,8,9,6,2,3,7,1,4],[7,1,4,5,8,9,6,2,3],[6,2,3,7,1,4,5,8,9],[4,5,8,9,6,2,3,7,1],[3,7,1,4,5,8,9,6,2],[9,6,2,3,7,1,4,5,8]]},{"id":"anti-king","title":"Anti-King Sudoku","family":"Anti-constraints","rule":"Equal digits may not touch diagonally as a chess king would.","kind":"anti-king","data":{},"puzzle":[[7,8,0,5,1,4,0,2,3],[0,6,0,7,8,9,1,0,0],[5,1,4,2,0,0,0,7,9],[3,2,8,0,0,1,0,4,6],[9,7,0,0,0,0,2,3,8],[0,5,6,3,2,8,7,9,1],[8,3,7,1,9,0,4,6,2],[1,9,5,0,4,0,3,8,7],[6,4,2,0,3,0,0,1,5]],"solution":[[7,8,9,5,1,4,6,2,3],[2,6,3,7,8,9,1,5,4],[5,1,4,2,6,3,8,7,9],[3,2,8,9,7,1,5,4,6],[9,7,1,4,5,6,2,3,8],[4,5,6,3,2,8,7,9,1],[8,3,7,1,9,5,4,6,2],[1,9,5,6,4,2,3,8,7],[6,4,2,8,3,7,9,1,5]]},{"id":"nonconsecutive","title":"Non-Consecutive Sudoku","family":"Anti-constraints","rule":"Orthogonally adjacent cells may not contain consecutive digits.","kind":"nonconsecutive","data":{},"puzzle":[[0,9,0,5,0,1,8,4,6],[8,0,4,0,0,7,0,1,0],[5,0,1,0,6,4,0,0,9],[7,5,3,0,8,0,4,9,2],[1,8,0,0,0,0,7,3,5],[4,2,9,7,5,3,1,6,8],[6,4,2,9,7,5,3,8,1],[0,1,0,6,4,2,0,5,0],[9,7,5,3,1,0,6,2,4]],"solution":[[2,9,7,5,3,1,8,4,6],[8,6,4,2,9,7,5,1,3],[5,3,1,8,6,4,2,7,9],[7,5,3,1,8,6,4,9,2],[1,8,6,4,2,9,7,3,5],[4,2,9,7,5,3,1,6,8],[6,4,2,9,7,5,3,8,1],[3,1,8,6,4,2,9,5,7],[9,7,5,3,1,8,6,2,4]]},{"id":"sandwich","title":"Sandwich Sudoku","family":"Outside clues","rule":"Each outside clue is the sum of digits between 1 and 9 in that row or column.","kind":"sandwich","data":{"clues":[{"axis":"row","index":0,"sum":0},{"axis":"row","index":1,"sum":0},{"axis":"row","index":2,"sum":0},{"axis":"row","index":3,"sum":13},{"axis":"row","index":4,"sum":0},{"axis":"row","index":5,"sum":3},{"axis":"row","index":6,"sum":6},{"axis":"row","index":7,"sum":0},{"axis":"row","index":8,"sum":7},{"axis":"col","index":0,"sum":19},{"axis":"col","index":1,"sum":7},{"axis":"col","index":2,"sum":9},{"axis":"col","index":3,"sum":18},{"axis":"col","index":4,"sum":20},{"axis":"col","index":5,"sum":14},{"axis":"col","index":6,"sum":35},{"axis":"col","index":7,"sum":12},{"axis":"col","index":8,"sum":15}]},"puzzle":[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],[8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],[0,6,0,0,0,0,2,8,0],[0,0,0,4,1,9,0,0,5],[0,0,0,0,8,0,0,7,9]],"solution":[[5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],[8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],[9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]]},{"id":"skyscraper","title":"Skyscraper Sudoku","family":"Outside clues","rule":"Outside clues count visible building heights from that side.","kind":"skyscraper","data":{"clues":[{"axis":"row","index":0,"side":"left","count":5},{"axis":"row","index":0,"side":"right","count":2},{"axis":"col","index":0,"side":"top","count":4},{"axis":"col","index":0,"side":"bottom","count":2},{"axis":"row","index":1,"side":"left","count":3},{"axis":"row","index":1,"side":"right","count":2},{"axis":"col","index":1,"side":"top","count":3},{"axis":"col","index":1,"side":"bottom","count":3},{"axis":"row","index":2,"side":"left","count":2},{"axis":"row","index":2,"side":"right","count":3},{"axis":"col","index":2,"side":"top","count":3},{"axis":"col","index":2,"side":"bottom","count":3},{"axis":"row","index":3,"side":"left","count":2},{"axis":"row","index":3,"side":"right","count":5},{"axis":"col","index":3,"side":"top","count":4},{"axis":"col","index":3,"side":"bottom","count":4},{"axis":"row","index":4,"side":"left","count":4},{"axis":"row","index":4,"side":"right","count":2},{"axis":"col","index":4,"side":"top","count":2},{"axis":"col","index":4,"side":"bottom","count":2},{"axis":"row","index":5,"side":"left","count":2},{"axis":"row","index":5,"side":"right","count":3},{"axis":"col","index":5,"side":"top","count":2},{"axis":"col","index":5,"side":"bottom","count":2},{"axis":"row","index":6,"side":"left","count":1},{"axis":"row","index":6,"side":"right","count":3},{"axis":"col","index":6,"side":"top","count":1},{"axis":"col","index":6,"side":"bottom","count":4},{"axis":"row","index":7,"side":"left","count":3},{"axis":"row","index":7,"side":"right","count":3},{"axis":"col","index":7,"side":"top","count":4},{"axis":"col","index":7,"side":"bottom","count":3},{"axis":"row","index":8,"side":"left","count":5},{"axis":"row","index":8,"side":"right","count":1},{"axis":"col","index":8,"side":"top","count":3},{"axis":"col","index":8,"side":"bottom","count":1}]},"puzzle":[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],[8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],[0,6,0,0,0,0,2,8,0],[0,0,0,4,1,9,0,0,5],[0,0,0,0,8,0,0,7,9]],"solution":[[5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],[8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],[9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]]},{"id":"little-killer","title":"Little Killer Sudoku","family":"Outside clues","rule":"Diagonal outside clues give the sum along the indicated diagonal.","kind":"littlekiller","data":{"clues":[{"cells":[[0,0],[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[8,8]],"sum":50},{"cells":[[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8]],"sum":38},{"cells":[[0,2],[1,3],[2,4],[3,5],[4,6],[5,7],[6,8]],"sum":26},{"cells":[[0,3],[1,4],[2,5],[3,6],[4,7],[5,8]],"sum":36},{"cells":[[0,3],[1,2],[2,1],[3,0]],"sum":25},{"cells":[[0,4],[1,5],[2,6],[3,7],[4,8]],"sum":20},{"cells":[[0,4],[1,3],[2,2],[3,1],[4,0]],"sum":25},{"cells":[[0,5],[1,6],[2,7],[3,8]],"sum":20},{"cells":[[0,5],[1,4],[2,3],[3,2],[4,1],[5,0]],"sum":38},{"cells":[[0,6],[1,5],[2,4],[3,3],[4,2],[5,1],[6,0]],"sum":41},{"cells":[[0,7],[1,6],[2,5],[3,4],[4,3],[5,2],[6,1],[7,0]],"sum":31},{"cells":[[0,8],[1,7],[2,6],[3,5],[4,4],[5,3],[6,2],[7,1],[8,0]],"sum":38}]},"puzzle":[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],[8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],[0,6,0,0,0,0,2,8,0],[0,0,0,4,1,9,0,0,5],[0,0,0,0,8,0,0,7,9]],"solution":[[5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],[8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],[9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]]},{"id":"renban","title":"Renban Sudoku","family":"Lines","rule":"Digits on each purple line form a non-repeating consecutive set in any order.","kind":"renban","data":{"lines":[[[2,5],[3,5],[4,5],[5,5]],[[2,3],[2,4],[2,5],[2,6]],[[3,5],[3,6],[3,7],[3,8]],[[0,3],[0,4],[0,5],[0,6]],[[8,0],[8,1],[8,2],[8,3]],[[0,0],[0,1],[0,2],[0,3]]]},"puzzle":[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],[8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],[0,6,0,0,0,0,2,8,0],[0,0,0,4,1,9,0,0,5],[0,0,0,0,8,0,0,7,9]],"solution":[[5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],[8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],[9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]]},{"id":"whispers","title":"German Whispers","family":"Lines","rule":"Adjacent digits on each green line differ by at least 5.","kind":"whispers","data":{"lines":[[[0,3],[1,3],[1,4],[2,4]],[[1,1],[1,2],[2,2],[2,3]],[[3,7],[4,7],[4,8],[5,8]]]},"puzzle":[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],[8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],[0,6,0,0,0,0,2,8,0],[0,0,0,4,1,9,0,0,5],[0,0,0,0,8,0,0,7,9]],"solution":[[5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],[8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],[9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]]},{"id":"between","title":"Between Lines Sudoku","family":"Lines","rule":"Interior digits lie strictly between the values at the two endpoint circles.","kind":"between","data":{"lines":[{"cells":[[1,6],[2,6],[3,6],[4,6],[5,6]]},{"cells":[[2,1],[2,2],[2,3],[2,4],[2,5]]},{"cells":[[4,8],[5,8],[6,8],[7,8],[8,8]]},{"cells":[[0,1],[0,2],[0,3],[0,4],[0,5]]},{"cells":[[3,4],[4,4],[5,4],[6,4],[7,4]]},{"cells":[[0,2],[0,3],[0,4],[0,5],[0,6]]}]},"puzzle":[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],[8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],[0,6,0,0,0,0,2,8,0],[0,0,0,4,1,9,0,0,5],[0,0,0,0,8,0,0,7,9]],"solution":[[5,3,4,6,7,8,9,1,2],[6,7,2,1,9,5,3,4,8],[1,9,8,3,4,2,5,6,7],[8,5,9,7,6,1,4,2,3],[4,2,6,8,5,3,7,9,1],[7,1,3,9,2,4,8,5,6],[9,6,1,5,3,7,2,8,4],[2,8,7,4,1,9,6,3,5],[3,4,5,2,8,6,1,7,9]]}];}(typeof window!=='undefined'?window:globalThis));
-
 
   </script>
   <script data-source="games/sudoku-bank-iteration2.js">
@@ -1441,7 +1432,6 @@ var s6=[[1,2,3,4,5,6],[4,5,6,1,2,3],[2,3,4,5,6,1],[5,6,1,2,3,4],[3,4,5,6,1,2],[6
 variant('mini-6','Mini Sudoku 6×6','Grid','Use 1–6 once in every row, column, and 2×3 box.','mini6',{},s6,p6);
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration3.js">
 (function (root) {
@@ -1501,7 +1491,6 @@ variant('mini-6','Mini Sudoku 6×6','Grid','Use 1–6 once in every row, column,
   combo('killer-lockout','Killer Lockout',['killer','lockout'],'Killer cage sums apply together with Lockout lines whose interior digits lie outside the endpoint range.');
 }(typeof window !== 'undefined' ? window : globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration4.js">
 (function(root){'use strict';if(!root.SudokuBank)return;var bank=root.SudokuBank;function cp(x){return JSON.parse(JSON.stringify(x));}function classic(){return bank.find(function(v){return v.id==='classic';});}function add(v){bank.push(v);}var c=classic();
@@ -1517,7 +1506,6 @@ var regions=[[0,0,0,1,1,1,2,2,2],[0,0,0,1,1,2,2,2,2],[0,0,0,1,1,1,1,2,2],[3,3,4,
 add({id:'jigsaw',title:'Jigsaw / Irregular Sudoku',family:'Grid',rule:'The standard 3×3 boxes are replaced by nine irregular connected regions; each region contains 1–9 exactly once.',kind:'jigsaw',data:{regions:regions},puzzle:cp(c.puzzle),solution:cp(c.solution)});
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration5.js">
 (function(root){'use strict';if(!root.SudokuBank)return;var bank=root.SudokuBank;
@@ -1530,7 +1518,6 @@ var classic=bank.find(function(v){return v.id==='classic';});
 add({id:'sukaku',title:'Sukaku',family:'Grid',rule:'Each cell starts with an allowed candidate set rather than ordinary givens. Choose one final digit per cell so rows, columns, and boxes contain 1–9.',kind:'sukaku',data:{},puzzle:blank(9),solution:classic.solution.map(function(r){return r.slice();})});
 add({id:'samurai',title:'Samurai / Gattai-5',family:'Grid',rule:'Five overlapping 9×9 Sudokus form one 21×21 cross. Each grid obeys normal Sudoku rules and each shared 3×3 box belongs to both grids.',kind:'samurai',data:{},puzzle:[],solution:[]});
 }(typeof window!=='undefined'?window:globalThis));
-
 
   </script>
   <script data-source="games/sudoku-bank-iteration6.js">
@@ -1563,7 +1550,6 @@ add({id:'samurai',title:'Samurai / Gattai-5',family:'Grid',rule:'Five overlappin
   });
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration7.js">
 (function(root){
@@ -1586,7 +1572,6 @@ add({id:'samurai',title:'Samurai / Gattai-5',family:'Grid',rule:'Five overlappin
     });
   }
 }(typeof window!=='undefined'?window:globalThis));
-
 
   </script>
   <script data-source="games/sudoku-bank-iteration8.js">
@@ -1626,7 +1611,6 @@ add({id:'samurai',title:'Samurai / Gattai-5',family:'Grid',rule:'Five overlappin
   });
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration9.js">
 (function(root){
@@ -1655,7 +1639,6 @@ add({id:'samurai',title:'Samurai / Gattai-5',family:'Grid',rule:'Five overlappin
   couples=couples.filter(function(_,index){return index%4===0;});
   bank.push({id:'couples',title:'Couples Sudoku',family:'Cell relations',rule:'Normal Sudoku rules apply. Cells separated by ~ have the same parity (both odd or both even). Cells separated by a slashed ~ have different parity.',kind:'couples',data:{couples:couples},puzzle:blank(),solution:solution});
 }(typeof window!=='undefined'?window:globalThis));
-
 
   </script>
   <script data-source="games/sudoku-bank-iteration10.js">
@@ -1699,7 +1682,6 @@ add({id:'samurai',title:'Samurai / Gattai-5',family:'Grid',rule:'Five overlappin
   });
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration11.js">
 (function(root){
@@ -1742,7 +1724,6 @@ add({id:'samurai',title:'Samurai / Gattai-5',family:'Grid',rule:'Five overlappin
   });
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration12.js">
 (function(root){
@@ -1778,7 +1759,6 @@ add({id:'samurai',title:'Samurai / Gattai-5',family:'Grid',rule:'Five overlappin
     kind:'nexttonine',data:{clues:nextToNineClues(solution)},puzzle:blank(),solution:solution
   });
 }(typeof window!=='undefined'?window:globalThis));
-
 
   </script>
   <script data-source="games/sudoku-bank-iteration13.js">
@@ -1820,7 +1800,6 @@ add({id:'samurai',title:'Samurai / Gattai-5',family:'Grid',rule:'Five overlappin
   });
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration14.js">
 (function(root){
@@ -1852,7 +1831,6 @@ add({id:'samurai',title:'Samurai / Gattai-5',family:'Grid',rule:'Five overlappin
     kind:'skyscrapernontouching',data:{clues:allSides(nonTouchSolution,'count')},puzzle:blank(),solution:nonTouchSolution
   });
 }(typeof window!=='undefined'?window:globalThis));
-
 
   </script>
   <script data-source="games/sudoku-bank-iteration15.js">
@@ -1889,7 +1867,6 @@ add({id:'samurai',title:'Samurai / Gattai-5',family:'Grid',rule:'Five overlappin
   });
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration16.js">
 (function(root){
@@ -1910,7 +1887,6 @@ add({id:'samurai',title:'Samurai / Gattai-5',family:'Grid',rule:'Five overlappin
   bank.push({id:'inside-skyscrapers',title:'Inside Skyscrapers Sudoku',family:'Outside clues',rule:'Standard Sudoku rules apply. A digit in a cell with an arrow gives the number of skyscrapers visible from that cell in the arrow direction; the clue cell itself is the viewpoint and is not counted.',kind:'insideskyscrapers',data:{sightClues:inside},puzzle:blank(),solution:base});
   bank.push({id:'diagonal-skyscrapers',title:'Diagonal Skyscraper Sudoku',family:'Outside clues',rule:'Standard Sudoku rules apply. Outside clues give the number of skyscrapers visible along the indicated diagonal sightline. Taller buildings hide shorter buildings behind them; digits may repeat along a diagonal if Sudoku allows it.',kind:'diagonalskyscrapers',data:{sightClues:diagonal},puzzle:blank(),solution:base});
 }(typeof window!=='undefined'?window:globalThis));
-
 
   </script>
   <script data-source="games/sudoku-bank-iteration17.js">
@@ -1939,7 +1915,6 @@ add({id:'samurai',title:'Samurai / Gattai-5',family:'Grid',rule:'Five overlappin
     kind:'killerskyscrapers',data:{clues:killerClues,cages:cages},puzzle:blank(),solution:base
   });
 }(typeof window!=='undefined'?window:globalThis));
-
 
   </script>
   <script data-source="games/sudoku-bank-iteration18.js">
@@ -1984,7 +1959,6 @@ add({id:'samurai',title:'Samurai / Gattai-5',family:'Grid',rule:'Five overlappin
   });
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration19.js">
 (function(root){
@@ -2013,7 +1987,6 @@ add({id:'samurai',title:'Samurai / Gattai-5',family:'Grid',rule:'Five overlappin
   });
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration20.js">
 (function(root){
@@ -2035,7 +2008,6 @@ add({id:'samurai',title:'Samurai / Gattai-5',family:'Grid',rule:'Five overlappin
   });
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration21.js">
 (function(root){
@@ -2054,7 +2026,6 @@ root.SudokuBank.push({
   });
 
 }(typeof window!=='undefined'?window:globalThis));
-
 
   </script>
   <script data-source="games/sudoku-bank-iteration22.js">
@@ -2079,7 +2050,6 @@ root.SudokuBank.push({
   });
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration23.js">
 (function(root){
@@ -2098,7 +2068,6 @@ root.SudokuBank.push({
 });
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration30.js">
 (function(root){
@@ -2113,7 +2082,6 @@ root.SudokuBank.push({
   });
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration31.js">
 (function(root){
@@ -2126,7 +2094,6 @@ root.SudokuBank.push({
     puzzle:[],solution:[]
   });
 }(typeof window!=='undefined'?window:globalThis));
-
 
   </script>
   <script data-source="games/sudoku-bank-iteration32.js">
@@ -2141,7 +2108,6 @@ root.SudokuBank.push({
   });
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration33.js">
 (function(root){
@@ -2154,7 +2120,6 @@ root.SudokuBank.push({
     puzzle:[],solution:[]
   });
 }(typeof window!=='undefined'?window:globalThis));
-
 
   </script>
   <script data-source="games/sudoku-bank-iteration34.js">
@@ -2169,7 +2134,6 @@ root.SudokuBank.push({
   });
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration35.js">
 (function(root){
@@ -2183,7 +2147,6 @@ root.SudokuBank.push({
   });
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration36.js">
 (function(root){
@@ -2195,7 +2158,6 @@ root.SudokuBank.push({
     data:{source:'World Puzzle Federation Nurikabe rules',inputMode:'nurikabe',size:5},puzzle:[],solution:[]
   });
 }(typeof window!=='undefined'?window:globalThis));
-
 
   </script>
   <script data-source="games/sudoku-bank-iteration37.js">
@@ -2209,7 +2171,6 @@ root.SudokuBank.push({
   });
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration38.js">
 (function(root){
@@ -2222,7 +2183,6 @@ root.SudokuBank.push({
   });
 }(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration50.js">
 (function(root){'use strict';if(!root.SudokuBank)return;
@@ -2231,7 +2191,6 @@ root.SudokuBank.push(
 {id:'aquarium',title:'Aquarium',family:'Japanese logic',kind:'aquarium',rule:'Shade water cells so every aquarium fills from the bottom up to one level. The numbers outside the grid give the number of water cells in each row and column.',data:{inputMode:'aquarium'},puzzle:[],solution:[]},
 {id:'tentai-show',title:'Tentai Show',family:'Japanese logic',kind:'galaxies',rule:'Divide the grid into galaxies. Every galaxy contains exactly one marked center and is 180-degree rotationally symmetric around that center.',data:{inputMode:'galaxies'},puzzle:[],solution:[]}
 );}(typeof window!=='undefined'?window:globalThis));
-
 
   </script>
   <script data-source="games/sudoku-bank-iteration51.js">
@@ -2242,7 +2201,6 @@ root.SudokuBank.push(
 {id:'yajilin',title:'Yajilin',family:'Japanese logic',kind:'yajilin',rule:'Draw one loop through the white cells. Arrow clues count black cells in their direction; black cells may not touch orthogonally.',data:{inputMode:'yajilin'},puzzle:[],solution:[]}
 );}(typeof window!=='undefined'?window:globalThis));
 
-
   </script>
   <script data-source="games/sudoku-bank-iteration52.js">
 (function(root){'use strict';if(!root.SudokuBank)return;
@@ -2251,7 +2209,6 @@ root.SudokuBank.push(
 {id:'battleships',title:'Battleships',family:'Japanese logic',kind:'battleships',rule:'Place the indicated fleet. Ships run horizontally or vertically and never touch another ship, even diagonally. Edge clues give the number of ship cells in each row and column.',data:{inputMode:'shade'},puzzle:[],solution:[]},
 {id:'heyawake',title:'Heyawake',family:'Japanese logic',kind:'heyawake',rule:'Shade cells so each numbered room contains exactly that many shaded cells. Shaded cells may not touch orthogonally, white cells stay connected, and a straight white run may not pass through three rooms.',data:{inputMode:'shade'},puzzle:[],solution:[]}
 );}(typeof window!=='undefined'?window:globalThis));
-
 
   </script>
   <script data-source="games/skyscraper-parks2-certified-corpus.js">
@@ -2269,7 +2226,6 @@ root.SudokuBank.push(
     certificate:{exactVariantUnique:true,baseNonUnique:true,variantEssential:true,locallyIrreducibleUnderProductionContract:true,localIrreducibilityProof:'monotone-nonuniqueness-from-single-pass',acceptedRemovals:14,rejectedRemovals:6,finalGivens:6,evidence:'host-realm deterministic carve audit, seed 92001'}
   }];
 }(typeof window!=='undefined'?window:globalThis));
-
 
   </script>
   <script data-source="games/sudoku-generator.js">
@@ -4721,7 +4677,6 @@ root.SudokuBank.push(
   };
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/classic-human/contracts.js">
 (function(root){'use strict';
@@ -4760,7 +4715,6 @@ root.SudokuBank.push(
   function countSolutions(source,limit){limit=limit==null?2:limit;if(!Number.isInteger(limit)||limit<1)throw new RangeError('limit must be >=1');var initial=new ClassicCandidateState(source);if(!initial.valid)return 0;var grid=initial.cloneGrid(),rowUsed=new Uint16Array(initial.rowUsed),colUsed=new Uint16Array(initial.colUsed),boxUsed=new Uint16Array(initial.boxUsed),found=0;function search(){if(found>=limit)return;var best=-1,bestMask=0,bestCount=10;for(var idx=0;idx<81;idx++){var rc=rowCol(idx),r=rc[0],c=rc[1];if(grid[r][c])continue;var mask=FULL_MASK&~(rowUsed[r]|colUsed[c]|boxUsed[boxIndex(r,c)]),cnt=bitCount(mask);if(!cnt)return;if(cnt<bestCount){best=idx;bestMask=mask;bestCount=cnt;if(cnt===1)break;}}if(best<0){found++;return;}var rc=rowCol(best),r=rc[0],c=rc[1],b=boxIndex(r,c);for(var bits=bestMask;bits&&found<limit;bits&=bits-1){var bit=bits&-bits,digit=digitsFromMask(bit)[0];grid[r][c]=digit;rowUsed[r]|=bit;colUsed[c]|=bit;boxUsed[b]|=bit;search();grid[r][c]=0;rowUsed[r]&=~bit;colUsed[c]&=~bit;boxUsed[b]&=~bit;}}search();return found;}function isSolvedGrid(source){var state=new ClassicCandidateState(source);if(!state.valid)return false;for(var r=0;r<9;r++)for(var c=0;c<9;c++)if(!state.grid[r][c])return false;return true;}
   var api={FULL_MASK:FULL_MASK,FAMILY_IDS:FAMILY_IDS,TECHNIQUES:TECHNIQUES,bitForDigit:bitForDigit,bitCount:bitCount,digitsFromMask:digitsFromMask,boxIndex:boxIndex,cellIndex:cellIndex,rowCol:rowCol,parseGrid:parseGrid,ClassicCandidateState:ClassicCandidateState,normalizeDeduction:normalizeDeduction,deductionStateKey:deductionStateKey,compareDeductions:compareDeductions,countSolutions:countSolutions,isSolvedGrid:isSolvedGrid};if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ClassicHumanContracts=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
-
 
   </script>
   <script data-source="games/classic-human/links.js">
@@ -4824,7 +4778,6 @@ root.SudokuBank.push(
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
   root.ClassicHumanLinks=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
-
 
   </script>
   <script data-source="games/classic-human/implication-graph.js">
@@ -4942,7 +4895,6 @@ root.SudokuBank.push(
   root.ClassicHumanImplicationGraph=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
 
-
   </script>
   <script data-source="games/classic-human/als.js">
 (function(root){'use strict';
@@ -5020,7 +4972,6 @@ root.SudokuBank.push(
   root.ClassicHumanALS=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
 
-
   </script>
   <script data-source="games/classic-human/fish.js">
 (function(root){'use strict';
@@ -5039,7 +4990,6 @@ root.SudokuBank.push(
   function findFinnedXWing(state){return findFinnedFish(state,2).filter(function(x){return x.techniqueId==='finned-x-wing';});}function findSashimiXWing(state){return findFinnedFish(state,2).filter(function(x){return x.techniqueId==='sashimi-x-wing';});}function findFinnedSwordfish(state){return findFinnedFish(state,3).filter(function(x){return x.techniqueId==='finned-swordfish';});}function findSashimiSwordfish(state){return findFinnedFish(state,3).filter(function(x){return x.techniqueId==='sashimi-swordfish';});}function findFinnedJellyfish(state){return findFinnedFish(state,4).filter(function(x){return x.techniqueId==='finned-jellyfish';});}function findSashimiJellyfish(state){return findFinnedFish(state,4).filter(function(x){return x.techniqueId==='sashimi-jellyfish';});}
   var api={findFish:findFish,findXWing:findXWing,findSwordfish:findSwordfish,findJellyfish:findJellyfish,findFinnedFish:findFinnedFish,findFinnedXWing:findFinnedXWing,findSashimiXWing:findSashimiXWing,findFinnedSwordfish:findFinnedSwordfish,findSashimiSwordfish:findSashimiSwordfish,findFinnedJellyfish:findFinnedJellyfish,findSashimiJellyfish:findSashimiJellyfish};if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ClassicHumanFish=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
-
   </script>
   <script data-source="games/classic-human/single-digit-patterns.js">
 (function(root){'use strict';
@@ -5192,7 +5142,6 @@ root.SudokuBank.push(
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
   root.ClassicHumanSingleDigitPatterns=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
-
 
   </script>
   <script data-source="games/classic-human/solver.js">
@@ -5442,7 +5391,6 @@ root.SudokuBank.push(
   root.ClassicHumanSolver=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
 
-
   </script>
   <script data-source="games/classic-human/wings.js">
 (function(root){'use strict';
@@ -5557,7 +5505,6 @@ root.SudokuBank.push(
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
   root.ClassicHumanWings=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
-
 
   </script>
   <script data-source="games/classic-human/coloring.js">
@@ -5689,7 +5636,6 @@ root.SudokuBank.push(
   root.ClassicHumanColoring=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
 
-
   </script>
   <script data-source="games/classic-human/uniqueness.js">
 (function(root){'use strict';
@@ -5806,7 +5752,6 @@ root.SudokuBank.push(
 
   var api={findUniqueRectangle:findUniqueRectangle,findUniqueLoop:findUniqueLoop,findBugPlusOne:findBugPlusOne};if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ClassicHumanUniqueness=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
-
 
   </script>
   <script data-source="games/classic-human/chains.js">
@@ -5968,7 +5913,6 @@ root.SudokuBank.push(
   root.ClassicHumanChains=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
 
-
   </script>
   <script data-source="games/classic-human/aic.js">
 (function(root){'use strict';
@@ -6113,7 +6057,6 @@ root.SudokuBank.push(
   root.ClassicHumanAIC=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
 
-
   </script>
   <script data-source="games/classic-human/grouped-aic.js">
 (function(root){'use strict';
@@ -6217,7 +6160,6 @@ root.SudokuBank.push(
   root.ClassicHumanGroupedAic=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
 
-
   </script>
   <script data-source="games/classic-human/als-xz.js">
 (function(root){'use strict';
@@ -6279,7 +6221,6 @@ root.SudokuBank.push(
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
   root.ClassicHumanAlsXz=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
-
 
   </script>
   <script data-source="games/classic-human/als-xy-wing.js">
@@ -6348,7 +6289,6 @@ root.SudokuBank.push(
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
   root.ClassicHumanAlsXyWing=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
-
 
   </script>
   <script data-source="games/classic-human/als-chain.js">
@@ -6449,7 +6389,6 @@ root.SudokuBank.push(
   root.ClassicHumanAlsChain=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
 
-
   </script>
   <script data-source="games/classic-human/trace-analysis.js">
 (function(root){'use strict';
@@ -6541,7 +6480,6 @@ root.SudokuBank.push(
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
   root.ClassicHumanTraceAnalysis=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
-
 
   </script>
   <script data-source="games/classic-human/rating.js">
@@ -6729,7 +6667,6 @@ root.SudokuBank.push(
   root.ClassicHumanRating=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
 
-
   </script>
   <script data-source="games/classic-human/runtime-solver.js">
 (function(root){'use strict';
@@ -6798,7 +6735,6 @@ root.SudokuBank.push(
   var api={FINDERS:FINDERS,findNext:findNext,solve:solve};if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ClassicHumanRuntimeSolver=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
 
-
   </script>
   <script data-source="games/classic-human/runtime-evaluator.js">
 (function(root){'use strict';
@@ -6820,7 +6756,6 @@ root.SudokuBank.push(
   function evaluateExpertSearch(puzzle){return baseEvaluate(puzzle,true);}
   var api={evaluate:evaluate,evaluateExpertSearch:evaluateExpertSearch};if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ClassicHumanRuntimeEvaluator=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
-
 
   </script>
   <script data-source="games/classic-human/runtime-guided-generator.js">
@@ -6986,7 +6921,6 @@ root.SudokuBank.push(
   root.ClassicHumanRuntimeGuidedGenerator=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
 
-
   </script>
   <script data-source="games/classic-human-runtime-generator.js">
 (function(root){'use strict';
@@ -7016,7 +6950,6 @@ root.SudokuBank.push(
   function install(generator){if(!generator||typeof generator.make!=='function')throw new TypeError('SudokuGenerator.make is required');if(generator.__classicHumanRuntimeGeneratorInstalled)return generator;var previous=generator.make;generator.make=function(variant,seed,difficulty){if(variant&&variant.id==='classic'){var base=function(v,s,d){return previous.call(generator,v,s,d);};return publish(difficulty==='expert'?expertMake(base,variant,seed):G.make(base,variant,seed,difficulty));}return previous.apply(this,arguments);};Object.defineProperty(generator,'__classicHumanRuntimeGeneratorInstalled',{value:true,configurable:false,enumerable:false,writable:false});generator.classicHumanRuntimeGeneratorStatus={installed:true,profile:G.PROFILE,budgets:G.BUDGETS,expertProfile:EXPERT_PROFILE,expertBudget:EXPERT_BUDGET};return generator;}
   var api={install:install,profile:G.PROFILE,budgets:G.BUDGETS,expertProfile:EXPERT_PROFILE,expertBudget:EXPERT_BUDGET};if(typeof module!=='undefined'&&module.exports)module.exports=api;root.ClassicHumanRuntimeGenerator=api;
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/extra-house-generator-core.js">
@@ -7144,7 +7077,6 @@ root.SudokuBank.push(
   root.ExtraHouseGeneratorCore={compile:compile,solve:solve,freshSolution:freshSolution,makeVariant:makeVariant,clone:clone,rng:rng,shuffle:shuffle};
 })(globalThis);
 
-
   </script>
   <script data-source="games/line-generator-core.js">
 (function(root){
@@ -7266,7 +7198,6 @@ root.SudokuBank.push(
   root.LineGeneratorCore={EXHAUSTED:EXHAUSTED,cloneGrid:cloneGrid,rng:rng,shuffle:shuffle,freshStandardSolution:freshStandardSolution,neighbours4:neighbours4,validateSimplePath:validateSimplePath,buildTransitionPath:buildTransitionPath,topologyFingerprint:topologyFingerprint,makeWhispersPilot:makeWhispersPilot};
 })(globalThis);
 
-
   </script>
   <script data-source="games/killer-generator.js">
 (function(root){
@@ -7298,7 +7229,6 @@ root.SudokuBank.push(
   root.KillerGenerator={cageValid:cageValid,partitionValid:partitionValid,buildCages:buildCages,topologyFingerprint:topologyFingerprint,makeVariantPilot:makeVariantPilot};
 })(globalThis);
 
-
   </script>
   <script data-source="games/line-generator-arrow.js">
 (function(root){
@@ -7318,7 +7248,6 @@ root.SudokuBank.push(
     throw new Error(EXHAUSTED+': Arrow pilot');}
   root.LineGeneratorArrow={arrowValid:arrowValid,buildArrow:buildArrow,topologyFingerprint:fingerprint,makeVariantPilot:makeVariantPilot};
 })(globalThis);
-
 
   </script>
   <script data-source="games/line-generator-whole-set.js">
@@ -7394,7 +7323,6 @@ root.SudokuBank.push(
 
   root.LineGeneratorWholeSet={buildRenbanPath:buildRenbanPath,makeRenbanPilot:makeRenbanPilot};
 })(globalThis);
-
 
   </script>
   <script data-source="games/line-generator-proven-siblings.js">
@@ -7527,7 +7455,6 @@ root.SudokuBank.push(
   root.LineGeneratorProvenSiblings={CONFIGS:CONFIGS,buildNabnerPath:buildNabnerPath,buildPalindromePath:buildPalindromePath,buildLockoutPath:buildLockoutPath,makeVariantPilot:makeVariantPilot};
 })(globalThis);
 
-
   </script>
   <script data-source="games/line-generator-sliding-triple.js">
 (function(root){
@@ -7629,7 +7556,6 @@ root.SudokuBank.push(
   root.LineGeneratorSlidingTriple={CONFIGS:CONFIGS,configFor:configFor,buildSlidingTriplePath:buildSlidingTriplePath,lineValid:lineValid,makeVariantPilot:makeVariantPilot};
 })(globalThis);
 
-
   </script>
   <script data-source="games/line-generator-directed.js">
 (function(root){
@@ -7714,7 +7640,6 @@ root.SudokuBank.push(
   root.LineGeneratorDirected={CONFIGS:CONFIGS,configFor:configFor,lineValid:lineValid,buildDirectedPath:buildDirectedPath,makeVariantPilot:makeVariantPilot};
 })(globalThis);
 
-
   </script>
   <script data-source="games/argyle-runtime-hardening.js">
 (function(root){
@@ -7754,7 +7679,6 @@ root.SudokuBank.push(
   generator.countVariantSolutions=function(source,variant,limit,stats){if(variant&&variant.kind==='uniqueline')return countUniqueLineSolutions(source,variant,limit,stats);return baseCount.call(this,source,variant,limit,stats);};
   root.ArgyleRuntimeHardening={uniqueLinesValid:uniqueLinesValid,countUniqueLineSolutions:countUniqueLineSolutions};
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/line-generator-argyle.js">
@@ -7832,7 +7756,6 @@ root.SudokuBank.push(
   }
   root.LineGeneratorArgyle={diagonalPool:diagonalPool,chooseLattice:chooseLattice,uniqueOnSolution:uniqueOnSolution,intersectionCount:intersectionCount,makeVariantPilot:makeVariantPilot};
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/line-generator-region-sum.js">
@@ -7923,7 +7846,6 @@ root.SudokuBank.push(
   root.LineGeneratorRegionSum={segmentInfo:segmentInfo,topologyValid:topologyValid,buildRegionSumPath:buildRegionSumPath,makeVariantPilot:makeVariantPilot};
 })(globalThis);
 
-
   </script>
   <script data-source="games/diagonal-generator-hardening.js">
 (function(root){
@@ -7949,7 +7871,6 @@ root.SudokuBank.push(
     return baseMake.call(this,variant,seed,difficulty);
   };
 })(globalThis);
-
 
   </script>
   <script data-source="games/extra-house-generator-hardening.js">
@@ -7979,7 +7900,6 @@ root.SudokuBank.push(
 
   root.SudokuGenerator.make=function(variant,seed,difficulty){var d=difficulty||'focused',kind=variant&&variant.kind;if(kind==='hyper'||kind==='disjoint'||kind==='parity'||adjacencyKinds[kind]){var key=kind+':'+(seed>>>0)+':'+d;if(!cache.has(key)){if(kind==='hyper')cache.set(key,makeHyper(variant,seed,d));else if(kind==='disjoint')cache.set(key,makeDisjoint(variant,seed,d));else if(kind==='parity')cache.set(key,makeParity(variant,seed,d));else cache.set(key,makeAdjacency(variant,seed,d));}return JSON.parse(JSON.stringify(cache.get(key)));}return baseMake.call(this,variant,seed,difficulty);};
 })(globalThis);
-
 
   </script>
   <script data-source="games/iteration4-generator-hardening.js">
@@ -8119,7 +8039,6 @@ root.SudokuBank.push(
   };
 })(globalThis);
 
-
   </script>
   <script data-source="games/magic-square-generator-hardening.js">
 (function(root){
@@ -8156,7 +8075,6 @@ root.SudokuBank.push(
   G.make=function(variant,seed,difficulty){if(variant&&variant.id==='magic-square')return makeMagic(variant,seed,difficulty);return baseMake.call(this,variant,seed,difficulty);};
   root.MagicSquareGeneratorHardening={freshSolution:freshSolution,makeMagic:makeMagic};
 })(globalThis);
-
 
   </script>
   <script data-source="games/asterisk-generator-hardening.js">
@@ -8214,7 +8132,6 @@ root.SudokuBank.push(
   generator.make=function(variant,seed,difficulty){if(variant&&variant.id==='asterisk')return makeAsterisk(variant,seed,difficulty);return baseMake.call(this,variant,seed,difficulty);};
   root.AsteriskGeneratorHardening={buildTopology:buildTopology,makeAsterisk:makeAsterisk};
 })(globalThis);
-
 
   </script>
   <script data-source="games/jigsaw-generator-hardening.js">
@@ -8406,7 +8323,6 @@ root.SudokuBank.push(
   generator.jigsawRegionsValidForSolution=regionsValidForSolution;
 })(globalThis);
 
-
   </script>
   <script data-source="games/iteration5-generator-hardening.js">
 (function(root){
@@ -8513,7 +8429,6 @@ root.SudokuBank.push(
   generator.makeRotationSafeSudoku12=makeSudoku12;
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/iteration6-generator-hardening.js">
 (function(root){
@@ -8539,7 +8454,6 @@ root.SudokuBank.push(
   generator.iteration6SearchStats=searchStats;
   generator.make=function(variant,seed,difficulty){var out=variant&&variant.id==='quad-sums'?makeQuadSums(variant,seed,difficulty):baseMake.call(this,variant,seed,difficulty);if(variant&&(variant.id==='anti-queen-9'||variant.id==='quad-sums')){var stats=searchStats(out.puzzle,out);out.generation.searchStats=stats;out.generation.difficultyScore=stats.nodes+stats.branches*3+stats.deadEnds*2;if(variant.id==='anti-queen-9')out.generation.generatorFamily=(out.generation.generatorFamily||'variant-essential')+'-measured';else out.generation.measured=true;}return out;};
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/iteration7-generator-hardening.js">
@@ -8633,7 +8547,6 @@ root.SudokuBank.push(
   };
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/iteration8-generator-hardening.js">
 (function(root){
@@ -8704,7 +8617,6 @@ root.SudokuBank.push(
   };
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/iteration9-generator-hardening.js">
 (function(root){
@@ -8768,7 +8680,6 @@ root.SudokuBank.push(
     return out;
   };
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/iteration10-generator-hardening.js">
@@ -8835,7 +8746,6 @@ root.SudokuBank.push(
   };
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/iteration11-generator-hardening.js">
 (function(root){
@@ -8872,7 +8782,6 @@ root.SudokuBank.push(
   generator.iteration11SearchStats=searchStats;
   generator.make=function(variant,seed,difficulty){var out=variant&&variant.id==='minmax'?makeMinMax(variant,seed,difficulty):baseMake.call(this,variant,seed,difficulty);if(variant&&(variant.id==='bishopsgate'||variant.id==='minmax')){var stats=searchStats(out.puzzle,out);out.generation.searchStats=stats;out.generation.difficultyScore=stats.nodes+stats.branches*3+stats.deadEnds*2;if(variant.id==='bishopsgate')out.generation.generatorFamily=(out.generation.generatorFamily||'variant-essential')+'-measured';else out.generation.measured=true;}return out;};
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/iteration12-generator-hardening.js">
@@ -8962,7 +8871,6 @@ root.SudokuBank.push(
     return out;
   };
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/iteration13-generator-hardening.js">
@@ -9094,7 +9002,6 @@ root.SudokuBank.push(
   generator.make=function(variant,seed,difficulty){var relation=variant&&['couples','reflection','slingshot','bishopsgate','axia'].indexOf(variant.id)>=0;var out=variant&&variant.id==='even-sandwich'?makeEvenSandwich(variant,seed,difficulty):variant&&variant.id==='top-heavy-parity'?makeTopHeavy(variant,seed,difficulty):relation?makeRelationVariant(variant,seed,difficulty):baseMake.call(this,variant,seed,difficulty);if(variant&&(variant.id==='even-sandwich'||variant.id==='top-heavy-parity')){var stats=searchStats(out.puzzle,out);out.generation.searchStats=stats;out.generation.difficultyScore=stats.nodes+stats.branches*3+stats.deadEnds*2;out.generation.measured=true;}return out;};
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/iteration14-generator-hardening.js">
 (function(root){
@@ -9158,7 +9065,6 @@ root.SudokuBank.push(
   };
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/iteration15-generator-hardening.js">
 (function(root){
@@ -9216,7 +9122,6 @@ root.SudokuBank.push(
   };
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/iteration16-generator-hardening.js">
 (function(root){
@@ -9273,7 +9178,6 @@ root.SudokuBank.push(
     return out;
   };
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/iteration17-generator-hardening.js">
@@ -9345,7 +9249,6 @@ root.SudokuBank.push(
   };
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/iteration18-generator-hardening.js">
 (function(root){
@@ -9399,7 +9302,6 @@ root.SudokuBank.push(
     return out;
   };
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/iteration19-generator-hardening.js">
@@ -9489,7 +9391,6 @@ root.SudokuBank.push(
   };
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/iteration20-generator-hardening.js">
 (function(root){
@@ -9549,7 +9450,6 @@ root.SudokuBank.push(
   };
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/iteration21-generator-hardening.js">
 (function(root){
@@ -9594,7 +9494,6 @@ root.SudokuBank.push(
     return out;
   };
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/iteration22-generator-hardening.js">
@@ -9644,7 +9543,6 @@ root.SudokuBank.push(
   };
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/iteration23-generator-hardening.js">
 (function(root){
@@ -9689,7 +9587,6 @@ root.SudokuBank.push(
   };
   if(root.ClassicHumanRuntimeGenerator)root.ClassicHumanRuntimeGenerator.install(generator);
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/ordering-family-generator-hardening.js">
@@ -9754,7 +9651,6 @@ root.SudokuBank.push(
     return baseMake.call(this,variant,seed,difficulty);
   };
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/anti-queen-9-generator-hardening.js">
@@ -9837,7 +9733,6 @@ root.SudokuBank.push(
   }
   generator.make=function(variant,seed,difficulty){return variant&&variant.id==='anti-queen-9'?makeAntiQueen(variant,seed,difficulty):baseMake.call(this,variant,seed,difficulty);};
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/final-three-generator-hardening.js">
@@ -9962,7 +9857,6 @@ root.SudokuBank.push(
   };
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/line-generator-hardening.js">
 (function(root){
@@ -10010,7 +9904,6 @@ root.SudokuBank.push(
     return baseMake.call(this,variant,seed,difficulty);
   };
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/line-generator-proven-siblings-hardening.js">
@@ -10257,7 +10150,6 @@ root.SudokuBank.push(
   };
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/line-generator-sliding-triple-hardening.js">
 (function(root){
@@ -10274,7 +10166,6 @@ root.SudokuBank.push(
     return baseMake.call(this,variant,seed,difficulty);
   };
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/line-generator-directed-hardening.js">
@@ -10293,7 +10184,6 @@ root.SudokuBank.push(
   };
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/line-generator-argyle-hardening.js">
 (function(root){
@@ -10310,7 +10200,6 @@ root.SudokuBank.push(
     return baseMake.call(this,variant,seed,difficulty);
   };
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/line-generator-arrow-hardening.js">
@@ -10329,7 +10218,6 @@ root.SudokuBank.push(
   };
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/killer-generator-hardening.js">
 (function(root){
@@ -10347,7 +10235,6 @@ root.SudokuBank.push(
   };
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/line-generator-region-sum-hardening.js">
 (function(root){
@@ -10364,7 +10251,6 @@ root.SudokuBank.push(
     return baseMake.call(this,variant,seed,difficulty);
   };
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/quadruple-runtime-hardening.js">
@@ -10444,7 +10330,6 @@ root.SudokuBank.push(
   runtime.countQuadrupleSolutions=countSolutions;
   root.QuadrupleRuntimeHardening=runtime;
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/little-killer-runtime-hardening.js">
@@ -10692,7 +10577,6 @@ root.SudokuBank.push(
   generator.make=function(variant,seed,difficulty){if(variant&&variant.kind==='littlekiller')return makeLittleKiller(variant,seed,difficulty);if(variant&&variant.kind==='clone')return makeClone(variant,seed,difficulty);return baseMake.call(this,variant,seed,difficulty);};
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/nabner-hidden-single-runtime.js">
 (function(root){
@@ -10839,7 +10723,6 @@ root.SudokuBank.push(
   };
   root.NabnerHiddenSingleRuntime={count:countNabnerSolutions,baseCount:baseCount,verification:'nabner-hidden-single-mrv-exact-v3'};
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/x-sums-runtime-hardening.js">
@@ -11064,7 +10947,6 @@ root.SudokuBank.push(
 
   root.XSumsRuntimeHardening={expertMinimumScore:EXPERT_MIN_SCORE,maxCandidates:MAX_CANDIDATES,candidateSeed:candidateSeed,rossiniClues:rossiniClues,sandwichClues:sandwichClues,outsideMaxAttempts:MAX_OUTSIDE_ATTEMPTS,skyscraperStructuralKinds:SKYSCRAPER_STRUCTURAL_KINDS.slice(),nonTouchingStructure:'reuse-iteration4-anti-king-seeded-solver-v2',skyscraperParksExpertTarget:SKYSCRAPER_PARKS_EXPERT_TARGET,skyscraperParksVerification:SKYSCRAPER_PARKS_VERIFICATION};
 })(typeof window!=='undefined'?window:globalThis);
-
   </script>
   <script data-source="games/miracle-generator-hardening.js">
 (function(root){
@@ -11216,7 +11098,6 @@ root.SudokuBank.push(
   root.MiracleGeneratorHardening={maxAttempts:MAX_ATTEMPTS,nodeLimit:NODE_LIMIT,cellTieBreak:'seeded-mrv-ties'};
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/skyscraper-parks-arc-runtime.js">
 (function(root){
@@ -11278,7 +11159,6 @@ root.SudokuBank.push(
   };
   root.SkyscraperParksArcRuntime={countArc:countArc,fallback:fallback,verification:VERIFICATION};
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/puzzle-rule-validators.js">
@@ -12950,7 +12830,6 @@ root.SudokuBank.push(
   root.RegionSumRuntimeHardening={countRegionSumSolutions:countRegionSumSolutions,classicConflict:classicConflict,regionConflict:regionConflict,correctRegionSumClasses:correctRegionSumClasses,makeClonePuzzle:makeClonePuzzle,translatedCloneGroups:translatedCloneGroups};
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/little-killer-layout-final-hardening.js">
 (function(root){
@@ -13002,7 +12881,6 @@ root.SudokuBank.push(
   root.LittleKillerRenderHardening={layout:layout,harden:hardenAll,decodeRawPosition:decodeRawPosition,arrangeDescriptors:arrangeDescriptors};if(root.RegionSumRuntimeHardening)root.RegionSumRuntimeHardening.littleKillerLayout=layout;
   if(typeof document!=='undefined'){var pending=false,observer=null;function schedule(){if(pending)return;pending=true;(root.requestAnimationFrame||function(fn){return setTimeout(fn,0);})(function(){pending=false;hardenAll();});}if(typeof MutationObserver!=='undefined'){observer=new MutationObserver(function(records){for(var i=0;i<records.length;i++)if(records[i].type==='childList'){schedule();break;}});observer.observe(document.documentElement,{childList:true,subtree:true});}root.addEventListener&&root.addEventListener('resize',schedule,{passive:true});if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',schedule,{once:true});else schedule();}
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/quadruple-render-final-hardening.js">
@@ -13088,7 +12966,6 @@ root.SudokuBank.push(
     if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',schedule,{once:true});else schedule();
   }
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/ildi-feedback-runtime-hardening.js">
@@ -13429,7 +13306,6 @@ root.SudokuBank.push(
     }
   }
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/p3-star-battle-complete.js">
@@ -14045,7 +13921,6 @@ root.SudokuBank.push(
   }
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/p3-galaxies-complete.js">
 (function(root){
@@ -14268,7 +14143,6 @@ root.SudokuBank.push(
   document.addEventListener('sudoku:languagechange',language);
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ensureControl,{once:true});else ensureControl();
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/p3-hitori-complete.js">
@@ -14607,7 +14481,6 @@ root.SudokuBank.push(
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ensureControl,{once:true});else ensureControl();
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/p3-futoshiki-complete.js">
 (function(root){
@@ -14824,7 +14697,6 @@ root.SudokuBank.push(
   document.addEventListener('sudoku:languagechange',language);
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ensureControl,{once:true});else ensureControl();
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/p3-fillomino-complete.js">
@@ -15091,7 +14963,6 @@ root.SudokuBank.push(
   root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};root.IldiP3SizeSupport.fillomino=supported.slice();
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/p3-nonogram-complete.js">
 (function(root){
@@ -15285,7 +15156,6 @@ root.SudokuBank.push(
   root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};
   root.IldiP3SizeSupport.nonogram=supported.slice();
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/p3-heyawake-complete.js">
@@ -15554,7 +15424,6 @@ root.SudokuBank.push(
   root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};
   root.IldiP3SizeSupport.heyawake=supported.slice();
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/p3-akari-complete.js">
@@ -15903,7 +15772,6 @@ root.SudokuBank.push(
   root.IldiP3SizeSupport.akari=supported.slice();
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/p3-nurikabe-complete.js">
 (function(root){
@@ -16161,7 +16029,6 @@ root.SudokuBank.push(
   root.IldiP3SizeSupport.nurikabe=supported.slice();
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/p3-ripple-effect-complete.js">
 (function(root){
@@ -16292,7 +16159,6 @@ root.SudokuBank.push(
   root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};
   root.IldiP3SizeSupport['ripple-effect']=supported.slice();
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/p3-battleships-complete.js">
@@ -16602,7 +16468,6 @@ root.SudokuBank.push(
   root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};
   root.IldiP3SizeSupport.battleships=supported.slice();
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/p3-slitherlink-complete.js">
@@ -16928,7 +16793,6 @@ root.SudokuBank.push(
   root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};
   root.IldiP3SizeSupport.slitherlink=supported.slice();
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/p3-masyu-complete.js">
@@ -17322,7 +17186,6 @@ root.SudokuBank.push(
   root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};
   root.IldiP3SizeSupport.masyu=supported.slice();
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/p3-hashiwokakero-complete.js">
@@ -17911,7 +17774,6 @@ root.SudokuBank.push(
   root.IldiP3SizeSupport.skyscraper=supported.slice();
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="games/p3-double-skyscraper-complete.js">
 (function(root){
@@ -18212,7 +18074,6 @@ root.SudokuBank.push(
   root.IldiP3SizeSupport=root.IldiP3SizeSupport||{};
   root.IldiP3SizeSupport['double-skyscrapers']=supported.slice();
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
   <script data-source="games/p3-size-control.js">
@@ -18646,7 +18507,6 @@ root.SudokuBank.push(
   };
 })(typeof window!=='undefined'?window:globalThis);
 
-
   </script>
   <script data-source="assets/app.js">
 (function(){
@@ -18684,7 +18544,6 @@ function bind(){refs['help-button'].addEventListener('click',function(){refs['he
 function init(){pruneRedundantInfo();initRefs();applyLanguage();setTheme(getTheme());renderStats();renderFavourites();bind();state.active=LR.games.find(function(g){return g.id==='sudoku-library';});state.seed=(Date.now()^LR.hashString('sudoku-library'))>>>0;mountActive(false);}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 }());
-
 
   </script>
   <script data-source="assets/generation-progress.js">
@@ -18887,7 +18746,6 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     hide:hide
   };
 })(typeof window!=='undefined'?window:globalThis);
-
 
   </script>
 </body>
