@@ -1,8 +1,13 @@
 # Architecture
 
+## Publication boundary
+
+This document describes the copied modular source and its historical iterations. In this publication repository, [index.html](../index.html) already contains inline scripts/styles and a link to [status.html](../status.html); it does not load the modular files described below.
+Current product changes belong to the [source repository](../../ildi-sudoku-kertje/AGENTS.md). Use its [maintenance contract](../../ildi-sudoku-kertje/docs/REPOSITORY_MAINTENANCE.md) for artifact generation/publication and the local [task router](../AGENTS.md) for publication constraints. The separate Brutal research subsystem is not a player runtime dependency.
+
 ## Offline contract
 
-`index.html` loads one stylesheet and ordered classic scripts by relative path. There are no ES modules, package imports, fetch calls, remote assets, fonts, service workers, or runtime data files. This avoids cross-origin and module-loading differences when the page is opened through `file://`.
+The modular source layout loads local stylesheets and ordered classic scripts by relative path; standalone generation inlines them for publication. Player runtime code must remain independent of ES module/package loading, network APIs, remote assets and services so the game works through `file://`.
 
 ## Shared shell
 
