@@ -1,5 +1,13 @@
 # Ildi Sudoku Kertje / Ildi's Sudoku Garden
 
+## Repository role
+
+This is the static publication repository. Start with [AGENTS.md](AGENTS.md) for task routing and safety constraints.
+The current [index.html](index.html) contains inline game scripts/styles and links to the generated [status.html](status.html).
+Product development belongs to [ildi-sudoku-kertje](../ildi-sudoku-kertje/AGENTS.md); the copied modules, tools and iteration notes below are historical source/release material, not the current development authority.
+For build and publication work use the source [maintenance contract](../ildi-sudoku-kertje/docs/REPOSITORY_MAINTENANCE.md). The legacy publisher copied here assumes a GitHub live `origin`; this checkout uses Forgejo `origin`. Resolve the target contract before any authorized publication.
+No hosted-site freshness or deployment state is established by this checkout alone.
+
 ## Iteration 57 – Tentai Show / Csillaggalaxisok hardening
 
 A katalógus továbbra is **106 játék**. Az Iteration 53 utolsó nyitott kiemelt hardening célpontja lezárult: a Tentai Show valódi center-anchored, exact-rotation, connectivity-aware solution countert és solver-verified uniqueness gate-et kapott. A generátor procedurális téglalap-galaxis tilinget használ, a difficulty tényleges solver-search alapján nő, a runtime pedig számozott cellatulajdonlás helyett közvetlen régióhatár-rajzolást használ 44 px-es mobil edge targetekkel. Részletek: `ITERATION57_AUDIT.md`.
@@ -18,7 +26,7 @@ Offline, telepítés nélkül használható Sudoku- és logikaijáték-gyűjtem�
 - Magyar az alapértelmezett nyelv; a fejlécben `EN` / `Magyar` gombbal váltható.
 - **106 játszható logikai rendszer**; a katalógus Iteration 54-ben nem bővült.
 - Seedelt generálás; a Hidak, Hitori és Nurikabe korábbi search-depth kalibrációja megmaradt. Iteration 48-ban a Futoshiki solver is nodes/branches/dead-ends/solutions instrumentációt kapott, és a 10-seedes audit növekvő populációs search-depth trendet igazol. A Masyu és Slitherlink mobil él-touch targetjei 44 px-re nőttek.
-- Nincs szerver, build, csomagkezelő, fiók vagy internetkapcsolat.
+- A játékhoz nem kell szerver, build, csomagkezelő, fiók vagy internetkapcsolat. A fejlesztési/release-eszközök és a külön Brutal kutatási szerver nem részei a játékos-runtime-nak.
 - A Cat Garden design, HU/EN felület és teljes offline működés megmaradt.
 
 ## Használat
@@ -30,7 +38,7 @@ Offline, telepítés nélkül használható Sudoku- és logikaijáték-gyűjtem�
 
 ## English
 
-The collection defaults to Hungarian. Use the language button in the header to switch the complete interface and all 97 game descriptions to English.
+The collection defaults to Hungarian. Use the language button in the header to switch the interface and game descriptions to English.
 
 
 ## Iteration 7 — personal design
